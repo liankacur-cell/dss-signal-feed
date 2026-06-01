@@ -1,7 +1,7 @@
 {
   "btc_context": "buruk",
   "signal_count": 1,
-  "last_update": "2026-06-02 04:21:40",
+  "last_update": "2026-06-02 05:06:40",
   "signals": [
     {
       "symbol": "BTCUSDT",
@@ -9,13 +9,13 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "rendah",
-      "entry": 71168.6,
-      "stop_loss": 71902.3679,
-      "take_profit_1": 70131.6607,
-      "take_profit_2": 69094.7214,
-      "risk_reward": 1.41,
-      "atr_4h": 691.2929,
-      "atr_1h": 489.1786,
+      "entry": 70861.1,
+      "stop_loss": 71593.4857,
+      "take_profit_1": 69800.3643,
+      "take_profit_2": 68739.6286,
+      "risk_reward": 1.45,
+      "atr_4h": 707.1571,
+      "atr_1h": 488.2571,
       "btc_context": "buruk"
     }
   ]
