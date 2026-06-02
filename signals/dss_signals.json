@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-06-03T04:18:01.060975",
+  "system": "DSS-Swing-Interday",
+  "total_signals": 9,
+  "signals": [
+    {
+      "pair": "ETHUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 1904.33,
+        "sl": 1950.0442857142857,
+        "tp": 1835.7585714285713,
+        "risk": 45.71428571428578,
+        "reward": 68.57142857142867,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=45.7143, Reward=68.5714"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "SOLUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 75.51,
+        "sl": 77.62428571428572,
+        "tp": 72.33857142857144,
+        "risk": 2.114285714285714,
+        "reward": 3.1714285714285637,
+        "rr": 1.4999999999999967,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=2.1143, Reward=3.1714"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "SUIUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 0.8291,
+        "sl": 0.8599142857142856,
+        "tp": 0.7828785714285714,
+        "risk": 0.030814285714285683,
+        "reward": 0.046221428571428524,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=0.0308, Reward=0.0462"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "DOGEUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 0.09414,
+        "sl": 0.09679142857142857,
+        "tp": 0.09016285714285714,
+        "risk": 0.0026514285714285685,
+        "reward": 0.00397714285714286,
+        "rr": 1.5000000000000027,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=0.0027, Reward=0.0040"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "UNIUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 2.835,
+        "sl": 2.9234285714285715,
+        "tp": 2.7023571428571427,
+        "risk": 0.08842857142857152,
+        "reward": 0.13264285714285728,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=0.0884, Reward=0.1326"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "1000SATSUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 1.069e-05,
+        "sl": 1.1171428571428571e-05,
+        "tp": 9.967857142857142e-06,
+        "risk": 4.814285714285721e-07,
+        "reward": 7.221428571428574e-07,
+        "rr": 1.4999999999999982,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=0.0000, Reward=0.0000"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "DOGSUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 4.78e-05,
+        "sl": 5.004857142857143e-05,
+        "tp": 4.442714285714286e-05,
+        "risk": 2.248571428571429e-06,
+        "reward": 3.37285714285714e-06,
+        "rr": 1.4999999999999984,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=0.0000, Reward=0.0000"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "NOTUSDT",
+      "market": "crypto",
+      "direction": "SHORT",
+      "score": 10.0,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 0.000454,
+        "sl": 0.0004786814999999999,
+        "tp": 0.00041778571428571423,
+        "risk": 2.468149999999993e-05,
+        "reward": 3.621428571428574e-05,
+        "rr": 1.4672643767309865,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.47, Risk=0.0000, Reward=0.0000"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "ZECUSDT",
+      "market": "crypto",
+      "direction": "LONG",
+      "score": 9.25,
+      "structure": "valid_bullish",
+      "trend": "bullish",
+      "risk": {
+        "entry": 603.81,
+        "sl": 564.4399999999999,
+        "tp": 662.8649999999999,
+        "risk": 39.370000000000005,
+        "reward": 59.05499999999995,
+        "rr": 1.4999999999999984,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50, Risk=39.3700, Reward=59.0550"
+      },
+      "reasoning": "Bullish: HH+HL"
+    }
+  ]
+}
