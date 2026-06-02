@@ -1,13 +1,13 @@
 {
   "btc_context": "buruk",
   "signal_count": 1,
-  "last_update": "2026-06-03 02:36:57",
+  "last_update": "2026-06-03 03:21:59",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "buruk"
     }
