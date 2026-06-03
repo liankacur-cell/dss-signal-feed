@@ -1,27 +1,47 @@
 {
-  "timestamp": "2026-06-04T01:22:25.192811",
+  "timestamp": "2026-06-04T02:22:41.188724",
   "system": "DSS-Swing-Interday-Crypto",
-  "total_signals": 1,
+  "total_signals": 2,
   "signals": [
     {
-      "pair": "NOTUSDT",
+      "pair": "NEIROUSDT",
+      "direction": "SHORT",
+      "score": 82.85,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 7.638e-05,
+        "sl": 7.920142857142857e-05,
+        "tp": 7.214785714285715e-05,
+        "risk": 2.8214285714285684e-06,
+        "reward": 4.232142857142846e-06,
+        "rr": 1.4999999999999976,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "DOGSUSDT",
       "direction": "LONG",
-      "score": 88.35,
-      "structure": "valid_bullish",
+      "score": 73.9231986421738,
+      "structure": "valid_bearish",
       "trend": "bullish",
       "risk": {
-        "entry": 0.0004787,
-        "sl": 0.00045822857142857143,
-        "tp": 0.0005094071428571428,
-        "risk": 2.047142857142855e-05,
-        "reward": 3.0707142857142825e-05,
+        "entry": 4.821e-05,
+        "sl": 4.647142857142857e-05,
+        "tp": 5.0817857142857144e-05,
+        "risk": 1.7385714285714286e-06,
+        "reward": 2.607857142857143e-06,
         "rr": 1.5,
         "pos_factor": 0.5,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "reasoning": "Bullish: HH+HL"
+      "reasoning": "Bearish: LH+LL"
     }
   ]
 }
