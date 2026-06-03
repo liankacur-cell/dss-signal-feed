@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-03T16:26:05.090170",
+  "timestamp": "2026-06-03T16:50:09.219625",
   "system": "DSS-Swing-Interday",
-  "total_signals": 3,
+  "total_signals": 4,
   "signals": [
     {
       "pair": "JPM",
@@ -25,19 +25,19 @@
       "reasoning": "Bullish: HH+HL"
     },
     {
-      "pair": "DOGSUSDT",
-      "market": "crypto",
+      "pair": "META",
+      "market": "stock",
       "direction": "SHORT",
-      "score": 82.74389548893285,
+      "score": 79.0,
       "structure": "valid_bearish",
       "trend": "bearish",
       "risk": {
-        "entry": 4.765e-05,
-        "sl": 4.975571428571429e-05,
-        "tp": 4.449142857142857e-05,
-        "risk": 2.1057142857142902e-06,
-        "reward": 3.158571428571432e-06,
-        "rr": 1.4999999999999984,
+        "entry": 597.65997,
+        "sl": 610.5749541428572,
+        "tp": 578.2874937857143,
+        "risk": 12.914984142857179,
+        "reward": 19.37247621428571,
+        "rr": 1.4999999999999956,
         "pos_factor": 0.4,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
@@ -65,6 +65,27 @@
         "reason": "RR=1:1.50"
       },
       "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "MSFT",
+      "market": "stock",
+      "direction": "SHORT",
+      "score": 72.75,
+      "structure": "valid_bullish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 441.29001,
+        "sl": 451.9499622857143,
+        "tp": 425.30008157142856,
+        "risk": 10.659952285714326,
+        "reward": 15.989928428571432,
+        "rr": 1.4999999999999947,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bullish: HH+HL"
     }
   ]
 }
