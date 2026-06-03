@@ -1,6 +1,82 @@
 {
-  "btc_context": "buruk",
-  "signal_count": 0,
-  "last_update": "2026-06-03 17:36:37",
-  "signals": []
+  "btc_context": "baik",
+  "signal_count": 5,
+  "last_update": "2026-06-03 18:21:41",
+  "signals": [
+    {
+      "symbol": "CLOUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "entry": 0.1856,
+      "stop_loss": 0.1639,
+      "take_profit_1": 0.2087,
+      "take_profit_2": 0.2319,
+      "risk_reward": 1.06,
+      "atr_4h": 0.0154,
+      "atr_1h": 0.0145,
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "\u9f99\u867eUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "entry": 0.009515,
+      "stop_loss": 0.009,
+      "take_profit_1": 0.0104,
+      "take_profit_2": 0.0112,
+      "risk_reward": 1.72,
+      "atr_4h": 0.0006,
+      "atr_1h": 0.0004,
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "LITUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "entry": 1.7144,
+      "stop_loss": 1.6123,
+      "take_profit_1": 1.8955,
+      "take_profit_2": 2.0765,
+      "risk_reward": 1.77,
+      "atr_4h": 0.1207,
+      "atr_1h": 0.0681,
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "MAGMAUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "normal",
+      "entry": 0.35795,
+      "stop_loss": 0.3392,
+      "take_profit_1": 0.3814,
+      "take_profit_2": 0.4048,
+      "risk_reward": 1.25,
+      "atr_4h": 0.0156,
+      "atr_1h": 0.0125,
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "DEXEUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "entry": 21.867,
+      "stop_loss": 19.9337,
+      "take_profit_1": 23.9812,
+      "take_profit_2": 26.0955,
+      "risk_reward": 1.09,
+      "atr_4h": 1.4095,
+      "atr_1h": 1.2889,
+      "btc_context": "baik"
+    }
+  ]
 }
