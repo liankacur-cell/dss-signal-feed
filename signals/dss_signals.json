@@ -1,63 +1,23 @@
 {
-  "timestamp": "2026-06-04T00:17:56.187337",
+  "timestamp": "2026-06-04T00:45:16.997806",
   "system": "DSS-Swing-Interday-Crypto",
-  "total_signals": 4,
+  "total_signals": 5,
   "signals": [
     {
-      "pair": "1000PEPEUSDT",
-      "direction": "SHORT",
-      "score": 75.56218730549752,
+      "pair": "MEMEUSDT",
+      "direction": "LONG",
+      "score": 88.3,
       "structure": "valid_bullish",
-      "trend": "bearish",
+      "trend": "bullish",
       "risk": {
-        "entry": 0.0031317,
-        "sl": 0.0032188714285714282,
-        "tp": 0.003000942857142857,
-        "risk": 8.717142857142838e-05,
-        "reward": 0.0001307571428571428,
-        "rr": 1.5000000000000024,
-        "pos_factor": 0.5,
-        "sl_reason": "Above liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "reasoning": "Bullish: HH+HL"
-    },
-    {
-      "pair": "DOGSUSDT",
-      "direction": "SHORT",
-      "score": 74.43326377010418,
-      "structure": "valid_bullish",
-      "trend": "bearish",
-      "risk": {
-        "entry": 4.769e-05,
-        "sl": 4.948714285714286e-05,
-        "tp": 4.499428571428571e-05,
-        "risk": 1.7971428571428598e-06,
-        "reward": 2.6957142857142897e-06,
+        "entry": 0.0005565,
+        "sl": 0.0005261571428571429,
+        "tp": 0.0006020142857142858,
+        "risk": 3.0342857142857168e-05,
+        "reward": 4.551428571428575e-05,
         "rr": 1.5,
         "pos_factor": 0.5,
-        "sl_reason": "Above liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "reasoning": "Bullish: HH+HL"
-    },
-    {
-      "pair": "NEIROUSDT",
-      "direction": "SHORT",
-      "score": 73.65,
-      "structure": "valid_bullish",
-      "trend": "bearish",
-      "risk": {
-        "entry": 7.648e-05,
-        "sl": 7.949714285714285e-05,
-        "tp": 7.195428571428572e-05,
-        "risk": 3.0171428571428515e-06,
-        "reward": 4.525714285714277e-06,
-        "rr": 1.5,
-        "pos_factor": 0.5,
-        "sl_reason": "Above liquidity + ATR",
+        "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
@@ -65,21 +25,81 @@
     },
     {
       "pair": "1000SATSUSDT",
+      "direction": "LONG",
+      "score": 87.17328469696812,
+      "structure": "valid_bullish",
+      "trend": "bullish",
+      "risk": {
+        "entry": 1.108e-05,
+        "sl": 1.0662857142857143e-05,
+        "tp": 1.1705714285714286e-05,
+        "risk": 4.1714285714285775e-07,
+        "reward": 6.257142857142858e-07,
+        "rr": 1.499999999999998,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bullish: HH+HL"
+    },
+    {
+      "pair": "DOGSUSDT",
+      "direction": "LONG",
+      "score": 86.96977320941713,
+      "structure": "valid_bullish",
+      "trend": "bullish",
+      "risk": {
+        "entry": 4.847e-05,
+        "sl": 4.6604285714285716e-05,
+        "tp": 5.126857142857143e-05,
+        "risk": 1.8657142857142858e-06,
+        "reward": 2.7985714285714286e-06,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bullish: HH+HL"
+    },
+    {
+      "pair": "NEIROUSDT",
+      "direction": "LONG",
+      "score": 86.65,
+      "structure": "valid_bullish",
+      "trend": "bullish",
+      "risk": {
+        "entry": 7.723e-05,
+        "sl": 7.410714285714286e-05,
+        "tp": 8.191428571428572e-05,
+        "risk": 3.1228571428571405e-06,
+        "reward": 4.684285714285711e-06,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bullish: HH+HL"
+    },
+    {
+      "pair": "BTCUSDT",
       "direction": "SHORT",
-      "score": 72.97071253062364,
+      "score": 70.44275009308338,
       "structure": "valid_bullish",
       "trend": "bearish",
       "risk": {
-        "entry": 1.099e-05,
-        "sl": 1.1567549999999999e-05,
-        "tp": 1.038142857142857e-05,
-        "risk": 5.775499999999992e-07,
-        "reward": 6.085714285714293e-07,
-        "rr": 1.0537121090319974,
+        "entry": 66082.8,
+        "sl": 67785.23999999999,
+        "tp": 64357.50000000001,
+        "risk": 1702.4399999999878,
+        "reward": 1725.2999999999956,
+        "rr": 1.0134277860012735,
         "pos_factor": 0.4,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.05"
+        "reason": "RR=1:1.01"
       },
       "reasoning": "Bullish: HH+HL"
     }
