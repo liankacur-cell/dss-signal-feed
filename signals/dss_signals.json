@@ -1,41 +1,21 @@
 {
-  "timestamp": "2026-06-04T11:41:21.155057",
+  "timestamp": "2026-06-04T12:41:38.468481",
   "system": "DSS-Swing-Interday-Crypto",
-  "total_signals": 3,
+  "total_signals": 4,
   "signals": [
     {
-      "pair": "MEMEUSDT",
-      "direction": "LONG",
-      "score": 86.95,
-      "structure": "valid_bullish",
-      "trend": "bullish",
-      "risk": {
-        "entry": 0.0005774,
-        "sl": 0.0005308142857142858,
-        "tp": 0.0006472785714285715,
-        "risk": 4.6585714285714264e-05,
-        "reward": 6.987857142857145e-05,
-        "rr": 1.500000000000001,
-        "pos_factor": 0.5,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "reasoning": "Bullish: HH+HL"
-    },
-    {
-      "pair": "HMSTRUSDT",
+      "pair": "PUMPUSDT",
       "direction": "SHORT",
-      "score": 70.69999999999999,
+      "score": 83.3778237856753,
       "structure": "valid_bearish",
       "trend": "bearish",
       "risk": {
-        "entry": 0.0001376,
-        "sl": 0.00015134285714285715,
-        "tp": 0.0001169857142857143,
-        "risk": 1.3742857142857144e-05,
-        "reward": 2.0614285714285716e-05,
-        "rr": 1.5,
+        "entry": 0.001749,
+        "sl": 0.001885142857142857,
+        "tp": 0.0015447857142857143,
+        "risk": 0.00013614285714285703,
+        "reward": 0.00020421428571428565,
+        "rr": 1.5000000000000009,
         "pos_factor": 0.5,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
@@ -44,24 +24,64 @@
       "reasoning": "Bearish: LH+LL"
     },
     {
-      "pair": "ZECUSDT",
+      "pair": "SOLUSDT",
       "direction": "SHORT",
-      "score": 68.81073661427142,
-      "structure": "valid_bullish",
+      "score": 78.85,
+      "structure": "valid_bearish",
       "trend": "bearish",
       "risk": {
-        "entry": 602.66,
-        "sl": 647.4014285714285,
-        "tp": 535.5478571428571,
-        "risk": 44.741428571428514,
-        "reward": 67.11214285714289,
+        "entry": 70.43,
+        "sl": 73.71714285714286,
+        "tp": 65.49928571428572,
+        "risk": 3.287142857142854,
+        "reward": 4.930714285714288,
+        "rr": 1.5000000000000022,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "HMSTRUSDT",
+      "direction": "SHORT",
+      "score": 78.65,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 0.0001384,
+        "sl": 0.0001526,
+        "tp": 0.0001171,
+        "risk": 1.4199999999999993e-05,
+        "reward": 2.1300000000000003e-05,
+        "rr": 1.5000000000000009,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "reasoning": "Bearish: LH+LL"
+    },
+    {
+      "pair": "SUIUSDT",
+      "direction": "SHORT",
+      "score": 77.15,
+      "structure": "valid_bearish",
+      "trend": "bearish",
+      "risk": {
+        "entry": 0.8004,
+        "sl": 0.8466714285714285,
+        "tp": 0.7309928571428571,
+        "risk": 0.04627142857142852,
+        "reward": 0.06940714285714289,
         "rr": 1.5000000000000024,
         "pos_factor": 0.5,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "reasoning": "Bullish: HH+HL"
+      "reasoning": "Bearish: LH+LL"
     }
   ]
 }
