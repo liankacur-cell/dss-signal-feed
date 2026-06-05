@@ -1,47 +1,15 @@
 {
-  "btc_context": "baik",
-  "signal_count": 5,
-  "last_update": "2026-06-05 12:28:25",
+  "btc_context": "buruk",
+  "signal_count": 1,
+  "last_update": "2026-06-05 13:13:13",
   "signals": [
     {
-      "symbol": "ETHUSDT",
+      "symbol": "BTCUSDT",
       "signal": "SHORT",
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "\u9f99\u867eUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "VELVETUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "buruk"
     }
   ]
 }
