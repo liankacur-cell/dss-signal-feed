@@ -1,6 +1,31 @@
 {
-  "btc_context": "buruk",
-  "signal_count": 0,
-  "last_update": "2026-06-05 06:28:05",
-  "signals": []
+  "btc_context": "baik",
+  "signal_count": 3,
+  "last_update": "2026-06-05 07:13:19",
+  "signals": [
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "HOMEUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "\u9f99\u867eUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "baik"
+    }
+  ]
 }
