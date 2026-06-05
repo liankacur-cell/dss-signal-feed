@@ -1,52 +1,6 @@
 {
-  "btc_context": "baik",
-  "signal_count": 3,
-  "last_update": "2026-06-05 07:13:09",
-  "signals": [
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "entry": 0.7619,
-      "stop_loss": 0.7861,
-      "take_profit_1": 0.7108,
-      "take_profit_2": 0.6597,
-      "risk_reward": 2.11,
-      "atr_4h": 0.0341,
-      "atr_1h": 0.0161,
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "HOMEUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "entry": 0.056802,
-      "stop_loss": 0.049,
-      "take_profit_1": 0.0657,
-      "take_profit_2": 0.0746,
-      "risk_reward": 1.14,
-      "atr_4h": 0.0059,
-      "atr_1h": 0.0052,
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "\u9f99\u867eUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "entry": 0.011277,
-      "stop_loss": 0.0105,
-      "take_profit_1": 0.0128,
-      "take_profit_2": 0.0143,
-      "risk_reward": 1.96,
-      "atr_4h": 0.001,
-      "atr_1h": 0.0005,
-      "btc_context": "baik"
-    }
-  ]
+  "btc_context": "buruk",
+  "signal_count": 0,
+  "last_update": "2026-06-05 07:58:04",
+  "signals": []
 }
