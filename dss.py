@@ -38,6 +38,7 @@
 ║  • Tidak ada sinyal → semua channel tetap notifikasi   ║
 ║  • Ada sinyal → FREE dapat ringkasan, VIP dapat full   ║
 ║  • signals.json + web.json diperbarui setiap siklus    ║
+║  • signal_history.json mencatat semua histori sinyal   ║
 ║  • Git push otomatis setelah setiap siklus             ║
 ╚══════════════════════════════════════════════════════════╝
 """
@@ -97,6 +98,7 @@ REQUEST_TIMEOUT = 15
 # Output files
 SIGNAL_FILE = "signals.json"
 WEB_FILE = "web.json"
+SIGNAL_HISTORY_FILE = "signal_history.json"
 
 # Git Repo Path
 GIT_REPO_PATH = os.path.expanduser("~/Dss_Web2")
@@ -636,6 +638,7 @@ def run_analysis_engine(cycle_count):
     print(f"  Total sinyal valid: {len(signals)}")
     
     save_signals_json(signals, btc_context)
+    save_signal_history(signals, btc_context)
     
     vip_distribution(signals, btc_context)
     free_distribution(signals, btc_context)
@@ -661,6 +664,29 @@ def save_signals_json(signals, btc_context):
         print(f"[OUTPUT] {SIGNAL_FILE} tersimpan ({len(signals)} sinyal)")
     except Exception as e:
         print(f"[ERROR] Gagal menyimpan {SIGNAL_FILE}: {e}")
+
+
+def save_signal_history(signals, btc_context):
+    entry = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "btc_context": btc_context,
+        "signal_count": len(signals),
+        "signals": signals
+    }
+
+    history = []
+
+    if os.path.exists(SIGNAL_HISTORY_FILE):
+        try:
+            with open(SIGNAL_HISTORY_FILE, "r") as f:
+                history = json.load(f)
+        except:
+            history = []
+
+    history.insert(0, entry)
+
+    with open(SIGNAL_HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
 
 
 # ============================================================
