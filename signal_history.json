@@ -1,5 +1,72 @@
 [
   {
+    "timestamp": "2026-06-06 22:33:50",
+    "btc_context": "baik",
+    "signal_count": 4,
+    "signals": [
+      {
+        "symbol": "SOLUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "lemah_bearish",
+        "volatility": "normal",
+        "entry": 61.61,
+        "stop_loss": 63.5364,
+        "take_profit_1": 57.7571,
+        "take_profit_2": 53.9043,
+        "risk_reward": 2.0,
+        "atr_4h": 2.5686,
+        "atr_1h": 1.2843,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "VELVETUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.18257,
+        "stop_loss": 0.1683,
+        "take_profit_1": 0.2051,
+        "take_profit_2": 0.2276,
+        "risk_reward": 1.58,
+        "atr_4h": 0.015,
+        "atr_1h": 0.0095,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "BLUAIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.016575,
+        "stop_loss": 0.0127,
+        "take_profit_1": 0.0195,
+        "take_profit_2": 0.0225,
+        "risk_reward": 0.75,
+        "atr_4h": 0.002,
+        "atr_1h": 0.0026,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 2.2224,
+        "stop_loss": 2.0604,
+        "take_profit_1": 2.5062,
+        "take_profit_2": 2.7901,
+        "risk_reward": 1.75,
+        "atr_4h": 0.1892,
+        "atr_1h": 0.108,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-06 21:48:51",
     "btc_context": "baik",
     "signal_count": 3,

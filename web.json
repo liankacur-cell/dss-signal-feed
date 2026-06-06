@@ -1,8 +1,16 @@
 {
   "btc_context": "baik",
-  "signal_count": 3,
-  "last_update": "2026-06-06 21:49:02",
+  "signal_count": 4,
+  "last_update": "2026-06-06 22:34:04",
   "signals": [
+    {
+      "symbol": "SOLUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
@@ -20,7 +28,7 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "CLOUSDT",
+      "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
