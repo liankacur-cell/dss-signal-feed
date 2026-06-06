@@ -1,5 +1,72 @@
 [
   {
+    "timestamp": "2026-06-07 06:55:58",
+    "btc_context": "baik",
+    "signal_count": 4,
+    "signals": [
+      {
+        "symbol": "SKYAIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.35254,
+        "stop_loss": 0.3116,
+        "take_profit_1": 0.3908,
+        "take_profit_2": 0.429,
+        "risk_reward": 0.93,
+        "atr_4h": 0.0255,
+        "atr_1h": 0.0273,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "LABUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 13.418,
+        "stop_loss": 11.3588,
+        "take_profit_1": 17.4154,
+        "take_profit_2": 21.4128,
+        "risk_reward": 1.94,
+        "atr_4h": 2.6649,
+        "atr_1h": 1.3728,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "GWEIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "normal",
+        "entry": 0.14368,
+        "stop_loss": 0.1343,
+        "take_profit_1": 0.1542,
+        "take_profit_2": 0.1646,
+        "risk_reward": 1.12,
+        "atr_4h": 0.007,
+        "atr_1h": 0.0062,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 2.2325,
+        "stop_loss": 2.0531,
+        "take_profit_1": 2.5384,
+        "take_profit_2": 2.8444,
+        "risk_reward": 1.71,
+        "atr_4h": 0.204,
+        "atr_1h": 0.1196,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-07 06:10:57",
     "btc_context": "baik",
     "signal_count": 3,
