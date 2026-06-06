@@ -1,18 +1,18 @@
 {
   "btc_context": "baik",
   "signal_count": 4,
-  "last_update": "2026-06-06 18:04:03",
+  "last_update": "2026-06-06 18:49:08",
   "signals": [
     {
-      "symbol": "VELVETUSDT",
+      "symbol": "BLUAIUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "baik"
     },
     {
-      "symbol": "BLUAIUSDT",
+      "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
@@ -28,7 +28,7 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "SIRENUSDT",
+      "symbol": "CLOUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
