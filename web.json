@@ -1,7 +1,7 @@
 {
   "btc_context": "baik",
-  "signal_count": 5,
-  "last_update": "2026-06-06 20:19:07",
+  "signal_count": 4,
+  "last_update": "2026-06-06 21:04:04",
   "signals": [
     {
       "symbol": "BLUAIUSDT",
@@ -29,14 +29,6 @@
     },
     {
       "symbol": "AIOUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "SIRENUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
