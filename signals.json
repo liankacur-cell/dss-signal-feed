@@ -1,21 +1,36 @@
 {
   "btc_context": "sideways",
-  "signal_count": 1,
-  "last_update": "2026-06-07 16:40:58",
+  "signal_count": 2,
+  "last_update": "2026-06-07 17:25:58",
   "signals": [
     {
-      "symbol": "\u5e01\u5b89\u4eba\u751fUSDT",
+      "symbol": "LABUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "tinggi",
+      "entry": 13.091,
+      "stop_loss": 14.4834,
+      "take_profit_1": 9.8307,
+      "take_profit_2": 6.5705,
+      "risk_reward": 2.34,
+      "atr_4h": 2.1735,
+      "atr_1h": 0.9283,
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
       "volatility": "tinggi",
-      "entry": 0.8769,
-      "stop_loss": 0.8288,
-      "take_profit_1": 0.9622,
-      "take_profit_2": 1.0474,
-      "risk_reward": 1.77,
-      "atr_4h": 0.0568,
-      "atr_1h": 0.0321,
+      "entry": 0.06147,
+      "stop_loss": 0.0574,
+      "take_profit_1": 0.0689,
+      "take_profit_2": 0.0762,
+      "risk_reward": 1.83,
+      "atr_4h": 0.0049,
+      "atr_1h": 0.0027,
       "btc_context": "sideways"
     }
   ]
