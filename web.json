@@ -1,23 +1,6 @@
 {
   "btc_context": "sideways",
-  "signal_count": 2,
-  "last_update": "2026-06-07 17:26:06",
-  "signals": [
-    {
-      "symbol": "LABUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "ESPORTSUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-06-07 18:11:00",
+  "signals": []
 }
