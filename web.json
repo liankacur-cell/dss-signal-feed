@@ -1,7 +1,7 @@
 {
-  "btc_context": "baik",
-  "signal_count": 2,
-  "last_update": "2026-06-07 22:24:17",
+  "btc_context": "sideways",
+  "signal_count": 3,
+  "last_update": "2026-06-07 23:09:20",
   "signals": [
     {
       "symbol": "UNIUSDT",
@@ -9,15 +9,23 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
-      "symbol": "ESPORTSUSDT",
+      "symbol": "BLESSUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "LABUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
     }
   ]
 }
