@@ -1,31 +1,23 @@
 {
-  "btc_context": "sideways",
-  "signal_count": 3,
-  "last_update": "2026-06-07 21:39:21",
+  "btc_context": "baik",
+  "signal_count": 2,
+  "last_update": "2026-06-07 22:24:17",
   "signals": [
     {
-      "symbol": "SIRENUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "LABUSDT",
+      "symbol": "UNIUSDT",
       "signal": "SHORT",
       "trend": "bearish",
       "momentum": "kuat_bearish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
+      "volatility": "normal",
+      "btc_context": "baik"
     },
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
-      "btc_context": "sideways"
+      "btc_context": "baik"
     }
   ]
 }

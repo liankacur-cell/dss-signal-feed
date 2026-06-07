@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-07 22:24:09",
+    "btc_context": "baik",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "UNIUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "normal",
+        "entry": 2.513,
+        "stop_loss": 2.6131,
+        "take_profit_1": 2.414,
+        "take_profit_2": 2.348,
+        "risk_reward": 0.99,
+        "atr_4h": 0.0825,
+        "atr_1h": 0.0302,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "ESPORTSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.06782,
+        "stop_loss": 0.0444,
+        "take_profit_1": 0.0759,
+        "take_profit_2": 0.0839,
+        "risk_reward": 0.35,
+        "atr_4h": 0.0054,
+        "atr_1h": 0.0034,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-07 21:39:10",
     "btc_context": "sideways",
     "signal_count": 3,
