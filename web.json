@@ -1,8 +1,40 @@
 {
   "btc_context": "baik",
-  "signal_count": 3,
-  "last_update": "2026-06-08 02:09:19",
+  "signal_count": 7,
+  "last_update": "2026-06-08 02:54:30",
   "signals": [
+    {
+      "symbol": "SOLUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "UNIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "SIRENUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "baik"
+    },
     {
       "symbol": "BLESSUSDT",
       "signal": "LONG",
@@ -12,7 +44,7 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "BEATUSDT",
+      "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
@@ -20,7 +52,7 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "HUSDT",
+      "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
