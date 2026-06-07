@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-06-07 07:40:54",
+    "btc_context": "buruk",
+    "signal_count": 0,
+    "signals": []
+  },
+  {
     "timestamp": "2026-06-07 06:55:58",
     "btc_context": "baik",
     "signal_count": 4,
