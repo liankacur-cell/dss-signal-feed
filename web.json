@@ -1,48 +1,8 @@
 {
   "btc_context": "sideways",
-  "signal_count": 7,
-  "last_update": "2026-06-08 05:09:31",
+  "signal_count": 3,
+  "last_update": "2026-06-08 05:54:19",
   "signals": [
-    {
-      "symbol": "BTCUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "BLESSUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
@@ -52,7 +12,15 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "ESPORTSUSDT",
+      "symbol": "SIRENUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "BLESSUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
