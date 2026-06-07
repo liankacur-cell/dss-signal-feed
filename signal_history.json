@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-06-08 02:09:09",
+    "btc_context": "baik",
+    "signal_count": 3,
+    "signals": [
+      {
+        "symbol": "BLESSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.007492,
+        "stop_loss": 0.0054,
+        "take_profit_1": 0.0084,
+        "take_profit_2": 0.0093,
+        "risk_reward": 0.43,
+        "atr_4h": 0.0006,
+        "atr_1h": 0.0004,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 3.0739,
+        "stop_loss": 1.87,
+        "take_profit_1": 3.4783,
+        "take_profit_2": 3.8827,
+        "risk_reward": 0.34,
+        "atr_4h": 0.2696,
+        "atr_1h": 0.1739,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "HUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.76967,
+        "stop_loss": 0.6042,
+        "take_profit_1": 0.8718,
+        "take_profit_2": 0.9739,
+        "risk_reward": 0.62,
+        "atr_4h": 0.0681,
+        "atr_1h": 0.0432,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-08 01:24:09",
     "btc_context": "sideways",
     "signal_count": 5,
