@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-06-07 15:55:57",
+    "btc_context": "baik",
+    "signal_count": 1,
+    "signals": [
+      {
+        "symbol": "HOMEUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.05405,
+        "stop_loss": 0.0507,
+        "take_profit_1": 0.0633,
+        "take_profit_2": 0.0726,
+        "risk_reward": 2.76,
+        "atr_4h": 0.0062,
+        "atr_1h": 0.0022,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-07 15:10:58",
     "btc_context": "sideways",
     "signal_count": 1,

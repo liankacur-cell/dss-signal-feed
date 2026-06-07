@@ -1,15 +1,15 @@
 {
-  "btc_context": "sideways",
+  "btc_context": "baik",
   "signal_count": 1,
-  "last_update": "2026-06-07 15:11:02",
+  "last_update": "2026-06-07 15:56:12",
   "signals": [
     {
-      "symbol": "LABUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "symbol": "HOMEUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
-      "btc_context": "sideways"
+      "btc_context": "baik"
     }
   ]
 }
