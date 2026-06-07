@@ -1,31 +1,55 @@
 {
-  "btc_context": "baik",
-  "signal_count": 7,
-  "last_update": "2026-06-08 02:54:30",
+  "btc_context": "sideways",
+  "signal_count": 8,
+  "last_update": "2026-06-08 03:39:34",
   "signals": [
     {
-      "symbol": "SOLUSDT",
+      "symbol": "BTCUSDT",
       "signal": "SHORT",
       "trend": "bearish",
       "momentum": "lemah_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
     },
     {
       "symbol": "SUIUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "lemah_bearish",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
     },
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "lemah_bearish",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
       "symbol": "SIRENUSDT",
@@ -33,15 +57,7 @@
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "BLESSUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
       "symbol": "ESPORTSUSDT",
@@ -49,15 +65,7 @@
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "VELVETUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     }
   ]
 }
