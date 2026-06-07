@@ -470,27 +470,91 @@ def scoring_engine(trend_result, momentum_result, volatility_result, oi_result):
 def tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m):
     if signal == "NO_TRADE":
         return None
+    
     if not candles_4h or not candles_1h or not candles_15m:
         return None
+    
     current_price = candles_15m[-1]["close"]
+    
     atr_4h = calculate_atr(candles_4h, 14)
     atr_1h = calculate_atr(candles_1h, 14)
+    
     if not atr_4h or not atr_1h:
         return None
+    
+    # === 1. ENTRY QUALITY FILTER (ANTI SPIKE ENTRY) ===
+    last_high = max(c["high"] for c in candles_15m[-3:])
+    last_low = min(c["low"] for c in candles_15m[-3:])
+    candle_range = last_high - last_low
+    
+    if signal == "LONG" and current_price > (last_high - candle_range * 0.2):
+        return None
+    
+    if signal == "SHORT" and current_price < (last_low + candle_range * 0.2):
+        return None
+    
+    # === 2. MOMENTUM CONTINUATION CHECK ===
+    momentum_strength = 0
+    
+    rsi = calculate_rsi([c["close"] for c in candles_1h], 14)
+    volume_trend = calculate_volume_trend(candles_15m)
+    _, _, macd_hist = calculate_macd([c["close"] for c in candles_1h])
+    
+    if signal == "LONG":
+        if rsi and rsi > 55:
+            momentum_strength += 1
+        if volume_trend == "increasing":
+            momentum_strength += 1
+        if macd_hist and macd_hist > 0:
+            momentum_strength += 1
+    elif signal == "SHORT":
+        if rsi and rsi < 45:
+            momentum_strength += 1
+        if volume_trend == "increasing":
+            momentum_strength += 1
+        if macd_hist and macd_hist < 0:
+            momentum_strength += 1
+    
+    # === 5. FILTER WEAK CONTINUATION ===
+    if momentum_strength == 0:
+        return None
+    
     sl_multiplier = 1.5
+    
+    # === 2. HYBRID STOP LOSS (ATR + SWING PROTECTION) ===
+    swing_high = max(c["high"] for c in candles_1h[-20:])
+    swing_low = min(c["low"] for c in candles_1h[-20:])
+    atr_sl = atr_1h * sl_multiplier
+    
     if signal == "LONG":
         entry = current_price
-        stop_loss = round(entry - (atr_1h * sl_multiplier), 4)
-        take_profit_1 = round(entry + (atr_4h * 1.5), 4)
-        take_profit_2 = round(entry + (atr_4h * 3.0), 4)
+        stop_loss = round(min(entry - atr_sl, swing_low - (atr_1h * 0.3)), 4)
     else:
         entry = current_price
-        stop_loss = round(entry + (atr_1h * sl_multiplier), 4)
-        take_profit_1 = round(entry - (atr_4h * 1.5), 4)
-        take_profit_2 = round(entry - (atr_4h * 3.0), 4)
+        stop_loss = round(max(entry + atr_sl, swing_high + (atr_1h * 0.3)), 4)
+    
+    # === 4. ADAPTIVE TP MULTIPLIER ===
+    if momentum_strength == 3:
+        tp1_mult = 1.8
+        tp2_mult = 3.5
+    elif momentum_strength == 2:
+        tp1_mult = 1.5
+        tp2_mult = 3.0
+    else:
+        tp1_mult = 1.2
+        tp2_mult = 2.0
+    
+    if signal == "LONG":
+        take_profit_1 = round(entry + (atr_4h * tp1_mult), 4)
+        take_profit_2 = round(entry + (atr_4h * tp2_mult), 4)
+    else:
+        take_profit_1 = round(entry - (atr_4h * tp1_mult), 4)
+        take_profit_2 = round(entry - (atr_4h * tp2_mult), 4)
+    
     risk = abs(entry - stop_loss)
     reward = abs(take_profit_1 - entry)
     risk_reward = round(reward / risk, 2) if risk > 0 else 0
+    
     return {
         "entry": entry,
         "stop_loss": stop_loss,
@@ -722,7 +786,7 @@ def send_to_telegram(chat_id, message, parse_mode="HTML"):
 
 
 # ============================================================
-# FORMAT SINYAL
+# FORMAT SINYAL (TANPA GARIS - CLEAN DESIGN)
 # ============================================================
 
 def escape_html(text):
@@ -741,69 +805,60 @@ def format_bias_emoji(signal):
 
 def format_trend_emoji(trend):
     if trend == "bullish":
-        return "BULLISH 🐂"
+        return "🐂"
     elif trend == "bearish":
-        return "BEARISH 🐻"
-    return "NEUTRAL ➡️"
+        return "🐻"
+    return "➡️"
 
 
 def format_momentum_label(momentum):
     if "kuat" in momentum and "bullish" in momentum:
-        return "MENGUAT ⬆️"
+        return "KUAT NAIK"
     elif "kuat" in momentum and "bearish" in momentum:
-        return "MELEMAH ⬇️"
+        return "KUAT TURUN"
     elif "lemah" in momentum and "bullish" in momentum:
-        return "LEMAH NAIK ↗️"
+        return "Lemah Naik"
     elif "lemah" in momentum and "bearish" in momentum:
-        return "LEMAH TURUN ↘️"
-    return "NETRAL ➡️"
+        return "Lemah Turun"
+    return "Netral"
 
 
 def format_btc_context_label(btc_context):
     if btc_context == "baik":
-        return "BULLISH 🟢"
+        return "BULLISH"
     elif btc_context == "buruk":
-        return "BEARISH 🔴"
-    return "SIDEWAYS 📊"
+        return "BEARISH"
+    return "SIDEWAYS"
 
 
 def format_signal_free(signal_data):
-    symbol = escape_html(signal_data["symbol"])
+    symbol = signal_data["symbol"]
     signal = signal_data["signal"]
     trend = signal_data["trend"]
     momentum = signal_data["momentum"]
     btc_context = signal_data["btc_context"]
+    
     bias_emoji = format_bias_emoji(signal)
-    trend_label = format_trend_emoji(trend)
+    trend_label = trend.upper()
     momentum_label = format_momentum_label(momentum)
     btc_label = format_btc_context_label(btc_context)
-    message = f"""
-<b>🔥 DSS MARKET ALERT 🔥</b>
+    
+    message = f"""🔥 DSS MARKET ALERT
 
-🆓 <i>VERSION FREE</i>
+{bias_emoji} {symbol}  •  {signal}
+📈 Trend: {trend_label} ({format_trend_emoji(trend)})
+⚡ Momentum: {momentum_label}
+₿ BTC: {btc_label}
 
-<b>🪙 PAIR</b>       : <code>{symbol}</code>
-<b>🎯 BIAS</b>       : <b>{bias_emoji} {signal}</b>
-<b>📈 TREND</b>      : <b>{trend_label}</b>
-<b>⚡ MOMENTUM</b>   : <b>{momentum_label}</b>
+✨ Watch for setup!
 
-─────────────────
-<b>₿ BTC CONTEXT</b> : {btc_label}
-<b>🎯 SIGNAL</b>      : <b>{signal}</b>
-─────────────────
-
-✨ <i>Watch for setup!</i> ✨
-
-<b>🔐 FULL ENTRY & TP/SL:</b>
-<blockquote>⚠️ <b>VIP CHANNEL ONLY</b> ⚠️</blockquote>
-
-<b>🏷️ #DSS</b>  <b>#{symbol}</b>
-"""
+🔐 Full Entry & TP/SL: VIP Only
+🏷️ #DSS #{symbol}"""
     return message
 
 
 def format_signal_vip(signal_data):
-    symbol = escape_html(signal_data["symbol"])
+    symbol = signal_data["symbol"]
     signal = signal_data["signal"]
     entry = signal_data["entry"]
     sl = signal_data["stop_loss"]
@@ -812,29 +867,24 @@ def format_signal_vip(signal_data):
     rr = signal_data["risk_reward"]
     trend = signal_data["trend"]
     momentum = signal_data["momentum"]
+    
     bias_emoji = format_bias_emoji(signal)
-    trend_label = format_trend_emoji(trend)
+    trend_label = trend.upper()
     momentum_label = format_momentum_label(momentum)
-    message = f"""
-<b>🔥 DSS VIP SIGNAL 🔥</b>
+    
+    message = f"""🔥 DSS VIP SIGNAL
 
-💎 <i>FULL ACCESS</i>
+{bias_emoji} {symbol}  •  {signal}
+📈 Trend: {trend_label} ({format_trend_emoji(trend)})
+⚡ Momentum: {momentum_label}
 
-<b>🪙 PAIR</b>       : <code>{symbol}</code>
-<b>🎯 BIAS</b>       : <b>{bias_emoji} {signal}</b>
-<b>📈 TREND</b>      : <b>{trend_label}</b>
-<b>⚡ MOMENTUM</b>   : <b>{momentum_label}</b>
+💰 Entry: {entry}
+🛑 SL: {sl}
+✅ TP1: {tp1}
+✅ TP2: {tp2}
+📊 RR: {rr}
 
-─────────────────
-<b>💰 ENTRY</b>      : <code>{entry}</code>
-<b>🛑 STOP LOSS</b>  : <code>{sl}</code>
-<b>✅ TP1</b>         : <code>{tp1}</code>
-<b>✅ TP2</b>         : <code>{tp2}</code>
-<b>📊 RISK/REWARD</b> : <b>{rr}</b>
-─────────────────
-
-🏷️ <b>#DSS #VIP</b>  <b>#{symbol}</b>
-"""
+🏷️ #DSS #{symbol}"""
     return message
 
 
@@ -843,36 +893,36 @@ def format_summary(signals, btc_context, channel="FREE"):
     signal_count = len(signals)
     
     if channel == "VIP":
-        header = "<b>📊 DSS VIP SESSION</b>"
+        header = "📊 DSS VIP SESSION"
         tag = "#DSS #VIP"
     else:
-        header = "<b>📊 DSS MARKET SESSION</b>"
+        header = "📊 DSS MARKET SESSION"
         tag = "#DSS"
     
     if signal_count == 0:
         return f"""{header}
 
-⏰ <i>Tidak ada sinyal valid</i>
+⏰ Tidak ada sinyal valid
 ₿ BTC: {btc_label}
-✅ <i>Sistem tetap berjalan normal</i>
+✅ Sistem tetap berjalan normal
 
-🏷️ <b>{tag}</b>"""
+🏷️ {tag}"""
     
     summary = f"""{header}
 
 ₿ BTC: {btc_label}
-📨 Sinyal: <b>{signal_count}</b>
+📨 Sinyal: {signal_count}
 
 """
     for s in signals:
         emoji = format_bias_emoji(s["signal"])
-        symbol = escape_html(s["symbol"])
+        symbol = s["symbol"]
         signal = s["signal"]
-        summary += f"{emoji} <b>{symbol}</b>: {signal}\n"
+        summary += f"{emoji} {symbol}: {signal}\n"
     
     if channel == "FREE":
-        summary += f"\n🔐 <i>Full entry di VIP Channel</i>"
-    summary += f"\n🏷️ <b>{tag}</b>"
+        summary += f"\n🔐 Full entry di VIP Channel"
+    summary += f"\n🏷️ {tag}"
     
     return summary
 
