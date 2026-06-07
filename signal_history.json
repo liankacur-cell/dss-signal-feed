@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-07 08:25:58",
+    "btc_context": "baik",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "SKYAIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.3579,
+        "stop_loss": 0.3143,
+        "take_profit_1": 0.3985,
+        "take_profit_2": 0.4392,
+        "risk_reward": 0.93,
+        "atr_4h": 0.0271,
+        "atr_1h": 0.0291,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "GWEIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "normal",
+        "entry": 0.14604,
+        "stop_loss": 0.1357,
+        "take_profit_1": 0.1569,
+        "take_profit_2": 0.1677,
+        "risk_reward": 1.05,
+        "atr_4h": 0.0072,
+        "atr_1h": 0.0069,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-07 07:40:54",
     "btc_context": "buruk",
     "signal_count": 0,
