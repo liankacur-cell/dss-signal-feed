@@ -1,7 +1,7 @@
 {
   "btc_context": "baik",
   "signal_count": 3,
-  "last_update": "2026-06-07 09:11:08",
+  "last_update": "2026-06-07 09:56:08",
   "signals": [
     {
       "symbol": "SKYAIUSDT",
@@ -12,15 +12,15 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "CLOUSDT",
+      "symbol": "GWEIUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
+      "momentum": "lemah_bullish",
+      "volatility": "normal",
       "btc_context": "baik"
     },
     {
-      "symbol": "GWEIUSDT",
+      "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
