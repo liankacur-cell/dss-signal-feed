@@ -1,13 +1,13 @@
 {
   "btc_context": "baik",
   "signal_count": 1,
-  "last_update": "2026-06-08 21:39:15",
+  "last_update": "2026-06-08 22:24:15",
   "signals": [
     {
-      "symbol": "BANKUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "baik"
     }

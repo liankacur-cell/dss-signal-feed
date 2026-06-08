@@ -1,21 +1,21 @@
 {
   "btc_context": "baik",
   "signal_count": 1,
-  "last_update": "2026-06-08 21:39:10",
+  "last_update": "2026-06-08 22:24:11",
   "signals": [
     {
-      "symbol": "BANKUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "entry": 0.04123,
-      "stop_loss": 0.0466,
-      "take_profit_1": 0.0361,
-      "take_profit_2": 0.0328,
-      "risk_reward": 0.96,
-      "atr_4h": 0.0042,
-      "atr_1h": 0.0025,
+      "entry": 0.38029,
+      "stop_loss": 0.2353,
+      "take_profit_1": 0.4288,
+      "take_profit_2": 0.4774,
+      "risk_reward": 0.33,
+      "atr_4h": 0.0324,
+      "atr_1h": 0.0239,
       "btc_context": "baik"
     }
   ]
