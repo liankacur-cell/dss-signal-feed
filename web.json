@@ -1,8 +1,24 @@
 {
   "btc_context": "sideways",
-  "signal_count": 1,
-  "last_update": "2026-06-08 23:54:15",
+  "signal_count": 3,
+  "last_update": "2026-06-09 00:39:19",
   "signals": [
+    {
+      "symbol": "BTCUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
