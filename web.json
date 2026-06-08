@@ -1,8 +1,16 @@
 {
   "btc_context": "sideways",
-  "signal_count": 5,
-  "last_update": "2026-06-08 16:24:26",
+  "signal_count": 8,
+  "last_update": "2026-06-08 17:09:34",
   "signals": [
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
@@ -40,6 +48,22 @@
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "BSBUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }
