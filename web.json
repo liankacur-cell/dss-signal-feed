@@ -1,18 +1,26 @@
 {
   "btc_context": "sideways",
-  "signal_count": 2,
-  "last_update": "2026-06-09 05:09:35",
+  "signal_count": 3,
+  "last_update": "2026-06-09 05:54:20",
   "signals": [
     {
-      "symbol": "4USDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
+      "symbol": "BTCUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "GWEIUSDT",
+      "symbol": "UNIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "4USDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
