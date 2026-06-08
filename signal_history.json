@@ -1,5 +1,87 @@
 [
   {
+    "timestamp": "2026-06-08 17:54:10",
+    "btc_context": "sideways",
+    "signal_count": 5,
+    "signals": [
+      {
+        "symbol": "ZECUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "tinggi",
+        "entry": 425.9,
+        "stop_loss": 450.1669,
+        "take_profit_1": 391.5089,
+        "take_profit_2": 368.5814,
+        "risk_reward": 1.42,
+        "atr_4h": 28.6593,
+        "atr_1h": 11.4229,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 4.149,
+        "stop_loss": 2.5921,
+        "take_profit_1": 4.7085,
+        "take_profit_2": 5.2679,
+        "risk_reward": 0.36,
+        "atr_4h": 0.373,
+        "atr_1h": 0.3291,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BLESSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.008972,
+        "stop_loss": 0.0063,
+        "take_profit_1": 0.0105,
+        "take_profit_2": 0.012,
+        "risk_reward": 0.57,
+        "atr_4h": 0.001,
+        "atr_1h": 0.0009,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "VELVETUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.30515,
+        "stop_loss": 0.2135,
+        "take_profit_1": 0.3501,
+        "take_profit_2": 0.3926,
+        "risk_reward": 0.49,
+        "atr_4h": 0.025,
+        "atr_1h": 0.0152,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BSBUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "tinggi",
+        "entry": 0.32502,
+        "stop_loss": 0.4178,
+        "take_profit_1": 0.2685,
+        "take_profit_2": 0.2309,
+        "risk_reward": 0.61,
+        "atr_4h": 0.0471,
+        "atr_1h": 0.0262,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-08 17:09:09",
     "btc_context": "sideways",
     "signal_count": 8,

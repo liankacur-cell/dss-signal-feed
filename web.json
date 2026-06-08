@@ -1,24 +1,8 @@
 {
   "btc_context": "sideways",
-  "signal_count": 8,
-  "last_update": "2026-06-08 17:09:34",
+  "signal_count": 5,
+  "last_update": "2026-06-08 17:54:26",
   "signals": [
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
@@ -29,14 +13,6 @@
     },
     {
       "symbol": "BEATUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "ALLOUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
