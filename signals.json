@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
   "signal_count": 2,
-  "last_update": "2026-06-09 04:24:09",
+  "last_update": "2026-06-09 05:09:09",
   "signals": [
     {
       "symbol": "4USDT",
@@ -9,10 +9,10 @@
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "entry": 0.011871,
+      "entry": 0.01201,
       "stop_loss": 0.0083,
-      "take_profit_1": 0.0129,
-      "take_profit_2": 0.0139,
+      "take_profit_1": 0.0131,
+      "take_profit_2": 0.0141,
       "risk_reward": 0.29,
       "atr_4h": 0.0007,
       "atr_1h": 0.0005,
@@ -24,13 +24,13 @@
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "entry": 0.16794,
-      "stop_loss": 0.1238,
-      "take_profit_1": 0.1884,
-      "take_profit_2": 0.2089,
-      "risk_reward": 0.46,
+      "entry": 0.16551,
+      "stop_loss": 0.1244,
+      "take_profit_1": 0.186,
+      "take_profit_2": 0.2064,
+      "risk_reward": 0.5,
       "atr_4h": 0.0136,
-      "atr_1h": 0.0085,
+      "atr_1h": 0.0087,
       "btc_context": "sideways"
     }
   ]

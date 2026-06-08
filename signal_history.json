@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-09 05:09:09",
+    "btc_context": "sideways",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "4USDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.01201,
+        "stop_loss": 0.0083,
+        "take_profit_1": 0.0131,
+        "take_profit_2": 0.0141,
+        "risk_reward": 0.29,
+        "atr_4h": 0.0007,
+        "atr_1h": 0.0005,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "GWEIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.16551,
+        "stop_loss": 0.1244,
+        "take_profit_1": 0.186,
+        "take_profit_2": 0.2064,
+        "risk_reward": 0.5,
+        "atr_4h": 0.0136,
+        "atr_1h": 0.0087,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-09 04:24:09",
     "btc_context": "sideways",
     "signal_count": 2,
