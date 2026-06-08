@@ -1,5 +1,72 @@
 [
   {
+    "timestamp": "2026-06-08 11:54:09",
+    "btc_context": "sideways",
+    "signal_count": 4,
+    "signals": [
+      {
+        "symbol": "SUIUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "normal",
+        "entry": 0.7411,
+        "stop_loss": 0.7847,
+        "take_profit_1": 0.7064,
+        "take_profit_2": 0.6832,
+        "risk_reward": 0.8,
+        "atr_4h": 0.0289,
+        "atr_1h": 0.0133,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "ZECUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "tinggi",
+        "entry": 426.6,
+        "stop_loss": 450.7617,
+        "take_profit_1": 390.9549,
+        "take_profit_2": 367.1914,
+        "risk_reward": 1.48,
+        "atr_4h": 29.7043,
+        "atr_1h": 13.4057,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 3.8698,
+        "stop_loss": 2.186,
+        "take_profit_1": 4.3735,
+        "take_profit_2": 4.8772,
+        "risk_reward": 0.3,
+        "atr_4h": 0.3358,
+        "atr_1h": 0.3242,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BSBUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "tinggi",
+        "entry": 0.28133,
+        "stop_loss": 0.4206,
+        "take_profit_1": 0.233,
+        "take_profit_2": 0.2007,
+        "risk_reward": 0.35,
+        "atr_4h": 0.0403,
+        "atr_1h": 0.0354,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-08 11:09:09",
     "btc_context": "sideways",
     "signal_count": 3,
