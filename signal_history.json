@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-06-08 23:09:10",
+    "btc_context": "sideways",
+    "signal_count": 0,
+    "signals": []
+  },
+  {
     "timestamp": "2026-06-08 22:24:11",
     "btc_context": "baik",
     "signal_count": 1,
