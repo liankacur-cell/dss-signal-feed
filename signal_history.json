@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-08 14:54:10",
+    "btc_context": "sideways",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "ESPORTSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.10995,
+        "stop_loss": 0.0569,
+        "take_profit_1": 0.1299,
+        "take_profit_2": 0.1487,
+        "risk_reward": 0.38,
+        "atr_4h": 0.0111,
+        "atr_1h": 0.0105,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 4.161,
+        "stop_loss": 2.3535,
+        "take_profit_1": 4.7036,
+        "take_profit_2": 5.2462,
+        "risk_reward": 0.3,
+        "atr_4h": 0.3617,
+        "atr_1h": 0.3225,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-08 14:09:09",
     "btc_context": "sideways",
     "signal_count": 3,
