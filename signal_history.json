@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-09 01:24:09",
+    "btc_context": "sideways",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "ETHUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "kuat_bearish",
+        "volatility": "normal",
+        "entry": 1684.82,
+        "stop_loss": 1716.4491,
+        "take_profit_1": 1636.9803,
+        "take_profit_2": 1605.0871,
+        "risk_reward": 1.51,
+        "atr_4h": 39.8664,
+        "atr_1h": 18.2636,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "VELVETUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.33359,
+        "stop_loss": 0.2327,
+        "take_profit_1": 0.3884,
+        "take_profit_2": 0.4432,
+        "risk_reward": 0.54,
+        "atr_4h": 0.0365,
+        "atr_1h": 0.0326,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-09 00:39:09",
     "btc_context": "sideways",
     "signal_count": 3,
