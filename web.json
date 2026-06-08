@@ -1,47 +1,23 @@
 {
-  "btc_context": "sideways",
-  "signal_count": 5,
-  "last_update": "2026-06-08 19:24:26",
+  "btc_context": "baik",
+  "signal_count": 2,
+  "last_update": "2026-06-08 20:09:18",
   "signals": [
-    {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "ZECUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "lemah_bearish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "sideways"
+      "btc_context": "baik"
     },
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "ALLOUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "sideways"
+      "btc_context": "baik"
     }
   ]
 }
