@@ -1,5 +1,72 @@
 [
   {
+    "timestamp": "2026-06-08 08:09:09",
+    "btc_context": "sideways",
+    "signal_count": 4,
+    "signals": [
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 3.6903,
+        "stop_loss": 1.8459,
+        "take_profit_1": 4.1867,
+        "take_profit_2": 4.6831,
+        "risk_reward": 0.27,
+        "atr_4h": 0.3309,
+        "atr_1h": 0.2543,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "ESPORTSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.0786,
+        "stop_loss": 0.0484,
+        "take_profit_1": 0.0892,
+        "take_profit_2": 0.0997,
+        "risk_reward": 0.35,
+        "atr_4h": 0.007,
+        "atr_1h": 0.0067,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BLESSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.008488,
+        "stop_loss": 0.0057,
+        "take_profit_1": 0.0096,
+        "take_profit_2": 0.0108,
+        "risk_reward": 0.4,
+        "atr_4h": 0.0008,
+        "atr_1h": 0.0006,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "VELVETUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.25753,
+        "stop_loss": 0.1861,
+        "take_profit_1": 0.289,
+        "take_profit_2": 0.3205,
+        "risk_reward": 0.44,
+        "atr_4h": 0.021,
+        "atr_1h": 0.0155,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-08 07:24:10",
     "btc_context": "sideways",
     "signal_count": 3,
