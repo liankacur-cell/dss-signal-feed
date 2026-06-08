@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
-  "signal_count": 4,
-  "last_update": "2026-06-08 13:24:32",
+  "signal_count": 3,
+  "last_update": "2026-06-08 14:09:20",
   "signals": [
     {
       "symbol": "SUIUSDT",
@@ -9,14 +9,6 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "ZECUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
