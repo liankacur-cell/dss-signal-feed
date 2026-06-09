@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-09 12:39:10",
+    "btc_context": "sideways",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "UNIUSDT",
+        "signal": "SHORT",
+        "trend": "bearish",
+        "momentum": "lemah_bearish",
+        "volatility": "normal",
+        "entry": 2.53,
+        "stop_loss": 2.6167,
+        "take_profit_1": 2.4472,
+        "take_profit_2": 2.392,
+        "risk_reward": 0.96,
+        "atr_4h": 0.069,
+        "atr_1h": 0.0324,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "ZESTUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.33875,
+        "stop_loss": 0.2581,
+        "take_profit_1": 0.3754,
+        "take_profit_2": 0.41,
+        "risk_reward": 0.45,
+        "atr_4h": 0.0203,
+        "atr_1h": 0.0129,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-09 11:54:10",
     "btc_context": "sideways",
     "signal_count": 4,
