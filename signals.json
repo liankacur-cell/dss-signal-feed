@@ -1,21 +1,36 @@
 {
   "btc_context": "sideways",
-  "signal_count": 1,
-  "last_update": "2026-06-09 13:24:09",
+  "signal_count": 2,
+  "last_update": "2026-06-09 14:09:10",
   "signals": [
+    {
+      "symbol": "UNIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "entry": 2.535,
+      "stop_loss": 2.6162,
+      "take_profit_1": 2.4513,
+      "take_profit_2": 2.3956,
+      "risk_reward": 1.03,
+      "atr_4h": 0.0697,
+      "atr_1h": 0.0307,
+      "btc_context": "sideways"
+    },
     {
       "symbol": "GWEIUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "entry": 0.17884,
-      "stop_loss": 0.1363,
-      "take_profit_1": 0.2002,
-      "take_profit_2": 0.2216,
-      "risk_reward": 0.5,
+      "entry": 0.1785,
+      "stop_loss": 0.1397,
+      "take_profit_1": 0.1999,
+      "take_profit_2": 0.2213,
+      "risk_reward": 0.55,
       "atr_4h": 0.0143,
-      "atr_1h": 0.0097,
+      "atr_1h": 0.0094,
       "btc_context": "sideways"
     }
   ]
