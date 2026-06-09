@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
   "signal_count": 6,
-  "last_update": "2026-06-09 20:09:29",
+  "last_update": "2026-06-09 20:54:29",
   "signals": [
     {
       "symbol": "BTCUSDT",
@@ -23,7 +23,15 @@
       "symbol": "SOLUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -31,20 +39,12 @@
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "POWERUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
-      "symbol": "VELVETUSDT",
+      "symbol": "ZEREBROUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
