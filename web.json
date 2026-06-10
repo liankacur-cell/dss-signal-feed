@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
   "signal_count": 5,
-  "last_update": "2026-06-10 21:39:27",
+  "last_update": "2026-06-10 22:24:27",
   "signals": [
     {
       "symbol": "STGUSDT",
@@ -28,7 +28,7 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "BTWUSDT",
+      "symbol": "KATUSDT",
       "signal": "SHORT",
       "trend": "bearish",
       "momentum": "kuat_bearish",
