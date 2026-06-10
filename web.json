@@ -1,15 +1,31 @@
 {
-  "btc_context": "baik",
-  "signal_count": 7,
-  "last_update": "2026-06-10 17:09:32",
+  "btc_context": "sideways",
+  "signal_count": 11,
+  "last_update": "2026-06-10 17:54:44",
   "signals": [
+    {
+      "symbol": "BTCUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
     },
     {
       "symbol": "SUIUSDT",
@@ -17,7 +33,7 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
       "symbol": "DOGEUSDT",
@@ -25,7 +41,7 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
       "symbol": "UNIUSDT",
@@ -33,7 +49,15 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "ZECUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
     },
     {
       "symbol": "STGUSDT",
@@ -41,7 +65,7 @@
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
       "symbol": "BTWUSDT",
@@ -49,15 +73,23 @@
       "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
     },
     {
-      "symbol": "BEATUSDT",
+      "symbol": "HMSTRUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "\u9f99\u867eUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
     }
   ]
 }
