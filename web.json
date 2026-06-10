@@ -1,10 +1,26 @@
 {
   "btc_context": "sideways",
-  "signal_count": 6,
-  "last_update": "2026-06-11 02:44:00",
+  "signal_count": 9,
+  "last_update": "2026-06-11 03:29:08",
   "signals": [
     {
+      "symbol": "SOLUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
       "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "DOGEUSDT",
       "signal": "SHORT",
       "trend": "bearish",
       "momentum": "kuat_bearish",
@@ -20,7 +36,23 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "VELVETUSDT",
+      "symbol": "ZECUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "ESPORTSUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
@@ -37,14 +69,6 @@
     },
     {
       "symbol": "MAGMAUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
