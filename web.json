@@ -1,10 +1,10 @@
 {
   "btc_context": "sideways",
-  "signal_count": 5,
-  "last_update": "2026-06-10 22:24:27",
+  "signal_count": 3,
+  "last_update": "2026-06-10 23:09:20",
   "signals": [
     {
-      "symbol": "STGUSDT",
+      "symbol": "MAGMAUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
@@ -12,7 +12,7 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "MAGMAUSDT",
+      "symbol": "HMSTRUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
@@ -24,22 +24,6 @@
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "KATUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "BEATUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }

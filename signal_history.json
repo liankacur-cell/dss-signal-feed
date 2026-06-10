@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-06-10 23:09:10",
+    "btc_context": "sideways",
+    "signal_count": 3,
+    "signals": [
+      {
+        "symbol": "MAGMAUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.5614,
+        "stop_loss": 0.3636,
+        "take_profit_1": 0.6151,
+        "take_profit_2": 0.6688,
+        "risk_reward": 0.27,
+        "atr_4h": 0.0358,
+        "atr_1h": 0.0298,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "HMSTRUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.0002507,
+        "stop_loss": 0.0002,
+        "take_profit_1": 0.0003,
+        "take_profit_2": 0.0003,
+        "risk_reward": 0.97,
+        "atr_4h": 0.0,
+        "atr_1h": 0.0,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "ESPORTSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.09972,
+        "stop_loss": 0.0583,
+        "take_profit_1": 0.1257,
+        "take_profit_2": 0.1517,
+        "risk_reward": 0.63,
+        "atr_4h": 0.0173,
+        "atr_1h": 0.0098,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-10 22:24:11",
     "btc_context": "sideways",
     "signal_count": 5,
