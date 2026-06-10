@@ -1,13 +1,13 @@
 {
   "btc_context": "sideways",
-  "signal_count": 10,
-  "last_update": "2026-06-11 04:59:12",
+  "signal_count": 9,
+  "last_update": "2026-06-11 05:44:10",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -60,14 +60,6 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "BEATUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
       "symbol": "HMSTRUSDT",
       "signal": "LONG",
       "trend": "bullish",
@@ -76,7 +68,7 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "MAGMAUSDT",
+      "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
