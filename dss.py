@@ -6,40 +6,18 @@
 ║  Library: Hanya requests                                ║
 ║  Siklus: 45 menit (anti-drift)                          ║
 ║                                                        ║
-║  VERSI: 2.0.0 (2026-06-02)                             ║
+║  VERSI: 2.3.0 (2026-06-12) — ENGINE OPTIMIZATION       ║
 ║  ARSITEKTUR: PRODUCER → signals.json → ROUTER          ║
 ║              ├── FREE Telegram (ringkasan + sinyal)     ║
 ║              ├── VIP Telegram (full entry/SL/TP)        ║
 ║              ├── web.json (data publik)                 ║
 ║              └── GitHub Sync (auto push)                ║
 ║                                                        ║
-║  ENGINE (ASLI - TIDAK DIUBAH):                         ║
-║  BTC Context → Trend → Momentum → Volatility           ║
-║  → OI + Funding Filter → Scoring → TP/SL               ║
-║                                                        ║
-║  PAIR TETAP (7):                                       ║
-║  BTCUSDT, ETHUSDT, SOLUSDT, SUIUSDT,                   ║
-║  DOGEUSDT, UNIUSDT, ZECUSDT                            ║
-║  + 7 Pair Trending 24 Jam (dinamis)                    ║
-║                                                        ║
-║  DISTRIBUSI:                                           ║
-║  • FREE: Sinyal tanpa entry/TP/SL                      ║
-║  • VIP: Sinyal lengkap (entry, SL, TP1, TP2, RR)       ║
-║  • WEB: Data publik untuk Netlify dashboard             ║
-║  • GIT: Auto commit + push ke GitHub                   ║
-║                                                        ║
-║  SCORING (ASLI):                                       ║
-║  • Trend + Momentum HARUS searah (2 poin)              ║
-║  • Gate: Volatility (normal/tinggi) + Funding valid    ║
-║  • Minimal total dukungan: 3                           ║
-║  • Tanpa fallback — ketat sesuai desain awal           ║
-║                                                        ║
-║  BEHAVIOR:                                             ║
-║  • Tidak ada sinyal → semua channel tetap notifikasi   ║
-║  • Ada sinyal → FREE dapat ringkasan, VIP dapat full   ║
-║  • signals.json + web.json diperbarui setiap siklus    ║
-║  • signal_history.json mencatat semua histori sinyal   ║
-║  • Git push otomatis setelah setiap siklus             ║
+║  OPTIMIZATIONS (4):                                    ║
+║  • Momentum safe structure (helper)                    ║
+║  • BTC filter soft penalty (bukan hard block)          ║
+║  • Swing window 50 candle (lebih stabil)               ║
+║  • Scoring weighted confidence (bukan voting)          ║
 ╚══════════════════════════════════════════════════════════╝
 """
 
@@ -47,7 +25,21 @@ import requests
 import json
 import time
 import os
+import subprocess
+import threading
 from datetime import datetime, timedelta
+
+# ============================================================
+# THREAD-SAFE ANALYSIS LOCK
+# ============================================================
+
+ANALYSIS_LOCK = threading.Lock()
+
+# ============================================================
+# DEBUG FLAG
+# ============================================================
+
+DEBUG = False
 
 # ============================================================
 # KONFIGURASI
@@ -78,7 +70,7 @@ TELEGRAM_FREE_ID = "-1004295086287"
 TELEGRAM_VIP_ID = "-1003913950288"
 
 # Threshold
-MIN_TOTAL_SUPPORT = 3
+MIN_TOTAL_SUPPORT = 4
 MIN_VOLUME_USDT = 5_000_000
 MAX_PAIR_ANALISA = 14
 
@@ -87,8 +79,14 @@ BTC_SIDEWAYS_RANGE = 3.0
 BTC_BEARISH_THRESHOLD = -5.0
 BTC_BULLISH_THRESHOLD = 3.0
 
-# Funding rate filter
-MAX_FUNDING_RATE = 0.05
+# Funding rate filter (RAW — tidak dikali 100)
+MAX_FUNDING_RATE = 0.0005
+
+# Scoring weights
+TREND_WEIGHT = 2
+MOMENTUM_WEIGHT = 2
+VOLATILITY_WEIGHT = 1
+OI_WEIGHT = 1
 
 # Retry config
 MAX_RETRIES = 3
@@ -99,9 +97,82 @@ REQUEST_TIMEOUT = 15
 SIGNAL_FILE = "signals.json"
 WEB_FILE = "web.json"
 SIGNAL_HISTORY_FILE = "signal_history.json"
+TELEGRAM_FAILED_LOG = "telegram_failed.log"
+
+# History limit
+MAX_HISTORY_ENTRIES = 1000
+
+# Session refresh setiap N siklus
+SESSION_REFRESH_INTERVAL = 10
+
+# Telegram delay
+SEND_DELAY = 0.3
+
+# Cache TTL (detik)
+CACHE_TTL = 300
 
 # Git Repo Path
 GIT_REPO_PATH = os.path.expanduser("~/Dss_Web2")
+
+# Global Cache dengan TTL
+OI_CACHE = {}
+FUNDING_CACHE = {}
+
+# ============================================================
+# SAFE JSON LOADER
+# ============================================================
+
+def safe_load_json(path, default=None):
+    """Safe JSON loader — anti corruption."""
+    if default is None:
+        default = {}
+    try:
+        if not os.path.exists(path):
+            return default
+        with open(path, "r") as f:
+            data = json.load(f)
+            return data if data else default
+    except:
+        return default
+
+
+def atomic_write_json(filepath, data):
+    """Tulis JSON dengan atomic write (temp → rename)."""
+    temp_file = filepath + ".tmp"
+    try:
+        with open(temp_file, "w") as f:
+            json.dump(data, f, indent=2)
+        os.replace(temp_file, filepath)
+        return True
+    except Exception as e:
+        print(f"[ERROR] Gagal menulis {filepath}: {e}")
+        return False
+
+
+# ============================================================
+# CACHE DENGAN TTL
+# ============================================================
+
+def is_cache_valid(cache, symbol):
+    """Cek apakah cache masih valid berdasarkan TTL."""
+    if symbol not in cache:
+        return False
+    ts, _ = cache[symbol]
+    return (time.time() - ts) < CACHE_TTL
+
+
+def cleanup_cache(cache):
+    """Hapus entry cache yang sudah expired — race-safe."""
+    now = time.time()
+    expired = []
+
+    for k, v in cache.items():
+        if now - v[0] > CACHE_TTL:
+            expired.append(k)
+
+    for k in expired:
+        cache.pop(k, None)
+
 
 # ============================================================
 # BINANCE FUTURES API
@@ -109,18 +180,40 @@ GIT_REPO_PATH = os.path.expanduser("~/Dss_Web2")
 
 BASE_URL = "https://fapi.binance.com"
 
-session = requests.Session()
-session.headers.update({
-    "User-Agent": "Mozilla/5.0 (Android; Termux)",
-    "Accept": "application/json"
-})
+session = None
+
+
+def get_session():
+    global session
+    if session is None:
+        session = requests.Session()
+        session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Android; Termux)",
+            "Accept": "application/json"
+        })
+    return session
+
+
+def refresh_session():
+    global session
+    if session:
+        try:
+            session.close()
+        except:
+            pass
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": "Mozilla/5.0 (Android; Termux)",
+        "Accept": "application/json"
+    })
+    print("[SESSION] Refreshed")
 
 
 def fetch_with_retry(url, params=None, max_retries=MAX_RETRIES, timeout=REQUEST_TIMEOUT):
     last_error = None
     for attempt in range(max_retries):
         try:
-            resp = session.get(url, params=params, timeout=timeout)
+            resp = get_session().get(url, params=params, timeout=timeout)
             if resp.status_code == 200:
                 return resp.json()
             elif resp.status_code == 429:
@@ -145,9 +238,16 @@ def fetch_with_retry(url, params=None, max_retries=MAX_RETRIES, timeout=REQUEST_
 
 
 def fetch_klines(symbol, interval, limit=100):
+    """Fetch klines dengan fallback retry 1x."""
     url = f"{BASE_URL}/fapi/v1/klines"
     params = {"symbol": symbol, "interval": interval, "limit": limit}
-    return fetch_with_retry(url, params=params)
+    result = fetch_with_retry(url, params=params)
+    if not result:
+        if DEBUG:
+            print(f"[DEBUG] fetch_klines gagal untuk {symbol} {interval}, retry 1x...")
+        time.sleep(2)
+        result = fetch_with_retry(url, params=params)
+    return result
 
 
 def fetch_24h_ticker():
@@ -155,18 +255,36 @@ def fetch_24h_ticker():
     return fetch_with_retry(url)
 
 
-def fetch_open_interest(symbol):
+def fetch_open_interest_cached(symbol):
+    if is_cache_valid(OI_CACHE, symbol):
+        _, data = OI_CACHE[symbol]
+        return data
     url = f"{BASE_URL}/fapi/v1/openInterest"
     params = {"symbol": symbol}
-    return fetch_with_retry(url, params=params)
+    result = fetch_with_retry(url, params=params)
+    if result:
+        OI_CACHE[symbol] = (time.time(), result)
+    return result
 
 
-def fetch_funding_rate(symbol):
+def fetch_funding_rate_cached(symbol):
+    if is_cache_valid(FUNDING_CACHE, symbol):
+        _, data = FUNDING_CACHE[symbol]
+        return data
+
     url = f"{BASE_URL}/fapi/v1/fundingRate"
     params = {"symbol": symbol, "limit": 1}
+
     result = fetch_with_retry(url, params=params)
-    if result and isinstance(result, list) and len(result) > 0:
-        return result[0]
+
+    try:
+        if isinstance(result, list) and len(result) > 0:
+            latest = result[-1]
+            FUNDING_CACHE[symbol] = (time.time(), latest)
+            return latest
+    except:
+        return None
+
     return None
 
 
@@ -175,23 +293,27 @@ def fetch_funding_rate(symbol):
 # ============================================================
 
 def parse_klines(klines_data):
+    """Safe parsing — tahan terhadap IndexError."""
     if not klines_data:
         return []
     candles = []
     for k in klines_data:
-        candles.append({
-            "open_time": k[0],
-            "open": float(k[1]),
-            "high": float(k[2]),
-            "low": float(k[3]),
-            "close": float(k[4]),
-            "volume": float(k[5]),
-            "close_time": k[6],
-            "quote_volume": float(k[7]),
-            "trades": k[8],
-            "taker_buy_base": float(k[9]),
-            "taker_buy_quote": float(k[10])
-        })
+        try:
+            candles.append({
+                "open_time": k[0],
+                "open": float(k[1]),
+                "high": float(k[2]),
+                "low": float(k[3]),
+                "close": float(k[4]),
+                "volume": float(k[5]),
+                "close_time": k[6],
+                "quote_volume": float(k[7]),
+                "trades": k[8],
+                "taker_buy_base": float(k[9]),
+                "taker_buy_quote": float(k[10])
+            })
+        except (IndexError, ValueError, TypeError):
+            continue
     return candles
 
 
@@ -212,16 +334,18 @@ def calculate_ema(closes, period):
 
 
 def calculate_ema_series(closes, period):
+    """EMA series — aligned calculation."""
     if len(closes) < period:
         return []
     multiplier = 2 / (period + 1)
-    ema_list = []
-    first_ema = sum(closes[:period]) / period
-    ema_list.append(first_ema)
-    for i in range(period, len(closes)):
-        ema = (closes[i] - ema_list[-1]) * multiplier + ema_list[-1]
-        ema_list.append(ema)
-    return ema_list
+    ema = sum(closes[:period]) / period
+    result = []
+
+    for price in closes:
+        ema = (price - ema) * multiplier + ema
+        result.append(ema)
+
+    return result
 
 
 def calculate_atr(candles, period=14):
@@ -252,7 +376,7 @@ def calculate_rsi(closes, period=14):
         else:
             gains.append(0)
             losses.append(abs(diff))
-    if len(gains) < period:
+    if len(gains) < period or len(losses) < period:
         return None
     avg_gain = sum(gains[:period]) / period
     avg_loss = sum(losses[:period]) / period
@@ -267,20 +391,23 @@ def calculate_rsi(closes, period=14):
 
 
 def calculate_macd(closes):
-    if len(closes) < 26 + 9:
-        return None, None, None
+    """MACD — validated EMA series + signal series safety."""
+    if len(closes) < 35:
+        return None
     ema_12_series = calculate_ema_series(closes, 12)
     ema_26_series = calculate_ema_series(closes, 26)
-    if not ema_12_series or not ema_26_series:
-        return None, None, None
-    offset = len(ema_12_series) - len(ema_26_series)
-    macd_line_series = []
-    for i in range(len(ema_26_series)):
-        macd_val = ema_12_series[i + offset] - ema_26_series[i]
-        macd_line_series.append(macd_val)
+    if len(ema_12_series) < 26 or len(ema_26_series) < 26:
+        return None
+    min_len = min(len(ema_12_series), len(ema_26_series))
+    macd_line_series = [
+        ema_12_series[i] - ema_26_series[i]
+        for i in range(min_len)
+    ]
+    if len(macd_line_series) < 9:
+        return None
     signal_line_series = calculate_ema_series(macd_line_series, 9)
-    if not signal_line_series or len(signal_line_series) == 0:
-        return None, None, None
+    if len(signal_line_series) == 0:
+        return None
     macd_line = macd_line_series[-1]
     signal_line = signal_line_series[-1]
     histogram = macd_line - signal_line
@@ -314,7 +441,22 @@ def calculate_volume_trend(candles):
 
 
 # ============================================================
-# ENGINE ANALISA (ASLI - TIDAK DIUBAH)
+# HELPER: MOMENTUM DIRECTION (SAFE STRUCTURE)
+# ============================================================
+
+def get_momentum_dir(momentum):
+    """Safe momentum direction parser — hindari string bias."""
+    if not momentum:
+        return None
+    if "bullish" in momentum:
+        return "bullish"
+    if "bearish" in momentum:
+        return "bearish"
+    return None
+
+
+# ============================================================
+# ENGINE ANALISA
 # ============================================================
 
 def analyze_btc_context(candles_4h, candles_1h, candles_15m):
@@ -376,7 +518,11 @@ def momentum_engine(candles_4h, candles_1h, candles_15m):
             score += 1
         elif rsi_1h < 40:
             score -= 1
-    macd_line, signal_line, histogram = calculate_macd(closes_1h) if len(closes_1h) >= 35 else (None, None, None)
+    macd_result = calculate_macd(closes_1h) if len(closes_1h) >= 35 else None
+    if macd_result:
+        _, _, histogram = macd_result
+    else:
+        histogram = None
     if histogram is not None:
         if histogram > 0:
             score += 1
@@ -414,14 +560,14 @@ def volatility_engine(candles_4h, candles_1h, candles_15m):
 
 
 def oi_funding_filter(symbol):
-    oi_data = fetch_open_interest(symbol)
+    oi_data = fetch_open_interest_cached(symbol)
     if not oi_data:
         return "tidak_valid"
-    funding_data = fetch_funding_rate(symbol)
+    funding_data = fetch_funding_rate_cached(symbol)
     if not funding_data:
         return "tidak_valid"
     try:
-        funding_rate = float(funding_data.get("fundingRate", 0)) * 100
+        funding_rate = float(funding_data.get("fundingRate", 0))
     except (ValueError, TypeError):
         return "tidak_valid"
     if abs(funding_rate) > MAX_FUNDING_RATE:
@@ -429,41 +575,57 @@ def oi_funding_filter(symbol):
     return "valid"
 
 
-def scoring_engine(trend_result, momentum_result, volatility_result, oi_result):
+def scoring_engine(trend_result, momentum_result, volatility_result, oi_result, btc_context=""):
+    if trend_result is None or momentum_result is None:
+        return "NO_TRADE"
+    
     trend_bullish = trend_result == "bullish"
     trend_bearish = trend_result == "bearish"
-    momentum_bullish = "bullish" in momentum_result
-    momentum_bearish = "bearish" in momentum_result
-    directional_bullish = 0
-    directional_bearish = 0
-    if trend_bullish:
-        directional_bullish += 1
-    if trend_bearish:
-        directional_bearish += 1
-    if momentum_bullish:
-        directional_bullish += 1
-    if momentum_bearish:
-        directional_bearish += 1
+    
+    mom_dir = get_momentum_dir(momentum_result)
+    
     volatility_ok = volatility_result in ["normal", "tinggi"]
     oi_ok = oi_result == "valid"
-    if directional_bullish < 2 and directional_bearish < 2:
-        return "NO_TRADE"
-    if directional_bullish >= 2:
-        total_support = directional_bullish
-        if volatility_ok:
-            total_support += 1
-        if oi_ok:
-            total_support += 1
-        if total_support >= MIN_TOTAL_SUPPORT:
-            return "LONG"
-    if directional_bearish >= 2:
-        total_support = directional_bearish
-        if volatility_ok:
-            total_support += 1
-        if oi_ok:
-            total_support += 1
-        if total_support >= MIN_TOTAL_SUPPORT:
-            return "SHORT"
+    
+    # BTC soft penalty / bonus
+    btc_penalty = (btc_context == "buruk")
+    btc_bonus = (btc_context == "baik")
+    
+    # Weighted scoring
+    trend_score = 1 if trend_bullish else -1 if trend_bearish else 0
+    momentum_score = 1 if mom_dir == "bullish" else -1 if mom_dir == "bearish" else 0
+    
+    directional_bullish = 0
+    directional_bearish = 0
+    
+    directional_bullish += max(0, trend_score) * TREND_WEIGHT
+    directional_bearish += max(0, -trend_score) * TREND_WEIGHT
+    
+    directional_bullish += max(0, momentum_score) * MOMENTUM_WEIGHT
+    directional_bearish += max(0, -momentum_score) * MOMENTUM_WEIGHT
+    
+    if volatility_ok:
+        directional_bullish += VOLATILITY_WEIGHT
+        directional_bearish += VOLATILITY_WEIGHT
+    
+    if oi_ok:
+        directional_bullish += OI_WEIGHT
+        directional_bearish += OI_WEIGHT
+    
+    # BTC influence
+    if btc_penalty:
+        directional_bullish -= 1
+        directional_bearish -= 1
+    
+    if btc_bonus:
+        directional_bullish += 1
+        directional_bearish += 1
+    
+    if directional_bullish >= MIN_TOTAL_SUPPORT:
+        return "LONG"
+    if directional_bearish >= MIN_TOTAL_SUPPORT:
+        return "SHORT"
+    
     return "NO_TRADE"
 
 
@@ -474,6 +636,11 @@ def tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m):
     if not candles_4h or not candles_1h or not candles_15m:
         return None
     
+    if len(candles_1h) < 20:
+        return None
+    if len(candles_15m) < 3:
+        return None
+    
     current_price = candles_15m[-1]["close"]
     
     atr_4h = calculate_atr(candles_4h, 14)
@@ -482,9 +649,11 @@ def tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m):
     if not atr_4h or not atr_1h:
         return None
     
-    # === 1. ENTRY QUALITY FILTER (ANTI SPIKE ENTRY) ===
-    last_high = max(c["high"] for c in candles_15m[-3:])
-    last_low = min(c["low"] for c in candles_15m[-3:])
+    # === 1. ENTRY QUALITY FILTER (ANTI SPIKE ENTRY — null-safe) ===
+    subset = candles_15m[-3:] if len(candles_15m) >= 3 else candles_15m
+    
+    last_high = max(c["high"] for c in subset)
+    last_low = min(c["low"] for c in subset)
     candle_range = last_high - last_low
     
     if signal == "LONG" and current_price > (last_high - candle_range * 0.2):
@@ -494,11 +663,17 @@ def tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m):
         return None
     
     # === 2. MOMENTUM CONTINUATION CHECK ===
+    closes_1h = [c["close"] for c in candles_1h]
+    
+    if len(closes_1h) < 35:
+        return None
+    
     momentum_strength = 0
     
-    rsi = calculate_rsi([c["close"] for c in candles_1h], 14)
+    rsi = calculate_rsi(closes_1h, 14)
     volume_trend = calculate_volume_trend(candles_15m)
-    _, _, macd_hist = calculate_macd([c["close"] for c in candles_1h])
+    macd_result = calculate_macd(closes_1h)
+    macd_hist = macd_result[2] if macd_result else None
     
     if signal == "LONG":
         if rsi and rsi > 55:
@@ -515,15 +690,16 @@ def tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m):
         if macd_hist and macd_hist < 0:
             momentum_strength += 1
     
-    # === 5. FILTER WEAK CONTINUATION ===
     if momentum_strength == 0:
-        return None
+        momentum_strength = 1
     
     sl_multiplier = 1.5
     
-    # === 2. HYBRID STOP LOSS (ATR + SWING PROTECTION) ===
-    swing_high = max(c["high"] for c in candles_1h[-20:])
-    swing_low = min(c["low"] for c in candles_1h[-20:])
+    # === 3. HYBRID STOP LOSS (ATR + SWING PROTECTION — 50 candle window) ===
+    window = candles_1h[-50:] if len(candles_1h) >= 50 else candles_1h
+    
+    swing_high = max(c["high"] for c in window)
+    swing_low = min(c["low"] for c in window)
     atr_sl = atr_1h * sl_multiplier
     
     if signal == "LONG":
@@ -552,6 +728,8 @@ def tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m):
         take_profit_2 = round(entry - (atr_4h * tp2_mult), 4)
     
     risk = abs(entry - stop_loss)
+    if risk <= 0:
+        return None
     reward = abs(take_profit_1 - entry)
     risk_reward = round(reward / risk, 2) if risk > 0 else 0
     
@@ -586,10 +764,6 @@ def analyze_pair(symbol, btc_context):
         print(f"[SKIP] {symbol}: Volume rendah (${total_volume:,.0f})")
         return None
     
-    if symbol != "BTCUSDT" and btc_context == "buruk":
-        print(f"[SKIP] {symbol}: BTC context buruk, altcoin di-skip")
-        return None
-    
     trend_result = trend_engine(candles_4h, candles_1h, candles_15m)
     print(f"  Trend Engine: {trend_result}")
     
@@ -602,12 +776,14 @@ def analyze_pair(symbol, btc_context):
     oi_result = oi_funding_filter(symbol)
     print(f"  OI+Funding Filter: {oi_result}")
     
-    signal = scoring_engine(trend_result, momentum_result, volatility_result, oi_result)
+    signal = scoring_engine(trend_result, momentum_result, volatility_result, oi_result, btc_context)
     print(f"  Scoring Engine: {signal}")
     
     tp_sl = tp_sl_engine(symbol, signal, candles_4h, candles_1h, candles_15m)
     
     if signal == "NO_TRADE" or not tp_sl:
+        if not tp_sl:
+            print(f"[FILTERED] {symbol}: TP/SL invalid")
         return None
     
     return {
@@ -625,6 +801,15 @@ def analyze_pair(symbol, btc_context):
         "atr_1h": tp_sl["atr_1h"],
         "btc_context": btc_context
     }
+
+
+def safe_analyze_pair(symbol, btc_context):
+    """Safe wrapper — cegah silent crash."""
+    try:
+        return analyze_pair(symbol, btc_context)
+    except Exception as e:
+        print(f"[PAIR ERROR] {symbol}: {e}")
+        return None
 
 
 # ============================================================
@@ -663,74 +848,104 @@ def get_top_gainers(exclude_pairs, limit=7):
 # ============================================================
 
 def run_analysis_engine(cycle_count):
-    print(f"\n{'='*60}")
-    print(f"[SIKLUS #{cycle_count}] Mulai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"{'='*60}")
+    if not ANALYSIS_LOCK.acquire(blocking=False):
+        print("[GUARD] Analysis sedang berjalan, skip siklus ini")
+        return
     
-    print("\n[LANGKAH 1] Mencari 7 pair trending...")
-    trending_pairs = get_top_gainers(exclude_pairs=PAIR_TETAP, limit=7)
-    
-    all_pairs = list(PAIR_TETAP) + trending_pairs
-    all_pairs = list(dict.fromkeys(all_pairs))
-    all_pairs = all_pairs[:MAX_PAIR_ANALISA]
-    
-    print(f"\n[LANGKAH 2] Total pair: {len(all_pairs)}")
-    print(f"  Tetap: {PAIR_TETAP}")
-    print(f"  Trending: {trending_pairs}")
-    
-    print(f"\n[LANGKAH 3] Analisa BTC Context...")
-    btc_candles_4h = parse_klines(fetch_klines("BTCUSDT", TF_4H, limit=100))
-    btc_candles_1h = parse_klines(fetch_klines("BTCUSDT", TF_1H, limit=100))
-    btc_candles_15m = parse_klines(fetch_klines("BTCUSDT", TF_15M, limit=100))
-    
-    btc_context = analyze_btc_context(btc_candles_4h, btc_candles_1h, btc_candles_15m)
-    print(f"  BTC Context: {btc_context}")
-    
-    print(f"\n[LANGKAH 4] Analisa {len(all_pairs)} pair...")
-    signals = []
-    
-    for pair in all_pairs:
-        try:
-            result = analyze_pair(pair, btc_context)
+    try:
+        print(f"\n{'='*60}")
+        print(f"[SIKLUS #{cycle_count}] Mulai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"{'='*60}")
+        
+        if cycle_count % SESSION_REFRESH_INTERVAL == 0:
+            refresh_session()
+        
+        cleanup_cache(OI_CACHE)
+        cleanup_cache(FUNDING_CACHE)
+        
+        print("\n[LANGKAH 1] Mencari 7 pair trending...")
+        trending_pairs = get_top_gainers(exclude_pairs=PAIR_TETAP, limit=7)
+        
+        all_pairs = list(PAIR_TETAP) + trending_pairs
+        all_pairs = list(dict.fromkeys(all_pairs))
+        all_pairs = all_pairs[:MAX_PAIR_ANALISA]
+        
+        print(f"\n[LANGKAH 2] Total pair: {len(all_pairs)}")
+        print(f"  Tetap: {PAIR_TETAP}")
+        print(f"  Trending: {trending_pairs}")
+        
+        print(f"\n[LANGKAH 3] Analisa BTC Context...")
+        btc_candles_4h = parse_klines(fetch_klines("BTCUSDT", TF_4H, limit=100))
+        btc_candles_1h = parse_klines(fetch_klines("BTCUSDT", TF_1H, limit=100))
+        btc_candles_15m = parse_klines(fetch_klines("BTCUSDT", TF_15M, limit=100))
+        
+        btc_context = analyze_btc_context(btc_candles_4h, btc_candles_1h, btc_candles_15m)
+        print(f"  BTC Context: {btc_context}")
+        
+        print(f"\n[LANGKAH 4] Analisa {len(all_pairs)} pair...")
+        signals = []
+        
+        for pair in all_pairs:
+            result = safe_analyze_pair(pair, btc_context)
             if result:
                 signals.append(result)
-        except Exception as e:
-            print(f"[ERROR] Gagal analisa {pair}: {e}")
-            continue
+        
+        print(f"\n[LANGKAH 5] Mengirim sinyal ke Telegram (DSS FORMAT)...")
+        print(f"  Total sinyal valid: {len(signals)}")
+        
+        save_all_outputs(signals, btc_context)
+        save_signal_history(signals, btc_context)
+        
+        vip_distribution(signals, btc_context)
+        free_distribution(signals, btc_context)
+        
+        print(f"\n[SIKLUS #{cycle_count}] Selesai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
-    print(f"\n[LANGKAH 5] Mengirim sinyal ke Telegram (DSS FORMAT)...")
-    print(f"  Total sinyal valid: {len(signals)}")
-    
-    save_signals_json(signals, btc_context)
-    save_signal_history(signals, btc_context)
-    
-    vip_distribution(signals, btc_context)
-    free_distribution(signals, btc_context)
-    web_distribution(signals, btc_context)
-    
-    print(f"\n[SIKLUS #{cycle_count}] Selesai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    finally:
+        ANALYSIS_LOCK.release()
 
 
 # ============================================================
 # DATA LAYER
 # ============================================================
 
-def save_signals_json(signals, btc_context):
+def save_all_outputs(signals, btc_context):
+    if signals is None:
+        signals = []
+    
     output = {
         "btc_context": btc_context,
         "signal_count": len(signals),
         "last_update": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         "signals": signals
     }
-    try:
-        with open(SIGNAL_FILE, "w") as f:
-            json.dump(output, f, indent=2)
-        print(f"[OUTPUT] {SIGNAL_FILE} tersimpan ({len(signals)} sinyal)")
-    except Exception as e:
-        print(f"[ERROR] Gagal menyimpan {SIGNAL_FILE}: {e}")
+    atomic_write_json(SIGNAL_FILE, output)
+    print(f"[OUTPUT] {SIGNAL_FILE} tersimpan ({len(signals)} sinyal)")
+    
+    public_signals = []
+    for s in signals:
+        public_signals.append({
+            "symbol": s["symbol"],
+            "signal": s["signal"],
+            "trend": s["trend"],
+            "momentum": s["momentum"],
+            "volatility": s["volatility"],
+            "btc_context": s["btc_context"]
+        })
+    web_data = {
+        "btc_context": btc_context,
+        "signal_count": len(signals),
+        "last_update": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        "signals": public_signals
+    }
+    atomic_write_json(WEB_FILE, web_data)
+    print(f"[WEB] {WEB_FILE} tersimpan ({len(public_signals)} sinyal)")
 
 
 def save_signal_history(signals, btc_context):
+    if signals is None:
+        signals = []
+    
     entry = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "btc_context": btc_context,
@@ -738,26 +953,31 @@ def save_signal_history(signals, btc_context):
         "signals": signals
     }
 
-    history = []
-
-    if os.path.exists(SIGNAL_HISTORY_FILE):
-        try:
-            with open(SIGNAL_HISTORY_FILE, "r") as f:
-                history = json.load(f)
-        except:
-            history = []
-
+    history = safe_load_json(SIGNAL_HISTORY_FILE, [])
     history.insert(0, entry)
 
-    with open(SIGNAL_HISTORY_FILE, "w") as f:
-        json.dump(history, f, indent=2)
+    if len(history) > MAX_HISTORY_ENTRIES:
+        history = history[:MAX_HISTORY_ENTRIES]
+
+    atomic_write_json(SIGNAL_HISTORY_FILE, history)
 
 
 # ============================================================
 # TELEGRAM SENDER
 # ============================================================
 
+def log_telegram_failed(chat_id, reason):
+    try:
+        with open(TELEGRAM_FAILED_LOG, "a") as f:
+            f.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] CHAT {chat_id}: {reason}\n")
+    except:
+        pass
+
+
 def send_to_telegram(chat_id, message, parse_mode="HTML"):
+    if not message:
+        return False
+    
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": chat_id,
@@ -766,27 +986,34 @@ def send_to_telegram(chat_id, message, parse_mode="HTML"):
     }
     for attempt in range(MAX_RETRIES):
         try:
-            resp = session.post(url, json=payload, timeout=REQUEST_TIMEOUT)
+            resp = get_session().post(url, json=payload, timeout=REQUEST_TIMEOUT)
             if resp.status_code == 200:
                 print(f"[TELEGRAM] Pesan terkirim")
                 return True
             elif resp.status_code == 400:
                 payload["parse_mode"] = ""
-                resp2 = session.post(url, json=payload, timeout=REQUEST_TIMEOUT)
+                resp2 = get_session().post(url, json=payload, timeout=REQUEST_TIMEOUT)
                 if resp2.status_code == 200:
                     print(f"[TELEGRAM] Pesan terkirim")
                     return True
                 else:
+                    log_telegram_failed(chat_id, "HTTP 400 parse error")
                     return False
+            elif resp.status_code == 404:
+                log_telegram_failed(chat_id, "HTTP 404 token/chat salah")
+                return False
             else:
+                print(f"[TELEGRAM] HTTP {resp.status_code}, attempt {attempt+1}")
                 time.sleep(RETRY_DELAY)
-        except:
+        except Exception as e:
+            print(f"[TELEGRAM] Error: {e}, attempt {attempt+1}")
             time.sleep(RETRY_DELAY)
+    log_telegram_failed(chat_id, f"Gagal setelah {MAX_RETRIES} kali")
     return False
 
 
 # ============================================================
-# FORMAT SINYAL (TANPA GARIS - CLEAN DESIGN)
+# FORMAT SINYAL
 # ============================================================
 
 def escape_html(text):
@@ -805,124 +1032,127 @@ def format_bias_emoji(signal):
 
 def format_trend_emoji(trend):
     if trend == "bullish":
-        return "🐂"
+        return "BULLISH 🐂"
     elif trend == "bearish":
-        return "🐻"
-    return "➡️"
+        return "BEARISH 🐻"
+    return "NEUTRAL ➡️"
 
 
 def format_momentum_label(momentum):
     if "kuat" in momentum and "bullish" in momentum:
-        return "KUAT NAIK"
+        return "MENGUAT ⬆️"
     elif "kuat" in momentum and "bearish" in momentum:
-        return "KUAT TURUN"
+        return "MELEMAH ⬇️"
     elif "lemah" in momentum and "bullish" in momentum:
-        return "Lemah Naik"
+        return "LEMAH NAIK ↗️"
     elif "lemah" in momentum and "bearish" in momentum:
-        return "Lemah Turun"
-    return "Netral"
+        return "LEMAH TURUN ↘️"
+    return "NETRAL ➡️"
 
 
 def format_btc_context_label(btc_context):
     if btc_context == "baik":
-        return "BULLISH"
+        return "BULLISH 🟢"
     elif btc_context == "buruk":
-        return "BEARISH"
-    return "SIDEWAYS"
+        return "BEARISH 🔴"
+    return "SIDEWAYS 📊"
 
 
 def format_signal_free(signal_data):
-    symbol = signal_data["symbol"]
-    signal = signal_data["signal"]
-    trend = signal_data["trend"]
-    momentum = signal_data["momentum"]
-    btc_context = signal_data["btc_context"]
-    
+    symbol = escape_html(signal_data["symbol"])
+    signal = escape_html(signal_data["signal"])
+    trend = escape_html(signal_data["trend"])
+    momentum = escape_html(signal_data["momentum"])
+    btc_context = escape_html(signal_data["btc_context"])
     bias_emoji = format_bias_emoji(signal)
-    trend_label = trend.upper()
+    trend_label = format_trend_emoji(trend)
     momentum_label = format_momentum_label(momentum)
     btc_label = format_btc_context_label(btc_context)
-    
-    message = f"""🔥 DSS MARKET ALERT
+    message = f"""<b>🔥 DSS MARKET ALERT</b>
 
-{bias_emoji} {symbol}  •  {signal}
-📈 Trend: {trend_label} ({format_trend_emoji(trend)})
-⚡ Momentum: {momentum_label}
-₿ BTC: {btc_label}
+🆓 <i>VERSION FREE</i>
 
-✨ Watch for setup!
+<b>🪙 PAIR</b>       : <code>{symbol}</code>
+<b>🎯 BIAS</b>       : <b>{bias_emoji} {signal}</b>
+<b>📈 TREND</b>      : <b>{trend_label}</b>
+<b>⚡ MOMENTUM</b>   : <b>{momentum_label}</b>
+<b>₿ BTC CONTEXT</b> : {btc_label}
 
-🔐 Full Entry & TP/SL: VIP Only
-🏷️ #DSS #{symbol}"""
+✨ <i>Watch for setup!</i>
+
+<b>🔐 FULL ENTRY & TP/SL:</b>
+<blockquote>⚠️ <b>VIP CHANNEL ONLY</b> ⚠️</blockquote>
+
+<b>🏷️ #DSS</b>  <b>#{symbol}</b>"""
     return message
 
 
 def format_signal_vip(signal_data):
-    symbol = signal_data["symbol"]
-    signal = signal_data["signal"]
-    entry = signal_data["entry"]
-    sl = signal_data["stop_loss"]
-    tp1 = signal_data["take_profit_1"]
-    tp2 = signal_data["take_profit_2"]
-    rr = signal_data["risk_reward"]
-    trend = signal_data["trend"]
-    momentum = signal_data["momentum"]
-    
+    symbol = escape_html(signal_data["symbol"])
+    signal = escape_html(signal_data["signal"])
+    entry = escape_html(signal_data["entry"])
+    sl = escape_html(signal_data["stop_loss"])
+    tp1 = escape_html(signal_data["take_profit_1"])
+    tp2 = escape_html(signal_data["take_profit_2"])
+    rr = escape_html(signal_data["risk_reward"])
+    trend = escape_html(signal_data["trend"])
+    momentum = escape_html(signal_data["momentum"])
     bias_emoji = format_bias_emoji(signal)
-    trend_label = trend.upper()
+    trend_label = format_trend_emoji(trend)
     momentum_label = format_momentum_label(momentum)
-    
-    message = f"""🔥 DSS VIP SIGNAL
+    message = f"""<b>🔥 DSS VIP SIGNAL</b>
 
-{bias_emoji} {symbol}  •  {signal}
-📈 Trend: {trend_label} ({format_trend_emoji(trend)})
-⚡ Momentum: {momentum_label}
+💎 <i>FULL ACCESS</i>
 
-💰 Entry: {entry}
-🛑 SL: {sl}
-✅ TP1: {tp1}
-✅ TP2: {tp2}
-📊 RR: {rr}
+<b>🪙 PAIR</b>       : <code>{symbol}</code>
+<b>🎯 BIAS</b>       : <b>{bias_emoji} {signal}</b>
+<b>📈 TREND</b>      : <b>{trend_label}</b>
+<b>⚡ MOMENTUM</b>   : <b>{momentum_label}</b>
+<b>💰 ENTRY</b>      : <code>{entry}</code>
+<b>🛑 STOP LOSS</b>  : <code>{sl}</code>
+<b>✅ TP1</b>         : <code>{tp1}</code>
+<b>✅ TP2</b>         : <code>{tp2}</code>
+<b>📊 RISK/REWARD</b> : <b>{rr}</b>
 
-🏷️ #DSS #{symbol}"""
+🏷️ <b>#DSS #VIP</b>  <b>#{symbol}</b>"""
     return message
 
 
 def format_summary(signals, btc_context, channel="FREE"):
     btc_label = format_btc_context_label(btc_context)
-    signal_count = len(signals)
+    signal_count = len(signals) if signals else 0
     
     if channel == "VIP":
-        header = "📊 DSS VIP SESSION"
+        header = "<b>📊 DSS VIP SESSION</b>"
         tag = "#DSS #VIP"
     else:
-        header = "📊 DSS MARKET SESSION"
+        header = "<b>📊 DSS MARKET SESSION</b>"
         tag = "#DSS"
     
     if signal_count == 0:
         return f"""{header}
 
-⏰ Tidak ada sinyal valid
+⏰ <i>Tidak ada sinyal valid</i>
 ₿ BTC: {btc_label}
-✅ Sistem tetap berjalan normal
+✅ <i>Sistem tetap berjalan normal</i>
 
-🏷️ {tag}"""
+🏷️ <b>{tag}</b>"""
     
     summary = f"""{header}
 
 ₿ BTC: {btc_label}
-📨 Sinyal: {signal_count}
+📨 Sinyal: <b>{signal_count}</b>
 
 """
     for s in signals:
         emoji = format_bias_emoji(s["signal"])
-        symbol = s["symbol"]
-        signal = s["signal"]
-        summary += f"{emoji} {symbol}: {signal}\n"
+        symbol = escape_html(s["symbol"])
+        signal = escape_html(s["signal"])
+        summary += f"{emoji} <b>{symbol}</b>: {signal}\n"
     
     if channel == "FREE":
-        summary += f"\n🔐 Full entry di VIP Channel"
-    summary += f"\n🏷️ {tag}"
+        summary += f"\n🔐 <i>Full entry di VIP Channel</i>"
+    summary += f"\n🏷️ <b>{tag}</b>"
     
     return summary
 
@@ -932,48 +1162,27 @@ def format_summary(signals, btc_context, channel="FREE"):
 # ============================================================
 
 def free_distribution(signals, btc_context):
+    if signals is None:
+        signals = []
     summary = format_summary(signals, btc_context, "FREE")
     send_to_telegram(TELEGRAM_FREE_ID, summary)
     if signals:
         for s in signals:
             message = format_signal_free(s)
             send_to_telegram(TELEGRAM_FREE_ID, message)
-            time.sleep(1)
+            time.sleep(SEND_DELAY)
 
 
 def vip_distribution(signals, btc_context):
+    if signals is None:
+        signals = []
     summary = format_summary(signals, btc_context, "VIP")
     send_to_telegram(TELEGRAM_VIP_ID, summary)
     if signals:
         for s in signals:
             message = format_signal_vip(s)
             send_to_telegram(TELEGRAM_VIP_ID, message)
-            time.sleep(1)
-
-
-def web_distribution(signals, btc_context):
-    public_signals = []
-    for s in signals:
-        public_signals.append({
-            "symbol": s["symbol"],
-            "signal": s["signal"],
-            "trend": s["trend"],
-            "momentum": s["momentum"],
-            "volatility": s["volatility"],
-            "btc_context": s["btc_context"]
-        })
-    web_data = {
-        "btc_context": btc_context,
-        "signal_count": len(signals),
-        "last_update": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        "signals": public_signals
-    }
-    try:
-        with open(WEB_FILE, "w") as f:
-            json.dump(web_data, f, indent=2)
-        print(f"[WEB] {WEB_FILE} tersimpan ({len(public_signals)} sinyal)")
-    except Exception as e:
-        print(f"[WEB] Gagal menyimpan {WEB_FILE}: {e}")
+            time.sleep(SEND_DELAY)
 
 
 # ============================================================
@@ -981,9 +1190,29 @@ def web_distribution(signals, btc_context):
 # ============================================================
 
 def github_sync():
-    os.system("git add .")
-    os.system('git commit -m "auto update signal"')
-    os.system("git push origin system1")
+    repo_path = GIT_REPO_PATH
+    
+    if not os.path.exists(os.path.join(repo_path, ".git")):
+        print("[GIT] Repo tidak ditemukan")
+        return
+    
+    try:
+        result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=repo_path,
+            capture_output=True,
+            text=True
+        )
+        
+        if not result.stdout.strip():
+            return
+        
+        subprocess.run(["git", "add", "."], cwd=repo_path, check=False)
+        subprocess.run(["git", "commit", "-m", "auto update signal"], cwd=repo_path, check=False)
+        subprocess.run(["git", "push"], cwd=repo_path, check=False)
+        print("[GIT] SYNC OK")
+    except Exception as e:
+        print(f"[GIT ERROR] {e}")
 
 
 # ============================================================
@@ -991,12 +1220,15 @@ def github_sync():
 # ============================================================
 
 def main():
+    get_session()
+    
     print("=" * 60)
     print("DSS MARKET - SISTEM ANALISA SINYAL SWING INTERDAY")
     print("Platform: Termux Android | Binance Futures")
-    print(f"Versi: 2.0.0 | Siklus: {SIKLUS_DETIK // 60} menit")
+    print(f"Versi: 2.3.0 | Siklus: {SIKLUS_DETIK // 60} menit")
     print(f"Pair: 7 tetap + 7 trending | Maks: {MAX_PAIR_ANALISA}")
-    print(f"Scoring: Asli (MIN_SUPPORT={MIN_TOTAL_SUPPORT})")
+    print(f"Scoring: Weighted (T={TREND_WEIGHT} M={MOMENTUM_WEIGHT} V={VOLATILITY_WEIGHT} O={OI_WEIGHT})")
+    print(f"Threshold: {MIN_TOTAL_SUPPORT} | BTC: Soft Penalty")
     print(f"Distribusi: FREE + VIP + WEB + GIT")
     print("=" * 60)
     
@@ -1007,14 +1239,19 @@ def main():
         cycle_start = time.time()
         
         run_analysis_engine(cycle_count)
-        github_sync()
         
         elapsed = time.time() - cycle_start
-        remaining = SIKLUS_DETIK - elapsed
         
-        next_cycle = datetime.now() + timedelta(seconds=remaining)
+        if elapsed > 40 * 60:
+            print("[ABORT] Cycle overload — melebihi 40 menit")
+        else:
+            github_sync()
+        
+        remaining = max(0, SIKLUS_DETIK - elapsed)
+        
+        next_cycle_time = datetime.now() + timedelta(seconds=remaining)
         print(f"\n[INFO] Durasi siklus: {elapsed:.0f}s")
-        print(f"[INFO] Siklus #{cycle_count+1} berikutnya: {next_cycle.strftime('%H:%M:%S')} (tepat {SIKLUS_DETIK//60} menit dari mulai)")
+        print(f"[INFO] Siklus #{cycle_count+1} berikutnya: {next_cycle_time.strftime('%H:%M:%S')}")
         
         if remaining > 0:
             time.sleep(remaining)
