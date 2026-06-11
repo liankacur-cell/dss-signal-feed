@@ -1,12 +1,12 @@
 {
   "btc_context": "sideways",
-  "signal_count": 10,
-  "last_update": "2026-06-12 04:39:05",
+  "signal_count": 9,
+  "last_update": "2026-06-12 04:50:00",
   "signals": [
     {
-      "symbol": "BTCUSDT",
+      "symbol": "ETHUSDT",
       "signal": "LONG",
-      "trend": "bullish",
+      "trend": "neutral",
       "momentum": "lemah_bullish",
       "volatility": "normal",
       "btc_context": "sideways"
@@ -44,9 +44,9 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "HUSDT",
+      "symbol": "ESPORTSUSDT",
       "signal": "LONG",
-      "trend": "neutral",
+      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
@@ -68,17 +68,9 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "AIOUSDT",
+      "symbol": "SKYAIUSDT",
       "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bearish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "AINUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
+      "trend": "bearish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
