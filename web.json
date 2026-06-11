@@ -1,10 +1,26 @@
 {
   "btc_context": "sideways",
-  "signal_count": 2,
-  "last_update": "2026-06-11 09:28:50",
+  "signal_count": 4,
+  "last_update": "2026-06-11 10:13:55",
   "signals": [
     {
       "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "AIOUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "HMSTRUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
