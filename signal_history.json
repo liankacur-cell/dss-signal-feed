@@ -1,5 +1,42 @@
 [
   {
+    "timestamp": "2026-06-11 13:58:42",
+    "btc_context": "sideways",
+    "signal_count": 2,
+    "signals": [
+      {
+        "symbol": "VELVETUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.93786,
+        "stop_loss": 0.236,
+        "take_profit_1": 1.1832,
+        "take_profit_2": 1.4285,
+        "risk_reward": 0.35,
+        "atr_4h": 0.1635,
+        "atr_1h": 0.1643,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 8.5271,
+        "stop_loss": 5.0727,
+        "take_profit_1": 9.9804,
+        "take_profit_2": 11.4337,
+        "risk_reward": 0.42,
+        "atr_4h": 0.9689,
+        "atr_1h": 0.8609,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-11 13:13:43",
     "btc_context": "sideways",
     "signal_count": 3,
