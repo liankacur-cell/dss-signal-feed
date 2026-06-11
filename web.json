@@ -1,10 +1,18 @@
 {
   "btc_context": "sideways",
-  "signal_count": 9,
-  "last_update": "2026-06-12 04:50:00",
+  "signal_count": 10,
+  "last_update": "2026-06-12 05:35:21",
   "signals": [
     {
-      "symbol": "ETHUSDT",
+      "symbol": "BTCUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "SOLUSDT",
       "signal": "LONG",
       "trend": "neutral",
       "momentum": "lemah_bullish",
@@ -15,7 +23,7 @@
       "symbol": "SUIUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "netral",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -24,14 +32,6 @@
       "signal": "LONG",
       "trend": "neutral",
       "momentum": "lemah_bullish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -47,14 +47,14 @@
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
-      "symbol": "VELVETUSDT",
+      "symbol": "HUSDT",
       "signal": "LONG",
-      "trend": "bullish",
+      "trend": "neutral",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
@@ -63,14 +63,22 @@
       "symbol": "STGUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
       "symbol": "SKYAIUSDT",
       "signal": "LONG",
-      "trend": "bearish",
+      "trend": "neutral",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "XNYUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
