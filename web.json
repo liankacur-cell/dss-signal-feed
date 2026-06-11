@@ -1,31 +1,31 @@
 {
-  "btc_context": "baik",
+  "btc_context": "sideways",
   "signal_count": 3,
-  "last_update": "2026-06-12 02:44:12",
+  "last_update": "2026-06-12 03:28:52",
   "signals": [
-    {
-      "symbol": "SUIUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "VELVETUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
-    },
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "STGUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "AINUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
     }
   ]
 }

@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-06-12 03:28:42",
+    "btc_context": "sideways",
+    "signal_count": 3,
+    "signals": [
+      {
+        "symbol": "ESPORTSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.18942,
+        "stop_loss": 0.0822,
+        "take_profit_1": 0.2239,
+        "take_profit_2": 0.2583,
+        "risk_reward": 0.32,
+        "atr_4h": 0.023,
+        "atr_1h": 0.0148,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "STGUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.5488,
+        "stop_loss": 0.375,
+        "take_profit_1": 0.6483,
+        "take_profit_2": 0.7478,
+        "risk_reward": 0.57,
+        "atr_4h": 0.0663,
+        "atr_1h": 0.0368,
+        "btc_context": "sideways"
+      },
+      {
+        "symbol": "AINUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "kuat_bullish",
+        "volatility": "tinggi",
+        "entry": 0.08779,
+        "stop_loss": 0.0623,
+        "take_profit_1": 0.0988,
+        "take_profit_2": 0.1091,
+        "risk_reward": 0.43,
+        "atr_4h": 0.0061,
+        "atr_1h": 0.0041,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-12 02:43:41",
     "btc_context": "baik",
     "signal_count": 3,
