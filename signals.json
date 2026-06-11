@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
   "signal_count": 1,
-  "last_update": "2026-06-11 20:43:42",
+  "last_update": "2026-06-11 21:28:43",
   "signals": [
     {
       "symbol": "BEATUSDT",
@@ -9,13 +9,13 @@
       "trend": "bullish",
       "momentum": "kuat_bullish",
       "volatility": "tinggi",
-      "entry": 9.3021,
-      "stop_loss": 5.6909,
-      "take_profit_1": 10.7688,
-      "take_profit_2": 12.2355,
-      "risk_reward": 0.41,
-      "atr_4h": 0.9778,
-      "atr_1h": 0.7146,
+      "entry": 9.3302,
+      "stop_loss": 5.7777,
+      "take_profit_1": 10.8204,
+      "take_profit_2": 12.3107,
+      "risk_reward": 0.42,
+      "atr_4h": 0.9935,
+      "atr_1h": 0.7266,
       "btc_context": "sideways"
     }
   ]
