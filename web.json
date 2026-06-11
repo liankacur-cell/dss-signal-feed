@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
-  "signal_count": 10,
-  "last_update": "2026-06-11 06:29:23",
+  "signal_count": 9,
+  "last_update": "2026-06-11 07:14:09",
   "signals": [
     {
       "symbol": "BTCUSDT",
@@ -69,14 +69,6 @@
     },
     {
       "symbol": "HMSTRUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
