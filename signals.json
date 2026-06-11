@@ -1,36 +1,21 @@
 {
   "btc_context": "sideways",
-  "signal_count": 2,
-  "last_update": "2026-06-11 16:58:42",
+  "signal_count": 1,
+  "last_update": "2026-06-11 17:43:42",
   "signals": [
-    {
-      "symbol": "AIOUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "entry": 0.20303,
-      "stop_loss": 0.1048,
-      "take_profit_1": 0.2295,
-      "take_profit_2": 0.2561,
-      "risk_reward": 0.27,
-      "atr_4h": 0.0177,
-      "atr_1h": 0.0226,
-      "btc_context": "sideways"
-    },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
-      "entry": 8.3463,
-      "stop_loss": 5.2807,
-      "take_profit_1": 9.817,
-      "take_profit_2": 11.2877,
-      "risk_reward": 0.48,
-      "atr_4h": 0.9805,
-      "atr_1h": 0.9351,
+      "entry": 8.4175,
+      "stop_loss": 5.3012,
+      "take_profit_1": 9.8883,
+      "take_profit_2": 11.3592,
+      "risk_reward": 0.47,
+      "atr_4h": 0.9806,
+      "atr_1h": 0.8666,
       "btc_context": "sideways"
     }
   ]

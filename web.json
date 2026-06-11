@@ -1,16 +1,8 @@
 {
   "btc_context": "sideways",
-  "signal_count": 2,
-  "last_update": "2026-06-11 16:58:49",
+  "signal_count": 1,
+  "last_update": "2026-06-11 17:43:47",
   "signals": [
-    {
-      "symbol": "AIOUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
