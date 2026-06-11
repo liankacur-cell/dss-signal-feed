@@ -1,15 +1,6 @@
 {
   "btc_context": "sideways",
-  "signal_count": 1,
-  "last_update": "2026-06-11 18:28:46",
-  "signals": [
-    {
-      "symbol": "SPACEUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-06-11 19:13:43",
+  "signals": []
 }
