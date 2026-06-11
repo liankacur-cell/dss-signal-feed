@@ -1,5 +1,57 @@
 [
   {
+    "timestamp": "2026-06-12 02:43:41",
+    "btc_context": "baik",
+    "signal_count": 3,
+    "signals": [
+      {
+        "symbol": "SUIUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "normal",
+        "entry": 0.7646,
+        "stop_loss": 0.7233,
+        "take_profit_1": 0.7964,
+        "take_profit_2": 0.8281,
+        "risk_reward": 0.77,
+        "atr_4h": 0.0212,
+        "atr_1h": 0.0093,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "VELVETUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 1.30486,
+        "stop_loss": 0.7073,
+        "take_profit_1": 1.618,
+        "take_profit_2": 1.9311,
+        "risk_reward": 0.52,
+        "atr_4h": 0.2087,
+        "atr_1h": 0.1224,
+        "btc_context": "baik"
+      },
+      {
+        "symbol": "ESPORTSUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 0.18328,
+        "stop_loss": 0.0825,
+        "take_profit_1": 0.2172,
+        "take_profit_2": 0.251,
+        "risk_reward": 0.34,
+        "atr_4h": 0.0226,
+        "atr_1h": 0.0138,
+        "btc_context": "baik"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-12 01:58:41",
     "btc_context": "baik",
     "signal_count": 6,
