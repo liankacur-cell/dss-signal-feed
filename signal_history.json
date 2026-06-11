@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-06-11 16:13:42",
+    "btc_context": "sideways",
+    "signal_count": 1,
+    "signals": [
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "trend": "bullish",
+        "momentum": "lemah_bullish",
+        "volatility": "tinggi",
+        "entry": 8.7238,
+        "stop_loss": 5.2876,
+        "take_profit_1": 10.1877,
+        "take_profit_2": 11.6517,
+        "risk_reward": 0.43,
+        "atr_4h": 0.9759,
+        "atr_1h": 0.9121,
+        "btc_context": "sideways"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-11 15:28:42",
     "btc_context": "sideways",
     "signal_count": 1,
