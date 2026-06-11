@@ -1,8 +1,24 @@
 {
   "btc_context": "sideways",
-  "signal_count": 3,
-  "last_update": "2026-06-12 03:28:52",
+  "signal_count": 5,
+  "last_update": "2026-06-12 04:13:57",
   "signals": [
+    {
+      "symbol": "UNIUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
@@ -12,7 +28,7 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "STGUSDT",
+      "symbol": "XNYUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
