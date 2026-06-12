@@ -1,21 +1,13 @@
 {
   "btc_context": "sideways",
-  "signal_count": 8,
-  "last_update": "2026-06-12 16:05:36",
+  "signal_count": 10,
+  "last_update": "2026-06-12 16:50:39",
   "signals": [
-    {
-      "symbol": "ETHUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
     {
       "symbol": "SOLUSDT",
       "signal": "SHORT",
       "trend": "neutral",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -31,7 +23,7 @@
       "symbol": "DOGEUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -44,6 +36,14 @@
       "btc_context": "sideways"
     },
     {
+      "symbol": "ZECUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "netral",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
@@ -52,10 +52,10 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "HUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "lemah_bearish",
+      "symbol": "NAORISUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
@@ -63,8 +63,24 @@
       "symbol": "XPLUSDT",
       "signal": "LONG",
       "trend": "neutral",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
       "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "INXUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bearish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "SKYAIUSDT",
+      "signal": "LONG",
+      "trend": "neutral",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
       "btc_context": "sideways"
     }
   ]
