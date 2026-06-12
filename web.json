@@ -1,8 +1,16 @@
 {
   "btc_context": "sideways",
-  "signal_count": 5,
-  "last_update": "2026-06-12 15:20:33",
+  "signal_count": 8,
+  "last_update": "2026-06-12 16:05:36",
   "signals": [
+    {
+      "symbol": "ETHUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "SOLUSDT",
       "signal": "SHORT",
@@ -12,35 +20,51 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "neutral",
-      "momentum": "lemah_bearish",
+      "symbol": "SUIUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "HUSDT",
+      "symbol": "DOGEUSDT",
       "signal": "LONG",
-      "trend": "bearish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
+      "trend": "bullish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "UNIUSDT",
+      "signal": "SHORT",
+      "trend": "neutral",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
       "btc_context": "sideways"
     },
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
-      "symbol": "HMSTRUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "symbol": "HUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
       "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "XPLUSDT",
+      "signal": "LONG",
+      "trend": "neutral",
+      "momentum": "kuat_bullish",
+      "volatility": "normal",
       "btc_context": "sideways"
     }
   ]
