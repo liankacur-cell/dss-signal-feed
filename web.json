@@ -1,8 +1,16 @@
 {
   "btc_context": "sideways",
-  "signal_count": 6,
-  "last_update": "2026-06-12 08:35:11",
+  "signal_count": 9,
+  "last_update": "2026-06-12 09:20:13",
   "signals": [
+    {
+      "symbol": "BTCUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "rendah",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
@@ -12,31 +20,39 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
+      "symbol": "SOLUSDT",
+      "signal": "LONG",
       "trend": "neutral",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bullish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "signal": "LONG",
+      "trend": "neutral",
+      "momentum": "lemah_bullish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
-      "trend": "bearish",
+      "trend": "neutral",
       "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "HUSDT",
-      "signal": "LONG",
+      "symbol": "ZECUSDT",
+      "signal": "SHORT",
       "trend": "neutral",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "ESPORTSUSDT",
+      "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
@@ -44,7 +60,15 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "VELVETUSDT",
+      "symbol": "HUSDT",
+      "signal": "LONG",
+      "trend": "bearish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "XNYUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
