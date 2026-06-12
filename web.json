@@ -1,13 +1,13 @@
 {
   "btc_context": "sideways",
-  "signal_count": 11,
-  "last_update": "2026-06-12 13:50:27",
+  "signal_count": 10,
+  "last_update": "2026-06-12 14:35:30",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "lemah_bearish",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -23,7 +23,7 @@
       "symbol": "SUIUSDT",
       "signal": "SHORT",
       "trend": "neutral",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -44,9 +44,17 @@
       "btc_context": "sideways"
     },
     {
+      "symbol": "ZECUSDT",
+      "signal": "SHORT",
+      "trend": "neutral",
+      "momentum": "lemah_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
+    {
       "symbol": "HUSDT",
       "signal": "LONG",
-      "trend": "neutral",
+      "trend": "bearish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
@@ -60,18 +68,10 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "NAORISUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
       "symbol": "SKYAIUSDT",
-      "signal": "LONG",
-      "trend": "neutral",
-      "momentum": "lemah_bullish",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "netral",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
@@ -79,15 +79,7 @@
       "symbol": "INXUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "AINUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "netral",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }
