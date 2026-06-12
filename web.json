@@ -1,12 +1,12 @@
 {
   "btc_context": "sideways",
-  "signal_count": 9,
-  "last_update": "2026-06-12 12:20:23",
+  "signal_count": 10,
+  "last_update": "2026-06-12 13:05:25",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "trend": "neutral",
+      "trend": "bearish",
       "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
@@ -21,8 +21,8 @@
     },
     {
       "symbol": "SUIUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
+      "signal": "SHORT",
+      "trend": "neutral",
       "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
@@ -38,16 +38,16 @@
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
-      "trend": "neutral",
+      "trend": "bearish",
       "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
       "symbol": "ZECUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "netral",
+      "signal": "SHORT",
+      "trend": "neutral",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -60,18 +60,26 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "STGUSDT",
+      "symbol": "LABUSDT",
       "signal": "LONG",
-      "trend": "bullish",
+      "trend": "neutral",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
-      "symbol": "INXUSDT",
+      "symbol": "SKYAIUSDT",
+      "signal": "LONG",
+      "trend": "neutral",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "NAORISUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }
