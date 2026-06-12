@@ -1,13 +1,13 @@
 {
   "btc_context": "baik",
-  "signal_count": 12,
-  "last_update": "2026-06-13 00:41:36",
+  "signal_count": 10,
+  "last_update": "2026-06-13 01:26:39",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "baik"
     },
@@ -23,7 +23,7 @@
       "symbol": "SOLUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "baik"
     },
@@ -44,14 +44,6 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "UNIUSDT",
-      "signal": "LONG",
-      "trend": "bearish",
-      "momentum": "lemah_bullish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
       "symbol": "ZECUSDT",
       "signal": "LONG",
       "trend": "bullish",
@@ -61,14 +53,6 @@
     },
     {
       "symbol": "ESPORTSUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "NAORISUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "lemah_bullish",
@@ -95,7 +79,7 @@
       "symbol": "KMNOUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
       "volatility": "normal",
       "btc_context": "baik"
     }
