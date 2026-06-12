@@ -1,14 +1,14 @@
 {
   "btc_context": "sideways",
-  "signal_count": 12,
-  "last_update": "2026-06-12 06:20:05",
+  "signal_count": 9,
+  "last_update": "2026-06-12 07:05:09",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "netral",
-      "volatility": "normal",
+      "momentum": "kuat_bullish",
+      "volatility": "rendah",
       "btc_context": "sideways"
     },
     {
@@ -20,35 +20,11 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "SUIUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "netral",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "LONG",
-      "trend": "neutral",
-      "momentum": "lemah_bullish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "neutral",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
       "symbol": "ZECUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "netral",
-      "volatility": "tinggi",
+      "volatility": "normal",
       "btc_context": "sideways"
     },
     {
@@ -63,7 +39,7 @@
       "symbol": "HUSDT",
       "signal": "LONG",
       "trend": "neutral",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
@@ -76,10 +52,10 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "SKYAIUSDT",
+      "symbol": "XNYUSDT",
       "signal": "LONG",
-      "trend": "neutral",
-      "momentum": "lemah_bullish",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
@@ -92,10 +68,10 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "AIOUSDT",
+      "symbol": "AINUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }
