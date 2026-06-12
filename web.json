@@ -1,7 +1,7 @@
 {
   "btc_context": "sideways",
-  "signal_count": 10,
-  "last_update": "2026-06-12 13:05:25",
+  "signal_count": 11,
+  "last_update": "2026-06-12 13:50:27",
   "signals": [
     {
       "symbol": "ETHUSDT",
@@ -14,8 +14,8 @@
     {
       "symbol": "SOLUSDT",
       "signal": "SHORT",
-      "trend": "neutral",
-      "momentum": "kuat_bearish",
+      "trend": "bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -29,9 +29,9 @@
     },
     {
       "symbol": "DOGEUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "signal": "SHORT",
+      "trend": "neutral",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -39,16 +39,16 @@
       "symbol": "UNIUSDT",
       "signal": "SHORT",
       "trend": "bearish",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "ZECUSDT",
-      "signal": "SHORT",
+      "symbol": "HUSDT",
+      "signal": "LONG",
       "trend": "neutral",
-      "momentum": "kuat_bearish",
-      "volatility": "normal",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
@@ -60,10 +60,10 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "LABUSDT",
+      "symbol": "NAORISUSDT",
       "signal": "LONG",
-      "trend": "neutral",
-      "momentum": "lemah_bullish",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
@@ -76,10 +76,18 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "NAORISUSDT",
+      "symbol": "INXUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
+      "symbol": "AINUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }
