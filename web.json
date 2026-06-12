@@ -1,20 +1,28 @@
 {
   "btc_context": "sideways",
-  "signal_count": 10,
-  "last_update": "2026-06-12 16:50:39",
+  "signal_count": 11,
+  "last_update": "2026-06-12 17:35:41",
   "signals": [
+    {
+      "symbol": "ETHUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "sideways"
+    },
     {
       "symbol": "SOLUSDT",
       "signal": "SHORT",
       "trend": "neutral",
-      "momentum": "lemah_bearish",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
       "symbol": "SUIUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
+      "signal": "SHORT",
+      "trend": "neutral",
       "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
@@ -23,14 +31,6 @@
       "symbol": "DOGEUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "neutral",
       "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
@@ -44,10 +44,18 @@
       "btc_context": "sideways"
     },
     {
+      "symbol": "ESPORTSUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "lemah_bullish",
+      "volatility": "tinggi",
+      "btc_context": "sideways"
+    },
+    {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bearish",
+      "momentum": "kuat_bearish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
@@ -62,23 +70,23 @@
     {
       "symbol": "XPLUSDT",
       "signal": "LONG",
-      "trend": "neutral",
+      "trend": "bearish",
       "momentum": "lemah_bullish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "INXUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bearish",
+      "symbol": "HUSDT",
+      "signal": "SHORT",
+      "trend": "bearish",
+      "momentum": "kuat_bearish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     },
     {
-      "symbol": "SKYAIUSDT",
+      "symbol": "AINUSDT",
       "signal": "LONG",
-      "trend": "neutral",
+      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
