@@ -1,7 +1,7 @@
 {
   "btc_context": "baik",
   "signal_count": 8,
-  "last_update": "2026-06-12 19:26:13",
+  "last_update": "2026-06-12 20:11:16",
   "signals": [
     {
       "symbol": "ETHUSDT",
@@ -28,6 +28,14 @@
       "btc_context": "baik"
     },
     {
+      "symbol": "UNIUSDT",
+      "signal": "LONG",
+      "trend": "bearish",
+      "momentum": "lemah_bullish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
       "symbol": "ZECUSDT",
       "signal": "LONG",
       "trend": "bullish",
@@ -49,14 +57,6 @@
       "trend": "bullish",
       "momentum": "kuat_bullish",
       "volatility": "tinggi",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "XPLUSDT",
-      "signal": "LONG",
-      "trend": "bearish",
-      "momentum": "kuat_bullish",
-      "volatility": "normal",
       "btc_context": "baik"
     },
     {
