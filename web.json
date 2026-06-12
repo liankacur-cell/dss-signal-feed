@@ -1,21 +1,21 @@
 {
   "btc_context": "sideways",
-  "signal_count": 11,
-  "last_update": "2026-06-12 11:35:21",
+  "signal_count": 9,
+  "last_update": "2026-06-12 12:20:23",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
       "trend": "neutral",
-      "momentum": "kuat_bearish",
+      "momentum": "lemah_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
       "symbol": "SOLUSDT",
-      "signal": "LONG",
+      "signal": "SHORT",
       "trend": "neutral",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -31,7 +31,7 @@
       "symbol": "DOGEUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
@@ -52,22 +52,6 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "HUSDT",
-      "signal": "LONG",
-      "trend": "neutral",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "VELVETUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
       "trend": "bullish",
@@ -76,9 +60,9 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "SKYAIUSDT",
+      "symbol": "STGUSDT",
       "signal": "LONG",
-      "trend": "neutral",
+      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
