@@ -1,50 +1,18 @@
 {
   "btc_context": "sideways",
-  "signal_count": 10,
-  "last_update": "2026-06-12 14:35:30",
+  "signal_count": 5,
+  "last_update": "2026-06-12 15:20:33",
   "signals": [
     {
-      "symbol": "ETHUSDT",
+      "symbol": "SOLUSDT",
       "signal": "SHORT",
-      "trend": "bearish",
+      "trend": "neutral",
       "momentum": "kuat_bearish",
       "volatility": "normal",
       "btc_context": "sideways"
     },
     {
-      "symbol": "SOLUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "trend": "neutral",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "trend": "neutral",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
       "symbol": "UNIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "ZECUSDT",
       "signal": "SHORT",
       "trend": "neutral",
       "momentum": "lemah_bearish",
@@ -60,7 +28,7 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "ESPORTSUSDT",
+      "symbol": "VELVETUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bearish",
@@ -68,18 +36,10 @@
       "btc_context": "sideways"
     },
     {
-      "symbol": "SKYAIUSDT",
-      "signal": "SHORT",
-      "trend": "bearish",
-      "momentum": "netral",
-      "volatility": "tinggi",
-      "btc_context": "sideways"
-    },
-    {
-      "symbol": "INXUSDT",
+      "symbol": "HMSTRUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "netral",
+      "momentum": "lemah_bullish",
       "volatility": "tinggi",
       "btc_context": "sideways"
     }
