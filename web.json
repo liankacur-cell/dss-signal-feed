@@ -1,50 +1,18 @@
 {
   "btc_context": "baik",
-  "signal_count": 10,
-  "last_update": "2026-06-13 01:26:39",
+  "signal_count": 9,
+  "last_update": "2026-06-13 15:04:55",
   "signals": [
-    {
-      "symbol": "BTCUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
     {
       "symbol": "ETHUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
+      "momentum": "lemah_bullish",
+      "volatility": "rendah",
       "btc_context": "baik"
     },
     {
       "symbol": "SOLUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "SUIUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "lemah_bearish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "ZECUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bearish",
@@ -52,34 +20,58 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "ESPORTSUSDT",
+      "symbol": "SUIUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bearish",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "ZECUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "netral",
+      "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "JCTUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "baik"
     },
     {
-      "symbol": "AINUSDT",
+      "symbol": "SKYAIUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "tinggi",
       "btc_context": "baik"
     },
     {
-      "symbol": "COAIUSDT",
+      "symbol": "GWEIUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
-      "volatility": "tinggi",
+      "momentum": "kuat_bullish",
+      "volatility": "normal",
       "btc_context": "baik"
     },
     {
-      "symbol": "KMNOUSDT",
+      "symbol": "NOTUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "lemah_bullish",
+      "momentum": "kuat_bullish",
       "volatility": "normal",
       "btc_context": "baik"
     }
