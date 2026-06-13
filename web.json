@@ -1,8 +1,16 @@
 {
   "btc_context": "baik",
   "signal_count": 9,
-  "last_update": "2026-06-13 15:04:55",
+  "last_update": "2026-06-13 15:49:57",
   "signals": [
+    {
+      "symbol": "BTCUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "netral",
+      "volatility": "rendah",
+      "btc_context": "baik"
+    },
     {
       "symbol": "ETHUSDT",
       "signal": "LONG",
@@ -15,7 +23,7 @@
       "symbol": "SOLUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bearish",
+      "momentum": "netral",
       "volatility": "normal",
       "btc_context": "baik"
     },
@@ -44,7 +52,7 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "JCTUSDT",
+      "symbol": "SKYAIUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
@@ -52,7 +60,7 @@
       "btc_context": "baik"
     },
     {
-      "symbol": "SKYAIUSDT",
+      "symbol": "JCTUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
@@ -64,15 +72,7 @@
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "NOTUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "normal",
+      "volatility": "tinggi",
       "btc_context": "baik"
     }
   ]
