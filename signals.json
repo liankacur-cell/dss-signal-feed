@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 3,
-  "last_update": "2026-06-14 02:39:09",
+  "last_update": "2026-06-14 02:58:47",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 413.72,
-      "stop_loss": 403.3223,
-      "take_profit_1": 425.4971,
-      "take_profit_2": 431.3856,
-      "risk_reward": 1.13,
-      "atr_15m": 3.9257142857142844,
+      "entry": 412.61,
+      "stop_loss": 403.417,
+      "take_profit_1": 423.44,
+      "take_profit_2": 428.855,
+      "risk_reward": 1.18,
+      "atr_15m": 3.609999999999997,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 63.6,
@@ -60,66 +60,12 @@
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
-      "entry": 7.4187,
-      "stop_loss": 6.5457,
-      "take_profit_1": 8.426,
-      "take_profit_2": 8.9297,
-      "risk_reward": 1.15,
-      "atr_15m": 0.33576428571428557,
-      "btc_regime": "BTC: bearish/bullish",
-      "audit": {
-        "total_score": 63.9,
-        "structure_score": 75,
-        "trend_score": 75,
-        "momentum_score": 32.5,
-        "volatility_score": 80,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bullish",
-        "label": "HH-BIAS"
-      },
-      "trend": {
-        "score": 75,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 32.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 80,
-        "state": "expansion"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
-    {
-      "symbol": "ESPORTSUSDT",
-      "signal": "LONG",
-      "entry": 0.10484,
-      "stop_loss": 0.0722,
-      "take_profit_1": 0.1539,
-      "take_profit_2": 0.1784,
+      "entry": 7.2608,
+      "stop_loss": 6.6058,
+      "take_profit_1": 8.2434,
+      "take_profit_2": 8.7347,
       "risk_reward": 1.5,
-      "atr_15m": 0.016342142857142857,
+      "atr_15m": 0.3275214285714285,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 62.8,
@@ -146,6 +92,60 @@
       },
       "momentum": {
         "score": 25.0,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 80,
+        "state": "expansion"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
+    {
+      "symbol": "ESPORTSUSDT",
+      "signal": "LONG",
+      "entry": 0.1258,
+      "stop_loss": 0.0813,
+      "take_profit_1": 0.1772,
+      "take_profit_2": 0.2029,
+      "risk_reward": 1.16,
+      "atr_15m": 0.017132142857142856,
+      "btc_regime": "BTC: bearish/bullish",
+      "audit": {
+        "total_score": 63.9,
+        "structure_score": 75,
+        "trend_score": 75,
+        "momentum_score": 32.5,
+        "volatility_score": 80,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bullish",
+        "label": "HH-BIAS"
+      },
+      "trend": {
+        "score": 75,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {

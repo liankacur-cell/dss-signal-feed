@@ -7,11 +7,11 @@
 ║  Siklus: 45 menit (anti-drift)                          ║
 ║  Retention: 90 hari rolling                             ║
 ║                                                        ║
-║  PATCH STABILISASI LANJUTAN:                           ║
-║  • RR filter >= 1.10                                   ║
-║  • Git sync lock guard                                 ║
-║  • Telegram duplicate send guard                       ║
-║  • Output cleanliness                                  ║
+║  7 ENGINE: Structure + Trend + Momentum                 ║
+║  + Volatility + Liquidity + Money Flow + Squeeze       ║
+║  Scoring: Core 30/20/15 + Extras 35%                   ║
+║  Alignment: +5/-8 | Gate: >=40 | Threshold: 62          ║
+║  RR Filter: >= 1.10 | Git Lock: ON                     ║
 ╚══════════════════════════════════════════════════════════╝
 """
 
@@ -19,7 +19,7 @@ import requests, json, time, os, subprocess, threading
 from datetime import datetime, timedelta
 
 # ============================================================
-# LAYER 1: CONFIG (v3.2.0)
+# LAYER 1: CONFIG
 # ============================================================
 ANALYSIS_LOCK = threading.Lock()
 
@@ -55,7 +55,7 @@ CACHE_TTL = 300
 GIT_REPO_PATH = os.path.expanduser("~/Dss_Web2")
 
 # ============================================================
-# LAYER 2: DATA FETCHER (v3.2.0)
+# LAYER 2: DATA FETCHER
 # ============================================================
 BASE_URL = "https://fapi.binance.com"
 session = None
@@ -211,7 +211,7 @@ def update_last_signal(symbol, signal):
     atomic_write_json(LAST_SIGNAL_FILE, last)
 
 # ============================================================
-# LAYER 3: 7 ANALYSIS ENGINES (v7.5)
+# LAYER 3: 7 ANALYSIS ENGINES
 # ============================================================
 
 # --- STRUCTURE ENGINE ---
@@ -336,7 +336,7 @@ def squeeze_engine(candles_4h):
     return {"score": 40, "state": "no_squeeze"}
 
 # ============================================================
-# LAYER 4: SCORING ENGINE (v7.5 + Alignment + Gate)
+# LAYER 4: SCORING ENGINE
 # ============================================================
 def scoring_engine(structure_data, trend_data, momentum_data,
                    vol_data, liq_data, flow_data, squeeze_data):
@@ -395,7 +395,7 @@ def scoring_engine(structure_data, trend_data, momentum_data,
     return "NO_TRADE", audit
 
 # ============================================================
-# LAYER 5: RISK ENGINE (RR >= 1.10)
+# LAYER 5: RISK ENGINE
 # ============================================================
 def risk_engine(symbol, signal, candles_15m):
     if signal == "NO_TRADE": return None
@@ -564,27 +564,8 @@ def run_analysis_engine(cycle_count):
         print(f"  Total sinyal valid: {len(signals)}")
         save_all_outputs(signals, btc_regime)
         save_signal_history(signals, btc_regime)
-
-        # Distribusi dengan sent_lock
-        sent_lock = set()
-        if signals:
-            for s in signals:
-                key = f"{s['symbol']}_{s['signal']}"
-                if key in sent_lock: continue
-                sent_lock.add(key)
-
-                if not is_duplicate_signal(s['symbol'], s['signal']):
-                    send_to_telegram(TELEGRAM_VIP_ID, format_signal_vip(s))
-                    send_to_telegram(TELEGRAM_FREE_ID, format_signal_free(s))
-                    update_last_signal(s['symbol'], s['signal'])
-                    time.sleep(SEND_DELAY)
-
-        # Ringkasan
-        summary_free = format_summary(signals, btc_regime, "FREE")
-        summary_vip = format_summary(signals, btc_regime, "VIP")
-        send_to_telegram(TELEGRAM_FREE_ID, summary_free)
-        send_to_telegram(TELEGRAM_VIP_ID, summary_vip)
-
+        vip_distribution(signals, btc_regime)
+        free_distribution(signals, btc_regime)
         print(f"\n[SIKLUS #{cycle_count}] Selesai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     finally:
         if ANALYSIS_LOCK.locked():
@@ -717,8 +698,30 @@ def format_summary(signals, btc_regime, channel="FREE"):
     s += f"\n🏷️ <b>{tag}</b>"
     return s
 
+def free_distribution(signals, btc_regime):
+    if signals is None: signals = []
+    summary = format_summary(signals, btc_regime, "FREE")
+    send_to_telegram(TELEGRAM_FREE_ID, summary)
+    if signals:
+        for s in signals:
+            if not is_duplicate_signal(s['symbol'], s['signal']):
+                send_to_telegram(TELEGRAM_FREE_ID, format_signal_free(s))
+                update_last_signal(s['symbol'], s['signal'])
+                time.sleep(SEND_DELAY)
+
+def vip_distribution(signals, btc_regime):
+    if signals is None: signals = []
+    summary = format_summary(signals, btc_regime, "VIP")
+    send_to_telegram(TELEGRAM_VIP_ID, summary)
+    if signals:
+        for s in signals:
+            if not is_duplicate_signal(s['symbol'], s['signal']):
+                send_to_telegram(TELEGRAM_VIP_ID, format_signal_vip(s))
+                update_last_signal(s['symbol'], s['signal'])
+                time.sleep(SEND_DELAY)
+
 # ============================================================
-# GITHUB SYNC (LOCK GUARD)
+# GITHUB SYNC
 # ============================================================
 def github_sync():
     if os.path.exists(".git_lock"): return
@@ -747,7 +750,7 @@ def main():
     print("DSS MARKET v8 — FULL v7.5 CLONE (TF BESAR)")
     print(f"Siklus: {SIKLUS_DETIK//60} menit | Retention: {RETENTION_DAYS} hari")
     print(f"7 Engines | Alignment: +5/-8 | Gate: >= {SCORE_GATE} | Threshold: {SCORE_THRESHOLD}")
-    print(f"RR Filter: >= 1.10 | Git Lock: ON | Duplicate Guard: ON")
+    print(f"RR Filter: >= 1.10 | Git Lock: ON")
     print("="*60)
     cycle = 0
     while True:
