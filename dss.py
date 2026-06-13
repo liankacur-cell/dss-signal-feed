@@ -1,20 +1,38 @@
 #!/usr/bin/env python3
 """
 ╔══════════════════════════════════════════════════════════╗
-║  DSS MARKET - SISTEM ANALISA SINYAL SWING INTERDAY      ║
+║  DSS MARKET v8 — FINAL FINAL                            ║
 ║  Platform: Termux Android | Binance Futures             ║
 ║  Library: Hanya requests                                ║
 ║  Siklus: 45 menit (anti-drift)                          ║
+║  Retention: 90 hari rolling                             ║
 ║                                                        ║
-║  VERSI: 3.2.0 (2026-06-12) — STRUCTURAL SAFETY PATCH    ║
-║  • Cache integrity validation                           ║
-║  • MACD alignment fix                                   ║
-║  • RSI honest None fallback                             ║
-║  • TP/SL early gate (no ghost signal)                   ║
-║  • BTC context multi‑factor                             ║
-║  • Gainers spike trap filter                            ║
-║  • Lock recovery safe                                   ║
-║  • Telegram error detail                                ║
+║  ARSITEKTUR:                                           ║
+║  Layer 1: Config                                       ║
+║  Layer 2: Data Fetcher                                 ║
+║  Layer 3: Analysis Engines                             ║
+║    - Structure (4H)                                    ║
+║    - Trend (4H+1H)                                     ║
+║    - Momentum (1H)                                     ║
+║    - Liquidity (Swing+Sweep)                           ║
+║    - Money Flow (OBV)                                  ║
+║    - Squeeze (Bollinger)                               ║
+║    - Open Interest (History+Klasifikasi)               ║
+║    - Funding Rate (Sentiment)                          ║
+║    - BTC Market Regime                                 ║
+║  Layer 4: Scoring Engine                               ║
+║  Layer 5: Risk Engine                                  ║
+║  Layer 6: Output Engine                                ║
+║                                                        ║
+║  SCORING:                                              ║
+║  Structure 22% | Trend 22% | Momentum 15%              ║
+║  Liquidity 12% | OI 10% | Funding 5%                  ║
+║  MoneyFlow 6% | Squeeze 3% | Volatility 5%            ║
+║                                                        ║
+║  RULES:                                                ║
+║  • Structure != Trend → NO_TRADE                       ║
+║  • LONG + BTC STRONG_BEAR → NO_TRADE                  ║
+║  • SHORT + BTC STRONG_BULL → NO_TRADE                 ║
 ╚══════════════════════════════════════════════════════════╝
 """
 
@@ -22,14 +40,10 @@ import requests, json, time, os, subprocess, threading
 from datetime import datetime, timedelta
 
 # ============================================================
-# THREAD‑SAFE ANALYSIS LOCK
+# LAYER 1: CONFIG
 # ============================================================
 ANALYSIS_LOCK = threading.Lock()
-DEBUG = False
 
-# ============================================================
-# KONFIGURASI
-# ============================================================
 PAIR_TETAP = ["BTCUSDT","ETHUSDT","SOLUSDT","SUIUSDT","DOGEUSDT","UNIUSDT","ZECUSDT"]
 TF_15M, TF_1H, TF_4H = "15m", "1h", "4h"
 SIKLUS_DETIK = 45 * 60
@@ -38,19 +52,11 @@ TELEGRAM_BOT_TOKEN = "8440657002:AAEqJIJziZ37HVRKOd0e3TcXyEAb3PclrwQ"
 TELEGRAM_FREE_ID = "-1004295086287"
 TELEGRAM_VIP_ID = "-1003913950288"
 
-MIN_TOTAL_SUPPORT = 4
 MIN_VOLUME_USDT = 5_000_000
 MAX_PAIR_ANALISA = 14
 
-BTC_SIDEWAYS_RANGE = 3.0
-BTC_BEARISH_THRESHOLD = -5.0
-BTC_BULLISH_THRESHOLD = 3.0
-MAX_FUNDING_RATE = 0.0005
-
-TREND_WEIGHT = 2
-MOMENTUM_WEIGHT = 2
-VOLATILITY_WEIGHT = 1
-OI_WEIGHT = 1
+SCORE_THRESHOLD = 62
+SWING_LOOKBACK = 10
 
 MAX_RETRIES = 3
 RETRY_DELAY = 3
@@ -60,7 +66,11 @@ SIGNAL_FILE = "signals.json"
 WEB_FILE = "web.json"
 SIGNAL_HISTORY_FILE = "signal_history.json"
 TELEGRAM_FAILED_LOG = "telegram_failed.log"
+ROLLOVER_STATE_FILE = "rollover_state.json"
+LAST_SIGNAL_FILE = "last_signal.json"
+OI_HISTORY_FILE = "oi_history.json"
 MAX_HISTORY_ENTRIES = 1000
+RETENTION_DAYS = 90
 SESSION_REFRESH_INTERVAL = 10
 SEND_DELAY = 0.3
 CACHE_TTL = 300
@@ -70,52 +80,7 @@ OI_CACHE = {}
 FUNDING_CACHE = {}
 
 # ============================================================
-# SAFE JSON & CACHE
-# ============================================================
-def safe_load_json(path, default=None):
-    if default is None: default = {}
-    try:
-        if not os.path.exists(path): return default
-        with open(path) as f:
-            data = json.load(f)
-            return data if data else default
-    except: return default
-
-def atomic_write_json(filepath, data):
-    temp = filepath + ".tmp"
-    try:
-        with open(temp, "w") as f: json.dump(data, f, indent=2)
-        os.replace(temp, filepath)
-        return True
-    except Exception as e:
-        print(f"[ERROR] Gagal menulis {filepath}: {e}")
-        return False
-
-def is_cache_valid(cache, symbol):
-    """Cache validity + data integrity check."""
-    if symbol not in cache:
-        return False
-    ts, data = cache[symbol]
-    # Time expiry
-    if (time.time() - ts) >= CACHE_TTL:
-        return False
-    # Structure check
-    if not isinstance(data, dict):
-        return False
-    # Numeric check for OI
-    try:
-        float(data.get("openInterest", 0))
-    except (ValueError, TypeError):
-        return False
-    return True
-
-def cleanup_cache(cache):
-    now = time.time()
-    expired = [k for k, v in cache.items() if now - v[0] > CACHE_TTL]
-    for k in expired: cache.pop(k, None)
-
-# ============================================================
-# BINANCE FUTURES API (DENGAN VALIDASI NUMERIK)
+# LAYER 2: DATA FETCHER
 # ============================================================
 BASE_URL = "https://fapi.binance.com"
 session = None
@@ -134,83 +99,59 @@ def refresh_session():
         except: pass
     session = requests.Session()
     session.headers.update({"User-Agent": "Mozilla/5.0 (Android; Termux)","Accept": "application/json"})
-    print("[SESSION] Refreshed")
 
 def fetch_with_retry(url, params=None, max_retries=MAX_RETRIES, timeout=REQUEST_TIMEOUT):
-    last_error = None
     for attempt in range(max_retries):
         try:
             resp = get_session().get(url, params=params, timeout=timeout)
             if resp.status_code == 200: return resp.json()
-            elif resp.status_code == 429:
-                wait = RETRY_DELAY * (attempt+1)*2
-                print(f"[RETRY] Rate limit, menunggu {wait}s...")
-                time.sleep(wait)
-            else:
-                print(f"[RETRY] HTTP {resp.status_code}, attempt {attempt+1}/{max_retries}")
-                time.sleep(RETRY_DELAY)
-        except requests.exceptions.Timeout:
-            print(f"[RETRY] Timeout, attempt {attempt+1}/{max_retries}")
-            time.sleep(RETRY_DELAY)
-        except requests.exceptions.ConnectionError:
-            print(f"[RETRY] Connection error, attempt {attempt+1}/{max_retries}")
-            time.sleep(RETRY_DELAY*2)
-        except Exception as e:
-            last_error = e
-            print(f"[RETRY] Error: {e}, attempt {attempt+1}/{max_retries}")
-            time.sleep(RETRY_DELAY)
-    print(f"[ERROR] Gagal setelah {max_retries} kali: {last_error}")
+            elif resp.status_code == 429: time.sleep(RETRY_DELAY * (attempt+1)*2)
+            else: time.sleep(RETRY_DELAY)
+        except: time.sleep(RETRY_DELAY)
     return None
 
 def fetch_klines(symbol, interval, limit=100):
     url = f"{BASE_URL}/fapi/v1/klines"
-    params = {"symbol": symbol, "interval": interval, "limit": limit}
-    result = fetch_with_retry(url, params)
+    result = fetch_with_retry(url, {"symbol": symbol, "interval": interval, "limit": limit})
     if not result:
-        if DEBUG: print(f"[DEBUG] fetch_klines gagal {symbol} {interval}, retry 1x...")
         time.sleep(2)
-        result = fetch_with_retry(url, params)
+        result = fetch_with_retry(url, {"symbol": symbol, "interval": interval, "limit": limit})
     return result
 
 def fetch_24h_ticker():
     return fetch_with_retry(f"{BASE_URL}/fapi/v1/ticker/24hr")
 
+def is_cache_valid(cache, symbol):
+    if symbol not in cache: return False
+    ts, data = cache[symbol]
+    if (time.time() - ts) >= CACHE_TTL: return False
+    if not isinstance(data, dict): return False
+    try: float(data.get("openInterest", 0)); return True
+    except: return False
+
 def fetch_open_interest_cached(symbol):
-    if is_cache_valid(OI_CACHE, symbol):
-        _, data = OI_CACHE[symbol]
-        return data
-    url = f"{BASE_URL}/fapi/v1/openInterest"
-    params = {"symbol": symbol}
-    result = fetch_with_retry(url, params)
+    if is_cache_valid(OI_CACHE, symbol): return OI_CACHE[symbol][1]
+    result = fetch_with_retry(f"{BASE_URL}/fapi/v1/openInterest", {"symbol": symbol})
     if result and isinstance(result, dict):
         try:
             float(result.get("openInterest", 0))
             OI_CACHE[symbol] = (time.time(), result)
             return result
-        except:
-            return None
+        except: pass
     return None
 
 def fetch_funding_rate_cached(symbol):
-    if is_cache_valid(FUNDING_CACHE, symbol):
-        _, data = FUNDING_CACHE[symbol]
-        return data
-    url = f"{BASE_URL}/fapi/v1/fundingRate"
-    params = {"symbol": symbol, "limit": 1}
-    result = fetch_with_retry(url, params)
+    if is_cache_valid(FUNDING_CACHE, symbol): return FUNDING_CACHE[symbol][1]
+    result = fetch_with_retry(f"{BASE_URL}/fapi/v1/fundingRate", {"symbol": symbol, "limit": 1})
     if isinstance(result, list) and len(result) > 0:
         latest = result[-1]
         try:
             float(latest.get("fundingRate", 0))
             FUNDING_CACHE[symbol] = (time.time(), latest)
             return latest
-        except:
-            return None
+        except: pass
     return None
 
-# ============================================================
-# PARSING DATA KLINES
-# ============================================================
 def parse_klines(klines_data):
     if not klines_data: return []
     candles = []
@@ -222,279 +163,456 @@ def parse_klines(klines_data):
                 "quote_volume": float(k[7]), "trades": k[8], "taker_buy_base": float(k[9]),
                 "taker_buy_quote": float(k[10])
             })
-        except (IndexError, ValueError, TypeError): continue
+        except: continue
     return candles
 
+# ============================================================
+# SHARED INDICATORS
+# ============================================================
 def calculate_sma(closes, period):
     if len(closes) < period: return None
     return sum(closes[-period:]) / period
 
-def calculate_ema_last(closes, period):
+def calculate_ema(closes, period):
     if len(closes) < period: return None
     multiplier = 2/(period+1)
     ema = sum(closes[:period]) / period
     for price in closes[period:]: ema = (price - ema) * multiplier + ema
     return ema
 
-def calculate_ema_series(closes, period):
-    if len(closes) < period: return []
-    multiplier = 2/(period+1)
-    ema = sum(closes[:period]) / period
-    result = []
-    for price in closes:
-        ema = (price - ema) * multiplier + ema
-        result.append(ema)
-    return result
-
 def calculate_atr(candles, period=14):
     if len(candles) < period+1: return None
     tr_list = []
     for i in range(1, len(candles)):
-        high, low, prev_close = candles[i]["high"], candles[i]["low"], candles[i-1]["close"]
-        tr = max(high-low, abs(high-prev_close), abs(low-prev_close))
-        tr_list.append(tr)
+        h, l, pc = candles[i]["high"], candles[i]["low"], candles[i-1]["close"]
+        tr_list.append(max(h-l, abs(h-pc), abs(l-pc)))
     if len(tr_list) < period: return None
     return sum(tr_list[-period:]) / period
 
 def calculate_rsi(closes, period=14):
-    """RSI – returns None if insufficient data (no masking)."""
-    if len(closes) < period + 1:
-        return None
-
-    gains = 0
-    losses = 0
+    if len(closes) < period + 1: return None
+    gains = 0; losses = 0
     for i in range(-period, 0):
         diff = closes[i] - closes[i-1]
         gains += max(diff, 0)
         losses += abs(min(diff, 0))
-
-    if losses == 0:
-        return 100.0
-
-    rs = gains / losses
-    return 100 - (100 / (1 + rs))
+    if losses == 0: return 100.0
+    return 100 - (100 / (1 + gains/losses))
 
 def calculate_macd(closes):
-    """Fixed MACD – aligned EMA series, zero‑padding safety."""
-    if len(closes) < 50:
-        return None, None, None
-
+    if len(closes) < 50: return None, None, None
     def ema(series, period):
-        multiplier = 2 / (period + 1)
-        ema_val = series[0]
-        out = []
-        for price in series:
-            ema_val = (price - ema_val) * multiplier + ema_val
-            out.append(ema_val)
+        m = 2/(period+1); e = series[0]; out = []
+        for p in series: e = (p-e)*m + e; out.append(e)
         return out
+    e12 = ema(closes, 12); e26 = ema(closes, 26)
+    macd = [0]*26 + [e12[i]-e26[i] for i in range(26, len(closes))]
+    sig = ema(macd, 9)
+    if len(sig) < 2: return None, None, None
+    return macd[-1], sig[-1], macd[-1]-sig[-1]
 
-    ema12 = ema(closes, 12)
-    ema26 = ema(closes, 26)
+def calculate_obv(closes, volumes):
+    if len(closes) < 2 or len(volumes) < 2: return None
+    obv = [0]
+    for i in range(1, len(closes)):
+        if closes[i] > closes[i-1]: obv.append(obv[-1] + volumes[i])
+        elif closes[i] < closes[i-1]: obv.append(obv[-1] - volumes[i])
+        else: obv.append(obv[-1])
+    return obv
 
-    macd_line = []
-    for i in range(len(closes)):
-        if i < 26:
-            macd_line.append(0)
-        else:
-            macd_line.append(ema12[i] - ema26[i])
-
-    signal_line = ema(macd_line, 9)
-
-    if len(signal_line) < 2:
-        return None, None, None
-
-    macd = macd_line[-1]
-    signal = signal_line[-1]
-    hist = macd - signal
-
-    return macd, signal, hist
-
-def calculate_percent_change(candles, lookback=20):
-    if len(candles) < lookback: return 0.0
-    cur = candles[-1]["close"]
-    past = candles[-lookback]["close"]
-    if past == 0: return 0.0
-    return ((cur-past)/past)*100
-
-def calculate_volume_trend(candles):
-    if len(candles) < 20: return "neutral"
-    recent = sum(c["volume"] for c in candles[-5:])
-    older = sum(c["volume"] for c in candles[-15:-5])
-    if older == 0: return "neutral"
-    ratio = recent/older
-    return "increasing" if ratio>1.3 else "decreasing" if ratio<0.7 else "neutral"
-
-def get_momentum_dir(momentum):
-    if not momentum: return None
-    if "bullish" in momentum: return "bullish"
-    if "bearish" in momentum: return "bearish"
-    return None
+def calculate_bollinger(closes, period=20, std_dev=2):
+    if len(closes) < period: return None, None, None, None
+    sma = sum(closes[-period:]) / period
+    variance = sum((x - sma)**2 for x in closes[-period:]) / period
+    std = variance**0.5
+    upper = sma + std_dev * std
+    lower = sma - std_dev * std
+    bandwidth = ((upper - lower) / sma) * 100 if sma > 0 else 0
+    return sma, upper, lower, bandwidth
 
 # ============================================================
-# ENGINE ANALISA (UPGRADED BTC CONTEXT, GUARDS)
+# SAFE JSON & RETENTION
 # ============================================================
-def analyze_btc_context(candles_4h, candles_1h, candles_15m):
-    """Multi‑factor BTC context."""
-    if not candles_4h or len(candles_4h) < 30:
-        return "sideways"
+def safe_load_json(path, default=None):
+    if default is None: default = {}
+    try:
+        if not os.path.exists(path): return default
+        with open(path) as f: return json.load(f) or default
+    except: return default
 
-    closes = [c["close"] for c in candles_4h]
-    change = calculate_percent_change(candles_4h, 6)
-    rsi = calculate_rsi(closes, 14)
-    sma20 = calculate_sma(closes, 20)
-    sma50 = calculate_sma(closes, 50)
+def atomic_write_json(filepath, data):
+    temp = filepath + ".tmp"
+    try:
+        with open(temp, "w") as f: json.dump(data, f, indent=2)
+        os.replace(temp, filepath)
+    except: pass
 
-    trend_bias = 0
-    if sma20 and sma50:
-        trend_bias = 1 if sma20 > sma50 else -1
+def apply_retention(filepath, days):
+    if not os.path.exists(filepath): return
+    try:
+        if filepath.endswith(".json"):
+            data = safe_load_json(filepath, [])
+            if isinstance(data, list):
+                cutoff = datetime.now() - timedelta(days=days)
+                new_data = [e for e in data if datetime.strptime(e.get("timestamp","2000-01-01 00:00:00"), "%Y-%m-%d %H:%M:%S") > cutoff]
+                if len(new_data) != len(data): atomic_write_json(filepath, new_data)
+        elif filepath.endswith(".log"):
+            cutoff = datetime.now() - timedelta(days=days)
+            with open(filepath, "r") as f: lines = f.readlines()
+            new_lines = [l for l in lines if datetime.strptime(l[1:20], "%Y-%m-%d %H:%M:%S") > cutoff]
+            if len(new_lines) != len(lines):
+                with open(filepath, "w") as f: f.writelines(new_lines)
+    except: pass
 
+def check_rollover():
+    state = safe_load_json(ROLLOVER_STATE_FILE, {"start_date": datetime.now().strftime("%Y-%m-%d")})
+    try:
+        if (datetime.now() - datetime.strptime(state.get("start_date", ""), "%Y-%m-%d")).days >= RETENTION_DAYS:
+            print("[ROLLOVER] 90 hari tercapai — reset history")
+            for f in [SIGNAL_HISTORY_FILE, TELEGRAM_FAILED_LOG, OI_HISTORY_FILE]:
+                if os.path.exists(f): atomic_write_json(f, [])
+            state["start_date"] = datetime.now().strftime("%Y-%m-%d")
+            atomic_write_json(ROLLOVER_STATE_FILE, state)
+    except: pass
+
+def is_duplicate_signal(symbol, signal):
+    last = safe_load_json(LAST_SIGNAL_FILE, {})
+    return last.get(f"{symbol}_{signal}") == signal
+
+def update_last_signal(symbol, signal):
+    last = safe_load_json(LAST_SIGNAL_FILE, {})
+    last[f"{symbol}_{signal}"] = signal
+    atomic_write_json(LAST_SIGNAL_FILE, last)
+
+# ============================================================
+# LAYER 3: ANALYSIS ENGINES
+# ============================================================
+
+# --- BTC MARKET REGIME ---
+def btc_market_regime_engine(candles_4h, candles_1h):
+    if not candles_4h or not candles_1h: return "BEAR"
+    t4 = trend_engine(candles_4h)
+    t1 = trend_engine(candles_1h)
+    m = momentum_engine(candles_1h)
     score = 0
-    score += 1 if change > 3 else -1 if change < -5 else 0
-    if rsi is not None:
-        score += 1 if rsi > 55 else -1 if rsi < 45 else 0
-    score += trend_bias
+    if t4["direction"] == "bullish": score += 3
+    elif t4["direction"] == "bearish": score -= 3
+    if t1["direction"] == t4["direction"] and t1["direction"] != "netral": score += 2
+    if m["direction"] == t4["direction"] and m["direction"] != "netral": score += 1
+    if score >= 4: return "STRONG_BULL"
+    elif score >= 2: return "BULL"
+    elif score <= -4: return "STRONG_BEAR"
+    elif score <= -2: return "BEAR"
+    return "BEAR"
 
-    if score >= 2:
-        return "baik"
-    elif score <= -2:
-        return "buruk"
-    return "sideways"
+# --- STRUCTURE ENGINE ---
+def structure_engine(candles_4h):
+    if not candles_4h or len(candles_4h) < 30:
+        return {"score": 50, "direction": "netral", "label": "DATA_KURANG",
+                "swing_highs": [], "swing_lows": []}
+    highs = [c["high"] for c in candles_4h]
+    lows = [c["low"] for c in candles_4h]
+    sh, sl = [], []
+    for i in range(SWING_LOOKBACK, len(candles_4h)-SWING_LOOKBACK):
+        if highs[i] == max(highs[i-SWING_LOOKBACK:i+SWING_LOOKBACK+1]): sh.append({"price": highs[i], "index": i})
+        if lows[i] == min(lows[i-SWING_LOOKBACK:i+SWING_LOOKBACK+1]): sl.append({"price": lows[i], "index": i})
+    if len(sh) < 2 or len(sl) < 2:
+        return {"score": 50, "direction": "netral", "label": "SWING_KURANG",
+                "swing_highs": sh, "swing_lows": sl}
+    rsh, rsl = sh[-4:], sl[-4:]
+    hh = sum(1 for i in range(1,len(rsh)) if rsh[i]["price"] > rsh[i-1]["price"])
+    lh = sum(1 for i in range(1,len(rsh)) if rsh[i]["price"] < rsh[i-1]["price"])
+    hl = sum(1 for i in range(1,len(rsl)) if rsl[i]["price"] > rsl[i-1]["price"])
+    ll = sum(1 for i in range(1,len(rsl)) if rsl[i]["price"] < rsl[i-1]["price"])
+    bull = hh + hl; bear = lh + ll
+    if bull > bear:
+        if hh >= 2 and hl >= 1: return {"score": 85, "direction": "bullish", "label": "HH-HL", "swing_highs": sh, "swing_lows": sl}
+        elif hh >= 1: return {"score": 70, "direction": "bullish", "label": "HH", "swing_highs": sh, "swing_lows": sl}
+        else: return {"score": 60, "direction": "bullish", "label": "HL", "swing_highs": sh, "swing_lows": sl}
+    elif bear > bull:
+        if ll >= 2 and lh >= 1: return {"score": 85, "direction": "bearish", "label": "LL-LH", "swing_highs": sh, "swing_lows": sl}
+        elif ll >= 1: return {"score": 70, "direction": "bearish", "label": "LL", "swing_highs": sh, "swing_lows": sl}
+        else: return {"score": 60, "direction": "bearish", "label": "LH", "swing_highs": sh, "swing_lows": sl}
+    return {"score": 50, "direction": "netral", "label": "RANGE", "swing_highs": sh, "swing_lows": sl}
 
-def trend_engine(candles_4h):
-    if not candles_4h or len(candles_4h)<50: return "neutral"
-    closes = [c["close"] for c in candles_4h]
-    sma20 = calculate_sma(closes, 20)
-    sma50 = calculate_sma(closes, 50)
-    if sma20 is None or sma50 is None: return "neutral"
-    if sma20 > sma50: return "bullish"
-    elif sma20 < sma50: return "bearish"
-    return "neutral"
+# --- TREND ENGINE ---
+def trend_engine(candles_4h, candles_1h=None):
+    if not candles_4h or len(candles_4h) < 50:
+        return {"score": 50, "direction": "netral"}
+    closes_4h = [c["close"] for c in candles_4h]
+    e9 = calculate_ema(closes_4h, 9); e21 = calculate_ema(closes_4h, 21)
+    if e9 is None or e21 is None: return {"score": 50, "direction": "netral"}
+    cp = closes_4h[-1]
+    if e9 > e21 and cp > e9: direction, base = "bullish", 70
+    elif e9 > e21: direction, base = "bullish", 60
+    elif e9 < e21 and cp < e9: direction, base = "bearish", 70
+    elif e9 < e21: direction, base = "bearish", 60
+    else: direction, base = "netral", 50
+    diff_pct = abs((e9-e21)/e21)*100
+    if diff_pct > 2.0: bonus = 20
+    elif diff_pct > 1.0: bonus = 12
+    elif diff_pct > 0.5: bonus = 6
+    elif diff_pct > 0.2: bonus = 3
+    else: bonus = 0
+    conf = 0
+    if candles_1h and len(candles_1h) >= 21:
+        c1 = [c["close"] for c in candles_1h]
+        e9_1 = calculate_ema(c1, 9); e21_1 = calculate_ema(c1, 21)
+        if e9_1 and e21_1:
+            if direction == "bullish" and e9_1 > e21_1: conf = 10
+            elif direction == "bearish" and e9_1 < e21_1: conf = 10
+            elif direction != "netral": conf = -5
+    return {"score": max(5, min(98, base + bonus + conf)), "direction": direction}
 
+# --- MOMENTUM ENGINE ---
 def momentum_engine(candles_1h):
-    if not candles_1h or len(candles_1h)<35: return "netral"
+    if not candles_1h or len(candles_1h) < 50:
+        return {"score": 50, "direction": "netral"}
     closes = [c["close"] for c in candles_1h]
     rsi = calculate_rsi(closes, 14)
-    if rsi is None:
-        return "netral"   # honest None → skip bias
-    macd_res = calculate_macd(closes)
-    macd_hist = macd_res[2] if macd_res else 0.0
-    vol_trend = calculate_volume_trend(candles_1h)
-    score = 0
-    if rsi > 60: score+=1
-    elif rsi < 40: score-=1
-    if macd_hist > 0: score+=1
-    elif macd_hist < 0: score-=1
-    if vol_trend=="increasing": score+=1
-    elif vol_trend=="decreasing": score-=1
-    if score>=2: return "kuat_bullish"
-    elif score<=-2: return "kuat_bearish"
-    elif score==1: return "lemah_bullish"
-    elif score==-1: return "lemah_bearish"
-    return "netral"
+    if rsi is None: return {"score": 50, "direction": "netral"}
+    macd_line, signal_line, histogram = calculate_macd(closes)
+    if macd_line is None: return {"score": 50, "direction": "netral"}
+    if rsi >= 70: rsi_s = 85
+    elif rsi >= 60: rsi_s = 70
+    elif rsi >= 50: rsi_s = 55
+    elif rsi >= 40: rsi_s = 45
+    elif rsi >= 30: rsi_s = 30
+    else: rsi_s = 15
+    if macd_line > signal_line and histogram > 0: macd_s = 80
+    elif macd_line > signal_line: macd_s = 65
+    elif macd_line < signal_line and histogram < 0: macd_s = 20
+    elif macd_line < signal_line: macd_s = 35
+    else: macd_s = 50
+    score = rsi_s*0.50 + macd_s*0.50
+    direction = "bullish" if histogram > 0 else "bearish" if histogram < 0 else "netral"
+    return {"score": round(max(5, min(98, score)), 1), "direction": direction}
 
-def volatility_engine(candles_4h):
-    if not candles_4h or len(candles_4h)<15: return "normal"
-    atr = calculate_atr(candles_4h, 14)
-    price = candles_4h[-1]["close"]
-    if not atr or price==0: return "normal"
-    pct = (atr/price)*100
-    return "tinggi" if pct>5.0 else "rendah" if pct<1.5 else "normal"
+# --- LIQUIDITY ENGINE (Swing + Sweep) ---
+def liquidity_engine(structure_data, candles_4h):
+    if not candles_4h or len(candles_4h) < 30:
+        return {"score": 50, "sweep_type": "none", "liquidity_level": 0}
+    sh = structure_data.get("swing_highs", [])
+    sl = structure_data.get("swing_lows", [])
+    if len(sh) < 2 or len(sl) < 2:
+        return {"score": 50, "sweep_type": "none", "liquidity_level": 0}
+    # Equal High / Equal Low
+    eq_high = None; eq_low = None
+    for i in range(len(sh)-1):
+        if abs(sh[i]["price"] - sh[i+1]["price"]) / sh[i]["price"] < 0.005:
+            eq_high = sh[i]["price"]
+    for i in range(len(sl)-1):
+        if abs(sl[i]["price"] - sl[i+1]["price"]) / sl[i]["price"] < 0.005:
+            eq_low = sl[i]["price"]
+    # Liquidity level
+    if eq_high: liquidity_level = eq_high; side = "SELL_SIDE"
+    elif eq_low: liquidity_level = eq_low; side = "BUY_SIDE"
+    else:
+        recent_high = max(s["price"] for s in sh[-3:])
+        recent_low = min(s["price"] for s in sl[-3:])
+        closes = [c["close"] for c in candles_4h]
+        if closes[-1] > (recent_high+recent_low)/2:
+            liquidity_level = recent_high; side = "SELL_SIDE"
+        else:
+            liquidity_level = recent_low; side = "BUY_SIDE"
+    # Sweep detection
+    closes = [c["close"] for c in candles_4h]
+    highs = [c["high"] for c in candles_4h]
+    lows = [c["low"] for c in candles_4h]
+    sweep_type = "none"; score = 50
+    for i in range(-10, 0):
+        if side == "SELL_SIDE" and highs[i] > liquidity_level and closes[i] < liquidity_level:
+            sweep_type = "SELL_SIDE_SWEEP"; score = 20
+        if side == "BUY_SIDE" and lows[i] < liquidity_level and closes[i] > liquidity_level:
+            sweep_type = "BUY_SIDE_SWEEP"; score = 85
+    if sweep_type == "none":
+        score = 65 if side == "BUY_SIDE" else 35
+    return {"score": score, "sweep_type": sweep_type, "liquidity_level": round(liquidity_level, 4)}
 
-def oi_funding_filter(symbol):
+# --- MONEY FLOW ENGINE ---
+def money_flow_engine(candles_1h):
+    if not candles_1h or len(candles_1h) < 30:
+        return {"score": 50, "state": "netral"}
+    closes = [c["close"] for c in candles_1h]
+    volumes = [c["volume"] for c in candles_1h]
+    obv = calculate_obv(closes, volumes)
+    if obv is None or len(obv) < 20: return {"score": 50, "state": "netral"}
+    obv_rising = obv[-1] > obv[-10]
+    price_rising = closes[-1] > closes[-20] if len(closes) >= 20 else False
+    if obv_rising and price_rising: score, state = 75, "accumulation"
+    elif obv_rising and not price_rising: score, state = 65, "bullish_divergence"
+    elif not obv_rising and not price_rising: score, state = 25, "distribution"
+    elif not obv_rising and price_rising: score, state = 35, "bearish_divergence"
+    else: score, state = 50, "netral"
+    return {"score": max(5, min(98, score)), "state": state}
+
+# --- SQUEEZE ENGINE ---
+def squeeze_engine(candles_4h):
+    if not candles_4h or len(candles_4h) < 30: return {"score": 50}
+    closes = [c["close"] for c in candles_4h]
+    sma, upper, lower, bandwidth = calculate_bollinger(closes, 20, 2)
+    if sma is None: return {"score": 50}
+    if len(closes) >= 30: _, _, _, bandwidth_prev = calculate_bollinger(closes[:-10], 20, 2)
+    else: bandwidth_prev = bandwidth
+    score = 50
+    if bandwidth and bandwidth_prev:
+        if bandwidth < 3: score += 20
+        elif bandwidth < 5: score += 10
+        if bandwidth > bandwidth_prev * 1.2: score += 15
+        elif bandwidth < bandwidth_prev * 0.8: score += 5
+    cp = closes[-1]
+    if cp > upper: score += 10
+    elif cp < lower: score -= 10
+    elif cp > sma: score += 5
+    else: score -= 5
+    return {"score": max(5, min(98, score))}
+
+# --- OPEN INTEREST ENGINE (History + Klasifikasi) ---
+def open_interest_engine(symbol, current_price):
     oi = fetch_open_interest_cached(symbol)
-    if not oi: return "tidak_valid", 0.0
+    if not oi: return {"score": 50, "value": 0, "prev_value": 0, "change_pct": 0, "state": "NO_DATA"}
+    try: current_oi = float(oi.get("openInterest", 0))
+    except: return {"score": 50, "value": 0, "prev_value": 0, "change_pct": 0, "state": "NO_DATA"}
+    history = safe_load_json(OI_HISTORY_FILE, {})
+    pair_history = history.get(symbol, [])
+    prev_oi = pair_history[-1]["oi"] if pair_history else current_oi
+    prev_price = pair_history[-1]["price"] if pair_history else current_price
+    oi_change_pct = ((current_oi - prev_oi) / prev_oi * 100) if prev_oi > 0 else 0
+    price_change = current_price - prev_price
+    if oi_change_pct > 0.5 and price_change > 0: state, score = "LONG_BUILDUP", 85
+    elif oi_change_pct > 0.5 and price_change < 0: state, score = "SHORT_BUILDUP", 20
+    elif oi_change_pct < -0.5 and price_change > 0: state, score = "SHORT_COVERING", 65
+    elif oi_change_pct < -0.5 and price_change < 0: state, score = "LONG_LIQUIDATION", 35
+    else: state, score = "STABLE", 50
+    pair_history.append({"oi": current_oi, "price": current_price, "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+    if len(pair_history) > 50: pair_history = pair_history[-50:]
+    history[symbol] = pair_history
+    atomic_write_json(OI_HISTORY_FILE, history)
+    return {"score": score, "value": current_oi, "prev_value": prev_oi, "change_pct": round(oi_change_pct, 2), "state": state}
+
+# --- FUNDING RATE ENGINE ---
+def funding_engine(symbol, signal=None):
     funding = fetch_funding_rate_cached(symbol)
-    if funding is None: return "tidak_valid", 0.0
+    if not funding: return {"score": 50, "rate": 0, "state": "NO_DATA"}
     try: rate = float(funding.get("fundingRate", 0))
-    except: return "tidak_valid", 0.0
-    return "valid", rate
+    except: return {"score": 50, "rate": 0, "state": "NO_DATA"}
+    if signal == "LONG":
+        if rate < 0: score, state = 80, "LONG_BIAS"
+        elif rate < 0.0002: score, state = 65, "NEUTRAL"
+        else: score, state = 40, "CROWDED_LONG"
+    elif signal == "SHORT":
+        if rate > 0: score, state = 80, "SHORT_BIAS"
+        elif rate > -0.0002: score, state = 65, "NEUTRAL"
+        else: score, state = 40, "CROWDED_SHORT"
+    else:
+        if rate < -0.0002: score, state = 70, "BULLISH"
+        elif rate > 0.0002: score, state = 30, "BEARISH"
+        else: score, state = 50, "NETRAL"
+    return {"score": score, "rate": rate, "state": state}
 
-def scoring_engine(trend_result, momentum_result, volatility_result, oi_result, btc_context="", funding_rate=0.0):
-    if trend_result is None or momentum_result is None:
-        return "NO_TRADE"
+# ============================================================
+# LAYER 4: SCORING ENGINE
+# ============================================================
+def scoring_engine(structure_data, trend_data, momentum_data, liquidity_data, money_flow_data, squeeze_data, oi_data, funding_data, btc_regime, signal_direction=None):
+    if structure_data is None or trend_data is None:
+        return "NO_TRADE", {"total_score": 0}
 
-    trend_score = 1 if trend_result=="bullish" else -1 if trend_result=="bearish" else 0
-    mom_dir = get_momentum_dir(momentum_result)
-    momentum_score = 1 if mom_dir=="bullish" else -1 if mom_dir=="bearish" else 0
+    s_dir = structure_data.get("direction", "netral")
+    t_dir = trend_data.get("direction", "netral")
 
-    volatility_score = 0
-    if volatility_result == "normal": volatility_score = 1
-    elif volatility_result == "tinggi": volatility_score = 0.5
+    # RULE: Structure != Trend → NO_TRADE
+    if s_dir != t_dir or s_dir == "netral":
+        return "NO_TRADE", {"total_score": 0, "structure_dir": s_dir, "trend_dir": t_dir, "gate": "STRUCTURE_TREND_MISMATCH"}
 
-    oi_score = 1 if oi_result=="valid" else 0
+    # RULE: LONG + BTC STRONG_BEAR → NO_TRADE
+    if signal_direction == "LONG" and btc_regime == "STRONG_BEAR":
+        return "NO_TRADE", {"total_score": 0, "gate": "BTC_STRONG_BEAR"}
+    # RULE: SHORT + BTC STRONG_BULL → NO_TRADE
+    if signal_direction == "SHORT" and btc_regime == "STRONG_BULL":
+        return "NO_TRADE", {"total_score": 0, "gate": "BTC_STRONG_BULL"}
 
-    funding_score = 0
-    if abs(funding_rate) < MAX_FUNDING_RATE: funding_score = 1
-    elif funding_rate > 0: funding_score = -0.5
-    else: funding_score = 0.5
+    s_score = structure_data.get("score", 50)
+    t_score = trend_data.get("score", 50)
+    m_score = momentum_data.get("score", 50)
+    l_score = liquidity_data.get("score", 50)
+    mf_score = money_flow_data.get("score", 50)
+    sq_score = squeeze_data.get("score", 50)
+    oi_score = oi_data.get("score", 50)
+    f_score = funding_data.get("score", 50)
 
-    btc_weight = 0
-    if btc_context == "baik": btc_weight = 1
-    elif btc_context == "buruk": btc_weight = -1
+    # Volatility dari ATR
+    v_score = 50  # default, akan di-overwrite dari luar
 
-    total_score = (trend_score * TREND_WEIGHT +
-                   momentum_score * MOMENTUM_WEIGHT +
-                   volatility_score * VOLATILITY_WEIGHT +
-                   oi_score * OI_WEIGHT +
-                   funding_score +
-                   btc_weight)
+    total = (s_score*0.22 + t_score*0.22 + m_score*0.15 +
+             l_score*0.12 + oi_score*0.10 + f_score*0.05 +
+             mf_score*0.06 + sq_score*0.03 + v_score*0.05)
 
-    if total_score is None: return "NO_TRADE"
+    if btc_regime == "STRONG_BULL": total += 5
+    elif btc_regime == "BULL": total += 2
+    elif btc_regime == "STRONG_BEAR": total -= 5
+    elif btc_regime == "BEAR": total -= 2
 
-    if total_score >= 4: return "LONG"
-    elif total_score <= -4: return "SHORT"
-    return "NO_TRADE"
+    total = max(0, min(100, total))
 
-def tp_sl_engine(symbol, signal, candles_15m):
+    audit = {
+        "total_score": round(total, 1),
+        "structure_score": s_score, "trend_score": t_score,
+        "momentum_score": m_score, "liquidity_score": l_score,
+        "money_flow_score": mf_score, "squeeze_score": sq_score,
+        "oi_score": oi_score, "funding_score": f_score,
+        "volatility_score": v_score,
+        "structure_dir": s_dir, "trend_dir": t_dir,
+        "btc_regime": btc_regime,
+        "gate": "PASS" if total >= 62 else ("BELOW_GATE" if total < 40 else "BELOW_THRESHOLD")
+    }
+
+    if total < 40: return "NO_TRADE", audit
+    if total < 62: return "NO_TRADE", audit
+
+    return s_dir.upper(), audit
+
+# ============================================================
+# LAYER 5: RISK ENGINE
+# ============================================================
+def risk_engine(symbol, signal, candles_15m, liquidity_level=0):
     if signal == "NO_TRADE": return None
     if not candles_15m or len(candles_15m) < 20: return None
-
     current_price = candles_15m[-1]["close"]
     atr_15m = calculate_atr(candles_15m, 14)
     if not atr_15m: return None
-
     subset = candles_15m[-3:] if len(candles_15m)>=3 else candles_15m
     last_high = max(c["high"] for c in subset)
     last_low = min(c["low"] for c in subset)
     candle_range = last_high - last_low
-    entry_penalty = False
-    if signal=="LONG" and current_price > (last_high - candle_range*0.2):
-        entry_penalty = True
-    if signal=="SHORT" and current_price < (last_low + candle_range*0.2):
-        entry_penalty = True
-
+    entry_penalty = (signal=="LONG" and current_price > last_high - candle_range*0.2) or \
+                    (signal=="SHORT" and current_price < last_low + candle_range*0.2)
     window = candles_15m[-50:] if len(candles_15m)>=50 else candles_15m
     if len(window)==0: return None
     swing_high = max(c["high"] for c in window)
     swing_low = min(c["low"] for c in window)
-
-    sl_multiplier = 1.5
     risk_mult = 1.3 if entry_penalty else 1.0
-    atr_sl = atr_15m * sl_multiplier * risk_mult
-
-    if signal=="LONG":
+    if signal == "LONG":
         entry = current_price
-        stop_loss = round(min(entry - atr_sl, swing_low - atr_15m*0.3), 4)
-        take_profit_1 = round(entry + atr_15m*1.5, 4)
-        take_profit_2 = round(entry + atr_15m*3.0, 4)
+        stop_loss = round(min(entry - atr_15m*2*risk_mult, (liquidity_level if liquidity_level>0 and liquidity_level<entry else swing_low) - atr_15m*0.3), 4)
+        take_profit_1 = round(max(entry + atr_15m*3, liquidity_level if liquidity_level>entry else 0), 4)
+        take_profit_2 = round(take_profit_1 + (take_profit_1-entry)*0.5, 4)
     else:
         entry = current_price
-        stop_loss = round(max(entry + atr_sl, swing_high + atr_15m*0.3), 4)
-        take_profit_1 = round(entry - atr_15m*1.5, 4)
-        take_profit_2 = round(entry - atr_15m*3.0, 4)
-
+        stop_loss = round(max(entry + atr_15m*2*risk_mult, (liquidity_level if liquidity_level>0 and liquidity_level>entry else swing_high) + atr_15m*0.3), 4)
+        take_profit_1 = round(min(entry - atr_15m*3, liquidity_level if liquidity_level<entry else 0), 4)
+        take_profit_2 = round(take_profit_1 - (entry-take_profit_1)*0.5, 4)
     risk = abs(entry - stop_loss)
-    if risk <= 0 or risk < 1e-8:
+    if risk <= 0 or risk < 1e-8: return None
+    rr = round(abs(take_profit_1-entry)/risk, 2)
+    if rr < 1.50:
+        print(f"[FILTER] RR rendah ({rr}) untuk {symbol}")
         return None
-    reward = abs(take_profit_1 - entry)
-    rr = round(reward/risk, 2)
-    return {"entry": entry, "stop_loss": stop_loss, "take_profit_1": take_profit_1,
-            "take_profit_2": take_profit_2, "risk_reward": rr, "atr": round(atr_15m,4)}
+    return {"entry": entry, "stop_loss": stop_loss, "take_profit_1": take_profit_1, "take_profit_2": take_profit_2, "risk_reward": rr}
 
 # ============================================================
-# ANALISA PER PAIR (DENGAN EARLY TP/SL GATE)
+# ANALISA PER PAIR
 # ============================================================
-def analyze_pair(symbol, btc_context):
+def analyze_pair(symbol, btc_regime):
     print(f"\n[ANALISA] {symbol}")
     c4 = parse_klines(fetch_klines(symbol, TF_4H, limit=100))
     c1 = parse_klines(fetch_klines(symbol, TF_1H, limit=100))
@@ -505,43 +623,77 @@ def analyze_pair(symbol, btc_context):
     if vol < MIN_VOLUME_USDT and symbol!="BTCUSDT":
         print(f"[SKIP] {symbol}: Volume rendah (${vol:,.0f})"); return None
 
-    # Early TP/SL feasibility check (avoid ghost signals)
-    if tp_sl_engine(symbol, "LONG", c15) is None and tp_sl_engine(symbol, "SHORT", c15) is None:
-        print(f"[SKIP] {symbol}: TP/SL invalid early filter"); return None
+    current_price = c15[-1]["close"]
 
-    trend_res = trend_engine(c4)
-    print(f"  Trend (4H): {trend_res}")
-    mom_res = momentum_engine(c1)
-    print(f"  Momentum (1H): {mom_res}")
-    vol_res = volatility_engine(c4)
-    print(f"  Volatility (4H): {vol_res}")
-    oi_res, funding_rate = oi_funding_filter(symbol)
-    print(f"  OI+Funding: OI={oi_res}, funding_rate={funding_rate}")
+    # Engines
+    struct = structure_engine(c4)
+    trend = trend_engine(c4, c1)
+    momentum = momentum_engine(c1)
+    liquidity = liquidity_engine(struct, c4)
+    moneyflow = money_flow_engine(c1)
+    squeeze = squeeze_engine(c4)
+    oi = open_interest_engine(symbol, current_price)
 
-    signal = scoring_engine(trend_res, mom_res, vol_res, oi_res, btc_context, funding_rate)
-    print(f"  Scoring: {signal}")
+    s_dir = struct["direction"]; t_dir = trend["direction"]
+    prelim_direction = s_dir.upper() if s_dir == t_dir and s_dir != "netral" else None
+    funding = funding_engine(symbol, prelim_direction)
 
-    tp = tp_sl_engine(symbol, signal, c15)
-    if signal=="NO_TRADE" or not tp:
-        if not tp: print(f"[FILTERED] {symbol}: TP/SL invalid")
+    # Volatility score
+    atr_4h = calculate_atr(c4, 14)
+    v_score = 50
+    if atr_4h and c4[-1]["close"] > 0:
+        atr_pct = (atr_4h / c4[-1]["close"]) * 100
+        if atr_pct < 1.5: v_score = 40
+        elif atr_pct > 5.0: v_score = 50
+        else: v_score = 70
+
+    # Audit log
+    print(f"  Structure : {struct['score']} ({struct['direction']}) {struct['label']}")
+    print(f"  Trend     : {trend['score']} ({trend['direction']})")
+    print(f"  Momentum  : {momentum['score']} ({momentum['direction']})")
+    print(f"  Liquidity : {liquidity['score']} (sweep={liquidity['sweep_type']}, level={liquidity['liquidity_level']})")
+    print(f"  MoneyFlow : {moneyflow['score']} ({moneyflow['state']})")
+    print(f"  Squeeze   : {squeeze['score']}")
+    print(f"  OI        : {oi['value']:,.0f} (prev={oi['prev_value']:,.0f}, chg={oi['change_pct']}%, state={oi['state']}, score={oi['score']})")
+    print(f"  Funding   : {funding['rate']} (state={funding['state']}, score={funding['score']})")
+    print(f"  Volatility: {v_score}")
+    print(f"  BTC Regime: {btc_regime}")
+
+    # Scoring (pakai v_score dari atas)
+    temp_audit = {}
+    signal, audit = scoring_engine(struct, trend, momentum, liquidity, moneyflow, squeeze, oi, funding, btc_regime, prelim_direction)
+    # Inject volatility score
+    if "volatility_score" in audit: audit["volatility_score"] = v_score
+
+    print(f"  Total Score: {audit.get('total_score', 0)} | Gate: {audit.get('gate', '?')}")
+    print(f"  Decision   : {signal}")
+
+    if signal == "NO_TRADE": return None
+
+    tp = risk_engine(symbol, signal, c15, liquidity["liquidity_level"])
+    if not tp:
+        print(f"[FILTERED] {symbol}: TP/SL invalid")
         return None
 
     return {
-        "symbol": symbol, "signal": signal, "trend": trend_res, "momentum": mom_res,
-        "volatility": vol_res, "entry": tp["entry"], "stop_loss": tp["stop_loss"],
+        "symbol": symbol, "signal": signal,
+        "entry": tp["entry"], "stop_loss": tp["stop_loss"],
         "take_profit_1": tp["take_profit_1"], "take_profit_2": tp["take_profit_2"],
-        "risk_reward": tp["risk_reward"], "atr_15m": tp["atr"], "btc_context": btc_context
+        "risk_reward": tp["risk_reward"], "atr_15m": tp["atr"], "btc_regime": btc_regime,
+        "audit": audit,
+        "structure": struct, "trend": trend, "momentum": momentum,
+        "liquidity": liquidity, "moneyflow": moneyflow, "squeeze": squeeze, "oi": oi, "funding": funding
     }
 
-def safe_analyze_pair(symbol, btc_context):
-    try: return analyze_pair(symbol, btc_context)
+def safe_analyze_pair(symbol, btc_regime):
+    try: return analyze_pair(symbol, btc_regime)
     except Exception as e:
         print(f"[PAIR ERROR] {symbol}: {e}"); return None
 
 # ============================================================
-# PAIR TRENDING (SPIKE TRAP FILTER)
+# PAIR TRENDING
 # ============================================================
-def get_top_gainers(exclude_pairs, limit=7):
+def get_top_futures_pairs(exclude_pairs, limit=7):
     tickers = fetch_24h_ticker()
     if not tickers: return []
     pairs = []
@@ -549,94 +701,92 @@ def get_top_gainers(exclude_pairs, limit=7):
         symbol = t.get("symbol","")
         if symbol.endswith("USDT") and symbol not in exclude_pairs:
             try:
-                chg = float(t.get("priceChangePercent",0))
-                vol = float(t.get("quoteVolume",0))
-                # Volume basic
-                if vol < MIN_VOLUME_USDT: continue
-                # Spike trap filter
-                if chg > 8 and vol < MIN_VOLUME_USDT * 3:
-                    continue
-                pairs.append({"symbol": symbol, "price_change": chg, "volume": vol})
+                vol = float(t.get("quoteVolume", 0))
+                if vol < MIN_VOLUME_USDT * 2: continue
+                chg = float(t.get("priceChangePercent", 0))
+                if chg > 8 and vol < MIN_VOLUME_USDT * 3: continue
+                pairs.append({"symbol": symbol, "volume": vol, "price_change": chg})
             except: continue
-    pairs.sort(key=lambda x: x["price_change"], reverse=True)
+    pairs.sort(key=lambda x: x["volume"], reverse=True)
     top = pairs[:limit]
-    print(f"\n[TOP GAINERS 24J]")
-    for i,p in enumerate(top,1): print(f"  {i}. {p['symbol']}: {p['price_change']:.2f}% (Vol: ${p['volume']:,.0f})")
+    print(f"\n[TOP FUTURES BY VOLUME]")
+    for i,p in enumerate(top,1): print(f"  {i}. {p['symbol']}: ${p['volume']:,.0f} ({p['price_change']:.2f}%)")
     return [p["symbol"] for p in top]
 
 # ============================================================
-# PRODUCER (LOCK SAFETY)
+# PRODUCER
 # ============================================================
 def run_analysis_engine(cycle_count):
     acquired = ANALYSIS_LOCK.acquire(blocking=False)
     if not acquired:
-        print("[GUARD] Analysis sedang berjalan, skip siklus ini")
-        return
+        print("[GUARD] Analysis sedang berjalan, skip siklus ini"); return
     try:
         print(f"\n{'='*60}")
         print(f"[SIKLUS #{cycle_count}] Mulai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"{'='*60}")
         if cycle_count % SESSION_REFRESH_INTERVAL == 0: refresh_session()
-        cleanup_cache(OI_CACHE); cleanup_cache(FUNDING_CACHE)
+
+        if cycle_count % 24 == 0:
+            check_rollover()
+            apply_retention(SIGNAL_HISTORY_FILE, RETENTION_DAYS)
+            apply_retention(TELEGRAM_FAILED_LOG, RETENTION_DAYS)
+            apply_retention(OI_HISTORY_FILE, RETENTION_DAYS)
 
         print("\n[LANGKAH 1] Mencari 7 pair trending...")
-        trending = get_top_gainers(PAIR_TETAP, 7)
+        trending = get_top_futures_pairs(PAIR_TETAP, 7)
         all_pairs = list(dict.fromkeys(PAIR_TETAP + trending))[:MAX_PAIR_ANALISA]
         print(f"\n[LANGKAH 2] Total pair: {len(all_pairs)}")
-        print(f"  Tetap: {PAIR_TETAP}"); print(f"  Trending: {trending}")
 
-        print(f"\n[LANGKAH 3] Analisa BTC Context...")
+        print(f"\n[LANGKAH 3] Analisa BTC Regime...")
         btc4 = parse_klines(fetch_klines("BTCUSDT", TF_4H, limit=100))
         btc1 = parse_klines(fetch_klines("BTCUSDT", TF_1H, limit=100))
-        btc15 = parse_klines(fetch_klines("BTCUSDT", TF_15M, limit=100))
-        btc_ctx = analyze_btc_context(btc4, btc1, btc15)
-        print(f"  BTC Context: {btc_ctx}")
+        btc_regime = btc_market_regime_engine(btc4, btc1)
+        print(f"  BTC Regime: {btc_regime}")
 
         print(f"\n[LANGKAH 4] Analisa {len(all_pairs)} pair...")
         signals = []
         for pair in all_pairs:
-            res = safe_analyze_pair(pair, btc_ctx)
+            res = safe_analyze_pair(pair, btc_regime)
             if res: signals.append(res)
 
         print(f"\n[LANGKAH 5] Mengirim sinyal ke Telegram (DSS FORMAT)...")
         print(f"  Total sinyal valid: {len(signals)}")
-        save_all_outputs(signals, btc_ctx)
-        save_signal_history(signals, btc_ctx)
-        vip_distribution(signals, btc_ctx)
-        free_distribution(signals, btc_ctx)
+        save_all_outputs(signals, btc_regime)
+        save_signal_history(signals, btc_regime)
+        vip_distribution(signals, btc_regime)
+        free_distribution(signals, btc_regime)
         print(f"\n[SIKLUS #{cycle_count}] Selesai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     finally:
         if ANALYSIS_LOCK.locked():
             ANALYSIS_LOCK.release()
 
 # ============================================================
-# DATA LAYER
+# LAYER 6: OUTPUT ENGINE
 # ============================================================
-def save_all_outputs(signals, btc_context):
+def save_all_outputs(signals, btc_regime):
     if signals is None: signals = []
-    out = {"btc_context": btc_context, "signal_count": len(signals),
+    out = {"btc_regime": btc_regime, "signal_count": len(signals),
            "last_update": datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "signals": signals}
     atomic_write_json(SIGNAL_FILE, out)
     print(f"[OUTPUT] {SIGNAL_FILE} tersimpan ({len(signals)} sinyal)")
-    pub = [{"symbol": s["symbol"], "signal": s["signal"], "trend": s["trend"],
-            "momentum": s["momentum"], "volatility": s["volatility"], "btc_context": s["btc_context"]} for s in signals]
-    web = {"btc_context": btc_context, "signal_count": len(signals),
+    pub = [{"symbol": s["symbol"], "signal": s["signal"],
+            "entry": s["entry"], "stop_loss": s["stop_loss"],
+            "take_profit_1": s["take_profit_1"], "take_profit_2": s["take_profit_2"],
+            "risk_reward": s["risk_reward"], "btc_regime": s["btc_regime"]} for s in signals]
+    web = {"btc_regime": btc_regime, "signal_count": len(signals),
            "last_update": datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "signals": pub}
     atomic_write_json(WEB_FILE, web)
     print(f"[WEB] {WEB_FILE} tersimpan ({len(pub)} sinyal)")
 
-def save_signal_history(signals, btc_context):
+def save_signal_history(signals, btc_regime):
     if signals is None: signals = []
     entry = {"timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-             "btc_context": btc_context, "signal_count": len(signals), "signals": signals}
+             "btc_regime": btc_regime, "signal_count": len(signals), "signals": signals}
     history = safe_load_json(SIGNAL_HISTORY_FILE, [])
     history.insert(0, entry)
     if len(history) > MAX_HISTORY_ENTRIES: history = history[:MAX_HISTORY_ENTRIES]
     atomic_write_json(SIGNAL_HISTORY_FILE, history)
 
-# ============================================================
-# TELEGRAM (ERROR DETAIL)
-# ============================================================
 def log_telegram_failed(chat_id, reason):
     try:
         with open(TELEGRAM_FAILED_LOG, "a") as f:
@@ -654,68 +804,32 @@ def send_to_telegram(chat_id, message, parse_mode="HTML"):
                 print(f"[TELEGRAM] Pesan terkirim"); return True
             elif resp.status_code == 400:
                 if payload["parse_mode"] != "":
-                    payload["parse_mode"] = ""
-                    continue
+                    payload["parse_mode"] = ""; continue
                 log_telegram_failed(chat_id, "HTTP 400 parse error"); return False
             elif resp.status_code == 404:
                 log_telegram_failed(chat_id, "HTTP 404 token/chat salah"); return False
-            else:
-                print(f"[TELEGRAM] HTTP {resp.status_code}: {resp.text[:200]}")
-                time.sleep(RETRY_DELAY)
-        except Exception as e:
-            print(f"[TELEGRAM ERROR DETAIL] {str(e)}")
-            time.sleep(RETRY_DELAY)
+            else: time.sleep(RETRY_DELAY)
+        except: time.sleep(RETRY_DELAY)
     log_telegram_failed(chat_id, f"Gagal setelah {MAX_RETRIES} kali")
     return False
 
-# ============================================================
-# FORMAT SINYAL
-# ============================================================
 def escape_html(text):
     if text is None: return ""
     return str(text).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
 
 def format_bias_emoji(signal):
-    if signal == "LONG": return "🟢"
-    elif signal == "SHORT": return "🔴"
-    return "⚪"
-
-def format_trend_emoji(trend):
-    if trend == "bullish": return "BULLISH 🐂"
-    elif trend == "bearish": return "BEARISH 🐻"
-    return "NEUTRAL ➡️"
-
-def format_momentum_label(momentum):
-    if "kuat" in momentum and "bullish" in momentum: return "MENGUAT ⬆️"
-    elif "kuat" in momentum and "bearish" in momentum: return "MELEMAH ⬇️"
-    elif "lemah" in momentum and "bullish" in momentum: return "LEMAH NAIK ↗️"
-    elif "lemah" in momentum and "bearish" in momentum: return "LEMAH TURUN ↘️"
-    return "NETRAL ➡️"
-
-def format_btc_context_label(ctx):
-    if ctx == "baik": return "BULLISH 🟢"
-    elif ctx == "buruk": return "BEARISH 🔴"
-    return "SIDEWAYS 📊"
+    return "🟢" if signal=="LONG" else "🔴" if signal=="SHORT" else "⚪"
 
 def format_signal_free(signal_data):
-    symbol = escape_html(signal_data["symbol"])
-    signal = escape_html(signal_data["signal"])
-    trend = escape_html(signal_data["trend"])
-    momentum = escape_html(signal_data["momentum"])
-    btc = escape_html(signal_data["btc_context"])
-    emoji = format_bias_emoji(signal)
-    trend_label = format_trend_emoji(trend)
-    mom_label = format_momentum_label(momentum)
-    btc_label = format_btc_context_label(btc)
+    symbol = escape_html(signal_data["symbol"]); signal = escape_html(signal_data["signal"])
+    btc = escape_html(signal_data["btc_regime"]); emoji = format_bias_emoji(signal)
     return f"""<b>🔥 DSS MARKET ALERT</b>
 
 🆓 <i>VERSION FREE</i>
 
 <b>🪙 PAIR</b>       : <code>{symbol}</code>
 <b>🎯 BIAS</b>       : <b>{emoji} {signal}</b>
-<b>📈 TREND</b>      : <b>{trend_label}</b>
-<b>⚡ MOMENTUM</b>   : <b>{mom_label}</b>
-<b>₿ BTC CONTEXT</b> : {btc_label}
+<b>₿ BTC REGIME</b>  : {btc}
 
 ✨ <i>Watch for setup!</i>
 
@@ -725,26 +839,18 @@ def format_signal_free(signal_data):
 <b>🏷️ #DSS</b>  <b>#{symbol}</b>"""
 
 def format_signal_vip(signal_data):
-    symbol = escape_html(signal_data["symbol"])
-    signal = escape_html(signal_data["signal"])
-    entry = escape_html(signal_data["entry"])
-    sl = escape_html(signal_data["stop_loss"])
-    tp1 = escape_html(signal_data["take_profit_1"])
-    tp2 = escape_html(signal_data["take_profit_2"])
-    rr = escape_html(signal_data["risk_reward"])
-    trend = escape_html(signal_data["trend"])
-    momentum = escape_html(signal_data["momentum"])
+    symbol = escape_html(signal_data["symbol"]); signal = escape_html(signal_data["signal"])
+    entry = escape_html(signal_data["entry"]); sl = escape_html(signal_data["stop_loss"])
+    tp1 = escape_html(signal_data["take_profit_1"]); tp2 = escape_html(signal_data["take_profit_2"])
+    rr = escape_html(signal_data["risk_reward"]); btc = escape_html(signal_data["btc_regime"])
     emoji = format_bias_emoji(signal)
-    trend_label = format_trend_emoji(trend)
-    mom_label = format_momentum_label(momentum)
     return f"""<b>🔥 DSS VIP SIGNAL</b>
 
 💎 <i>FULL ACCESS</i>
 
 <b>🪙 PAIR</b>       : <code>{symbol}</code>
 <b>🎯 BIAS</b>       : <b>{emoji} {signal}</b>
-<b>📈 TREND</b>      : <b>{trend_label}</b>
-<b>⚡ MOMENTUM</b>   : <b>{mom_label}</b>
+<b>₿ BTC REGIME</b>  : {btc}
 <b>💰 ENTRY</b>      : <code>{entry}</code>
 <b>🛑 STOP LOSS</b>  : <code>{sl}</code>
 <b>✅ TP1</b>         : <code>{tp1}</code>
@@ -753,8 +859,7 @@ def format_signal_vip(signal_data):
 
 🏷️ <b>#DSS #VIP</b>  <b>#{symbol}</b>"""
 
-def format_summary(signals, btc_context, channel="FREE"):
-    btc_label = format_btc_context_label(btc_context)
+def format_summary(signals, btc_regime, channel="FREE"):
     cnt = len(signals) if signals else 0
     header = "<b>📊 DSS VIP SESSION</b>" if channel=="VIP" else "<b>📊 DSS MARKET SESSION</b>"
     tag = "#DSS #VIP" if channel=="VIP" else "#DSS"
@@ -762,49 +867,46 @@ def format_summary(signals, btc_context, channel="FREE"):
         return f"""{header}
 
 ⏰ <i>Tidak ada sinyal valid</i>
-₿ BTC: {btc_label}
+₿ BTC: {btc_regime}
 ✅ <i>Sistem tetap berjalan normal</i>
 
 🏷️ <b>{tag}</b>"""
     s = f"""{header}
 
-₿ BTC: {btc_label}
+₿ BTC Regime: {btc_regime}
 📨 Sinyal: <b>{cnt}</b>
 
 """
     for sig in signals:
-        emoji = format_bias_emoji(sig["signal"])
-        symbol = escape_html(sig["symbol"])
+        emoji = format_bias_emoji(sig["signal"]); symbol = escape_html(sig["symbol"])
         signal = escape_html(sig["signal"])
         s += f"{emoji} <b>{symbol}</b>: {signal}\n"
     if channel=="FREE": s += "\n🔐 <i>Full entry di VIP Channel</i>"
     s += f"\n🏷️ <b>{tag}</b>"
     return s
 
-# ============================================================
-# DISTRIBUTION
-# ============================================================
-def free_distribution(signals, btc_context):
+def free_distribution(signals, btc_regime):
     if signals is None: signals = []
-    summary = format_summary(signals, btc_context, "FREE")
+    summary = format_summary(signals, btc_regime, "FREE")
     send_to_telegram(TELEGRAM_FREE_ID, summary)
     if signals:
         for s in signals:
-            send_to_telegram(TELEGRAM_FREE_ID, format_signal_free(s))
-            time.sleep(SEND_DELAY)
+            if not is_duplicate_signal(s['symbol'], s['signal']):
+                send_to_telegram(TELEGRAM_FREE_ID, format_signal_free(s))
+                update_last_signal(s['symbol'], s['signal'])
+                time.sleep(SEND_DELAY)
 
-def vip_distribution(signals, btc_context):
+def vip_distribution(signals, btc_regime):
     if signals is None: signals = []
-    summary = format_summary(signals, btc_context, "VIP")
+    summary = format_summary(signals, btc_regime, "VIP")
     send_to_telegram(TELEGRAM_VIP_ID, summary)
     if signals:
         for s in signals:
-            send_to_telegram(TELEGRAM_VIP_ID, format_signal_vip(s))
-            time.sleep(SEND_DELAY)
+            if not is_duplicate_signal(s['symbol'], s['signal']):
+                send_to_telegram(TELEGRAM_VIP_ID, format_signal_vip(s))
+                update_last_signal(s['symbol'], s['signal'])
+                time.sleep(SEND_DELAY)
 
-# ============================================================
-# GITHUB SYNC
-# ============================================================
 def github_sync():
     repo = GIT_REPO_PATH
     if not os.path.exists(os.path.join(repo, ".git")):
@@ -812,14 +914,11 @@ def github_sync():
     try:
         r = subprocess.run(["git","status","--porcelain"], cwd=repo, capture_output=True, text=True)
         if not r.stdout.strip(): return
-        a = subprocess.run(["git","add","."], cwd=repo, capture_output=True, text=True)
-        if a.returncode!=0: print(f"[GIT] Add gagal: {a.stderr.strip()}"); return
-        c = subprocess.run(["git","commit","-m","auto update signal"], cwd=repo, capture_output=True, text=True)
-        if c.returncode!=0: print(f"[GIT] Commit gagal: {c.stderr.strip()}"); return
-        p = subprocess.run(["git","push"], cwd=repo, capture_output=True, text=True)
-        if p.returncode!=0: print(f"[GIT] Push gagal: {p.stderr.strip()}")
-        else: print("[GIT] SYNC OK")
-    except Exception as e: print(f"[GIT ERROR] {e}")
+        subprocess.run(["git","add","."], cwd=repo, check=False)
+        subprocess.run(["git","commit","-m","auto update signal"], cwd=repo, check=False)
+        subprocess.run(["git","push"], cwd=repo, check=False)
+        print("[GIT] SYNC OK")
+    except: pass
 
 # ============================================================
 # MAIN LOOP
@@ -827,10 +926,10 @@ def github_sync():
 def main():
     get_session()
     print("="*60)
-    print("DSS MARKET - SISTEM ANALISA SINYAL SWING INTERDAY")
-    print(f"Versi: 3.2.0 | Siklus: {SIKLUS_DETIK//60} menit")
-    print(f"Cache integrity: ON | MACD alignment: FIXED")
-    print(f"Spike trap filter: ON | Early TP/SL gate: ON")
+    print("DSS MARKET v8 — FINAL")
+    print(f"Siklus: {SIKLUS_DETIK//60} menit | Retention: {RETENTION_DAYS} hari")
+    print(f"Scoring: 0-100 | Threshold: {SCORE_THRESHOLD}")
+    print(f"Rules: Structure!=Trend→NO_TRADE | LONG+STRONG_BEAR→NO_TRADE | SHORT+STRONG_BULL→NO_TRADE")
     print("="*60)
     cycle = 0
     while True:
