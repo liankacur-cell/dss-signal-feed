@@ -1,7 +1,7 @@
 {
   "btc_context": "baik",
   "signal_count": 11,
-  "last_update": "2026-06-13 21:50:18",
+  "last_update": "2026-06-13 22:35:22",
   "signals": [
     {
       "symbol": "BTCUSDT",
@@ -55,7 +55,7 @@
       "symbol": "ZECUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "netral",
+      "momentum": "lemah_bullish",
       "volatility": "normal",
       "btc_context": "baik"
     },
