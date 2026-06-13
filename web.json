@@ -1,13 +1,13 @@
 {
   "btc_context": "baik",
-  "signal_count": 10,
-  "last_update": "2026-06-13 18:50:10",
+  "signal_count": 11,
+  "last_update": "2026-06-13 19:35:11",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
       "volatility": "rendah",
       "btc_context": "baik"
     },
@@ -15,7 +15,7 @@
       "symbol": "ETHUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "kuat_bullish",
+      "momentum": "lemah_bullish",
       "volatility": "rendah",
       "btc_context": "baik"
     },
@@ -46,7 +46,7 @@
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "trend": "bearish",
+      "trend": "bullish",
       "momentum": "lemah_bullish",
       "volatility": "normal",
       "btc_context": "baik"
@@ -55,20 +55,28 @@
       "symbol": "ZECUSDT",
       "signal": "LONG",
       "trend": "bullish",
-      "momentum": "netral",
+      "momentum": "lemah_bullish",
       "volatility": "normal",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "JCTUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
+      "btc_context": "baik"
+    },
+    {
+      "symbol": "RIFUSDT",
+      "signal": "LONG",
+      "trend": "bullish",
+      "momentum": "kuat_bullish",
+      "volatility": "tinggi",
       "btc_context": "baik"
     },
     {
       "symbol": "NOTUSDT",
-      "signal": "LONG",
-      "trend": "bullish",
-      "momentum": "kuat_bullish",
-      "volatility": "normal",
-      "btc_context": "baik"
-    },
-    {
-      "symbol": "GWEIUSDT",
       "signal": "LONG",
       "trend": "bullish",
       "momentum": "kuat_bullish",
