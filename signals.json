@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 3,
-  "last_update": "2026-06-14 01:21:32",
+  "last_update": "2026-06-14 02:39:09",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 410.63,
-      "stop_loss": 402.46,
-      "take_profit_1": 422.885,
-      "take_profit_2": 429.0125,
-      "risk_reward": 1.5,
-      "atr_15m": 4.084999999999992,
+      "entry": 413.72,
+      "stop_loss": 403.3223,
+      "take_profit_1": 425.4971,
+      "take_profit_2": 431.3856,
+      "risk_reward": 1.13,
+      "atr_15m": 3.9257142857142844,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 62.8,
+        "total_score": 63.6,
         "structure_score": 65,
         "trend_score": 92,
-        "momentum_score": 62.5,
+        "momentum_score": 67.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 62.5,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -60,18 +60,18 @@
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
-      "entry": 7.0684,
-      "stop_loss": 6.3344,
-      "take_profit_1": 8.1694,
-      "take_profit_2": 8.7199,
-      "risk_reward": 1.5,
-      "atr_15m": 0.36698571428571414,
+      "entry": 7.4187,
+      "stop_loss": 6.5457,
+      "take_profit_1": 8.426,
+      "take_profit_2": 8.9297,
+      "risk_reward": 1.15,
+      "atr_15m": 0.33576428571428557,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 62.8,
+        "total_score": 63.9,
         "structure_score": 75,
         "trend_score": 75,
-        "momentum_score": 25.0,
+        "momentum_score": 32.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +91,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 25.0,
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {
@@ -114,12 +114,12 @@
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
-      "entry": 0.13525,
-      "stop_loss": 0.0974,
-      "take_profit_1": 0.1817,
-      "take_profit_2": 0.2049,
-      "risk_reward": 1.23,
-      "atr_15m": 0.015469285714285715,
+      "entry": 0.10484,
+      "stop_loss": 0.0722,
+      "take_profit_1": 0.1539,
+      "take_profit_2": 0.1784,
+      "risk_reward": 1.5,
+      "atr_15m": 0.016342142857142857,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 62.8,
