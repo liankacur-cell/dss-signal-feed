@@ -1,34 +1,43 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 3,
-  "last_update": "2026-06-14 02:58:47",
+  "signal_count": 4,
+  "last_update": "2026-06-14 03:43:50",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 412.61,
-      "stop_loss": 403.417,
-      "take_profit_1": 423.44,
-      "take_profit_2": 428.855,
-      "risk_reward": 1.18
+      "entry": 409.17,
+      "stop_loss": 403.1157,
+      "take_profit_1": 418.2514,
+      "take_profit_2": 422.7921,
+      "risk_reward": 1.5
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "entry": 0.4677,
+      "stop_loss": 0.3407,
+      "take_profit_1": 0.6116,
+      "take_profit_2": 0.6836,
+      "risk_reward": 1.13
     },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
-      "entry": 7.2608,
-      "stop_loss": 6.6058,
-      "take_profit_1": 8.2434,
-      "take_profit_2": 8.7347,
-      "risk_reward": 1.5
+      "entry": 7.499,
+      "stop_loss": 6.6679,
+      "take_profit_1": 8.4579,
+      "take_profit_2": 8.9374,
+      "risk_reward": 1.15
     },
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
-      "entry": 0.1258,
-      "stop_loss": 0.0813,
-      "take_profit_1": 0.1772,
-      "take_profit_2": 0.2029,
-      "risk_reward": 1.16
+      "entry": 0.09358,
+      "stop_loss": 0.0522,
+      "take_profit_1": 0.1557,
+      "take_profit_2": 0.1868,
+      "risk_reward": 1.5
     }
   ]
 }
