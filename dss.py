@@ -7,15 +7,11 @@
 ║  Siklus: 45 menit (anti-drift)                          ║
 ║  Retention: 90 hari rolling                             ║
 ║                                                        ║
-║  PATCH STABILISASI (8 BUG FIXES):                      ║
-║  • Signal consistency (BULLISH→LONG, BEARISH→SHORT)    ║
-║  • Risk engine ATR return fix                          ║
-║  • ATR key usage fix                                   ║
-║  • Safe load JSON default type fix                     ║
-║  • Timestamp retention crash fix                       ║
-║  • Duplicate signal logic fix                          ║
-║  • Distribution strict pass-through                    ║
-║  • Emoji compatibility                                 ║
+║  PATCH STABILISASI LANJUTAN:                           ║
+║  • RR filter >= 1.10                                   ║
+║  • Git sync lock guard                                 ║
+║  • Telegram duplicate send guard                       ║
+║  • Output cleanliness                                  ║
 ╚══════════════════════════════════════════════════════════╝
 """
 
@@ -156,7 +152,7 @@ def calculate_macd(closes):
     return macd[-1], sig[-1], macd[-1]-sig[-1]
 
 # ============================================================
-# SAFE JSON & RETENTION (v3.2.0 + PATCH)
+# SAFE JSON & RETENTION
 # ============================================================
 def safe_load_json(path, default=None):
     if default is None: default = []
@@ -361,7 +357,6 @@ def scoring_engine(structure_data, trend_data, momentum_data,
 
     total = core + extras
 
-    # === ALIGNMENT BONUS/PENALTY (v7.5) ===
     s_dir = structure_data.get("direction", "netral")
     t_dir = trend_data.get("direction", "netral")
     m_dir = momentum_data.get("direction", "netral")
@@ -400,7 +395,7 @@ def scoring_engine(structure_data, trend_data, momentum_data,
     return "NO_TRADE", audit
 
 # ============================================================
-# LAYER 5: RISK ENGINE (PATCHED)
+# LAYER 5: RISK ENGINE (RR >= 1.10)
 # ============================================================
 def risk_engine(symbol, signal, candles_15m):
     if signal == "NO_TRADE": return None
@@ -432,7 +427,7 @@ def risk_engine(symbol, signal, candles_15m):
     risk = abs(entry - stop_loss)
     if risk <= 0 or risk < 1e-8: return None
     rr = round(abs(take_profit_1-entry)/risk, 2)
-    if rr < 1.50:
+    if rr < 1.10:
         print(f"[FILTER] RR rendah ({rr}) untuk {symbol}")
         return None
     return {
@@ -445,7 +440,7 @@ def risk_engine(symbol, signal, candles_15m):
     }
 
 # ============================================================
-# ANALISA PER PAIR (PATCHED)
+# ANALISA PER PAIR
 # ============================================================
 def analyze_pair(symbol, btc_regime=""):
     print(f"\n[ANALISA] {symbol}")
@@ -477,11 +472,8 @@ def analyze_pair(symbol, btc_regime=""):
 
     signal, audit = scoring_engine(struct, trend, momentum, vol_data, liq_data, flow_data, sqz_data)
 
-    # FIX: normalisasi output sistem
-    if signal == "BULLISH":
-        signal = "LONG"
-    elif signal == "BEARISH":
-        signal = "SHORT"
+    if signal == "BULLISH": signal = "LONG"
+    elif signal == "BEARISH": signal = "SHORT"
 
     print(f"  Total Score: {audit.get('total_score', 0)} | Gate: {audit.get('gate', '?')}")
     print(f"  Decision   : {signal}")
@@ -572,15 +564,34 @@ def run_analysis_engine(cycle_count):
         print(f"  Total sinyal valid: {len(signals)}")
         save_all_outputs(signals, btc_regime)
         save_signal_history(signals, btc_regime)
-        vip_distribution(signals, btc_regime)
-        free_distribution(signals, btc_regime)
+
+        # Distribusi dengan sent_lock
+        sent_lock = set()
+        if signals:
+            for s in signals:
+                key = f"{s['symbol']}_{s['signal']}"
+                if key in sent_lock: continue
+                sent_lock.add(key)
+
+                if not is_duplicate_signal(s['symbol'], s['signal']):
+                    send_to_telegram(TELEGRAM_VIP_ID, format_signal_vip(s))
+                    send_to_telegram(TELEGRAM_FREE_ID, format_signal_free(s))
+                    update_last_signal(s['symbol'], s['signal'])
+                    time.sleep(SEND_DELAY)
+
+        # Ringkasan
+        summary_free = format_summary(signals, btc_regime, "FREE")
+        summary_vip = format_summary(signals, btc_regime, "VIP")
+        send_to_telegram(TELEGRAM_FREE_ID, summary_free)
+        send_to_telegram(TELEGRAM_VIP_ID, summary_vip)
+
         print(f"\n[SIKLUS #{cycle_count}] Selesai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     finally:
         if ANALYSIS_LOCK.locked():
             ANALYSIS_LOCK.release()
 
 # ============================================================
-# LAYER 6: OUTPUT ENGINE (v3.2.0 + PATCH)
+# LAYER 6: OUTPUT ENGINE
 # ============================================================
 def save_all_outputs(signals, btc_regime):
     if signals is None: signals = []
@@ -613,7 +624,8 @@ def log_telegram_failed(chat_id, reason):
     except: pass
 
 def send_to_telegram(chat_id, message, parse_mode="HTML"):
-    if not message: return False
+    if not chat_id: return False
+    if not message or not message.strip(): return False
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {"chat_id": chat_id, "text": message, "parse_mode": parse_mode}
     for attempt in range(MAX_RETRIES):
@@ -640,7 +652,7 @@ def format_bias_emoji(signal):
     return "🟢" if signal=="LONG" else "🔴" if signal=="SHORT" else "⚪"
 
 def format_signal_free(signal_data):
-    signal = signal_data["signal"]  # DO NOT MODIFY
+    signal = signal_data["signal"]
     symbol = escape_html(signal_data["symbol"])
     emoji = format_bias_emoji(signal)
     return f"""<b>🔥 DSS MARKET ALERT</b>
@@ -658,7 +670,7 @@ def format_signal_free(signal_data):
 <b>🏷️ #DSS</b>  <b>#{symbol}</b>"""
 
 def format_signal_vip(signal_data):
-    signal = signal_data["signal"]  # DO NOT MODIFY
+    signal = signal_data["signal"]
     symbol = escape_html(signal_data["symbol"])
     entry = escape_html(signal_data["entry"]); sl = escape_html(signal_data["stop_loss"])
     tp1 = escape_html(signal_data["take_profit_1"]); tp2 = escape_html(signal_data["take_profit_2"])
@@ -697,7 +709,7 @@ def format_summary(signals, btc_regime, channel="FREE"):
 
 """
     for sig in signals:
-        signal = sig["signal"]  # DO NOT MODIFY
+        signal = sig["signal"]
         emoji = format_bias_emoji(signal)
         symbol = escape_html(sig["symbol"])
         s += f"{emoji} <b>{symbol}</b>: {signal}\n"
@@ -705,40 +717,26 @@ def format_summary(signals, btc_regime, channel="FREE"):
     s += f"\n🏷️ <b>{tag}</b>"
     return s
 
-def free_distribution(signals, btc_regime):
-    if signals is None: signals = []
-    summary = format_summary(signals, btc_regime, "FREE")
-    send_to_telegram(TELEGRAM_FREE_ID, summary)
-    if signals:
-        for s in signals:
-            if not is_duplicate_signal(s['symbol'], s['signal']):
-                send_to_telegram(TELEGRAM_FREE_ID, format_signal_free(s))
-                update_last_signal(s['symbol'], s['signal'])
-                time.sleep(SEND_DELAY)
-
-def vip_distribution(signals, btc_regime):
-    if signals is None: signals = []
-    summary = format_summary(signals, btc_regime, "VIP")
-    send_to_telegram(TELEGRAM_VIP_ID, summary)
-    if signals:
-        for s in signals:
-            if not is_duplicate_signal(s['symbol'], s['signal']):
-                send_to_telegram(TELEGRAM_VIP_ID, format_signal_vip(s))
-                update_last_signal(s['symbol'], s['signal'])
-                time.sleep(SEND_DELAY)
-
+# ============================================================
+# GITHUB SYNC (LOCK GUARD)
+# ============================================================
 def github_sync():
-    repo = GIT_REPO_PATH
-    if not os.path.exists(os.path.join(repo, ".git")):
-        print("[GIT] Repo tidak ditemukan"); return
+    if os.path.exists(".git_lock"): return
+    open(".git_lock", "w").close()
     try:
+        repo = GIT_REPO_PATH
+        if not os.path.exists(os.path.join(repo, ".git")):
+            print("[GIT] Repo tidak ditemukan"); return
         r = subprocess.run(["git","status","--porcelain"], cwd=repo, capture_output=True, text=True)
-        if not r.stdout.strip(): return
+        if not r.stdout.strip():
+            if os.path.exists(".git_lock"): os.remove(".git_lock")
+            return
         subprocess.run(["git","add","."], cwd=repo, check=False)
         subprocess.run(["git","commit","-m","auto update signal"], cwd=repo, check=False)
         subprocess.run(["git","push"], cwd=repo, check=False)
         print("[GIT] SYNC OK")
     except: pass
+    if os.path.exists(".git_lock"): os.remove(".git_lock")
 
 # ============================================================
 # MAIN LOOP
@@ -749,6 +747,7 @@ def main():
     print("DSS MARKET v8 — FULL v7.5 CLONE (TF BESAR)")
     print(f"Siklus: {SIKLUS_DETIK//60} menit | Retention: {RETENTION_DAYS} hari")
     print(f"7 Engines | Alignment: +5/-8 | Gate: >= {SCORE_GATE} | Threshold: {SCORE_THRESHOLD}")
+    print(f"RR Filter: >= 1.10 | Git Lock: ON | Duplicate Guard: ON")
     print("="*60)
     cycle = 0
     while True:

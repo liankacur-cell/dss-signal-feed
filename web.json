@@ -1,25 +1,34 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-06-14 01:05:48",
+  "signal_count": 3,
+  "last_update": "2026-06-14 01:21:32",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 410.34,
-      "stop_loss": 402.2243,
-      "take_profit_1": 422.5136,
-      "take_profit_2": 428.6004,
+      "entry": 410.63,
+      "stop_loss": 402.46,
+      "take_profit_1": 422.885,
+      "take_profit_2": 429.0125,
       "risk_reward": 1.5
     },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
-      "entry": 7.3929,
-      "stop_loss": 6.6321,
-      "take_profit_1": 8.534,
-      "take_profit_2": 9.1046,
+      "entry": 7.0684,
+      "stop_loss": 6.3344,
+      "take_profit_1": 8.1694,
+      "take_profit_2": 8.7199,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "ESPORTSUSDT",
+      "signal": "LONG",
+      "entry": 0.13525,
+      "stop_loss": 0.0974,
+      "take_profit_1": 0.1817,
+      "take_profit_2": 0.2049,
+      "risk_reward": 1.23
     }
   ]
 }
