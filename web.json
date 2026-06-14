@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-15 03:20:33",
+  "last_update": "2026-06-15 04:05:35",
   "signals": [
     {
       "symbol": "SIRENUSDT",
       "signal": "LONG",
-      "entry": 0.0436,
-      "stop_loss": 0.0362,
-      "take_profit_1": 0.0547,
-      "take_profit_2": 0.0602,
-      "risk_reward": 1.5
+      "entry": 0.0414,
+      "stop_loss": 0.035,
+      "take_profit_1": 0.0511,
+      "take_profit_2": 0.0559,
+      "risk_reward": 1.52
     },
     {
       "symbol": "WLDUSDT",
       "signal": "LONG",
-      "entry": 0.4986,
-      "stop_loss": 0.4879,
-      "take_profit_1": 0.5132,
-      "take_profit_2": 0.5205,
-      "risk_reward": 1.36
+      "entry": 0.5003,
+      "stop_loss": 0.488,
+      "take_profit_1": 0.5145,
+      "take_profit_2": 0.5216,
+      "risk_reward": 1.15
     }
   ]
 }

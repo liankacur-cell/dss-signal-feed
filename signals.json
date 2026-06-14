@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-15 03:20:33",
+  "last_update": "2026-06-15 04:05:35",
   "signals": [
     {
       "symbol": "SIRENUSDT",
       "signal": "LONG",
-      "entry": 0.0436,
-      "stop_loss": 0.0362,
-      "take_profit_1": 0.0547,
-      "take_profit_2": 0.0602,
-      "risk_reward": 1.5,
-      "atr_15m": 0.0036999999999999993,
+      "entry": 0.0414,
+      "stop_loss": 0.035,
+      "take_profit_1": 0.0511,
+      "take_profit_2": 0.0559,
+      "risk_reward": 1.52,
+      "atr_15m": 0.003221428571428571,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 64.8,
@@ -60,18 +60,18 @@
     {
       "symbol": "WLDUSDT",
       "signal": "LONG",
-      "entry": 0.4986,
-      "stop_loss": 0.4879,
-      "take_profit_1": 0.5132,
-      "take_profit_2": 0.5205,
-      "risk_reward": 1.36,
-      "atr_15m": 0.004857142857142861,
+      "entry": 0.5003,
+      "stop_loss": 0.488,
+      "take_profit_1": 0.5145,
+      "take_profit_2": 0.5216,
+      "risk_reward": 1.15,
+      "atr_15m": 0.004721428571428591,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 62.0,
+        "total_score": 63.1,
         "structure_score": 75,
         "trend_score": 71,
-        "momentum_score": 25.0,
+        "momentum_score": 32.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +91,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 25.0,
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {
