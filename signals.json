@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 1,
-  "last_update": "2026-06-15 00:20:24",
+  "last_update": "2026-06-15 01:05:25",
   "signals": [
     {
       "symbol": "SIRENUSDT",
       "signal": "LONG",
-      "entry": 0.0551,
-      "stop_loss": 0.0473,
-      "take_profit_1": 0.0667,
-      "take_profit_2": 0.0725,
-      "risk_reward": 1.49,
-      "atr_15m": 0.0038785714285714283,
+      "entry": 0.0557,
+      "stop_loss": 0.0475,
+      "take_profit_1": 0.068,
+      "take_profit_2": 0.0742,
+      "risk_reward": 1.5,
+      "atr_15m": 0.004107142857142859,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 64.8,

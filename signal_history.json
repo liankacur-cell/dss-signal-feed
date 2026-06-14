@@ -1,5 +1,66 @@
 [
   {
+    "timestamp": "2026-06-15 01:05:25",
+    "btc_context": "BTC: bearish/bullish",
+    "signal_count": 1,
+    "signals": [
+      {
+        "symbol": "SIRENUSDT",
+        "signal": "LONG",
+        "entry": 0.0557,
+        "stop_loss": 0.0475,
+        "take_profit_1": 0.068,
+        "take_profit_2": 0.0742,
+        "risk_reward": 1.5,
+        "atr_15m": 0.004107142857142859,
+        "btc_regime": "BTC: bearish/bullish",
+        "audit": {
+          "total_score": 64.8,
+          "structure_score": 75,
+          "trend_score": 98,
+          "momentum_score": 47.5,
+          "volatility_score": 80,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bullish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bullish",
+          "label": "HH-BIAS"
+        },
+        "trend": {
+          "score": 98,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 47.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 80,
+          "state": "expansion"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-15 00:20:24",
     "btc_context": "BTC: bearish/bullish",
     "signal_count": 1,
