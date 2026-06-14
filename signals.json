@@ -1,71 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-06-14 16:32:58",
+  "signal_count": 3,
+  "last_update": "2026-06-14 16:49:51",
   "signals": [
-    {
-      "symbol": "SOLUSDT",
-      "signal": "LONG",
-      "entry": 68.16,
-      "stop_loss": 67.8086,
-      "take_profit_1": 68.6743,
-      "take_profit_2": 68.9315,
-      "risk_reward": 1.46,
-      "atr_15m": 0.17142857142857082,
-      "btc_regime": "BTC: bearish/bullish",
-      "audit": {
-        "total_score": 63.0,
-        "structure_score": 65,
-        "trend_score": 92,
-        "momentum_score": 32.5,
-        "volatility_score": 65,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 65,
-        "direction": "bullish",
-        "label": "RANGE_BIAS"
-      },
-      "trend": {
-        "score": 92,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 32.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 65,
-        "state": "normal"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
     {
       "symbol": "HYPEUSDT",
       "signal": "LONG",
-      "entry": 60.02,
-      "stop_loss": 59.3434,
-      "take_profit_1": 61.0349,
-      "take_profit_2": 61.5423,
-      "risk_reward": 1.5,
-      "atr_15m": 0.3382857142857146,
+      "entry": 60.384,
+      "stop_loss": 59.4419,
+      "take_profit_1": 61.4711,
+      "take_profit_2": 62.0147,
+      "risk_reward": 1.15,
+      "atr_15m": 0.3623571428571434,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 62.6,
@@ -114,12 +60,12 @@
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
-      "entry": 0.06806,
-      "stop_loss": 0.0587,
-      "take_profit_1": 0.0808,
-      "take_profit_2": 0.0872,
-      "risk_reward": 1.36,
-      "atr_15m": 0.004257142857142859,
+      "entry": 0.06728,
+      "stop_loss": 0.0588,
+      "take_profit_1": 0.0791,
+      "take_profit_2": 0.085,
+      "risk_reward": 1.39,
+      "atr_15m": 0.00393,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 64.8,
@@ -168,12 +114,12 @@
     {
       "symbol": "HUSDT",
       "signal": "SHORT",
-      "entry": 0.55653,
-      "stop_loss": 0.6232,
-      "take_profit_1": 0.4566,
-      "take_profit_2": 0.4066,
+      "entry": 0.57093,
+      "stop_loss": 0.6354,
+      "take_profit_1": 0.4742,
+      "take_profit_2": 0.4258,
       "risk_reward": 1.5,
-      "atr_15m": 0.03331714285714287,
+      "atr_15m": 0.03222857142857145,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 63.0,
