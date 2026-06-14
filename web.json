@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-14 08:14:03",
+  "last_update": "2026-06-14 08:59:07",
   "signals": [
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
-      "entry": 0.3754,
-      "stop_loss": 0.3257,
-      "take_profit_1": 0.4499,
-      "take_profit_2": 0.4872,
+      "entry": 0.4052,
+      "stop_loss": 0.3554,
+      "take_profit_1": 0.4799,
+      "take_profit_2": 0.5172,
       "risk_reward": 1.5
     },
     {
       "symbol": "BEATUSDT",
       "signal": "LONG",
-      "entry": 7.3297,
-      "stop_loss": 6.7699,
-      "take_profit_1": 8.1309,
-      "take_profit_2": 8.5315,
-      "risk_reward": 1.43
+      "entry": 7.3504,
+      "stop_loss": 6.763,
+      "take_profit_1": 8.2203,
+      "take_profit_2": 8.6553,
+      "risk_reward": 1.48
     }
   ]
 }
