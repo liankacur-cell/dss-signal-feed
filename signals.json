@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-14 19:50:01",
+  "last_update": "2026-06-14 20:35:04",
   "signals": [
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
-      "entry": 0.4163,
-      "stop_loss": 0.3558,
-      "take_profit_1": 0.507,
-      "take_profit_2": 0.5524,
-      "risk_reward": 1.5,
-      "atr_15m": 0.03022857142857143,
+      "entry": 0.4234,
+      "stop_loss": 0.3635,
+      "take_profit_1": 0.5012,
+      "take_profit_2": 0.5401,
+      "risk_reward": 1.3,
+      "atr_15m": 0.025949999999999997,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 67.0,
+        "total_score": 67.8,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 62.5,
+        "momentum_score": 67.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 62.5,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -60,12 +60,12 @@
     {
       "symbol": "WLDUSDT",
       "signal": "LONG",
-      "entry": 0.4968,
-      "stop_loss": 0.487,
-      "take_profit_1": 0.5115,
-      "take_profit_2": 0.5188,
-      "risk_reward": 1.5,
-      "atr_15m": 0.004914285714285704,
+      "entry": 0.4971,
+      "stop_loss": 0.4875,
+      "take_profit_1": 0.5116,
+      "take_profit_2": 0.5189,
+      "risk_reward": 1.51,
+      "atr_15m": 0.004821428571428568,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 65.3,
