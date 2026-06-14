@@ -9,5 +9,17 @@
   "SUIUSDT_LONG": "LONG",
   "TAOUSDT_SHORT": "SHORT",
   "HYPEUSDT_LONG": "LONG",
-  "SOLUSDT_LONG": "LONG"
+  "SOLUSDT_LONG": "LONG",
+  "FREE": {
+    "SOLUSDT": "LONG",
+    "HYPEUSDT": "LONG",
+    "ESPORTSUSDT": "LONG",
+    "HUSDT": "SHORT"
+  },
+  "VIP": {
+    "SOLUSDT": "LONG",
+    "HYPEUSDT": "LONG",
+    "ESPORTSUSDT": "LONG",
+    "HUSDT": "SHORT"
+  }
 }
