@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 1,
-  "last_update": "2026-06-14 12:44:19",
+  "last_update": "2026-06-14 13:29:21",
   "signals": [
     {
-      "symbol": "WLDUSDT",
+      "symbol": "BEATUSDT",
       "signal": "LONG",
-      "entry": 0.4995,
-      "stop_loss": 0.4859,
-      "take_profit_1": 0.5152,
-      "take_profit_2": 0.5231,
-      "risk_reward": 1.15
+      "entry": 6.956,
+      "stop_loss": 6.3705,
+      "take_profit_1": 7.8343,
+      "take_profit_2": 8.2735,
+      "risk_reward": 1.5
     }
   ]
 }

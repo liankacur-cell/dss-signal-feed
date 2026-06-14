@@ -1,5 +1,66 @@
 [
   {
+    "timestamp": "2026-06-14 13:29:21",
+    "btc_context": "BTC: bearish/bullish",
+    "signal_count": 1,
+    "signals": [
+      {
+        "symbol": "BEATUSDT",
+        "signal": "LONG",
+        "entry": 6.956,
+        "stop_loss": 6.3705,
+        "take_profit_1": 7.8343,
+        "take_profit_2": 8.2735,
+        "risk_reward": 1.5,
+        "atr_15m": 0.29276428571428564,
+        "btc_regime": "BTC: bearish/bullish",
+        "audit": {
+          "total_score": 62.3,
+          "structure_score": 75,
+          "trend_score": 67,
+          "momentum_score": 32.5,
+          "volatility_score": 80,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bullish",
+          "trend_dir": "bullish",
+          "momentum_dir": "bearish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bullish",
+          "label": "HH-BIAS"
+        },
+        "trend": {
+          "score": 67,
+          "direction": "bullish"
+        },
+        "momentum": {
+          "score": 32.5,
+          "direction": "bearish"
+        },
+        "volatility": {
+          "score": 80,
+          "state": "expansion"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-14 12:44:19",
     "btc_context": "BTC: bearish/bullish",
     "signal_count": 1,
