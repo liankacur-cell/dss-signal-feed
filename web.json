@@ -1,25 +1,6 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-06-14 11:14:14",
-  "signals": [
-    {
-      "symbol": "TAOUSDT",
-      "signal": "SHORT",
-      "entry": 278.28,
-      "stop_loss": 286.8757,
-      "take_profit_1": 265.3864,
-      "take_profit_2": 258.9396,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "WLDUSDT",
-      "signal": "LONG",
-      "entry": 0.4978,
-      "stop_loss": 0.4865,
-      "take_profit_1": 0.5148,
-      "take_profit_2": 0.5233,
-      "risk_reward": 1.5
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-06-14 11:59:16",
+  "signals": []
 }
