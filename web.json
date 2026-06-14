@@ -1,43 +1,34 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-06-14 14:59:28",
+  "signal_count": 3,
+  "last_update": "2026-06-14 15:44:30",
   "signals": [
+    {
+      "symbol": "SOLUSDT",
+      "signal": "LONG",
+      "entry": 68.26,
+      "stop_loss": 67.8571,
+      "take_profit_1": 68.8643,
+      "take_profit_2": 69.1664,
+      "risk_reward": 1.5
+    },
     {
       "symbol": "HYPEUSDT",
       "signal": "LONG",
-      "entry": 60.078,
-      "stop_loss": 59.392,
-      "take_profit_1": 61.107,
-      "take_profit_2": 61.6215,
-      "risk_reward": 1.5
+      "entry": 60.072,
+      "stop_loss": 59.1642,
+      "take_profit_1": 61.1194,
+      "take_profit_2": 61.6431,
+      "risk_reward": 1.15
     },
     {
       "symbol": "ESPORTSUSDT",
       "signal": "LONG",
-      "entry": 0.06606,
-      "stop_loss": 0.0548,
-      "take_profit_1": 0.083,
-      "take_profit_2": 0.0915,
+      "entry": 0.06767,
+      "stop_loss": 0.0571,
+      "take_profit_1": 0.0835,
+      "take_profit_2": 0.0914,
       "risk_reward": 1.5
-    },
-    {
-      "symbol": "BEATUSDT",
-      "signal": "LONG",
-      "entry": 7.1465,
-      "stop_loss": 6.377,
-      "take_profit_1": 8.0343,
-      "take_profit_2": 8.4782,
-      "risk_reward": 1.15
-    },
-    {
-      "symbol": "WLDUSDT",
-      "signal": "LONG",
-      "entry": 0.5042,
-      "stop_loss": 0.487,
-      "take_profit_1": 0.5273,
-      "take_profit_2": 0.5389,
-      "risk_reward": 1.34
     }
   ]
 }
