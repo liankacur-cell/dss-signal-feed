@@ -1,43 +1,25 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-06-14 18:19:56",
+  "signal_count": 2,
+  "last_update": "2026-06-14 19:04:58",
   "signals": [
-    {
-      "symbol": "HYPEUSDT",
-      "signal": "LONG",
-      "entry": 60.577,
-      "stop_loss": 59.5266,
-      "take_profit_1": 61.8308,
-      "take_profit_2": 62.4577,
-      "risk_reward": 1.19
-    },
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
-      "entry": 0.423,
-      "stop_loss": 0.3351,
-      "take_profit_1": 0.5548,
-      "take_profit_2": 0.6207,
-      "risk_reward": 1.5
+      "entry": 0.4316,
+      "stop_loss": 0.3392,
+      "take_profit_1": 0.5382,
+      "take_profit_2": 0.5915,
+      "risk_reward": 1.15
     },
     {
       "symbol": "HUSDT",
       "signal": "SHORT",
-      "entry": 0.57001,
-      "stop_loss": 0.6315,
-      "take_profit_1": 0.4777,
-      "take_profit_2": 0.4315,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "WLDUSDT",
-      "signal": "LONG",
-      "entry": 0.4962,
-      "stop_loss": 0.4851,
-      "take_profit_1": 0.5128,
-      "take_profit_2": 0.5211,
-      "risk_reward": 1.5
+      "entry": 0.55756,
+      "stop_loss": 0.6176,
+      "take_profit_1": 0.4768,
+      "take_profit_2": 0.4364,
+      "risk_reward": 1.35
     }
   ]
 }
