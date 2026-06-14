@@ -1,24 +1,24 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-15 05:35:41",
+  "last_update": "2026-06-15 06:20:42",
   "signals": [
     {
-      "symbol": "TAOUSDT",
+      "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 274.33,
-      "stop_loss": 280.6857,
-      "take_profit_1": 264.7964,
-      "take_profit_2": 260.0296,
+      "entry": 63.643,
+      "stop_loss": 65.044,
+      "take_profit_1": 61.5415,
+      "take_profit_2": 60.4907,
       "risk_reward": 1.5
     },
     {
-      "symbol": "SIRENUSDT",
-      "signal": "LONG",
-      "entry": 0.0433,
-      "stop_loss": 0.0344,
-      "take_profit_1": 0.0535,
-      "take_profit_2": 0.0586,
+      "symbol": "TAOUSDT",
+      "signal": "SHORT",
+      "entry": 271.64,
+      "stop_loss": 280.3537,
+      "take_profit_1": 261.5857,
+      "take_profit_2": 256.5585,
       "risk_reward": 1.15
     }
   ]
