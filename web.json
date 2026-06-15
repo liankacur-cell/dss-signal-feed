@@ -1,25 +1,43 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-06-16 04:08:34",
+  "signal_count": 4,
+  "last_update": "2026-06-16 04:53:37",
   "signals": [
     {
       "symbol": "SUIUSDT",
       "signal": "LONG",
       "entry": 0.7991,
-      "stop_loss": 0.7869,
-      "take_profit_1": 0.8132,
-      "take_profit_2": 0.8203,
-      "risk_reward": 1.16
+      "stop_loss": 0.787,
+      "take_profit_1": 0.8126,
+      "take_profit_2": 0.8194,
+      "risk_reward": 1.12
+    },
+    {
+      "symbol": "UNIUSDT",
+      "signal": "SHORT",
+      "entry": 2.776,
+      "stop_loss": 2.8186,
+      "take_profit_1": 2.7121,
+      "take_profit_2": 2.6802,
+      "risk_reward": 1.5
     },
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 193.62,
-      "stop_loss": 200.6757,
-      "take_profit_1": 183.0364,
-      "take_profit_2": 177.7446,
+      "entry": 196.86,
+      "stop_loss": 203.1486,
+      "take_profit_1": 187.4271,
+      "take_profit_2": 182.7106,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "signal": "SHORT",
+      "entry": 67.984,
+      "stop_loss": 68.8827,
+      "take_profit_1": 66.7272,
+      "take_profit_2": 66.0988,
+      "risk_reward": 1.4
     }
   ]
 }
