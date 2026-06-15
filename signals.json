@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-15 06:20:42",
+  "last_update": "2026-06-15 07:05:46",
   "signals": [
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 63.643,
-      "stop_loss": 65.044,
-      "take_profit_1": 61.5415,
-      "take_profit_2": 60.4907,
-      "risk_reward": 1.5,
-      "atr_15m": 0.7004999999999997,
+      "entry": 63.559,
+      "stop_loss": 65.429,
+      "take_profit_1": 61.4014,
+      "take_profit_2": 60.3226,
+      "risk_reward": 1.15,
+      "atr_15m": 0.7192142857142854,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 62.3,
@@ -60,18 +60,18 @@
     {
       "symbol": "TAOUSDT",
       "signal": "SHORT",
-      "entry": 271.64,
-      "stop_loss": 280.3537,
-      "take_profit_1": 261.5857,
-      "take_profit_2": 256.5585,
-      "risk_reward": 1.15,
-      "atr_15m": 3.3514285714285728,
+      "entry": 268.02,
+      "stop_loss": 277.4424,
+      "take_profit_1": 257.3957,
+      "take_profit_2": 252.0835,
+      "risk_reward": 1.13,
+      "atr_15m": 3.5414285714285705,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 63.3,
+        "total_score": 62.5,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 37.5,
+        "momentum_score": 32.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +91,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 37.5,
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {
