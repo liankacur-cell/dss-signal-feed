@@ -1,15 +1,15 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 1,
-  "last_update": "2026-06-15 15:22:43",
+  "last_update": "2026-06-15 16:07:46",
   "signals": [
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 65.577,
-      "stop_loss": 66.4103,
-      "take_profit_1": 64.3271,
-      "take_profit_2": 63.7022,
+      "entry": 65.878,
+      "stop_loss": 66.7006,
+      "take_profit_1": 64.6441,
+      "take_profit_2": 64.0271,
       "risk_reward": 1.5
     }
   ]
