@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 1,
-  "last_update": "2026-06-16 02:38:29",
+  "last_update": "2026-06-16 03:23:31",
   "signals": [
     {
-      "symbol": "WLDUSDT",
-      "signal": "LONG",
-      "entry": 0.5847,
-      "stop_loss": 0.5637,
-      "take_profit_1": 0.6079,
-      "take_profit_2": 0.6195,
-      "risk_reward": 1.1
+      "symbol": "SPCXUSDT",
+      "signal": "SHORT",
+      "entry": 192.44,
+      "stop_loss": 200.0214,
+      "take_profit_1": 181.0679,
+      "take_profit_2": 175.3819,
+      "risk_reward": 1.5
     }
   ]
 }
