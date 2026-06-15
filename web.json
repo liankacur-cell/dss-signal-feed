@@ -1,6 +1,16 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-06-15 13:51:10",
-  "signals": []
+  "signal_count": 1,
+  "last_update": "2026-06-15 14:37:41",
+  "signals": [
+    {
+      "symbol": "HUSDT",
+      "signal": "SHORT",
+      "entry": 0.43136,
+      "stop_loss": 0.488,
+      "take_profit_1": 0.3463,
+      "take_profit_2": 0.3038,
+      "risk_reward": 1.5
+    }
+  ]
 }
