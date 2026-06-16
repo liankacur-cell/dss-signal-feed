@@ -1,71 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 3,
-  "last_update": "2026-06-17 00:25:10",
+  "signal_count": 2,
+  "last_update": "2026-06-17 01:09:54",
   "signals": [
-    {
-      "symbol": "SOLUSDT",
-      "signal": "LONG",
-      "entry": 73.3,
-      "stop_loss": 72.1458,
-      "take_profit_1": 74.7421,
-      "take_profit_2": 75.4631,
-      "risk_reward": 1.25,
-      "atr_15m": 0.480714285714285,
-      "btc_regime": "BTC: bearish/bullish",
-      "audit": {
-        "total_score": 64.6,
-        "structure_score": 75,
-        "trend_score": 85,
-        "momentum_score": 32.5,
-        "volatility_score": 65,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bullish",
-        "label": "HH-BIAS"
-      },
-      "trend": {
-        "score": 85,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 32.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 65,
-        "state": "normal"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
-      "entry": 3.139,
-      "stop_loss": 3.2453,
-      "take_profit_1": 2.9796,
-      "take_profit_2": 2.8999,
+      "entry": 3.208,
+      "stop_loss": 3.3159,
+      "take_profit_1": 3.0462,
+      "take_profit_2": 2.9653,
       "risk_reward": 1.5,
-      "atr_15m": 0.053142857142857124,
+      "atr_15m": 0.05392857142857142,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 63.0,
@@ -112,20 +58,20 @@
       }
     },
     {
-      "symbol": "SPCXUSDT",
+      "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 213.25,
-      "stop_loss": 227.3717,
-      "take_profit_1": 196.9557,
-      "take_profit_2": 188.8086,
-      "risk_reward": 1.15,
-      "atr_15m": 5.431428571428573,
+      "entry": 74.666,
+      "stop_loss": 77.2826,
+      "take_profit_1": 71.7496,
+      "take_profit_2": 70.2914,
+      "risk_reward": 1.11,
+      "atr_15m": 0.9721428571428591,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 62.5,
+        "total_score": 64.4,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 32.5,
+        "momentum_score": 45.0,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -145,7 +91,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 32.5,
+        "score": 45.0,
         "direction": "bearish"
       },
       "volatility": {
