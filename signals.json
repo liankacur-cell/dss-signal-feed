@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 2,
-  "last_update": "2026-06-16 15:24:17",
+  "last_update": "2026-06-16 16:09:19",
   "signals": [
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
-      "entry": 3.013,
-      "stop_loss": 3.095,
-      "take_profit_1": 2.89,
-      "take_profit_2": 2.8285,
+      "entry": 2.984,
+      "stop_loss": 3.0729,
+      "take_profit_1": 2.8507,
+      "take_profit_2": 2.784,
       "risk_reward": 1.5,
-      "atr_15m": 0.04099999999999999,
+      "atr_15m": 0.04442857142857142,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 64.8,
+        "total_score": 63.0,
         "structure_score": 75,
         "trend_score": 98,
         "momentum_score": 82.5,
         "volatility_score": 80,
-        "liquidity_score": 80,
+        "liquidity_score": 60,
         "money_flow_score": 55,
         "squeeze_score": 40,
         "structure_dir": "bearish",
@@ -45,8 +45,8 @@
         "state": "expansion"
       },
       "liquidity": {
-        "score": 80,
-        "state": "sell_liquidity_sweep"
+        "score": 60,
+        "state": "neutral"
       },
       "money_flow": {
         "score": 55,
@@ -60,20 +60,20 @@
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 72.724,
-      "stop_loss": 74.2336,
-      "take_profit_1": 70.4596,
-      "take_profit_2": 69.3274,
+      "entry": 73.333,
+      "stop_loss": 74.7814,
+      "take_profit_1": 71.1604,
+      "take_profit_2": 70.0741,
       "risk_reward": 1.5,
-      "atr_15m": 0.7547857142857127,
+      "atr_15m": 0.7242142857142844,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 64.8,
+        "total_score": 63.0,
         "structure_score": 75,
         "trend_score": 98,
         "momentum_score": 82.5,
         "volatility_score": 80,
-        "liquidity_score": 80,
+        "liquidity_score": 60,
         "money_flow_score": 55,
         "squeeze_score": 40,
         "structure_dir": "bearish",
@@ -99,8 +99,8 @@
         "state": "expansion"
       },
       "liquidity": {
-        "score": 80,
-        "state": "sell_liquidity_sweep"
+        "score": 60,
+        "state": "neutral"
       },
       "money_flow": {
         "score": 55,
