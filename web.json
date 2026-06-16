@@ -1,52 +1,34 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 5,
-  "last_update": "2026-06-16 11:39:03",
+  "signal_count": 3,
+  "last_update": "2026-06-16 12:24:05",
   "signals": [
-    {
-      "symbol": "SOLUSDT",
-      "signal": "LONG",
-      "entry": 73.3,
-      "stop_loss": 72.5943,
-      "take_profit_1": 74.3586,
-      "take_profit_2": 74.8879,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "ZECUSDT",
-      "signal": "LONG",
-      "entry": 522.55,
-      "stop_loss": 505.2755,
-      "take_profit_1": 542.995,
-      "take_profit_2": 553.2175,
-      "risk_reward": 1.18
-    },
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 69.352,
-      "stop_loss": 70.6261,
-      "take_profit_1": 67.4408,
-      "take_profit_2": 66.4852,
+      "entry": 71.833,
+      "stop_loss": 73.4266,
+      "take_profit_1": 69.4426,
+      "take_profit_2": 68.2474,
       "risk_reward": 1.5
-    },
-    {
-      "symbol": "XRPUSDT",
-      "signal": "LONG",
-      "entry": 1.2231,
-      "stop_loss": 1.2119,
-      "take_profit_1": 1.238,
-      "take_profit_2": 1.2454,
-      "risk_reward": 1.33
     },
     {
       "symbol": "EVAAUSDT",
       "signal": "LONG",
-      "entry": 1.0357,
-      "stop_loss": 0.9163,
-      "take_profit_1": 1.2148,
-      "take_profit_2": 1.3044,
+      "entry": 0.8145,
+      "stop_loss": 0.6737,
+      "take_profit_1": 1.0256,
+      "take_profit_2": 1.1312,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "WLDUSDT",
+      "signal": "LONG",
+      "entry": 0.5814,
+      "stop_loss": 0.5644,
+      "take_profit_1": 0.6068,
+      "take_profit_2": 0.6195,
+      "risk_reward": 1.49
     }
   ]
 }
