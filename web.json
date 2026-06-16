@@ -1,70 +1,52 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 7,
-  "last_update": "2026-06-16 22:54:44",
+  "signal_count": 5,
+  "last_update": "2026-06-16 23:39:49",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 73.33,
-      "stop_loss": 72.1117,
-      "take_profit_1": 75.1129,
-      "take_profit_2": 76.0043,
+      "entry": 73.19,
+      "stop_loss": 72.1359,
+      "take_profit_1": 74.7307,
+      "take_profit_2": 75.501,
       "risk_reward": 1.46
     },
     {
       "symbol": "UNIUSDT",
       "signal": "SHORT",
-      "entry": 3.042,
-      "stop_loss": 3.1401,
-      "take_profit_1": 2.8948,
-      "take_profit_2": 2.8212,
-      "risk_reward": 1.5
+      "entry": 3.061,
+      "stop_loss": 3.1781,
+      "take_profit_1": 2.9101,
+      "take_profit_2": 2.8346,
+      "risk_reward": 1.29
     },
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 210.97,
-      "stop_loss": 227.6394,
-      "take_profit_1": 190.7757,
-      "take_profit_2": 180.6786,
-      "risk_reward": 1.21
+      "entry": 215.39,
+      "stop_loss": 229.09,
+      "take_profit_1": 194.84,
+      "take_profit_2": 184.565,
+      "risk_reward": 1.5
     },
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 74.474,
-      "stop_loss": 77.3106,
-      "take_profit_1": 71.2779,
-      "take_profit_2": 69.6799,
-      "risk_reward": 1.13
-    },
-    {
-      "symbol": "XRPUSDT",
-      "signal": "LONG",
-      "entry": 1.2121,
-      "stop_loss": 1.1953,
-      "take_profit_1": 1.2372,
-      "take_profit_2": 1.2498,
-      "risk_reward": 1.49
+      "entry": 74.609,
+      "stop_loss": 77.3005,
+      "take_profit_1": 71.5143,
+      "take_profit_2": 69.967,
+      "risk_reward": 1.15
     },
     {
       "symbol": "MUUSDT",
       "signal": "LONG",
-      "entry": 1041.5,
-      "stop_loss": 1005.3671,
-      "take_profit_1": 1095.6993,
-      "take_profit_2": 1122.7989,
+      "entry": 1043.39,
+      "stop_loss": 1006.2114,
+      "take_profit_1": 1099.1579,
+      "take_profit_2": 1127.0418,
       "risk_reward": 1.5
-    },
-    {
-      "symbol": "XAGUSDT",
-      "signal": "LONG",
-      "entry": 70.12,
-      "stop_loss": 69.1561,
-      "take_profit_1": 71.2321,
-      "take_profit_2": 71.7882,
-      "risk_reward": 1.15
     }
   ]
 }
