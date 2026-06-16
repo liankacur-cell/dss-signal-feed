@@ -1,34 +1,25 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 3,
-  "last_update": "2026-06-16 12:24:05",
+  "signal_count": 2,
+  "last_update": "2026-06-16 13:09:08",
   "signals": [
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 71.833,
-      "stop_loss": 73.4266,
-      "take_profit_1": 69.4426,
-      "take_profit_2": 68.2474,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "EVAAUSDT",
-      "signal": "LONG",
-      "entry": 0.8145,
-      "stop_loss": 0.6737,
-      "take_profit_1": 1.0256,
-      "take_profit_2": 1.1312,
+      "entry": 72.121,
+      "stop_loss": 73.801,
+      "take_profit_1": 69.601,
+      "take_profit_2": 68.341,
       "risk_reward": 1.5
     },
     {
       "symbol": "WLDUSDT",
       "signal": "LONG",
-      "entry": 0.5814,
-      "stop_loss": 0.5644,
-      "take_profit_1": 0.6068,
-      "take_profit_2": 0.6195,
-      "risk_reward": 1.49
+      "entry": 0.5859,
+      "stop_loss": 0.5652,
+      "take_profit_1": 0.6098,
+      "take_profit_2": 0.6218,
+      "risk_reward": 1.15
     }
   ]
 }
