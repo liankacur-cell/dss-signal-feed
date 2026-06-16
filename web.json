@@ -1,52 +1,34 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 5,
-  "last_update": "2026-06-16 10:08:57",
+  "signal_count": 3,
+  "last_update": "2026-06-16 10:54:00",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 72.9,
-      "stop_loss": 72.1743,
-      "take_profit_1": 73.9886,
-      "take_profit_2": 74.5329,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "ZECUSDT",
-      "signal": "LONG",
-      "entry": 516.89,
-      "stop_loss": 505.8766,
-      "take_profit_1": 531.3243,
-      "take_profit_2": 538.5414,
-      "risk_reward": 1.31
-    },
-    {
-      "symbol": "SPCXUSDT",
-      "signal": "SHORT",
-      "entry": 213.02,
-      "stop_loss": 229.8692,
-      "take_profit_1": 194.3279,
-      "take_profit_2": 184.9819,
-      "risk_reward": 1.11
+      "entry": 73.65,
+      "stop_loss": 72.6143,
+      "take_profit_1": 74.8071,
+      "take_profit_2": 75.3856,
+      "risk_reward": 1.12
     },
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 67.976,
-      "stop_loss": 69.0416,
-      "take_profit_1": 66.3776,
-      "take_profit_2": 65.5784,
+      "entry": 69.496,
+      "stop_loss": 70.7517,
+      "take_profit_1": 67.6124,
+      "take_profit_2": 66.6706,
       "risk_reward": 1.5
     },
     {
       "symbol": "XRPUSDT",
       "signal": "LONG",
-      "entry": 1.218,
-      "stop_loss": 1.2071,
-      "take_profit_1": 1.2344,
-      "take_profit_2": 1.2426,
-      "risk_reward": 1.5
+      "entry": 1.2266,
+      "stop_loss": 1.2117,
+      "take_profit_1": 1.2433,
+      "take_profit_2": 1.2517,
+      "risk_reward": 1.12
     }
   ]
 }
