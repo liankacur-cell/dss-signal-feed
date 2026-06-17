@@ -1,71 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 3,
-  "last_update": "2026-06-17 18:42:37",
+  "signal_count": 2,
+  "last_update": "2026-06-17 19:27:39",
   "signals": [
-    {
-      "symbol": "ZECUSDT",
-      "signal": "LONG",
-      "entry": 497.19,
-      "stop_loss": 487.5743,
-      "take_profit_1": 511.6136,
-      "take_profit_2": 518.8254,
-      "risk_reward": 1.5,
-      "atr_15m": 4.807857142857147,
-      "btc_regime": "BTC: bearish/bullish",
-      "audit": {
-        "total_score": 63.9,
-        "structure_score": 75,
-        "trend_score": 75,
-        "momentum_score": 32.5,
-        "volatility_score": 80,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bullish",
-        "label": "HH-BIAS"
-      },
-      "trend": {
-        "score": 75,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 32.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 80,
-        "state": "expansion"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
     {
       "symbol": "WLDUSDT",
       "signal": "LONG",
-      "entry": 0.6568,
-      "stop_loss": 0.632,
-      "take_profit_1": 0.6855,
-      "take_profit_2": 0.6998,
-      "risk_reward": 1.16,
-      "atr_15m": 0.00955714285714286,
+      "entry": 0.6542,
+      "stop_loss": 0.6371,
+      "take_profit_1": 0.6791,
+      "take_profit_2": 0.6916,
+      "risk_reward": 1.46,
+      "atr_15m": 0.008285714285714294,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 68.5,
@@ -114,18 +60,18 @@
     {
       "symbol": "CLUSDT",
       "signal": "SHORT",
-      "entry": 76.03,
-      "stop_loss": 76.8243,
-      "take_profit_1": 74.8386,
-      "take_profit_2": 74.2429,
+      "entry": 75.95,
+      "stop_loss": 76.7314,
+      "take_profit_1": 74.7779,
+      "take_profit_2": 74.1919,
       "risk_reward": 1.5,
-      "atr_15m": 0.3971428571428573,
+      "atr_15m": 0.3907142857142856,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
-        "total_score": 72.5,
+        "total_score": 71.7,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 67.5,
+        "momentum_score": 62.5,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -145,7 +91,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 67.5,
+        "score": 62.5,
         "direction": "bullish"
       },
       "volatility": {
