@@ -1,43 +1,34 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-06-18 01:28:02",
+  "signal_count": 3,
+  "last_update": "2026-06-18 02:13:05",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 73.04,
-      "stop_loss": 71.3525,
-      "take_profit_1": 74.915,
-      "take_profit_2": 75.8525,
-      "risk_reward": 1.11
+      "entry": 73.14,
+      "stop_loss": 71.3137,
+      "take_profit_1": 75.4029,
+      "take_profit_2": 76.5344,
+      "risk_reward": 1.24
     },
     {
       "symbol": "SUIUSDT",
       "signal": "LONG",
-      "entry": 0.7899,
-      "stop_loss": 0.7748,
-      "take_profit_1": 0.8125,
-      "take_profit_2": 0.8238,
+      "entry": 0.7934,
+      "stop_loss": 0.7752,
+      "take_profit_1": 0.8207,
+      "take_profit_2": 0.8343,
       "risk_reward": 1.5
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.08656,
-      "stop_loss": 0.0879,
-      "take_profit_1": 0.0849,
-      "take_profit_2": 0.0841,
-      "risk_reward": 1.24
-    },
-    {
-      "symbol": "WLDUSDT",
-      "signal": "LONG",
-      "entry": 0.6572,
-      "stop_loss": 0.6352,
-      "take_profit_1": 0.6902,
-      "take_profit_2": 0.7067,
-      "risk_reward": 1.5
+      "entry": 0.08671,
+      "stop_loss": 0.0884,
+      "take_profit_1": 0.0847,
+      "take_profit_2": 0.0837,
+      "risk_reward": 1.19
     }
   ]
 }
