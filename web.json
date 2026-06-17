@@ -1,25 +1,16 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 2,
-  "last_update": "2026-06-18 03:43:11",
+  "signal_count": 1,
+  "last_update": "2026-06-18 04:28:13",
   "signals": [
-    {
-      "symbol": "MUUSDT",
-      "signal": "LONG",
-      "entry": 1058.95,
-      "stop_loss": 1008.3221,
-      "take_profit_1": 1115.7293,
-      "take_profit_2": 1144.119,
-      "risk_reward": 1.12
-    },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 240.98,
-      "stop_loss": 262.5439,
-      "take_profit_1": 216.9414,
-      "take_profit_2": 204.9221,
-      "risk_reward": 1.11
+      "entry": 241.63,
+      "stop_loss": 262.432,
+      "take_profit_1": 218.71,
+      "take_profit_2": 207.25,
+      "risk_reward": 1.1
     }
   ]
 }
