@@ -1,52 +1,70 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 5,
-  "last_update": "2026-06-27 21:58:31",
+  "signal_count": 7,
+  "last_update": "2026-06-27 22:43:34",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "entry": 1593.21,
-      "stop_loss": 1601.3129,
-      "take_profit_1": 1581.0557,
-      "take_profit_2": 1574.9785,
+      "entry": 1605.65,
+      "stop_loss": 1616.9371,
+      "take_profit_1": 1588.7193,
+      "take_profit_2": 1580.2539,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "entry": 0.7112,
+      "stop_loss": 0.7184,
+      "take_profit_1": 0.701,
+      "take_profit_2": 0.6959,
+      "risk_reward": 1.42
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07589,
-      "stop_loss": 0.0763,
-      "take_profit_1": 0.0753,
-      "take_profit_2": 0.075,
-      "risk_reward": 1.44
+      "entry": 0.07624,
+      "stop_loss": 0.0767,
+      "take_profit_1": 0.0756,
+      "take_profit_2": 0.0753,
+      "risk_reward": 1.39
+    },
+    {
+      "symbol": "ZECUSDT",
+      "signal": "SHORT",
+      "entry": 412.7,
+      "stop_loss": 418.7986,
+      "take_profit_1": 404.5143,
+      "take_profit_2": 400.4214,
+      "risk_reward": 1.34
     },
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 154.53,
-      "stop_loss": 155.102,
-      "take_profit_1": 153.87,
-      "take_profit_2": 153.54,
-      "risk_reward": 1.15
+      "entry": 154.72,
+      "stop_loss": 155.1929,
+      "take_profit_1": 154.0107,
+      "take_profit_2": 153.6561,
+      "risk_reward": 1.5
     },
     {
       "symbol": "AGLDUSDT",
       "signal": "SHORT",
-      "entry": 0.2248,
-      "stop_loss": 0.2467,
-      "take_profit_1": 0.2002,
-      "take_profit_2": 0.1879,
-      "risk_reward": 1.12
+      "entry": 0.2285,
+      "stop_loss": 0.2477,
+      "take_profit_1": 0.1997,
+      "take_profit_2": 0.1853,
+      "risk_reward": 1.5
     },
     {
-      "symbol": "SNDKUSDT",
-      "signal": "LONG",
-      "entry": 2101.06,
-      "stop_loss": 2088.7097,
-      "take_profit_1": 2116.4629,
-      "take_profit_2": 2124.1644,
-      "risk_reward": 1.25
+      "symbol": "SOXLUSDT",
+      "signal": "SHORT",
+      "entry": 214.4,
+      "stop_loss": 215.6929,
+      "take_profit_1": 212.4607,
+      "take_profit_2": 211.4911,
+      "risk_reward": 1.5
     }
   ]
 }
