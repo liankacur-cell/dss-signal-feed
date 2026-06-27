@@ -1,15 +1,15 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 1,
-  "last_update": "2026-06-28 06:14:00",
+  "last_update": "2026-06-28 06:59:03",
   "signals": [
     {
       "symbol": "REUSDT",
       "signal": "SHORT",
-      "entry": 0.6721,
-      "stop_loss": 0.6985,
-      "take_profit_1": 0.6325,
-      "take_profit_2": 0.6127,
+      "entry": 0.6894,
+      "stop_loss": 0.7163,
+      "take_profit_1": 0.6491,
+      "take_profit_2": 0.629,
       "risk_reward": 1.5
     }
   ]
