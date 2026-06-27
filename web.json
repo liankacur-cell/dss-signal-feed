@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 1,
-  "last_update": "2026-06-28 04:43:54",
+  "last_update": "2026-06-28 05:28:57",
   "signals": [
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
       "entry": 2.929,
-      "stop_loss": 2.8986,
-      "take_profit_1": 2.9727,
-      "take_profit_2": 2.9946,
-      "risk_reward": 1.44
+      "stop_loss": 2.8893,
+      "take_profit_1": 2.9749,
+      "take_profit_2": 2.9978,
+      "risk_reward": 1.16
     }
   ]
 }
