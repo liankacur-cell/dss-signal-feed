@@ -1,24 +1,15 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 2,
-  "last_update": "2026-06-28 00:58:42",
+  "signal_count": 1,
+  "last_update": "2026-06-28 01:43:44",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 72.14,
-      "stop_loss": 71.3966,
-      "take_profit_1": 73.0743,
-      "take_profit_2": 73.5414,
-      "risk_reward": 1.26
-    },
-    {
-      "symbol": "SOXLUSDT",
-      "signal": "SHORT",
-      "entry": 214.8,
-      "stop_loss": 216.6014,
-      "take_profit_1": 212.0979,
-      "take_profit_2": 210.7468,
+      "entry": 71.9,
+      "stop_loss": 71.3,
+      "take_profit_1": 72.8,
+      "take_profit_2": 73.25,
       "risk_reward": 1.5
     }
   ]
