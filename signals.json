@@ -1,22 +1,22 @@
 {
-  "btc_context": "BTC: bullish/bearish",
+  "btc_context": "BTC: bearish/bearish",
   "signal_count": 2,
-  "last_update": "2026-06-28 02:28:46",
+  "last_update": "2026-06-28 03:13:49",
   "signals": [
     {
-      "symbol": "SOLUSDT",
+      "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 71.26,
-      "stop_loss": 70.6043,
-      "take_profit_1": 72.2436,
-      "take_profit_2": 72.7354,
-      "risk_reward": 1.5,
-      "atr_15m": 0.3278571428571441,
-      "btc_regime": "BTC: bullish/bearish",
+      "entry": 2.945,
+      "stop_loss": 2.8964,
+      "take_profit_1": 3.0108,
+      "take_profit_2": 3.0437,
+      "risk_reward": 1.35,
+      "atr_15m": 0.021928571428571457,
+      "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 65.3,
+        "total_score": 65.5,
         "structure_score": 75,
-        "trend_score": 82,
+        "trend_score": 83,
         "momentum_score": 32.5,
         "volatility_score": 80,
         "liquidity_score": 60,
@@ -33,7 +33,7 @@
         "label": "HH-BIAS"
       },
       "trend": {
-        "score": 82,
+        "score": 83,
         "direction": "bullish"
       },
       "momentum": {
@@ -58,27 +58,27 @@
       }
     },
     {
-      "symbol": "UNIUSDT",
+      "symbol": "AAVEUSDT",
       "signal": "LONG",
-      "entry": 2.95,
-      "stop_loss": 2.8961,
-      "take_profit_1": 3.0194,
-      "take_profit_2": 3.0541,
-      "risk_reward": 1.29,
-      "atr_15m": 0.023142857142857163,
-      "btc_regime": "BTC: bullish/bearish",
+      "entry": 93.71,
+      "stop_loss": 92.2,
+      "take_profit_1": 95.975,
+      "take_profit_2": 97.1075,
+      "risk_reward": 1.5,
+      "atr_15m": 0.7550000000000026,
+      "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 77.8,
+        "total_score": 68.5,
         "structure_score": 75,
-        "trend_score": 83,
-        "momentum_score": 67.5,
+        "trend_score": 98,
+        "momentum_score": 32.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
         "squeeze_score": 40,
         "structure_dir": "bullish",
         "trend_dir": "bullish",
-        "momentum_dir": "bullish",
+        "momentum_dir": "bearish",
         "gate": "PASS"
       },
       "structure": {
@@ -87,12 +87,12 @@
         "label": "HH-BIAS"
       },
       "trend": {
-        "score": 83,
+        "score": 98,
         "direction": "bullish"
       },
       "momentum": {
-        "score": 67.5,
-        "direction": "bullish"
+        "score": 32.5,
+        "direction": "bearish"
       },
       "volatility": {
         "score": 80,
