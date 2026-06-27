@@ -1,34 +1,52 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 3,
-  "last_update": "2026-06-27 21:13:29",
+  "signal_count": 5,
+  "last_update": "2026-06-27 21:58:31",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "entry": 1593.39,
-      "stop_loss": 1600.5143,
-      "take_profit_1": 1582.7036,
-      "take_profit_2": 1577.3604,
+      "entry": 1593.21,
+      "stop_loss": 1601.3129,
+      "take_profit_1": 1581.0557,
+      "take_profit_2": 1574.9785,
       "risk_reward": 1.5
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07584,
-      "stop_loss": 0.0762,
+      "entry": 0.07589,
+      "stop_loss": 0.0763,
       "take_profit_1": 0.0753,
       "take_profit_2": 0.075,
-      "risk_reward": 1.5
+      "risk_reward": 1.44
     },
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 154.72,
-      "stop_loss": 155.1529,
-      "take_profit_1": 154.0707,
-      "take_profit_2": 153.746,
-      "risk_reward": 1.5
+      "entry": 154.53,
+      "stop_loss": 155.102,
+      "take_profit_1": 153.87,
+      "take_profit_2": 153.54,
+      "risk_reward": 1.15
+    },
+    {
+      "symbol": "AGLDUSDT",
+      "signal": "SHORT",
+      "entry": 0.2248,
+      "stop_loss": 0.2467,
+      "take_profit_1": 0.2002,
+      "take_profit_2": 0.1879,
+      "risk_reward": 1.12
+    },
+    {
+      "symbol": "SNDKUSDT",
+      "signal": "LONG",
+      "entry": 2101.06,
+      "stop_loss": 2088.7097,
+      "take_profit_1": 2116.4629,
+      "take_profit_2": 2124.1644,
+      "risk_reward": 1.25
     }
   ]
 }
