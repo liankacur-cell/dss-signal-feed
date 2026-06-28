@@ -1,25 +1,16 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 2,
-  "last_update": "2026-06-29 01:00:09",
+  "signal_count": 1,
+  "last_update": "2026-06-29 01:45:10",
   "signals": [
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "entry": 0.6834,
-      "stop_loss": 0.6924,
-      "take_profit_1": 0.6731,
-      "take_profit_2": 0.668,
-      "risk_reward": 1.14
-    },
     {
       "symbol": "MANTAUSDT",
       "signal": "LONG",
-      "entry": 0.09509,
-      "stop_loss": 0.0739,
-      "take_profit_1": 0.1269,
-      "take_profit_2": 0.1428,
-      "risk_reward": 1.5
+      "entry": 0.09755,
+      "stop_loss": 0.0744,
+      "take_profit_1": 0.1243,
+      "take_profit_2": 0.1377,
+      "risk_reward": 1.16
     }
   ]
 }
