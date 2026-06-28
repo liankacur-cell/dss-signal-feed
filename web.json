@@ -1,43 +1,43 @@
 {
   "btc_context": "BTC: bullish/bearish",
   "signal_count": 4,
-  "last_update": "2026-06-28 18:59:47",
+  "last_update": "2026-06-28 19:44:49",
   "signals": [
     {
       "symbol": "SUIUSDT",
       "signal": "SHORT",
-      "entry": 0.6877,
-      "stop_loss": 0.6942,
-      "take_profit_1": 0.678,
-      "take_profit_2": 0.6732,
-      "risk_reward": 1.49
+      "entry": 0.6867,
+      "stop_loss": 0.6931,
+      "take_profit_1": 0.6772,
+      "take_profit_2": 0.6724,
+      "risk_reward": 1.48
     },
     {
       "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 16.318,
-      "stop_loss": 15.6427,
-      "take_profit_1": 17.3309,
-      "take_profit_2": 17.8374,
-      "risk_reward": 1.5
+      "entry": 16.735,
+      "stop_loss": 15.7704,
+      "take_profit_1": 17.848,
+      "take_profit_2": 18.4045,
+      "risk_reward": 1.15
     },
     {
       "symbol": "SLXUSDT",
       "signal": "LONG",
-      "entry": 0.5211,
-      "stop_loss": 0.4539,
-      "take_profit_1": 0.6086,
-      "take_profit_2": 0.6523,
-      "risk_reward": 1.3
+      "entry": 0.52906,
+      "stop_loss": 0.4534,
+      "take_profit_1": 0.622,
+      "take_profit_2": 0.6685,
+      "risk_reward": 1.23
     },
     {
       "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 1.052,
-      "stop_loss": 1.0597,
-      "take_profit_1": 1.0404,
-      "take_profit_2": 1.0346,
-      "risk_reward": 1.51
+      "entry": 1.0507,
+      "stop_loss": 1.0594,
+      "take_profit_1": 1.0395,
+      "take_profit_2": 1.0339,
+      "risk_reward": 1.29
     }
   ]
 }
