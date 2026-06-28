@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 1,
-  "last_update": "2026-06-29 04:45:22",
+  "last_update": "2026-06-29 05:30:25",
   "signals": [
     {
       "symbol": "MANTAUSDT",
       "signal": "LONG",
-      "entry": 0.09207,
-      "stop_loss": 0.0866,
-      "take_profit_1": 0.1002,
-      "take_profit_2": 0.1043,
-      "risk_reward": 1.49
+      "entry": 0.09213,
+      "stop_loss": 0.0875,
+      "take_profit_1": 0.0991,
+      "take_profit_2": 0.1026,
+      "risk_reward": 1.51
     }
   ]
 }
