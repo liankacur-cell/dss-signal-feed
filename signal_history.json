@@ -1,5 +1,66 @@
 [
   {
+    "timestamp": "2026-06-29 02:30:13",
+    "btc_context": "BTC: bearish/bearish",
+    "signal_count": 1,
+    "signals": [
+      {
+        "symbol": "MANTAUSDT",
+        "signal": "LONG",
+        "entry": 0.09698,
+        "stop_loss": 0.0826,
+        "take_profit_1": 0.1186,
+        "take_profit_2": 0.1294,
+        "risk_reward": 1.5,
+        "atr_15m": 0.007208571428571427,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 64.7,
+          "structure_score": 65,
+          "trend_score": 90,
+          "momentum_score": 37.5,
+          "volatility_score": 80,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bullish",
+          "trend_dir": "bullish",
+          "momentum_dir": "bearish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 65,
+          "direction": "bullish",
+          "label": "RANGE_BIAS"
+        },
+        "trend": {
+          "score": 90,
+          "direction": "bullish"
+        },
+        "momentum": {
+          "score": 37.5,
+          "direction": "bearish"
+        },
+        "volatility": {
+          "score": 80,
+          "state": "expansion"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-29 01:45:10",
     "btc_context": "BTC: bearish/bearish",
     "signal_count": 1,
