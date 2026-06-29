@@ -1,61 +1,52 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 6,
-  "last_update": "2026-06-29 11:30:44",
+  "signal_count": 5,
+  "last_update": "2026-06-29 12:15:47",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 59879.1,
-      "stop_loss": 60471.2429,
-      "take_profit_1": 58990.8857,
-      "take_profit_2": 58546.7786,
-      "risk_reward": 1.5
+      "entry": 59587.4,
+      "stop_loss": 60309.0871,
+      "take_profit_1": 58690.5286,
+      "take_profit_2": 58242.0929,
+      "risk_reward": 1.24
     },
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "entry": 1580.86,
-      "stop_loss": 1599.4257,
-      "take_profit_1": 1553.0114,
-      "take_profit_2": 1539.0871,
-      "risk_reward": 1.5
+      "entry": 1567.74,
+      "stop_loss": 1591.6836,
+      "take_profit_1": 1540.1036,
+      "take_profit_2": 1526.2854,
+      "risk_reward": 1.15
     },
     {
       "symbol": "SUIUSDT",
       "signal": "SHORT",
-      "entry": 0.6879,
-      "stop_loss": 0.6972,
-      "take_profit_1": 0.674,
-      "take_profit_2": 0.6671,
-      "risk_reward": 1.49
+      "entry": 0.6827,
+      "stop_loss": 0.6957,
+      "take_profit_1": 0.6679,
+      "take_profit_2": 0.6605,
+      "risk_reward": 1.14
     },
     {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "entry": 0.07282,
-      "stop_loss": 0.0739,
-      "take_profit_1": 0.0715,
-      "take_profit_2": 0.0708,
-      "risk_reward": 1.22
+      "symbol": "UNIUSDT",
+      "signal": "LONG",
+      "entry": 2.922,
+      "stop_loss": 2.8543,
+      "take_profit_1": 2.9991,
+      "take_profit_2": 3.0376,
+      "risk_reward": 1.14
     },
     {
       "symbol": "VELVETUSDT",
       "signal": "LONG",
-      "entry": 1.839,
-      "stop_loss": 1.6256,
-      "take_profit_1": 2.1591,
-      "take_profit_2": 2.3192,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "HYPEUSDT",
-      "signal": "SHORT",
-      "entry": 62.432,
-      "stop_loss": 63.3681,
-      "take_profit_1": 61.0278,
-      "take_profit_2": 60.3257,
-      "risk_reward": 1.5
+      "entry": 1.6994,
+      "stop_loss": 1.3175,
+      "take_profit_1": 2.1263,
+      "take_profit_2": 2.3397,
+      "risk_reward": 1.12
     }
   ]
 }
