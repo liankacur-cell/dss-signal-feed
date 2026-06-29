@@ -1,6 +1,34 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 0,
-  "last_update": "2026-06-29 16:00:59",
-  "signals": []
+  "signal_count": 3,
+  "last_update": "2026-06-29 16:46:02",
+  "signals": [
+    {
+      "symbol": "BTCUSDT",
+      "signal": "SHORT",
+      "entry": 59988.4,
+      "stop_loss": 60372.325,
+      "take_profit_1": 59515.15,
+      "take_profit_2": 59278.525,
+      "risk_reward": 1.23
+    },
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "entry": 0.6906,
+      "stop_loss": 0.6988,
+      "take_profit_1": 0.6796,
+      "take_profit_2": 0.6741,
+      "risk_reward": 1.34
+    },
+    {
+      "symbol": "ZECUSDT",
+      "signal": "SHORT",
+      "entry": 385.02,
+      "stop_loss": 389.5614,
+      "take_profit_1": 378.2079,
+      "take_profit_2": 374.8019,
+      "risk_reward": 1.5
+    }
+  ]
 }
