@@ -1,34 +1,43 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 3,
-  "last_update": "2026-06-29 07:45:32",
+  "signal_count": 4,
+  "last_update": "2026-06-29 08:30:35",
   "signals": [
+    {
+      "symbol": "ETHUSDT",
+      "signal": "SHORT",
+      "entry": 1560.1,
+      "stop_loss": 1588.9111,
+      "take_profit_1": 1527.6893,
+      "take_profit_2": 1511.484,
+      "risk_reward": 1.12
+    },
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "entry": 0.6773,
+      "stop_loss": 0.6919,
+      "take_profit_1": 0.6612,
+      "take_profit_2": 0.6532,
+      "risk_reward": 1.1
+    },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 2.913,
-      "stop_loss": 2.8434,
-      "take_profit_1": 2.9934,
-      "take_profit_2": 3.0336,
-      "risk_reward": 1.16
+      "entry": 2.908,
+      "stop_loss": 2.8543,
+      "take_profit_1": 2.9854,
+      "take_profit_2": 3.0241,
+      "risk_reward": 1.44
     },
     {
       "symbol": "MANTAUSDT",
       "signal": "LONG",
-      "entry": 0.08672,
-      "stop_loss": 0.0826,
-      "take_profit_1": 0.0929,
-      "take_profit_2": 0.096,
+      "entry": 0.08532,
+      "stop_loss": 0.0814,
+      "take_profit_1": 0.0912,
+      "take_profit_2": 0.0941,
       "risk_reward": 1.5
-    },
-    {
-      "symbol": "XRPUSDT",
-      "signal": "SHORT",
-      "entry": 1.0411,
-      "stop_loss": 1.0591,
-      "take_profit_1": 1.0205,
-      "take_profit_2": 1.0102,
-      "risk_reward": 1.14
     }
   ]
 }
