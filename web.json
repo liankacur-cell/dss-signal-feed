@@ -1,78 +1,51 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 8,
-  "last_update": "2026-06-29 22:46:28",
+  "signal_count": 5,
+  "last_update": "2026-06-29 23:31:31",
   "signals": [
-    {
-      "symbol": "BTCUSDT",
-      "signal": "SHORT",
-      "entry": 59796.5,
-      "stop_loss": 60883.4021,
-      "take_profit_1": 58545.4786,
-      "take_profit_2": 57919.9679,
-      "risk_reward": 1.15
-    },
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "entry": 1576.88,
-      "stop_loss": 1601.4814,
-      "take_profit_1": 1539.9779,
-      "take_profit_2": 1521.5269,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "SOLUSDT",
-      "signal": "SHORT",
-      "entry": 73.88,
-      "stop_loss": 75.6814,
-      "take_profit_1": 71.1779,
-      "take_profit_2": 69.8268,
-      "risk_reward": 1.5
+      "entry": 1575.45,
+      "stop_loss": 1600.3032,
+      "take_profit_1": 1542.4179,
+      "take_profit_2": 1525.9018,
+      "risk_reward": 1.33
     },
     {
       "symbol": "SUIUSDT",
       "signal": "SHORT",
-      "entry": 0.6934,
-      "stop_loss": 0.7059,
-      "take_profit_1": 0.6747,
-      "take_profit_2": 0.6653,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "entry": 0.07282,
-      "stop_loss": 0.074,
-      "take_profit_1": 0.0711,
-      "take_profit_2": 0.0702,
-      "risk_reward": 1.46
+      "entry": 0.6904,
+      "stop_loss": 0.705,
+      "take_profit_1": 0.6736,
+      "take_profit_2": 0.6652,
+      "risk_reward": 1.15
     },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 2.964,
-      "stop_loss": 2.8938,
-      "take_profit_1": 3.0561,
-      "take_profit_2": 3.1021,
-      "risk_reward": 1.31
+      "entry": 2.938,
+      "stop_loss": 2.88,
+      "take_profit_1": 3.025,
+      "take_profit_2": 3.0685,
+      "risk_reward": 1.5
     },
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 389.92,
-      "stop_loss": 399.2757,
-      "take_profit_1": 375.8864,
-      "take_profit_2": 368.8696,
-      "risk_reward": 1.5
+      "entry": 386.26,
+      "stop_loss": 397.31,
+      "take_profit_1": 373.51,
+      "take_profit_2": 367.135,
+      "risk_reward": 1.15
     },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 224.34,
-      "stop_loss": 237.8786,
-      "take_profit_1": 204.0321,
-      "take_profit_2": 193.8782,
+      "entry": 230.25,
+      "stop_loss": 243.9229,
+      "take_profit_1": 209.7407,
+      "take_profit_2": 199.4861,
       "risk_reward": 1.5
     }
   ]
