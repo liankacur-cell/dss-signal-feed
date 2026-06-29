@@ -1,61 +1,43 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 6,
-  "last_update": "2026-06-30 02:31:41",
+  "signal_count": 4,
+  "last_update": "2026-06-30 03:16:45",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 60427.1,
-      "stop_loss": 60908.0714,
-      "take_profit_1": 59705.6429,
-      "take_profit_2": 59344.9143,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "ETHUSDT",
-      "signal": "SHORT",
-      "entry": 1624.8,
-      "stop_loss": 1644.7586,
-      "take_profit_1": 1594.8621,
-      "take_profit_2": 1579.8932,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "SOLUSDT",
-      "signal": "SHORT",
-      "entry": 76.02,
-      "stop_loss": 77.4357,
-      "take_profit_1": 73.8964,
-      "take_profit_2": 72.8346,
+      "entry": 60407.9,
+      "stop_loss": 60854.5429,
+      "take_profit_1": 59737.9357,
+      "take_profit_2": 59402.9536,
       "risk_reward": 1.5
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07403,
-      "stop_loss": 0.0748,
+      "entry": 0.07381,
+      "stop_loss": 0.0745,
       "take_profit_1": 0.0728,
-      "take_profit_2": 0.0722,
-      "risk_reward": 1.6
+      "take_profit_2": 0.0723,
+      "risk_reward": 1.46
     },
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 408.72,
-      "stop_loss": 417.1,
-      "take_profit_1": 396.15,
-      "take_profit_2": 389.865,
+      "entry": 407.15,
+      "stop_loss": 415.4457,
+      "take_profit_1": 394.7064,
+      "take_profit_2": 388.4846,
       "risk_reward": 1.5
     },
     {
-      "symbol": "SOXLUSDT",
+      "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 234.91,
-      "stop_loss": 240.8543,
-      "take_profit_1": 225.9936,
-      "take_profit_2": 221.5354,
-      "risk_reward": 1.5
+      "entry": 66.721,
+      "stop_loss": 68.2936,
+      "take_profit_1": 64.9064,
+      "take_profit_2": 63.9991,
+      "risk_reward": 1.15
     }
   ]
 }
