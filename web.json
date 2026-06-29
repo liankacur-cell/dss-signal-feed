@@ -1,70 +1,79 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 7,
-  "last_update": "2026-06-29 13:00:49",
+  "signal_count": 8,
+  "last_update": "2026-06-29 13:45:51",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 60123.1,
-      "stop_loss": 60590.1286,
-      "take_profit_1": 59422.5571,
-      "take_profit_2": 59072.2856,
-      "risk_reward": 1.5
+      "entry": 60055.1,
+      "stop_loss": 60601.88,
+      "take_profit_1": 59424.2,
+      "take_profit_2": 59108.75,
+      "risk_reward": 1.15
     },
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "entry": 1584.16,
-      "stop_loss": 1598.48,
-      "take_profit_1": 1562.68,
-      "take_profit_2": 1551.94,
+      "entry": 1581.14,
+      "stop_loss": 1594.4457,
+      "take_profit_1": 1561.1814,
+      "take_profit_2": 1551.2021,
       "risk_reward": 1.5
     },
     {
       "symbol": "SUIUSDT",
       "signal": "SHORT",
-      "entry": 0.6883,
-      "stop_loss": 0.6964,
-      "take_profit_1": 0.6762,
-      "take_profit_2": 0.6702,
-      "risk_reward": 1.49
+      "entry": 0.6914,
+      "stop_loss": 0.7013,
+      "take_profit_1": 0.68,
+      "take_profit_2": 0.6743,
+      "risk_reward": 1.15
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07311,
-      "stop_loss": 0.0738,
-      "take_profit_1": 0.072,
+      "entry": 0.073,
+      "stop_loss": 0.0739,
+      "take_profit_1": 0.0719,
       "take_profit_2": 0.0714,
-      "risk_reward": 1.61
+      "risk_reward": 1.22
     },
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 383.03,
-      "stop_loss": 391.0581,
-      "take_profit_1": 373.4493,
-      "take_profit_2": 368.659,
-      "risk_reward": 1.19
+      "entry": 382.73,
+      "stop_loss": 389.157,
+      "take_profit_1": 374.36,
+      "take_profit_2": 370.175,
+      "risk_reward": 1.3
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "signal": "LONG",
+      "entry": 1.6638,
+      "stop_loss": 1.3215,
+      "take_profit_1": 2.0509,
+      "take_profit_2": 2.2445,
+      "risk_reward": 1.13
     },
     {
       "symbol": "HYPEUSDT",
       "signal": "SHORT",
-      "entry": 62.952,
-      "stop_loss": 63.796,
-      "take_profit_1": 61.686,
-      "take_profit_2": 61.053,
-      "risk_reward": 1.5
+      "entry": 62.78,
+      "stop_loss": 63.8614,
+      "take_profit_1": 61.5322,
+      "take_profit_2": 60.9083,
+      "risk_reward": 1.15
     },
     {
-      "symbol": "ACTUSDT",
+      "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 0.01299,
-      "stop_loss": 0.0141,
-      "take_profit_1": 0.0114,
-      "take_profit_2": 0.0106,
-      "risk_reward": 1.43
+      "entry": 1.0482,
+      "stop_loss": 1.0606,
+      "take_profit_1": 1.0339,
+      "take_profit_2": 1.0268,
+      "risk_reward": 1.15
     }
   ]
 }
