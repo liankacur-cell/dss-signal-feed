@@ -1,125 +1,17 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 5,
-  "last_update": "2026-06-29 07:00:29",
+  "signal_count": 3,
+  "last_update": "2026-06-29 07:45:32",
   "signals": [
-    {
-      "symbol": "ETHUSDT",
-      "signal": "SHORT",
-      "entry": 1568.17,
-      "stop_loss": 1591.6313,
-      "take_profit_1": 1541.0993,
-      "take_profit_2": 1527.564,
-      "risk_reward": 1.15,
-      "atr_15m": 9.023571428571406,
-      "btc_regime": "BTC: bearish/bearish",
-      "audit": {
-        "total_score": 69.6,
-        "structure_score": 75,
-        "trend_score": 86,
-        "momentum_score": 32.5,
-        "volatility_score": 40,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bearish",
-        "trend_dir": "bearish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bearish",
-        "label": "LL-BIAS"
-      },
-      "trend": {
-        "score": 86,
-        "direction": "bearish"
-      },
-      "momentum": {
-        "score": 32.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 40,
-        "state": "squeeze"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "entry": 0.07304,
-      "stop_loss": 0.0741,
-      "take_profit_1": 0.0718,
-      "take_profit_2": 0.0712,
-      "risk_reward": 1.17,
-      "atr_15m": 0.00040642857142856947,
-      "btc_regime": "BTC: bearish/bearish",
-      "audit": {
-        "total_score": 68.3,
-        "structure_score": 75,
-        "trend_score": 92,
-        "momentum_score": 62.5,
-        "volatility_score": 40,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bearish",
-        "trend_dir": "bearish",
-        "momentum_dir": "bullish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bearish",
-        "label": "LL-BIAS"
-      },
-      "trend": {
-        "score": 92,
-        "direction": "bearish"
-      },
-      "momentum": {
-        "score": 62.5,
-        "direction": "bullish"
-      },
-      "volatility": {
-        "score": 40,
-        "state": "squeeze"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
       "entry": 2.913,
-      "stop_loss": 2.8554,
-      "take_profit_1": 2.9794,
-      "take_profit_2": 3.0126,
-      "risk_reward": 1.15,
-      "atr_15m": 0.02214285714285718,
+      "stop_loss": 2.8434,
+      "take_profit_1": 2.9934,
+      "take_profit_2": 3.0336,
+      "risk_reward": 1.16,
+      "atr_15m": 0.02678571428571432,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 62.9,
@@ -168,12 +60,12 @@
     {
       "symbol": "MANTAUSDT",
       "signal": "LONG",
-      "entry": 0.08659,
-      "stop_loss": 0.0822,
-      "take_profit_1": 0.0932,
-      "take_profit_2": 0.0965,
-      "risk_reward": 1.51,
-      "atr_15m": 0.002217142857142856,
+      "entry": 0.08672,
+      "stop_loss": 0.0826,
+      "take_profit_1": 0.0929,
+      "take_profit_2": 0.096,
+      "risk_reward": 1.5,
+      "atr_15m": 0.0020664285714285693,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 63.9,
@@ -222,12 +114,12 @@
     {
       "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 1.0458,
-      "stop_loss": 1.0602,
-      "take_profit_1": 1.0292,
-      "take_profit_2": 1.0209,
-      "risk_reward": 1.15,
-      "atr_15m": 0.005521428571428566,
+      "entry": 1.0411,
+      "stop_loss": 1.0591,
+      "take_profit_1": 1.0205,
+      "take_profit_2": 1.0102,
+      "risk_reward": 1.14,
+      "atr_15m": 0.006850000000000007,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 69.6,
