@@ -1,5 +1,336 @@
 [
   {
+    "timestamp": "2026-06-30 02:31:41",
+    "btc_context": "BTC: bearish/bearish",
+    "signal_count": 6,
+    "signals": [
+      {
+        "symbol": "BTCUSDT",
+        "signal": "SHORT",
+        "entry": 60427.1,
+        "stop_loss": 60908.0714,
+        "take_profit_1": 59705.6429,
+        "take_profit_2": 59344.9143,
+        "risk_reward": 1.5,
+        "atr_15m": 240.48571428571398,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 64.0,
+          "structure_score": 75,
+          "trend_score": 58,
+          "momentum_score": 67.5,
+          "volatility_score": 40,
+          "liquidity_score": 80,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 58,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 67.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 40,
+          "state": "squeeze"
+        },
+        "liquidity": {
+          "score": 80,
+          "state": "sell_liquidity_sweep"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "ETHUSDT",
+        "signal": "SHORT",
+        "entry": 1624.8,
+        "stop_loss": 1644.7586,
+        "take_profit_1": 1594.8621,
+        "take_profit_2": 1579.8932,
+        "risk_reward": 1.5,
+        "atr_15m": 9.979285714285734,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 67.9,
+          "structure_score": 75,
+          "trend_score": 55,
+          "momentum_score": 82.5,
+          "volatility_score": 65,
+          "liquidity_score": 80,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 55,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 82.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 65,
+          "state": "normal"
+        },
+        "liquidity": {
+          "score": 80,
+          "state": "sell_liquidity_sweep"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "SOLUSDT",
+        "signal": "SHORT",
+        "entry": 76.02,
+        "stop_loss": 77.4357,
+        "take_profit_1": 73.8964,
+        "take_profit_2": 72.8346,
+        "risk_reward": 1.5,
+        "atr_15m": 0.7078571428571406,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 62.3,
+          "structure_score": 75,
+          "trend_score": 92,
+          "momentum_score": 82.5,
+          "volatility_score": 65,
+          "liquidity_score": 80,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bullish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 92,
+          "direction": "bullish"
+        },
+        "momentum": {
+          "score": 82.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 65,
+          "state": "normal"
+        },
+        "liquidity": {
+          "score": 80,
+          "state": "sell_liquidity_sweep"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "signal": "SHORT",
+        "entry": 0.07403,
+        "stop_loss": 0.0748,
+        "take_profit_1": 0.0728,
+        "take_profit_2": 0.0722,
+        "risk_reward": 1.6,
+        "atr_15m": 0.00039785714285714224,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 67.4,
+          "structure_score": 75,
+          "trend_score": 67,
+          "momentum_score": 75.0,
+          "volatility_score": 65,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 67,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 75.0,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 65,
+          "state": "normal"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "ZECUSDT",
+        "signal": "SHORT",
+        "entry": 408.72,
+        "stop_loss": 417.1,
+        "take_profit_1": 396.15,
+        "take_profit_2": 389.865,
+        "risk_reward": 1.5,
+        "atr_15m": 4.190000000000006,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 69.8,
+          "structure_score": 75,
+          "trend_score": 67,
+          "momentum_score": 82.5,
+          "volatility_score": 80,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 67,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 82.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 80,
+          "state": "expansion"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "SOXLUSDT",
+        "signal": "SHORT",
+        "entry": 234.91,
+        "stop_loss": 240.8543,
+        "take_profit_1": 225.9936,
+        "take_profit_2": 221.5354,
+        "risk_reward": 1.5,
+        "atr_15m": 2.972142857142856,
+        "btc_regime": "BTC: bearish/bearish",
+        "audit": {
+          "total_score": 66.9,
+          "structure_score": 75,
+          "trend_score": 58,
+          "momentum_score": 75.0,
+          "volatility_score": 80,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 58,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 75.0,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 80,
+          "state": "expansion"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-30 01:46:39",
     "btc_context": "BTC: bearish/bearish",
     "signal_count": 5,
