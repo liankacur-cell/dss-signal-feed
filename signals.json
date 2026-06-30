@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 2,
-  "last_update": "2026-06-30 13:02:22",
+  "last_update": "2026-06-30 13:47:24",
   "signals": [
     {
-      "symbol": "MUUSDT",
+      "symbol": "XAUUSDT",
       "signal": "SHORT",
-      "entry": 1158.58,
-      "stop_loss": 1171.13,
-      "take_profit_1": 1139.755,
-      "take_profit_2": 1130.3425,
+      "entry": 4033.78,
+      "stop_loss": 4055.5971,
+      "take_profit_1": 4001.0543,
+      "take_profit_2": 3984.6914,
       "risk_reward": 1.5,
-      "atr_15m": 6.274999999999977,
+      "atr_15m": 10.90857142857135,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 66.8,
+        "total_score": 65.3,
         "structure_score": 75,
-        "trend_score": 55,
-        "momentum_score": 75.0,
-        "volatility_score": 65,
-        "liquidity_score": 80,
+        "trend_score": 73,
+        "momentum_score": 67.5,
+        "volatility_score": 40,
+        "liquidity_score": 60,
         "money_flow_score": 55,
         "squeeze_score": 40,
         "structure_dir": "bearish",
@@ -33,20 +33,20 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 55,
+        "score": 73,
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
-        "score": 65,
-        "state": "normal"
+        "score": 40,
+        "state": "squeeze"
       },
       "liquidity": {
-        "score": 80,
-        "state": "sell_liquidity_sweep"
+        "score": 60,
+        "state": "neutral"
       },
       "money_flow": {
         "score": 55,
@@ -60,18 +60,18 @@
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 2104.67,
-      "stop_loss": 2128.9829,
-      "take_profit_1": 2068.2007,
-      "take_profit_2": 2049.966,
-      "risk_reward": 1.5,
-      "atr_15m": 12.156428571428576,
+      "entry": 2100.73,
+      "stop_loss": 2126.8255,
+      "take_profit_1": 2061.775,
+      "take_profit_2": 2042.2975,
+      "risk_reward": 1.49,
+      "atr_15m": 12.984999999999998,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 67.3,
+        "total_score": 66.2,
         "structure_score": 75,
         "trend_score": 61,
-        "momentum_score": 82.5,
+        "momentum_score": 75.0,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +91,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 82.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
