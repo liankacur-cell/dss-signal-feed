@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 1,
-  "last_update": "2026-06-30 14:32:28",
+  "last_update": "2026-06-30 15:17:31",
   "signals": [
     {
       "symbol": "XAUUSDT",
       "signal": "SHORT",
-      "entry": 4029.21,
-      "stop_loss": 4051.4243,
-      "take_profit_1": 3995.8886,
-      "take_profit_2": 3979.2279,
-      "risk_reward": 1.5
+      "entry": 4025.74,
+      "stop_loss": 4053.7383,
+      "take_profit_1": 3993.4343,
+      "take_profit_2": 3977.2814,
+      "risk_reward": 1.15
     }
   ]
 }
