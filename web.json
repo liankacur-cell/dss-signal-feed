@@ -1,6 +1,25 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 0,
-  "last_update": "2026-06-30 09:17:08",
-  "signals": []
+  "signal_count": 2,
+  "last_update": "2026-06-30 10:02:11",
+  "signals": [
+    {
+      "symbol": "MUUSDT",
+      "signal": "SHORT",
+      "entry": 1141.34,
+      "stop_loss": 1154.2786,
+      "take_profit_1": 1121.9321,
+      "take_profit_2": 1112.2281,
+      "risk_reward": 1.5
+    },
+    {
+      "symbol": "SNDKUSDT",
+      "signal": "SHORT",
+      "entry": 2070.02,
+      "stop_loss": 2103.9643,
+      "take_profit_1": 2019.1036,
+      "take_profit_2": 1993.6454,
+      "risk_reward": 1.5
+    }
+  ]
 }
