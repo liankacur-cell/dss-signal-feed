@@ -1,43 +1,34 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 4,
-  "last_update": "2026-06-30 23:33:04",
+  "signal_count": 3,
+  "last_update": "2026-07-01 00:18:07",
   "signals": [
-    {
-      "symbol": "SUIUSDT",
-      "signal": "SHORT",
-      "entry": 0.6866,
-      "stop_loss": 0.6999,
-      "take_profit_1": 0.6712,
-      "take_profit_2": 0.6635,
-      "risk_reward": 1.16
-    },
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 395.32,
-      "stop_loss": 406.7284,
-      "take_profit_1": 382.1564,
-      "take_profit_2": 375.5746,
-      "risk_reward": 1.15
+      "entry": 399.76,
+      "stop_loss": 408.2657,
+      "take_profit_1": 387.0014,
+      "take_profit_2": 380.6221,
+      "risk_reward": 1.5
     },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 262.7,
-      "stop_loss": 271.8714,
-      "take_profit_1": 248.9429,
-      "take_profit_2": 242.0644,
+      "entry": 264.92,
+      "stop_loss": 271.3771,
+      "take_profit_1": 255.2343,
+      "take_profit_2": 250.3914,
       "risk_reward": 1.5
     },
     {
-      "symbol": "MUUSDT",
-      "signal": "LONG",
-      "entry": 1154.58,
-      "stop_loss": 1121.4149,
-      "take_profit_1": 1195.4314,
-      "take_profit_2": 1215.8571,
-      "risk_reward": 1.23
+      "symbol": "SNDKUSDT",
+      "signal": "SHORT",
+      "entry": 2202.45,
+      "stop_loss": 2255.1029,
+      "take_profit_1": 2123.4707,
+      "take_profit_2": 2083.981,
+      "risk_reward": 1.5
     }
   ]
 }
