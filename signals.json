@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 3,
-  "last_update": "2026-06-30 18:17:43",
+  "last_update": "2026-06-30 19:02:47",
   "signals": [
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 244.55,
-      "stop_loss": 248.8314,
-      "take_profit_1": 238.1279,
-      "take_profit_2": 234.9169,
-      "risk_reward": 1.5,
-      "atr_15m": 2.140714285714288,
+      "entry": 242.92,
+      "stop_loss": 247.9139,
+      "take_profit_1": 237.1579,
+      "take_profit_2": 234.2769,
+      "risk_reward": 1.15,
+      "atr_15m": 1.9207142857142887,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 65.0,
+        "total_score": 64.4,
         "structure_score": 75,
-        "trend_score": 92,
+        "trend_score": 98,
         "momentum_score": 45.0,
         "volatility_score": 80,
-        "liquidity_score": 80,
+        "liquidity_score": 60,
         "money_flow_score": 55,
         "squeeze_score": 40,
         "structure_dir": "bearish",
@@ -33,7 +33,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 92,
+        "score": 98,
         "direction": "bullish"
       },
       "momentum": {
@@ -45,8 +45,8 @@
         "state": "expansion"
       },
       "liquidity": {
-        "score": 80,
-        "state": "sell_liquidity_sweep"
+        "score": 60,
+        "state": "neutral"
       },
       "money_flow": {
         "score": 55,
@@ -60,12 +60,12 @@
     {
       "symbol": "XAUUSDT",
       "signal": "SHORT",
-      "entry": 4033.6,
-      "stop_loss": 4047.0286,
-      "take_profit_1": 4013.4571,
-      "take_profit_2": 4003.3857,
+      "entry": 4035.75,
+      "stop_loss": 4046.8957,
+      "take_profit_1": 4019.0314,
+      "take_profit_2": 4010.6721,
       "risk_reward": 1.5,
-      "atr_15m": 6.714285714285714,
+      "atr_15m": 5.572857142857174,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 62.3,
@@ -114,17 +114,17 @@
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 2096.79,
-      "stop_loss": 2127.1626,
-      "take_profit_1": 2054.4643,
-      "take_profit_2": 2033.3015,
-      "risk_reward": 1.39,
-      "atr_15m": 14.108571428571363,
+      "entry": 2112.0,
+      "stop_loss": 2137.8886,
+      "take_profit_1": 2073.1671,
+      "take_profit_2": 2053.7506,
+      "risk_reward": 1.5,
+      "atr_15m": 12.944285714285636,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 66.2,
+        "total_score": 65.6,
         "structure_score": 75,
-        "trend_score": 61,
+        "trend_score": 58,
         "momentum_score": 75.0,
         "volatility_score": 65,
         "liquidity_score": 60,
@@ -141,7 +141,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 61,
+        "score": 58,
         "direction": "bearish"
       },
       "momentum": {
