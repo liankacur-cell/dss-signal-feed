@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 2,
-  "last_update": "2026-07-01 05:33:27",
+  "last_update": "2026-07-01 06:18:30",
   "signals": [
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 171.37,
-      "stop_loss": 172.7714,
-      "take_profit_1": 169.2679,
-      "take_profit_2": 168.2168,
+      "entry": 172.64,
+      "stop_loss": 173.7829,
+      "take_profit_1": 170.9257,
+      "take_profit_2": 170.0686,
       "risk_reward": 1.5
     },
     {
       "symbol": "INUSDT",
       "signal": "LONG",
-      "entry": 0.06938,
-      "stop_loss": 0.0577,
-      "take_profit_1": 0.0828,
-      "take_profit_2": 0.0895,
-      "risk_reward": 1.15
+      "entry": 0.06998,
+      "stop_loss": 0.0627,
+      "take_profit_1": 0.081,
+      "take_profit_2": 0.0865,
+      "risk_reward": 1.51
     }
   ]
 }
