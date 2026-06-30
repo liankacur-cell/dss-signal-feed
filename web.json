@@ -1,25 +1,34 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 2,
-  "last_update": "2026-06-30 17:32:40",
+  "signal_count": 3,
+  "last_update": "2026-06-30 18:17:43",
   "signals": [
+    {
+      "symbol": "SOXLUSDT",
+      "signal": "SHORT",
+      "entry": 244.55,
+      "stop_loss": 248.8314,
+      "take_profit_1": 238.1279,
+      "take_profit_2": 234.9169,
+      "risk_reward": 1.5
+    },
     {
       "symbol": "XAUUSDT",
       "signal": "SHORT",
-      "entry": 4029.83,
-      "stop_loss": 4044.0186,
-      "take_profit_1": 4008.5471,
-      "take_profit_2": 3997.9056,
+      "entry": 4033.6,
+      "stop_loss": 4047.0286,
+      "take_profit_1": 4013.4571,
+      "take_profit_2": 4003.3857,
       "risk_reward": 1.5
     },
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 2099.09,
-      "stop_loss": 2126.3444,
-      "take_profit_1": 2064.9457,
-      "take_profit_2": 2047.8736,
-      "risk_reward": 1.25
+      "entry": 2096.79,
+      "stop_loss": 2127.1626,
+      "take_profit_1": 2054.4643,
+      "take_profit_2": 2033.3015,
+      "risk_reward": 1.39
     }
   ]
 }
