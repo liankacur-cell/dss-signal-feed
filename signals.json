@@ -1,22 +1,22 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 3,
-  "last_update": "2026-07-01 11:33:52",
+  "last_update": "2026-07-01 12:18:54",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 59220.7,
-      "stop_loss": 59731.9,
-      "take_profit_1": 58453.9,
-      "take_profit_2": 58070.5,
+      "entry": 59305.8,
+      "stop_loss": 59694.5143,
+      "take_profit_1": 58722.7286,
+      "take_profit_2": 58431.1929,
       "risk_reward": 1.5,
-      "atr_15m": 255.59999999999906,
+      "atr_15m": 194.35714285714235,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 68.1,
+        "total_score": 65.1,
         "structure_score": 75,
-        "trend_score": 76,
+        "trend_score": 61,
         "momentum_score": 82.5,
         "volatility_score": 40,
         "liquidity_score": 60,
@@ -33,7 +33,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 76,
+        "score": 61,
         "direction": "bearish"
       },
       "momentum": {
@@ -60,12 +60,12 @@
     {
       "symbol": "ETHUSDT",
       "signal": "SHORT",
-      "entry": 1593.69,
-      "stop_loss": 1609.2729,
-      "take_profit_1": 1570.3157,
-      "take_profit_2": 1558.6286,
+      "entry": 1597.09,
+      "stop_loss": 1610.08,
+      "take_profit_1": 1577.605,
+      "take_profit_2": 1567.8625,
       "risk_reward": 1.5,
-      "atr_15m": 7.79142857142855,
+      "atr_15m": 6.4950000000000045,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 66.1,
@@ -114,12 +114,12 @@
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07245,
+      "entry": 0.07241,
       "stop_loss": 0.0731,
-      "take_profit_1": 0.0714,
-      "take_profit_2": 0.0709,
-      "risk_reward": 1.62,
-      "atr_15m": 0.0003464285714285739,
+      "take_profit_1": 0.0716,
+      "take_profit_2": 0.0712,
+      "risk_reward": 1.17,
+      "atr_15m": 0.0002735714285714306,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 67.3,
