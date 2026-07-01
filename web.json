@@ -1,52 +1,43 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 5,
-  "last_update": "2026-07-01 22:04:37",
+  "signal_count": 4,
+  "last_update": "2026-07-01 22:49:39",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 59680.1,
-      "stop_loss": 60324.8143,
-      "take_profit_1": 58713.0286,
-      "take_profit_2": 58229.4929,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "ETHUSDT",
-      "signal": "SHORT",
-      "entry": 1607.16,
-      "stop_loss": 1627.2157,
-      "take_profit_1": 1577.0764,
-      "take_profit_2": 1562.0346,
+      "entry": 60121.7,
+      "stop_loss": 60866.8857,
+      "take_profit_1": 59003.9214,
+      "take_profit_2": 58445.0321,
       "risk_reward": 1.5
     },
     {
       "symbol": "SOLUSDT",
       "signal": "SHORT",
-      "entry": 77.0,
-      "stop_loss": 78.1914,
-      "take_profit_1": 75.2129,
-      "take_profit_2": 74.3194,
+      "entry": 77.19,
+      "stop_loss": 78.4943,
+      "take_profit_1": 75.2336,
+      "take_profit_2": 74.2554,
       "risk_reward": 1.5
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07293,
-      "stop_loss": 0.0738,
-      "take_profit_1": 0.0716,
-      "take_profit_2": 0.0709,
-      "risk_reward": 1.53
+      "entry": 0.07336,
+      "stop_loss": 0.0743,
+      "take_profit_1": 0.0719,
+      "take_profit_2": 0.0712,
+      "risk_reward": 1.55
     },
     {
       "symbol": "XAUUSDT",
       "signal": "SHORT",
-      "entry": 4092.06,
-      "stop_loss": 4135.8496,
-      "take_profit_1": 4041.5336,
-      "take_profit_2": 4016.2704,
-      "risk_reward": 1.15
+      "entry": 4085.5,
+      "stop_loss": 4121.9089,
+      "take_profit_1": 4034.6114,
+      "take_profit_2": 4009.1671,
+      "risk_reward": 1.4
     }
   ]
 }
