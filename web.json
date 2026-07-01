@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 2,
-  "last_update": "2026-07-02 00:19:45",
+  "last_update": "2026-07-02 01:04:48",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 59990.8,
-      "stop_loss": 60628.7143,
-      "take_profit_1": 59033.9286,
-      "take_profit_2": 58555.4929,
+      "entry": 60162.0,
+      "stop_loss": 60676.6286,
+      "take_profit_1": 59390.0571,
+      "take_profit_2": 59004.0856,
       "risk_reward": 1.5
     },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07303,
-      "stop_loss": 0.0738,
-      "take_profit_1": 0.0718,
-      "take_profit_2": 0.0712,
-      "risk_reward": 1.6
+      "entry": 0.0735,
+      "stop_loss": 0.0742,
+      "take_profit_1": 0.0724,
+      "take_profit_2": 0.0719,
+      "risk_reward": 1.57
     }
   ]
 }
