@@ -1,34 +1,25 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 3,
-  "last_update": "2026-07-01 16:49:14",
+  "signal_count": 2,
+  "last_update": "2026-07-01 17:34:17",
   "signals": [
-    {
-      "symbol": "UNIUSDT",
-      "signal": "LONG",
-      "entry": 2.753,
-      "stop_loss": 2.7203,
-      "take_profit_1": 2.8021,
-      "take_profit_2": 2.8266,
-      "risk_reward": 1.5
-    },
     {
       "symbol": "SOXLUSDT",
       "signal": "LONG",
-      "entry": 256.44,
-      "stop_loss": 249.5073,
-      "take_profit_1": 264.4393,
-      "take_profit_2": 268.4389,
-      "risk_reward": 1.15
+      "entry": 257.31,
+      "stop_loss": 252.3698,
+      "take_profit_1": 264.5121,
+      "take_profit_2": 268.1131,
+      "risk_reward": 1.46
     },
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 174.49,
-      "stop_loss": 176.2257,
-      "take_profit_1": 171.8864,
-      "take_profit_2": 170.5846,
-      "risk_reward": 1.5
+      "entry": 175.36,
+      "stop_loss": 177.8764,
+      "take_profit_1": 172.4564,
+      "take_profit_2": 171.0046,
+      "risk_reward": 1.15
     }
   ]
 }
