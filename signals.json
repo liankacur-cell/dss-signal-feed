@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 2,
-  "last_update": "2026-07-02 01:04:48",
+  "last_update": "2026-07-02 01:49:51",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "SHORT",
-      "entry": 60162.0,
-      "stop_loss": 60676.6286,
-      "take_profit_1": 59390.0571,
-      "take_profit_2": 59004.0856,
+      "entry": 60216.7,
+      "stop_loss": 60593.6857,
+      "take_profit_1": 59651.2214,
+      "take_profit_2": 59368.4821,
       "risk_reward": 1.5,
-      "atr_15m": 257.3142857142858,
+      "atr_15m": 188.4928571428583,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
         "total_score": 67.3,
@@ -60,20 +60,20 @@
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.0735,
-      "stop_loss": 0.0742,
-      "take_profit_1": 0.0724,
+      "entry": 0.07314,
+      "stop_loss": 0.0737,
+      "take_profit_1": 0.0723,
       "take_profit_2": 0.0719,
-      "risk_reward": 1.57,
-      "atr_15m": 0.00036357142857142935,
+      "risk_reward": 1.5,
+      "atr_15m": 0.0002864285714285724,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 68.0,
+        "total_score": 65.1,
         "structure_score": 75,
         "trend_score": 61,
-        "momentum_score": 75.0,
+        "momentum_score": 67.5,
         "volatility_score": 65,
-        "liquidity_score": 80,
+        "liquidity_score": 60,
         "money_flow_score": 55,
         "squeeze_score": 40,
         "structure_dir": "bearish",
@@ -91,7 +91,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -99,8 +99,8 @@
         "state": "normal"
       },
       "liquidity": {
-        "score": 80,
-        "state": "sell_liquidity_sweep"
+        "score": 60,
+        "state": "neutral"
       },
       "money_flow": {
         "score": 55,
