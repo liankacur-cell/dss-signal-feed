@@ -1,23 +1,77 @@
 {
   "btc_context": "BTC: bearish/bearish",
-  "signal_count": 1,
-  "last_update": "2026-07-01 13:49:01",
+  "signal_count": 2,
+  "last_update": "2026-07-01 14:34:03",
   "signals": [
+    {
+      "symbol": "SOXLUSDT",
+      "signal": "LONG",
+      "entry": 257.9,
+      "stop_loss": 253.4982,
+      "take_profit_1": 264.3179,
+      "take_profit_2": 267.5269,
+      "risk_reward": 1.46,
+      "atr_15m": 2.139285714285703,
+      "btc_regime": "BTC: bearish/bearish",
+      "audit": {
+        "total_score": 64.4,
+        "structure_score": 65,
+        "trend_score": 98,
+        "momentum_score": 25.0,
+        "volatility_score": 80,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 65,
+        "direction": "bullish",
+        "label": "RANGE_BIAS"
+      },
+      "trend": {
+        "score": 98,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 25.0,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 80,
+        "state": "expansion"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
     {
       "symbol": "SNDKUSDT",
       "signal": "LONG",
-      "entry": 2194.68,
-      "stop_loss": 2175.8871,
-      "take_profit_1": 2222.8693,
-      "take_profit_2": 2236.9639,
+      "entry": 2194.34,
+      "stop_loss": 2175.5314,
+      "take_profit_1": 2222.5529,
+      "take_profit_2": 2236.6593,
       "risk_reward": 1.5,
-      "atr_15m": 9.396428571428585,
+      "atr_15m": 9.404285714285704,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 65.1,
+        "total_score": 63.2,
         "structure_score": 65,
         "trend_score": 92,
-        "momentum_score": 37.5,
+        "momentum_score": 25.0,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +91,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 37.5,
+        "score": 25.0,
         "direction": "bearish"
       },
       "volatility": {
