@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bearish/bearish",
   "signal_count": 1,
-  "last_update": "2026-07-01 19:49:27",
+  "last_update": "2026-07-01 20:34:31",
   "signals": [
     {
       "symbol": "XAUUSDT",
       "signal": "SHORT",
-      "entry": 4028.84,
-      "stop_loss": 4046.31,
-      "take_profit_1": 4002.635,
-      "take_profit_2": 3989.5325,
+      "entry": 4046.81,
+      "stop_loss": 4069.6657,
+      "take_profit_1": 4012.5264,
+      "take_profit_2": 3995.3846,
       "risk_reward": 1.5,
-      "atr_15m": 8.734999999999998,
+      "atr_15m": 11.42785714285716,
       "btc_regime": "BTC: bearish/bearish",
       "audit": {
-        "total_score": 62.3,
+        "total_score": 63.4,
         "structure_score": 75,
         "trend_score": 58,
-        "momentum_score": 67.5,
+        "momentum_score": 75.0,
         "volatility_score": 40,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 67.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
