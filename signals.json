@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-03 06:04:31",
+  "signal_count": 1,
+  "last_update": "2026-07-03 06:49:35",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 80.53,
-      "stop_loss": 79.9314,
-      "take_profit_1": 81.4279,
-      "take_profit_2": 81.8768,
-      "risk_reward": 1.5,
-      "atr_15m": 0.2992857142857121,
+      "entry": 80.67,
+      "stop_loss": 79.9486,
+      "take_profit_1": 81.4843,
+      "take_profit_2": 81.8915,
+      "risk_reward": 1.13,
+      "atr_15m": 0.2714285714285702,
       "btc_regime": "BTC: bearish/bullish",
       "audit": {
         "total_score": 65.0,
@@ -43,60 +43,6 @@
       "volatility": {
         "score": 65,
         "state": "normal"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
-    {
-      "symbol": "SKHYNIXUSDT",
-      "signal": "LONG",
-      "entry": 1391.53,
-      "stop_loss": 1356.9151,
-      "take_profit_1": 1432.3793,
-      "take_profit_2": 1452.8039,
-      "risk_reward": 1.18,
-      "atr_15m": 13.61642857142858,
-      "btc_regime": "BTC: bearish/bullish",
-      "audit": {
-        "total_score": 65.9,
-        "structure_score": 75,
-        "trend_score": 98,
-        "momentum_score": 55.0,
-        "volatility_score": 80,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bearish",
-        "momentum_dir": "bullish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bullish",
-        "label": "HH-BIAS"
-      },
-      "trend": {
-        "score": 98,
-        "direction": "bearish"
-      },
-      "momentum": {
-        "score": 55.0,
-        "direction": "bullish"
-      },
-      "volatility": {
-        "score": 80,
-        "state": "expansion"
       },
       "liquidity": {
         "score": 60,

@@ -1,25 +1,16 @@
 {
   "btc_context": "BTC: bearish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-03 06:04:31",
+  "signal_count": 1,
+  "last_update": "2026-07-03 06:49:35",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 80.53,
-      "stop_loss": 79.9314,
-      "take_profit_1": 81.4279,
-      "take_profit_2": 81.8768,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "SKHYNIXUSDT",
-      "signal": "LONG",
-      "entry": 1391.53,
-      "stop_loss": 1356.9151,
-      "take_profit_1": 1432.3793,
-      "take_profit_2": 1452.8039,
-      "risk_reward": 1.18
+      "entry": 80.67,
+      "stop_loss": 79.9486,
+      "take_profit_1": 81.4843,
+      "take_profit_2": 81.8915,
+      "risk_reward": 1.13
     }
   ]
 }
