@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-07-02 09:20:23",
+    "btc_context": "BTC: bearish/bearish",
+    "signal_count": 0,
+    "signals": []
+  },
+  {
     "timestamp": "2026-07-02 08:35:20",
     "btc_context": "BTC: bearish/bearish",
     "signal_count": 2,
