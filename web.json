@@ -1,15 +1,15 @@
 {
   "btc_context": "BTC: bearish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-02 15:22:16",
+  "last_update": "2026-07-02 16:07:19",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "SHORT",
-      "entry": 78.24,
-      "stop_loss": 79.0631,
-      "take_profit_1": 77.2093,
-      "take_profit_2": 76.694,
+      "entry": 78.25,
+      "stop_loss": 79.0611,
+      "take_profit_1": 77.2386,
+      "take_profit_2": 76.7329,
       "risk_reward": 1.25
     }
   ]
