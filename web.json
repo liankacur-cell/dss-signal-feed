@@ -1,61 +1,43 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 6,
-  "last_update": "2026-07-03 12:04:57",
+  "signal_count": 4,
+  "last_update": "2026-07-03 12:49:59",
   "signals": [
-    {
-      "symbol": "ETHUSDT",
-      "signal": "LONG",
-      "entry": 1705.0,
-      "stop_loss": 1689.3601,
-      "take_profit_1": 1724.3993,
-      "take_profit_2": 1734.099,
-      "risk_reward": 1.24
-    },
-    {
-      "symbol": "SOLUSDT",
-      "signal": "LONG",
-      "entry": 80.6,
-      "stop_loss": 79.9386,
-      "take_profit_1": 81.5921,
-      "take_profit_2": 82.0882,
-      "risk_reward": 1.5
-    },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.193,
-      "stop_loss": 3.1343,
-      "take_profit_1": 3.2695,
-      "take_profit_2": 3.3077,
-      "risk_reward": 1.3
+      "entry": 3.196,
+      "stop_loss": 3.1346,
+      "take_profit_1": 3.2704,
+      "take_profit_2": 3.3076,
+      "risk_reward": 1.21
     },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 187.82,
-      "stop_loss": 195.3629,
-      "take_profit_1": 176.5057,
-      "take_profit_2": 170.8485,
-      "risk_reward": 1.5
+      "entry": 185.84,
+      "stop_loss": 193.0339,
+      "take_profit_1": 175.3014,
+      "take_profit_2": 170.0321,
+      "risk_reward": 1.46
     },
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 1014.43,
-      "stop_loss": 1033.7371,
-      "take_profit_1": 985.4693,
-      "take_profit_2": 970.9889,
-      "risk_reward": 1.5
+      "entry": 1005.99,
+      "stop_loss": 1030.2814,
+      "take_profit_1": 977.9614,
+      "take_profit_2": 963.9471,
+      "risk_reward": 1.15
     },
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 597.81,
-      "stop_loss": 629.01,
-      "take_profit_1": 551.01,
-      "take_profit_2": 527.61,
-      "risk_reward": 1.5
+      "entry": 578.64,
+      "stop_loss": 616.3827,
+      "take_profit_1": 535.0907,
+      "take_profit_2": 513.316,
+      "risk_reward": 1.15
     }
   ]
 }
