@@ -1,16 +1,34 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-03 09:05:03",
+  "signal_count": 3,
+  "last_update": "2026-07-03 09:49:46",
   "signals": [
+    {
+      "symbol": "ETHUSDT",
+      "signal": "LONG",
+      "entry": 1701.04,
+      "stop_loss": 1682.6599,
+      "take_profit_1": 1724.8407,
+      "take_profit_2": 1736.7411,
+      "risk_reward": 1.29
+    },
+    {
+      "symbol": "SOLUSDT",
+      "signal": "LONG",
+      "entry": 80.76,
+      "stop_loss": 79.9312,
+      "take_profit_1": 81.7479,
+      "take_profit_2": 82.2418,
+      "risk_reward": 1.19
+    },
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 579.41,
-      "stop_loss": 628.3687,
-      "take_profit_1": 523.0229,
-      "take_profit_2": 494.8294,
-      "risk_reward": 1.15
+      "entry": 557.96,
+      "stop_loss": 596.6229,
+      "take_profit_1": 499.9657,
+      "take_profit_2": 470.9686,
+      "risk_reward": 1.5
     }
   ]
 }
