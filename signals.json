@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 5,
-  "last_update": "2026-07-03 20:20:32",
+  "signal_count": 7,
+  "last_update": "2026-07-03 21:05:42",
   "signals": [
     {
       "symbol": "SUIUSDT",
       "signal": "SHORT",
-      "entry": 0.757,
-      "stop_loss": 0.7649,
-      "take_profit_1": 0.7451,
-      "take_profit_2": 0.7391,
+      "entry": 0.7563,
+      "stop_loss": 0.7642,
+      "take_profit_1": 0.7444,
+      "take_profit_2": 0.7384,
       "risk_reward": 1.51,
-      "atr_15m": 0.003950000000000009,
+      "atr_15m": 0.003950000000000017,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 63.5,
@@ -60,12 +60,12 @@
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07603,
-      "stop_loss": 0.0766,
-      "take_profit_1": 0.0751,
-      "take_profit_2": 0.0746,
-      "risk_reward": 1.63,
-      "atr_15m": 0.0003092857142857143,
+      "entry": 0.07647,
+      "stop_loss": 0.0771,
+      "take_profit_1": 0.0755,
+      "take_profit_2": 0.075,
+      "risk_reward": 1.54,
+      "atr_15m": 0.00033785714285714175,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 62.3,
@@ -114,12 +114,12 @@
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 462.11,
-      "stop_loss": 472.7129,
-      "take_profit_1": 446.2057,
-      "take_profit_2": 438.2535,
-      "risk_reward": 1.5,
-      "atr_15m": 5.301428571428581,
+      "entry": 461.03,
+      "stop_loss": 473.1033,
+      "take_profit_1": 447.0993,
+      "take_profit_2": 440.134,
+      "risk_reward": 1.15,
+      "atr_15m": 4.643571428571444,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 63.0,
@@ -168,18 +168,18 @@
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 192.6,
-      "stop_loss": 196.5454,
-      "take_profit_1": 186.8464,
-      "take_profit_2": 183.9696,
-      "risk_reward": 1.46,
-      "atr_15m": 1.9178571428571405,
+      "entry": 191.89,
+      "stop_loss": 196.9266,
+      "take_profit_1": 186.0786,
+      "take_profit_2": 183.1729,
+      "risk_reward": 1.15,
+      "atr_15m": 1.9371428571428555,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 74.9,
+        "total_score": 76.0,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 75.0,
+        "momentum_score": 82.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -199,7 +199,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 82.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -220,20 +220,128 @@
       }
     },
     {
-      "symbol": "KORUUSDT",
-      "signal": "SHORT",
-      "entry": 604.29,
-      "stop_loss": 617.1686,
-      "take_profit_1": 585.3043,
-      "take_profit_2": 575.8115,
-      "risk_reward": 1.47,
-      "atr_15m": 6.328571428571446,
+      "symbol": "XAUUSDT",
+      "signal": "LONG",
+      "entry": 4168.43,
+      "stop_loss": 4156.5043,
+      "take_profit_1": 4186.3186,
+      "take_profit_2": 4195.2629,
+      "risk_reward": 1.5,
+      "atr_15m": 5.962857142857241,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 70.3,
+        "total_score": 62.1,
+        "structure_score": 65,
+        "trend_score": 86,
+        "momentum_score": 37.5,
+        "volatility_score": 40,
+        "liquidity_score": 80,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 65,
+        "direction": "bullish",
+        "label": "RANGE_BIAS"
+      },
+      "trend": {
+        "score": 86,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 37.5,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 40,
+        "state": "squeeze"
+      },
+      "liquidity": {
+        "score": 80,
+        "state": "sell_liquidity_sweep"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
+    {
+      "symbol": "XAGUSDT",
+      "signal": "LONG",
+      "entry": 62.33,
+      "stop_loss": 61.8886,
+      "take_profit_1": 62.9921,
+      "take_profit_2": 63.3231,
+      "risk_reward": 1.5,
+      "atr_15m": 0.22071428571428545,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 69.7,
+        "structure_score": 75,
+        "trend_score": 92,
+        "momentum_score": 45.0,
+        "volatility_score": 65,
+        "liquidity_score": 80,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bullish",
+        "label": "HH-BIAS"
+      },
+      "trend": {
+        "score": 92,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 45.0,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 65,
+        "state": "normal"
+      },
+      "liquidity": {
+        "score": 80,
+        "state": "sell_liquidity_sweep"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
+    {
+      "symbol": "KORUUSDT",
+      "signal": "SHORT",
+      "entry": 602.76,
+      "stop_loss": 617.2243,
+      "take_profit_1": 583.2171,
+      "take_profit_2": 573.4456,
+      "risk_reward": 1.35,
+      "atr_15m": 6.514285714285726,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 71.4,
         "structure_score": 75,
         "trend_score": 75,
-        "momentum_score": 75.0,
+        "momentum_score": 82.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -253,7 +361,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 82.5,
         "direction": "bullish"
       },
       "volatility": {
