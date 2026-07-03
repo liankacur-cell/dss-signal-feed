@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 4,
-  "last_update": "2026-07-03 14:20:07",
+  "last_update": "2026-07-03 15:05:08",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 437.64,
-      "stop_loss": 443.3671,
-      "take_profit_1": 429.0493,
-      "take_profit_2": 424.754,
+      "entry": 441.9,
+      "stop_loss": 448.35,
+      "take_profit_1": 432.225,
+      "take_profit_2": 427.3875,
       "risk_reward": 1.5,
-      "atr_15m": 2.863571428571435,
+      "atr_15m": 3.2250000000000063,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 62.5,
+        "total_score": 63.3,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 32.5,
+        "momentum_score": 37.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 32.5,
+        "score": 37.5,
         "direction": "bearish"
       },
       "volatility": {
@@ -60,18 +60,18 @@
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 187.85,
-      "stop_loss": 194.0714,
-      "take_profit_1": 178.5179,
-      "take_profit_2": 173.8519,
+      "entry": 188.5,
+      "stop_loss": 193.9086,
+      "take_profit_1": 180.3871,
+      "take_profit_2": 176.3306,
       "risk_reward": 1.5,
-      "atr_15m": 3.1107142857142827,
+      "atr_15m": 2.7042857142857133,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 76.0,
+        "total_score": 74.9,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 82.5,
+        "momentum_score": 75.0,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +91,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 82.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
@@ -114,18 +114,18 @@
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 1012.5,
-      "stop_loss": 1028.3514,
-      "take_profit_1": 988.7229,
-      "take_profit_2": 976.8343,
+      "entry": 1012.87,
+      "stop_loss": 1028.2943,
+      "take_profit_1": 989.7336,
+      "take_profit_2": 978.1654,
       "risk_reward": 1.5,
-      "atr_15m": 7.925714285714288,
+      "atr_15m": 7.712142857142867,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 73.4,
+        "total_score": 70.3,
         "structure_score": 75,
-        "trend_score": 85,
-        "momentum_score": 82.5,
+        "trend_score": 75,
+        "momentum_score": 75.0,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -141,11 +141,11 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 85,
+        "score": 75,
         "direction": "bearish"
       },
       "momentum": {
-        "score": 82.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
@@ -168,18 +168,18 @@
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 581.17,
-      "stop_loss": 609.6635,
-      "take_profit_1": 540.535,
-      "take_profit_2": 520.2175,
-      "risk_reward": 1.43,
-      "atr_15m": 13.545000000000007,
+      "entry": 587.25,
+      "stop_loss": 609.3814,
+      "take_profit_1": 554.0529,
+      "take_profit_2": 537.4543,
+      "risk_reward": 1.5,
+      "atr_15m": 11.065714285714307,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 71.4,
+        "total_score": 70.3,
         "structure_score": 75,
         "trend_score": 75,
-        "momentum_score": 82.5,
+        "momentum_score": 75.0,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -199,7 +199,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 82.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
