@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 4,
-  "last_update": "2026-07-03 18:05:20",
+  "last_update": "2026-07-03 18:50:24",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "SHORT",
-      "entry": 460.1,
-      "stop_loss": 470.3657,
-      "take_profit_1": 444.7014,
-      "take_profit_2": 437.0021,
+      "entry": 463.55,
+      "stop_loss": 474.4814,
+      "take_profit_1": 447.1529,
+      "take_profit_2": 438.9543,
       "risk_reward": 1.5,
-      "atr_15m": 5.132857142857152,
+      "atr_15m": 5.465714285714289,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 64.8,
@@ -60,12 +60,12 @@
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 192.99,
-      "stop_loss": 196.3229,
-      "take_profit_1": 187.9907,
-      "take_profit_2": 185.4911,
-      "risk_reward": 1.5,
-      "atr_15m": 1.6664285714285663,
+      "entry": 192.76,
+      "stop_loss": 197.8263,
+      "take_profit_1": 186.9143,
+      "take_profit_2": 183.9914,
+      "risk_reward": 1.15,
+      "atr_15m": 1.9485714285714266,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 74.9,
@@ -114,18 +114,18 @@
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 1026.54,
-      "stop_loss": 1036.7471,
-      "take_profit_1": 1011.2293,
-      "take_profit_2": 1003.5739,
+      "entry": 1038.05,
+      "stop_loss": 1048.6629,
+      "take_profit_1": 1022.1307,
+      "take_profit_2": 1014.1711,
       "risk_reward": 1.5,
-      "atr_15m": 5.10357142857144,
+      "atr_15m": 5.306428571428569,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 70.3,
+        "total_score": 71.4,
         "structure_score": 75,
         "trend_score": 75,
-        "momentum_score": 75.0,
+        "momentum_score": 82.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -145,7 +145,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 82.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -168,12 +168,12 @@
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 604.84,
-      "stop_loss": 618.86,
-      "take_profit_1": 583.81,
-      "take_profit_2": 573.295,
-      "risk_reward": 1.5,
-      "atr_15m": 7.009999999999999,
+      "entry": 603.03,
+      "stop_loss": 621.6274,
+      "take_profit_1": 581.5714,
+      "take_profit_2": 570.8421,
+      "risk_reward": 1.15,
+      "atr_15m": 7.152857142857142,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 70.3,
