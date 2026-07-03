@@ -1,6 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-07-03 08:19:40",
-  "signals": []
+  "signal_count": 1,
+  "last_update": "2026-07-03 09:05:03",
+  "signals": [
+    {
+      "symbol": "KORUUSDT",
+      "signal": "SHORT",
+      "entry": 579.41,
+      "stop_loss": 628.3687,
+      "take_profit_1": 523.0229,
+      "take_profit_2": 494.8294,
+      "risk_reward": 1.15
+    }
+  ]
 }
