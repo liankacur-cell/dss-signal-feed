@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-07-04 17:21:58",
+  "signal_count": 5,
+  "last_update": "2026-07-04 18:07:02",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
-      "entry": 62470.7,
-      "stop_loss": 62276.2793,
-      "take_profit_1": 62733.9071,
-      "take_profit_2": 62865.5106,
-      "risk_reward": 1.35,
-      "atr_15m": 87.73571428571346,
+      "entry": 62457.7,
+      "stop_loss": 62278.8593,
+      "take_profit_1": 62695.1071,
+      "take_profit_2": 62813.8106,
+      "risk_reward": 1.33,
+      "atr_15m": 79.13571428571491,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 64.5,
+        "total_score": 65.6,
         "structure_score": 75,
         "trend_score": 92,
-        "momentum_score": 25.0,
+        "momentum_score": 32.5,
         "volatility_score": 40,
         "liquidity_score": 80,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 25.0,
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {
@@ -58,19 +58,19 @@
       }
     },
     {
-      "symbol": "ZECUSDT",
+      "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 458.15,
-      "stop_loss": 453.9071,
-      "take_profit_1": 464.5143,
-      "take_profit_2": 467.6965,
-      "risk_reward": 1.5,
-      "atr_15m": 2.1214285714285745,
+      "entry": 3.191,
+      "stop_loss": 3.162,
+      "take_profit_1": 3.2306,
+      "take_profit_2": 3.2504,
+      "risk_reward": 1.37,
+      "atr_15m": 0.013214285714285718,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 67.4,
+        "total_score": 64.8,
         "structure_score": 75,
-        "trend_score": 98,
+        "trend_score": 85,
         "momentum_score": 25.0,
         "volatility_score": 80,
         "liquidity_score": 60,
@@ -87,7 +87,7 @@
         "label": "HH-BIAS"
       },
       "trend": {
-        "score": 98,
+        "score": 85,
         "direction": "bullish"
       },
       "momentum": {
@@ -112,14 +112,68 @@
       }
     },
     {
+      "symbol": "HYPEUSDT",
+      "signal": "LONG",
+      "entry": 70.526,
+      "stop_loss": 69.8675,
+      "take_profit_1": 71.4406,
+      "take_profit_2": 71.8979,
+      "risk_reward": 1.39,
+      "atr_15m": 0.3048571428571399,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 64.2,
+        "structure_score": 65,
+        "trend_score": 98,
+        "momentum_score": 32.5,
+        "volatility_score": 65,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 65,
+        "direction": "bullish",
+        "label": "RANGE_BIAS"
+      },
+      "trend": {
+        "score": 98,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 32.5,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 65,
+        "state": "normal"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
+    {
       "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 1.1389,
-      "stop_loss": 1.1507,
-      "take_profit_1": 1.1237,
-      "take_profit_2": 1.1161,
-      "risk_reward": 1.29,
-      "atr_15m": 0.005064285714285711,
+      "entry": 1.1416,
+      "stop_loss": 1.1518,
+      "take_profit_1": 1.1264,
+      "take_profit_2": 1.1188,
+      "risk_reward": 1.49,
+      "atr_15m": 0.00507857142857144,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 63.7,
@@ -168,12 +222,12 @@
     {
       "symbol": "ARPAUSDT",
       "signal": "LONG",
-      "entry": 0.01021,
-      "stop_loss": 0.0095,
-      "take_profit_1": 0.0112,
-      "take_profit_2": 0.0117,
-      "risk_reward": 1.39,
-      "atr_15m": 0.0003435714285714288,
+      "entry": 0.01018,
+      "stop_loss": 0.0096,
+      "take_profit_1": 0.011,
+      "take_profit_2": 0.0114,
+      "risk_reward": 1.41,
+      "atr_15m": 0.00026857142857142867,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 65.5,
