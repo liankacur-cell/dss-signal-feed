@@ -1,25 +1,34 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-04 19:37:06",
+  "signal_count": 3,
+  "last_update": "2026-07-04 20:22:09",
   "signals": [
     {
       "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 1.1469,
-      "stop_loss": 1.1561,
-      "take_profit_1": 1.1331,
-      "take_profit_2": 1.1262,
+      "entry": 1.1587,
+      "stop_loss": 1.1698,
+      "take_profit_1": 1.1421,
+      "take_profit_2": 1.1338,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "TLMUSDT",
+      "signal": "LONG",
+      "entry": 0.00264,
+      "stop_loss": 0.0022,
+      "take_profit_1": 0.0032,
+      "take_profit_2": 0.0035,
+      "risk_reward": 1.27
     },
     {
       "symbol": "HMSTRUSDT",
       "signal": "SHORT",
-      "entry": 0.0004048,
-      "stop_loss": 0.0005,
+      "entry": 0.0003594,
+      "stop_loss": 0.0004,
       "take_profit_1": 0.0003,
-      "take_profit_2": 0.0002,
-      "risk_reward": 1.1
+      "take_profit_2": 0.0003,
+      "risk_reward": 1.46
     }
   ]
 }
