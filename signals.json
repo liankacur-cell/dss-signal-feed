@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 2,
-  "last_update": "2026-07-04 06:51:17",
+  "last_update": "2026-07-04 07:36:20",
   "signals": [
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
       "entry": 3.212,
-      "stop_loss": 3.1796,
-      "take_profit_1": 3.2606,
-      "take_profit_2": 3.2849,
+      "stop_loss": 3.1801,
+      "take_profit_1": 3.2598,
+      "take_profit_2": 3.2837,
       "risk_reward": 1.5,
-      "atr_15m": 0.016214285714285737,
+      "atr_15m": 0.015928571428571514,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 69.3,
+        "total_score": 68.5,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 37.5,
+        "momentum_score": 32.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bullish"
       },
       "momentum": {
-        "score": 37.5,
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {
@@ -60,17 +60,17 @@
     {
       "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 1.1339,
+      "entry": 1.138,
       "stop_loss": 1.1462,
-      "take_profit_1": 1.1201,
-      "take_profit_2": 1.1132,
-      "risk_reward": 1.12,
-      "atr_15m": 0.004585714285714304,
+      "take_profit_1": 1.1257,
+      "take_profit_2": 1.1195,
+      "risk_reward": 1.5,
+      "atr_15m": 0.004114285714285737,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 62.3,
+        "total_score": 63.5,
         "structure_score": 75,
-        "trend_score": 92,
+        "trend_score": 98,
         "momentum_score": 82.5,
         "volatility_score": 65,
         "liquidity_score": 80,
@@ -87,7 +87,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 92,
+        "score": 98,
         "direction": "bullish"
       },
       "momentum": {
