@@ -1,43 +1,43 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 4,
-  "last_update": "2026-07-04 16:36:56",
+  "last_update": "2026-07-04 17:21:58",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
-      "entry": 62424.9,
-      "stop_loss": 62233.8,
-      "take_profit_1": 62711.55,
-      "take_profit_2": 62854.875,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "UNIUSDT",
-      "signal": "LONG",
-      "entry": 3.185,
-      "stop_loss": 3.1574,
-      "take_profit_1": 3.2264,
-      "take_profit_2": 3.2471,
-      "risk_reward": 1.5
+      "entry": 62470.7,
+      "stop_loss": 62276.2793,
+      "take_profit_1": 62733.9071,
+      "take_profit_2": 62865.5106,
+      "risk_reward": 1.35
     },
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 457.18,
-      "stop_loss": 452.8343,
-      "take_profit_1": 463.6986,
-      "take_profit_2": 466.9579,
+      "entry": 458.15,
+      "stop_loss": 453.9071,
+      "take_profit_1": 464.5143,
+      "take_profit_2": 467.6965,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "XRPUSDT",
+      "signal": "SHORT",
+      "entry": 1.1389,
+      "stop_loss": 1.1507,
+      "take_profit_1": 1.1237,
+      "take_profit_2": 1.1161,
+      "risk_reward": 1.29
     },
     {
       "symbol": "ARPAUSDT",
       "signal": "LONG",
-      "entry": 0.01038,
-      "stop_loss": 0.0096,
-      "take_profit_1": 0.0116,
-      "take_profit_2": 0.0122,
-      "risk_reward": 1.56
+      "entry": 0.01021,
+      "stop_loss": 0.0095,
+      "take_profit_1": 0.0112,
+      "take_profit_2": 0.0117,
+      "risk_reward": 1.39
     }
   ]
 }
