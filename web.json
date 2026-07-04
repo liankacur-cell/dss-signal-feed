@@ -1,25 +1,70 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-04 21:52:58",
+  "signal_count": 7,
+  "last_update": "2026-07-04 22:37:26",
   "signals": [
+    {
+      "symbol": "SUIUSDT",
+      "signal": "SHORT",
+      "entry": 0.7707,
+      "stop_loss": 0.7787,
+      "take_profit_1": 0.7587,
+      "take_profit_2": 0.7527,
+      "risk_reward": 1.5
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "signal": "SHORT",
+      "entry": 0.07852,
+      "stop_loss": 0.0792,
+      "take_profit_1": 0.0775,
+      "take_profit_2": 0.077,
+      "risk_reward": 1.5
+    },
     {
       "symbol": "XRPUSDT",
       "signal": "SHORT",
-      "entry": 1.1695,
-      "stop_loss": 1.1853,
-      "take_profit_1": 1.1458,
-      "take_profit_2": 1.134,
+      "entry": 1.1705,
+      "stop_loss": 1.1886,
+      "take_profit_1": 1.1434,
+      "take_profit_2": 1.1298,
+      "risk_reward": 1.5
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "signal": "LONG",
+      "entry": 70.875,
+      "stop_loss": 70.1821,
+      "take_profit_1": 71.9143,
+      "take_profit_2": 72.4339,
       "risk_reward": 1.5
     },
     {
       "symbol": "TLMUSDT",
       "signal": "LONG",
-      "entry": 0.002636,
+      "entry": 0.002617,
       "stop_loss": 0.0022,
-      "take_profit_1": 0.0032,
-      "take_profit_2": 0.0035,
-      "risk_reward": 1.29
+      "take_profit_1": 0.0031,
+      "take_profit_2": 0.0033,
+      "risk_reward": 1.16
+    },
+    {
+      "symbol": "HMSTRUSDT",
+      "signal": "SHORT",
+      "entry": 0.0003233,
+      "stop_loss": 0.0004,
+      "take_profit_1": 0.0002,
+      "take_profit_2": 0.0001,
+      "risk_reward": 1.61
+    },
+    {
+      "symbol": "ADAUSDT",
+      "signal": "SHORT",
+      "entry": 0.1882,
+      "stop_loss": 0.1921,
+      "take_profit_1": 0.1824,
+      "take_profit_2": 0.1795,
+      "risk_reward": 1.49
     }
   ]
 }
