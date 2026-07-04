@@ -1,17 +1,71 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-05 06:03:15",
+  "signal_count": 2,
+  "last_update": "2026-07-05 06:48:18",
   "signals": [
+    {
+      "symbol": "ZECUSDT",
+      "signal": "LONG",
+      "entry": 464.61,
+      "stop_loss": 459.1914,
+      "take_profit_1": 472.7379,
+      "take_profit_2": 476.8019,
+      "risk_reward": 1.5,
+      "atr_15m": 2.709285714285715,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 69.1,
+        "structure_score": 75,
+        "trend_score": 98,
+        "momentum_score": 45.0,
+        "volatility_score": 65,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bullish",
+        "label": "HH-BIAS"
+      },
+      "trend": {
+        "score": 98,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 45.0,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 65,
+        "state": "normal"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
     {
       "symbol": "HYPEUSDT",
       "signal": "LONG",
-      "entry": 69.984,
-      "stop_loss": 69.3267,
-      "take_profit_1": 70.8975,
-      "take_profit_2": 71.3542,
-      "risk_reward": 1.39,
-      "atr_15m": 0.3045000000000004,
+      "entry": 69.944,
+      "stop_loss": 69.3273,
+      "take_profit_1": 70.8515,
+      "take_profit_2": 71.3053,
+      "risk_reward": 1.47,
+      "atr_15m": 0.302500000000001,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 63.5,
