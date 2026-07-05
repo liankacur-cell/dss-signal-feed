@@ -1,24 +1,33 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-05 07:33:22",
+  "signal_count": 3,
+  "last_update": "2026-07-05 08:18:26",
   "signals": [
+    {
+      "symbol": "ETHUSDT",
+      "signal": "LONG",
+      "entry": 1765.93,
+      "stop_loss": 1755.1329,
+      "take_profit_1": 1782.1257,
+      "take_profit_2": 1790.2236,
+      "risk_reward": 1.5
+    },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.196,
-      "stop_loss": 3.169,
-      "take_profit_1": 3.2365,
-      "take_profit_2": 3.2567,
+      "entry": 3.185,
+      "stop_loss": 3.1563,
+      "take_profit_1": 3.2281,
+      "take_profit_2": 3.2496,
       "risk_reward": 1.5
     },
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 459.78,
-      "stop_loss": 454.6357,
-      "take_profit_1": 467.4964,
-      "take_profit_2": 471.3546,
+      "entry": 457.05,
+      "stop_loss": 451.8071,
+      "take_profit_1": 464.9143,
+      "take_profit_2": 468.8465,
       "risk_reward": 1.5
     }
   ]
