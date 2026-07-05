@@ -1,43 +1,34 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-07-05 11:18:36",
+  "signal_count": 3,
+  "last_update": "2026-07-05 12:03:39",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
-      "entry": 62776.4,
-      "stop_loss": 62466.4057,
-      "take_profit_1": 63134.0857,
-      "take_profit_2": 63312.9286,
-      "risk_reward": 1.15
-    },
-    {
-      "symbol": "ETHUSDT",
-      "signal": "LONG",
-      "entry": 1764.92,
-      "stop_loss": 1750.5643,
-      "take_profit_1": 1781.4843,
-      "take_profit_2": 1789.7665,
-      "risk_reward": 1.15
-    },
-    {
-      "symbol": "HMSTRUSDT",
-      "signal": "LONG",
-      "entry": 0.0003171,
-      "stop_loss": 0.0003,
-      "take_profit_1": 0.0004,
-      "take_profit_2": 0.0004,
-      "risk_reward": 4.85
+      "entry": 62735.1,
+      "stop_loss": 62509.5143,
+      "take_profit_1": 63073.4786,
+      "take_profit_2": 63242.6679,
+      "risk_reward": 1.5
     },
     {
       "symbol": "ADAUSDT",
       "signal": "LONG",
-      "entry": 0.19,
+      "entry": 0.1898,
       "stop_loss": 0.187,
-      "take_profit_1": 0.1945,
-      "take_profit_2": 0.1968,
-      "risk_reward": 1.5
+      "take_profit_1": 0.1939,
+      "take_profit_2": 0.1959,
+      "risk_reward": 1.46
+    },
+    {
+      "symbol": "TLMUSDT",
+      "signal": "LONG",
+      "entry": 0.002321,
+      "stop_loss": 0.0022,
+      "take_profit_1": 0.0025,
+      "take_profit_2": 0.0026,
+      "risk_reward": 1.48
     }
   ]
 }
