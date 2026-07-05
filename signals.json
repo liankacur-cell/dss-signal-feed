@@ -1,6 +1,169 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-07-05 15:48:54",
-  "signals": []
+  "signal_count": 3,
+  "last_update": "2026-07-05 16:33:57",
+  "signals": [
+    {
+      "symbol": "BTCUSDT",
+      "signal": "LONG",
+      "entry": 62711.1,
+      "stop_loss": 62494.8143,
+      "take_profit_1": 63035.5286,
+      "take_profit_2": 63197.7429,
+      "risk_reward": 1.5,
+      "atr_15m": 108.14285714285663,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 62.7,
+        "structure_score": 75,
+        "trend_score": 92,
+        "momentum_score": 25.0,
+        "volatility_score": 40,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bullish",
+        "label": "HH-BIAS"
+      },
+      "trend": {
+        "score": 92,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 25.0,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 40,
+        "state": "squeeze"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
+    {
+      "symbol": "ADAUSDT",
+      "signal": "LONG",
+      "entry": 0.1902,
+      "stop_loss": 0.1873,
+      "take_profit_1": 0.1946,
+      "take_profit_2": 0.1968,
+      "risk_reward": 1.52,
+      "atr_15m": 0.0014571428571428593,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 65.5,
+        "structure_score": 65,
+        "trend_score": 98,
+        "momentum_score": 32.5,
+        "volatility_score": 80,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 65,
+        "direction": "bullish",
+        "label": "RANGE_BIAS"
+      },
+      "trend": {
+        "score": 98,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 32.5,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 80,
+        "state": "expansion"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    },
+    {
+      "symbol": "HMSTRUSDT",
+      "signal": "LONG",
+      "entry": 0.0003355,
+      "stop_loss": 0.0003,
+      "take_profit_1": 0.0004,
+      "take_profit_2": 0.0004,
+      "risk_reward": 1.82,
+      "atr_15m": 1.2192857142857149e-05,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 62.9,
+        "structure_score": 65,
+        "trend_score": 85,
+        "momentum_score": 32.5,
+        "volatility_score": 80,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 65,
+        "direction": "bullish",
+        "label": "RANGE_BIAS"
+      },
+      "trend": {
+        "score": 85,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 32.5,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 80,
+        "state": "expansion"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    }
+  ]
 }
