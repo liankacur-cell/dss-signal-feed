@@ -1,25 +1,34 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-05 18:04:02",
+  "signal_count": 3,
+  "last_update": "2026-07-05 18:49:05",
   "signals": [
+    {
+      "symbol": "LABUSDT",
+      "signal": "LONG",
+      "entry": 15.568,
+      "stop_loss": 14.6707,
+      "take_profit_1": 16.8115,
+      "take_profit_2": 17.4332,
+      "risk_reward": 1.39
+    },
     {
       "symbol": "ADAUSDT",
       "signal": "LONG",
-      "entry": 0.1867,
-      "stop_loss": 0.1835,
-      "take_profit_1": 0.1915,
-      "take_profit_2": 0.1939,
-      "risk_reward": 1.5
+      "entry": 0.187,
+      "stop_loss": 0.1833,
+      "take_profit_1": 0.1913,
+      "take_profit_2": 0.1935,
+      "risk_reward": 1.16
     },
     {
       "symbol": "HMSTRUSDT",
       "signal": "LONG",
-      "entry": 0.0003412,
+      "entry": 0.0003417,
       "stop_loss": 0.0003,
       "take_profit_1": 0.0004,
       "take_profit_2": 0.0004,
-      "risk_reward": 1.43
+      "risk_reward": 1.4
     }
   ]
 }
