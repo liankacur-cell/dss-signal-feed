@@ -1,6 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-07-06 06:04:50",
-  "signals": []
+  "signal_count": 1,
+  "last_update": "2026-07-06 06:49:53",
+  "signals": [
+    {
+      "symbol": "XAUUSDT",
+      "signal": "LONG",
+      "entry": 4184.33,
+      "stop_loss": 4171.1571,
+      "take_profit_1": 4204.0893,
+      "take_profit_2": 4213.9689,
+      "risk_reward": 1.5
+    }
+  ]
 }
