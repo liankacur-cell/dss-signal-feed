@@ -1,16 +1,6 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-05 15:03:51",
-  "signals": [
-    {
-      "symbol": "VANRYUSDT",
-      "signal": "LONG",
-      "entry": 0.004613,
-      "stop_loss": 0.0041,
-      "take_profit_1": 0.0052,
-      "take_profit_2": 0.0055,
-      "risk_reward": 1.14
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-07-05 15:48:54",
+  "signals": []
 }
