@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-05 19:34:08",
+  "last_update": "2026-07-05 20:19:10",
   "signals": [
     {
-      "symbol": "ADAUSDT",
+      "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 0.1866,
-      "stop_loss": 0.1839,
-      "take_profit_1": 0.1907,
-      "take_profit_2": 0.1928,
-      "risk_reward": 1.52,
-      "atr_15m": 0.0013642857142857126,
+      "entry": 15.904,
+      "stop_loss": 14.7754,
+      "take_profit_1": 17.1599,
+      "take_profit_2": 17.7878,
+      "risk_reward": 1.11,
+      "atr_15m": 0.41864285714285704,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 64.4,
-        "structure_score": 65,
+        "total_score": 69.3,
+        "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 25.0,
+        "momentum_score": 37.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -28,16 +28,16 @@
         "gate": "PASS"
       },
       "structure": {
-        "score": 65,
+        "score": 75,
         "direction": "bullish",
-        "label": "RANGE_BIAS"
+        "label": "HH-BIAS"
       },
       "trend": {
         "score": 98,
         "direction": "bullish"
       },
       "momentum": {
-        "score": 25.0,
+        "score": 37.5,
         "direction": "bearish"
       },
       "volatility": {

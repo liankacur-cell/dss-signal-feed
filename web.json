@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-05 19:34:08",
+  "last_update": "2026-07-05 20:19:10",
   "signals": [
     {
-      "symbol": "ADAUSDT",
+      "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 0.1866,
-      "stop_loss": 0.1839,
-      "take_profit_1": 0.1907,
-      "take_profit_2": 0.1928,
-      "risk_reward": 1.52
+      "entry": 15.904,
+      "stop_loss": 14.7754,
+      "take_profit_1": 17.1599,
+      "take_profit_2": 17.7878,
+      "risk_reward": 1.11
     }
   ]
 }
