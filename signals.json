@@ -1,77 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-06 16:35:37",
+  "signal_count": 1,
+  "last_update": "2026-07-06 17:20:40",
   "signals": [
-    {
-      "symbol": "LABUSDT",
-      "signal": "LONG",
-      "entry": 15.731,
-      "stop_loss": 14.9206,
-      "take_profit_1": 16.9466,
-      "take_profit_2": 17.5544,
-      "risk_reward": 1.5,
-      "atr_15m": 0.40521428571428536,
-      "btc_regime": "BTC: bullish/bullish",
-      "audit": {
-        "total_score": 65.8,
-        "structure_score": 75,
-        "trend_score": 90,
-        "momentum_score": 25.0,
-        "volatility_score": 80,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bullish",
-        "label": "HH-BIAS"
-      },
-      "trend": {
-        "score": 90,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 25.0,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 80,
-        "state": "expansion"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
     {
       "symbol": "HYPEUSDT",
       "signal": "LONG",
-      "entry": 69.96,
-      "stop_loss": 69.2949,
-      "take_profit_1": 70.9577,
-      "take_profit_2": 71.4566,
-      "risk_reward": 1.5,
-      "atr_15m": 0.332571428571431,
+      "entry": 70.37,
+      "stop_loss": 69.6009,
+      "take_profit_1": 71.4011,
+      "take_profit_2": 71.9167,
+      "risk_reward": 1.34,
+      "atr_15m": 0.3437142857142886,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 64.8,
+        "total_score": 66.0,
         "structure_score": 75,
-        "trend_score": 82,
-        "momentum_score": 37.5,
+        "trend_score": 92,
+        "momentum_score": 32.5,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -87,11 +33,11 @@
         "label": "HH-BIAS"
       },
       "trend": {
-        "score": 82,
+        "score": 92,
         "direction": "bullish"
       },
       "momentum": {
-        "score": 37.5,
+        "score": 32.5,
         "direction": "bearish"
       },
       "volatility": {
