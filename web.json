@@ -1,52 +1,43 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 5,
-  "last_update": "2026-07-06 10:35:08",
+  "signal_count": 4,
+  "last_update": "2026-07-06 11:20:10",
   "signals": [
     {
       "symbol": "ETHUSDT",
       "signal": "LONG",
-      "entry": 1774.99,
-      "stop_loss": 1758.4114,
-      "take_profit_1": 1799.8579,
-      "take_profit_2": 1812.2919,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "SOLUSDT",
-      "signal": "LONG",
-      "entry": 80.62,
-      "stop_loss": 79.7386,
-      "take_profit_1": 81.9421,
-      "take_profit_2": 82.6031,
-      "risk_reward": 1.5
+      "entry": 1780.87,
+      "stop_loss": 1763.567,
+      "take_profit_1": 1800.835,
+      "take_profit_2": 1810.8175,
+      "risk_reward": 1.15
     },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.151,
-      "stop_loss": 3.1124,
-      "take_profit_1": 3.2089,
-      "take_profit_2": 3.2378,
-      "risk_reward": 1.5
+      "entry": 3.168,
+      "stop_loss": 3.1253,
+      "take_profit_1": 3.2173,
+      "take_profit_2": 3.2419,
+      "risk_reward": 1.15
     },
     {
       "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 16.368,
-      "stop_loss": 15.5152,
-      "take_profit_1": 17.4662,
-      "take_profit_2": 18.0153,
-      "risk_reward": 1.29
+      "entry": 16.32,
+      "stop_loss": 15.5253,
+      "take_profit_1": 17.3171,
+      "take_profit_2": 17.8156,
+      "risk_reward": 1.25
     },
     {
       "symbol": "VANRYUSDT",
       "signal": "LONG",
-      "entry": 0.00541,
-      "stop_loss": 0.0049,
-      "take_profit_1": 0.0061,
-      "take_profit_2": 0.0064,
-      "risk_reward": 1.35
+      "entry": 0.005264,
+      "stop_loss": 0.0048,
+      "take_profit_1": 0.0059,
+      "take_profit_2": 0.0062,
+      "risk_reward": 1.37
     }
   ]
 }
