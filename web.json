@@ -1,42 +1,51 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-07-06 08:19:59",
+  "signal_count": 5,
+  "last_update": "2026-07-06 09:05:02",
   "signals": [
     {
-      "symbol": "ZECUSDT",
+      "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 463.65,
-      "stop_loss": 456.3514,
-      "take_profit_1": 472.4357,
-      "take_profit_2": 476.8286,
-      "risk_reward": 1.2
+      "entry": 81.48,
+      "stop_loss": 80.6047,
+      "take_profit_1": 82.6329,
+      "take_profit_2": 83.2094,
+      "risk_reward": 1.32
+    },
+    {
+      "symbol": "SUIUSDT",
+      "signal": "LONG",
+      "entry": 0.7546,
+      "stop_loss": 0.7464,
+      "take_profit_1": 0.7669,
+      "take_profit_2": 0.7731,
+      "risk_reward": 1.5
     },
     {
       "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 15.908,
-      "stop_loss": 15.2383,
-      "take_profit_1": 16.9126,
-      "take_profit_2": 17.4149,
+      "entry": 15.984,
+      "stop_loss": 15.3084,
+      "take_profit_1": 16.9974,
+      "take_profit_2": 17.5041,
       "risk_reward": 1.5
     },
     {
       "symbol": "VANRYUSDT",
       "signal": "LONG",
-      "entry": 0.005462,
+      "entry": 0.005752,
       "stop_loss": 0.0051,
-      "take_profit_1": 0.0061,
-      "take_profit_2": 0.0064,
-      "risk_reward": 1.76
+      "take_profit_1": 0.0065,
+      "take_profit_2": 0.0069,
+      "risk_reward": 1.15
     },
     {
       "symbol": "XAUUSDT",
       "signal": "LONG",
-      "entry": 4189.48,
-      "stop_loss": 4166.3257,
-      "take_profit_1": 4224.2114,
-      "take_profit_2": 4241.5771,
+      "entry": 4186.8,
+      "stop_loss": 4162.4614,
+      "take_profit_1": 4223.3079,
+      "take_profit_2": 4241.5619,
       "risk_reward": 1.5
     }
   ]
