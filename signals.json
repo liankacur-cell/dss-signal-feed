@@ -1,61 +1,6 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-07 02:21:19",
-  "signals": [
-    {
-      "symbol": "MUUSDT",
-      "signal": "SHORT",
-      "entry": 1002.87,
-      "stop_loss": 1021.6439,
-      "take_profit_1": 979.3307,
-      "take_profit_2": 967.5611,
-      "risk_reward": 1.25,
-      "atr_15m": 7.846428571428565,
-      "btc_regime": "BTC: bullish/bullish",
-      "audit": {
-        "total_score": 71.8,
-        "structure_score": 75,
-        "trend_score": 86,
-        "momentum_score": 32.5,
-        "volatility_score": 65,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bearish",
-        "trend_dir": "bearish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bearish",
-        "label": "LL-BIAS"
-      },
-      "trend": {
-        "score": 86,
-        "direction": "bearish"
-      },
-      "momentum": {
-        "score": 32.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 65,
-        "state": "normal"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-07-07 03:06:22",
+  "signals": []
 }

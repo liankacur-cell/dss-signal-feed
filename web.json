@@ -1,16 +1,6 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-07 02:21:19",
-  "signals": [
-    {
-      "symbol": "MUUSDT",
-      "signal": "SHORT",
-      "entry": 1002.87,
-      "stop_loss": 1021.6439,
-      "take_profit_1": 979.3307,
-      "take_profit_2": 967.5611,
-      "risk_reward": 1.25
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-07-07 03:06:22",
+  "signals": []
 }
