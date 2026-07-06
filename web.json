@@ -1,33 +1,42 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 3,
-  "last_update": "2026-07-06 21:50:58",
+  "signal_count": 4,
+  "last_update": "2026-07-06 22:36:00",
   "signals": [
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 1834.7,
-      "stop_loss": 1886.6714,
-      "take_profit_1": 1756.7429,
-      "take_profit_2": 1717.7643,
-      "risk_reward": 1.5
+      "entry": 1797.3,
+      "stop_loss": 1865.4534,
+      "take_profit_1": 1710.8657,
+      "take_profit_2": 1667.6486,
+      "risk_reward": 1.27
+    },
+    {
+      "symbol": "SKHYNIXUSDT",
+      "signal": "LONG",
+      "entry": 1546.42,
+      "stop_loss": 1509.5553,
+      "take_profit_1": 1591.1671,
+      "take_profit_2": 1613.5406,
+      "risk_reward": 1.21
     },
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 1016.71,
-      "stop_loss": 1038.7643,
-      "take_profit_1": 983.6286,
-      "take_profit_2": 967.0879,
+      "entry": 1002.75,
+      "stop_loss": 1027.2643,
+      "take_profit_1": 965.9786,
+      "take_profit_2": 947.5929,
       "risk_reward": 1.5
     },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 209.51,
-      "stop_loss": 217.0014,
-      "take_profit_1": 198.2729,
-      "take_profit_2": 192.6543,
+      "entry": 204.14,
+      "stop_loss": 212.8171,
+      "take_profit_1": 191.1243,
+      "take_profit_2": 184.6165,
       "risk_reward": 1.5
     }
   ]
