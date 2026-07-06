@@ -1,6 +1,61 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-07-06 14:20:24",
-  "signals": []
+  "signal_count": 1,
+  "last_update": "2026-07-06 15:05:28",
+  "signals": [
+    {
+      "symbol": "LABUSDT",
+      "signal": "LONG",
+      "entry": 16.571,
+      "stop_loss": 15.4954,
+      "take_profit_1": 17.8666,
+      "take_profit_2": 18.5144,
+      "risk_reward": 1.2,
+      "atr_15m": 0.43185714285714244,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 68.5,
+        "structure_score": 75,
+        "trend_score": 98,
+        "momentum_score": 32.5,
+        "volatility_score": 80,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bearish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bullish",
+        "label": "HH-BIAS"
+      },
+      "trend": {
+        "score": 98,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 32.5,
+        "direction": "bearish"
+      },
+      "volatility": {
+        "score": 80,
+        "state": "expansion"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    }
+  ]
 }
