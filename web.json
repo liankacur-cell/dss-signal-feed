@@ -1,16 +1,6 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-07 06:51:43",
-  "signals": [
-    {
-      "symbol": "LABUSDT",
-      "signal": "LONG",
-      "entry": 14.066,
-      "stop_loss": 12.9532,
-      "take_profit_1": 15.3245,
-      "take_profit_2": 15.9537,
-      "risk_reward": 1.13
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-07-07 07:36:46",
+  "signals": []
 }
