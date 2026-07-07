@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-07 15:52:32",
+  "last_update": "2026-07-07 16:37:36",
   "signals": [
     {
       "symbol": "SPCXUSDT",
       "signal": "LONG",
-      "entry": 157.21,
-      "stop_loss": 155.4891,
-      "take_profit_1": 159.3186,
-      "take_profit_2": 160.3729,
-      "risk_reward": 1.23
+      "entry": 157.47,
+      "stop_loss": 155.472,
+      "take_profit_1": 159.75,
+      "take_profit_2": 160.89,
+      "risk_reward": 1.14
     }
   ]
 }
