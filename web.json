@@ -1,51 +1,33 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 5,
-  "last_update": "2026-07-08 00:08:09",
+  "signal_count": 3,
+  "last_update": "2026-07-08 00:53:12",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07545,
-      "stop_loss": 0.0764,
-      "take_profit_1": 0.074,
-      "take_profit_2": 0.0733,
+      "entry": 0.07543,
+      "stop_loss": 0.0763,
+      "take_profit_1": 0.0741,
+      "take_profit_2": 0.0734,
       "risk_reward": 1.53
-    },
-    {
-      "symbol": "SNDKUSDT",
-      "signal": "SHORT",
-      "entry": 1613.28,
-      "stop_loss": 1696.9854,
-      "take_profit_1": 1508.7257,
-      "take_profit_2": 1456.4486,
-      "risk_reward": 1.25
     },
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1446.0,
-      "stop_loss": 1481.3029,
-      "take_profit_1": 1393.0457,
-      "take_profit_2": 1366.5685,
+      "entry": 1456.32,
+      "stop_loss": 1486.1643,
+      "take_profit_1": 1411.5536,
+      "take_profit_2": 1389.1704,
       "risk_reward": 1.5
-    },
-    {
-      "symbol": "SOXLUSDT",
-      "signal": "SHORT",
-      "entry": 169.69,
-      "stop_loss": 184.4373,
-      "take_profit_1": 153.4171,
-      "take_profit_2": 145.2807,
-      "risk_reward": 1.1
     },
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 936.52,
-      "stop_loss": 964.6129,
-      "take_profit_1": 894.3807,
-      "take_profit_2": 873.3111,
+      "entry": 935.38,
+      "stop_loss": 958.8443,
+      "take_profit_1": 900.1836,
+      "take_profit_2": 882.5854,
       "risk_reward": 1.5
     }
   ]
