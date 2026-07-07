@@ -1,25 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-08 01:38:15",
+  "signal_count": 1,
+  "last_update": "2026-07-08 02:23:19",
   "signals": [
     {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "entry": 0.0751,
-      "stop_loss": 0.0758,
-      "take_profit_1": 0.074,
-      "take_profit_2": 0.0734,
-      "risk_reward": 1.57
-    },
-    {
-      "symbol": "SKHYNIXUSDT",
-      "signal": "SHORT",
-      "entry": 1444.4,
-      "stop_loss": 1473.7577,
-      "take_profit_1": 1410.5257,
-      "take_profit_2": 1393.5885,
-      "risk_reward": 1.15
+      "symbol": "ETHUSDT",
+      "signal": "LONG",
+      "entry": 1780.49,
+      "stop_loss": 1757.2451,
+      "take_profit_1": 1808.1393,
+      "take_profit_2": 1821.964,
+      "risk_reward": 1.19
     }
   ]
 }
