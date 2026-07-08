@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 2,
-  "last_update": "2026-07-08 13:39:06",
+  "last_update": "2026-07-08 14:24:09",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 474.68,
-      "stop_loss": 468.1657,
-      "take_profit_1": 484.4514,
-      "take_profit_2": 489.3371,
+      "entry": 475.32,
+      "stop_loss": 468.4371,
+      "take_profit_1": 485.6443,
+      "take_profit_2": 490.8064,
       "risk_reward": 1.5,
-      "atr_15m": 3.257142857142855,
+      "atr_15m": 3.4414285714285677,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 65.1,
@@ -58,18 +58,18 @@
       }
     },
     {
-      "symbol": "SKHYNIXUSDT",
+      "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 1406.58,
-      "stop_loss": 1352.3,
-      "take_profit_1": 1488.0,
-      "take_profit_2": 1528.71,
+      "entry": 3.115,
+      "stop_loss": 2.3216,
+      "take_profit_1": 4.3051,
+      "take_profit_2": 4.9002,
       "risk_reward": 1.5,
-      "atr_15m": 27.140000000000004,
+      "atr_15m": 0.3967142857142858,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 64.0,
-        "structure_score": 65,
+        "total_score": 67.0,
+        "structure_score": 75,
         "trend_score": 98,
         "momentum_score": 62.5,
         "volatility_score": 80,
@@ -82,9 +82,9 @@
         "gate": "PASS"
       },
       "structure": {
-        "score": 65,
+        "score": 75,
         "direction": "bullish",
-        "label": "RANGE_BIAS"
+        "label": "HH-BIAS"
       },
       "trend": {
         "score": 98,
