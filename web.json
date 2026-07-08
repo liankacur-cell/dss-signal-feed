@@ -1,33 +1,24 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 3,
-  "last_update": "2026-07-08 12:54:04",
+  "signal_count": 2,
+  "last_update": "2026-07-08 13:39:06",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 481.99,
-      "stop_loss": 474.4761,
-      "take_profit_1": 492.8286,
-      "take_profit_2": 498.2479,
-      "risk_reward": 1.44
-    },
-    {
-      "symbol": "LABUSDT",
-      "signal": "LONG",
-      "entry": 3.395,
-      "stop_loss": 2.4309,
-      "take_profit_1": 4.8412,
-      "take_profit_2": 5.5643,
+      "entry": 474.68,
+      "stop_loss": 468.1657,
+      "take_profit_1": 484.4514,
+      "take_profit_2": 489.3371,
       "risk_reward": 1.5
     },
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "LONG",
-      "entry": 1420.06,
-      "stop_loss": 1365.1957,
-      "take_profit_1": 1502.3564,
-      "take_profit_2": 1543.5046,
+      "entry": 1406.58,
+      "stop_loss": 1352.3,
+      "take_profit_1": 1488.0,
+      "take_profit_2": 1528.71,
       "risk_reward": 1.5
     }
   ]
