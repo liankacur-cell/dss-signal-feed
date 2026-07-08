@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bearish",
   "signal_count": 5,
-  "last_update": "2026-07-08 23:24:49",
+  "last_update": "2026-07-09 00:09:52",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07212,
-      "stop_loss": 0.0729,
-      "take_profit_1": 0.071,
-      "take_profit_2": 0.0704,
-      "risk_reward": 1.44,
-      "atr_15m": 0.00038357142857142854,
+      "entry": 0.07242,
+      "stop_loss": 0.0731,
+      "take_profit_1": 0.0713,
+      "take_profit_2": 0.0707,
+      "risk_reward": 1.65,
+      "atr_15m": 0.00036071428571428566,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 69.4,
+        "total_score": 70.5,
         "structure_score": 75,
         "trend_score": 92,
-        "momentum_score": 55.0,
+        "momentum_score": 62.5,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 55.0,
+        "score": 62.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -60,17 +60,17 @@
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 1633.12,
-      "stop_loss": 1719.0401,
-      "take_profit_1": 1518.9186,
-      "take_profit_2": 1461.8179,
-      "risk_reward": 1.33,
-      "atr_15m": 38.06714285714286,
+      "entry": 1654.32,
+      "stop_loss": 1719.8086,
+      "take_profit_1": 1556.0871,
+      "take_profit_2": 1506.9706,
+      "risk_reward": 1.5,
+      "atr_15m": 32.744285714285716,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 71.4,
+        "total_score": 68.4,
         "structure_score": 75,
-        "trend_score": 90,
+        "trend_score": 75,
         "momentum_score": 62.5,
         "volatility_score": 80,
         "liquidity_score": 60,
@@ -87,7 +87,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 90,
+        "score": 75,
         "direction": "bearish"
       },
       "momentum": {
@@ -114,12 +114,12 @@
     {
       "symbol": "LABUSDT",
       "signal": "LONG",
-      "entry": 1.19,
-      "stop_loss": 0.687,
-      "take_profit_1": 1.9445,
-      "take_profit_2": 2.3217,
+      "entry": 1.181,
+      "stop_loss": 0.6801,
+      "take_profit_1": 1.9323,
+      "take_profit_2": 2.3079,
       "risk_reward": 1.5,
-      "atr_15m": 0.2515,
+      "atr_15m": 0.2504285714285714,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
         "total_score": 64.8,
@@ -168,17 +168,17 @@
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 169.05,
-      "stop_loss": 180.4929,
-      "take_profit_1": 151.8857,
-      "take_profit_2": 143.3036,
+      "entry": 173.94,
+      "stop_loss": 184.1329,
+      "take_profit_1": 158.6507,
+      "take_profit_2": 151.0061,
       "risk_reward": 1.5,
-      "atr_15m": 5.721428571428573,
+      "atr_15m": 5.096428571428573,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 72.2,
+        "total_score": 69.2,
         "structure_score": 75,
-        "trend_score": 90,
+        "trend_score": 75,
         "momentum_score": 67.5,
         "volatility_score": 80,
         "liquidity_score": 60,
@@ -195,7 +195,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 90,
+        "score": 75,
         "direction": "bearish"
       },
       "momentum": {
@@ -222,18 +222,18 @@
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 935.88,
-      "stop_loss": 968.4086,
-      "take_profit_1": 887.0871,
-      "take_profit_2": 862.6907,
+      "entry": 942.96,
+      "stop_loss": 968.4786,
+      "take_profit_1": 904.6821,
+      "take_profit_2": 885.5431,
       "risk_reward": 1.5,
-      "atr_15m": 16.264285714285702,
+      "atr_15m": 12.759285714285697,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 71.4,
+        "total_score": 69.2,
         "structure_score": 75,
-        "trend_score": 90,
-        "momentum_score": 62.5,
+        "trend_score": 75,
+        "momentum_score": 67.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -249,11 +249,11 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 90,
+        "score": 75,
         "direction": "bearish"
       },
       "momentum": {
-        "score": 62.5,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
