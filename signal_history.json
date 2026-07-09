@@ -1,5 +1,174 @@
 [
   {
+    "timestamp": "2026-07-10 03:11:45",
+    "btc_context": "BTC: bullish/bullish",
+    "signal_count": 3,
+    "signals": [
+      {
+        "symbol": "DOGEUSDT",
+        "signal": "SHORT",
+        "entry": 0.07302,
+        "stop_loss": 0.0735,
+        "take_profit_1": 0.0723,
+        "take_profit_2": 0.0719,
+        "risk_reward": 1.5,
+        "atr_15m": 0.0002500000000000012,
+        "btc_regime": "BTC: bullish/bullish",
+        "audit": {
+          "total_score": 65.1,
+          "structure_score": 75,
+          "trend_score": 61,
+          "momentum_score": 67.5,
+          "volatility_score": 65,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 61,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 67.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 65,
+          "state": "normal"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "KORUUSDT",
+        "signal": "SHORT",
+        "entry": 568.27,
+        "stop_loss": 580.5343,
+        "take_profit_1": 549.8736,
+        "take_profit_2": 540.6754,
+        "risk_reward": 1.5,
+        "atr_15m": 6.132142857142843,
+        "btc_regime": "BTC: bullish/bullish",
+        "audit": {
+          "total_score": 69.8,
+          "structure_score": 75,
+          "trend_score": 67,
+          "momentum_score": 82.5,
+          "volatility_score": 80,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 67,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 82.5,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 80,
+          "state": "expansion"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      },
+      {
+        "symbol": "SPCXUSDT",
+        "signal": "SHORT",
+        "entry": 152.29,
+        "stop_loss": 154.2214,
+        "take_profit_1": 149.3929,
+        "take_profit_2": 147.9443,
+        "risk_reward": 1.5,
+        "atr_15m": 0.9657142857142864,
+        "btc_regime": "BTC: bullish/bullish",
+        "audit": {
+          "total_score": 67.4,
+          "structure_score": 75,
+          "trend_score": 67,
+          "momentum_score": 75.0,
+          "volatility_score": 65,
+          "liquidity_score": 60,
+          "money_flow_score": 55,
+          "squeeze_score": 40,
+          "structure_dir": "bearish",
+          "trend_dir": "bearish",
+          "momentum_dir": "bullish",
+          "gate": "PASS"
+        },
+        "structure": {
+          "score": 75,
+          "direction": "bearish",
+          "label": "LL-BIAS"
+        },
+        "trend": {
+          "score": 67,
+          "direction": "bearish"
+        },
+        "momentum": {
+          "score": 75.0,
+          "direction": "bullish"
+        },
+        "volatility": {
+          "score": 65,
+          "state": "normal"
+        },
+        "liquidity": {
+          "score": 60,
+          "state": "neutral"
+        },
+        "money_flow": {
+          "score": 55,
+          "state": "balanced"
+        },
+        "squeeze": {
+          "score": 40,
+          "state": "no_squeeze"
+        }
+      }
+    ]
+  },
+  {
     "timestamp": "2026-07-10 02:26:42",
     "btc_context": "BTC: bullish/bearish",
     "signal_count": 2,
