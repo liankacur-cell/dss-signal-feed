@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bullish/bearish",
   "signal_count": 2,
-  "last_update": "2026-07-09 19:41:12",
+  "last_update": "2026-07-09 20:26:14",
   "signals": [
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1533.59,
-      "stop_loss": 1554.3629,
-      "take_profit_1": 1502.4307,
-      "take_profit_2": 1486.851,
+      "entry": 1548.19,
+      "stop_loss": 1571.6286,
+      "take_profit_1": 1513.0321,
+      "take_profit_2": 1495.4531,
       "risk_reward": 1.5,
-      "atr_15m": 10.386428571428578,
+      "atr_15m": 11.719285714285709,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
         "total_score": 66.9,
@@ -60,18 +60,18 @@
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 550.85,
-      "stop_loss": 564.2186,
-      "take_profit_1": 530.7971,
-      "take_profit_2": 520.7706,
+      "entry": 558.47,
+      "stop_loss": 573.7529,
+      "take_profit_1": 535.5457,
+      "take_profit_2": 524.0836,
       "risk_reward": 1.5,
-      "atr_15m": 6.684285714285688,
+      "atr_15m": 7.641428571428556,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 68.4,
+        "total_score": 69.2,
         "structure_score": 75,
         "trend_score": 75,
-        "momentum_score": 62.5,
+        "momentum_score": 67.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +91,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 62.5,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
