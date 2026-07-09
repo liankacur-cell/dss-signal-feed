@@ -1,43 +1,61 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 4,
-  "last_update": "2026-07-09 21:56:22",
+  "signal_count": 6,
+  "last_update": "2026-07-09 22:41:25",
   "signals": [
+    {
+      "symbol": "SOLUSDT",
+      "signal": "LONG",
+      "entry": 77.75,
+      "stop_loss": 76.5239,
+      "take_profit_1": 79.1107,
+      "take_profit_2": 79.791,
+      "risk_reward": 1.11
+    },
+    {
+      "symbol": "SUIUSDT",
+      "signal": "LONG",
+      "entry": 0.7185,
+      "stop_loss": 0.7108,
+      "take_profit_1": 0.7287,
+      "take_profit_2": 0.7338,
+      "risk_reward": 1.32
+    },
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07263,
+      "entry": 0.07264,
       "stop_loss": 0.0733,
-      "take_profit_1": 0.0718,
-      "take_profit_2": 0.0714,
-      "risk_reward": 1.24
+      "take_profit_1": 0.0717,
+      "take_profit_2": 0.0712,
+      "risk_reward": 1.42
     },
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 1861.2,
-      "stop_loss": 1911.84,
-      "take_profit_1": 1785.24,
-      "take_profit_2": 1747.26,
+      "entry": 1877.2,
+      "stop_loss": 1928.0943,
+      "take_profit_1": 1800.8586,
+      "take_profit_2": 1762.6879,
       "risk_reward": 1.5
     },
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1529.23,
-      "stop_loss": 1576.0982,
-      "take_profit_1": 1476.2479,
-      "take_profit_2": 1449.7569,
-      "risk_reward": 1.13
+      "entry": 1539.22,
+      "stop_loss": 1576.0704,
+      "take_profit_1": 1486.5164,
+      "take_profit_2": 1460.1646,
+      "risk_reward": 1.43
     },
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 554.23,
-      "stop_loss": 581.7814,
-      "take_profit_1": 518.9157,
-      "take_profit_2": 501.2586,
-      "risk_reward": 1.28
+      "entry": 565.85,
+      "stop_loss": 589.2686,
+      "take_profit_1": 530.7221,
+      "take_profit_2": 513.1581,
+      "risk_reward": 1.5
     }
   ]
 }
