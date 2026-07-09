@@ -1,24 +1,33 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 2,
-  "last_update": "2026-07-09 20:26:14",
+  "signal_count": 3,
+  "last_update": "2026-07-09 21:11:17",
   "signals": [
+    {
+      "symbol": "SNDKUSDT",
+      "signal": "SHORT",
+      "entry": 1850.77,
+      "stop_loss": 1897.0029,
+      "take_profit_1": 1781.4207,
+      "take_profit_2": 1746.746,
+      "risk_reward": 1.5
+    },
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1548.19,
-      "stop_loss": 1571.6286,
-      "take_profit_1": 1513.0321,
-      "take_profit_2": 1495.4531,
-      "risk_reward": 1.5
+      "entry": 1542.43,
+      "stop_loss": 1582.379,
+      "take_profit_1": 1496.335,
+      "take_profit_2": 1473.2875,
+      "risk_reward": 1.15
     },
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 558.47,
-      "stop_loss": 573.7529,
-      "take_profit_1": 535.5457,
-      "take_profit_2": 524.0836,
+      "entry": 567.94,
+      "stop_loss": 587.8729,
+      "take_profit_1": 538.0407,
+      "take_profit_2": 523.091,
       "risk_reward": 1.5
     }
   ]
