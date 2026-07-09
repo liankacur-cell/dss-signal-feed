@@ -1,23 +1,23 @@
 {
-  "btc_context": "BTC: bullish/bullish",
+  "btc_context": "BTC: bullish/bearish",
   "signal_count": 2,
-  "last_update": "2026-07-10 01:41:38",
+  "last_update": "2026-07-10 02:26:42",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.0732,
-      "stop_loss": 0.0737,
-      "take_profit_1": 0.0724,
-      "take_profit_2": 0.072,
-      "risk_reward": 1.6,
-      "atr_15m": 0.0002642857142857149,
-      "btc_regime": "BTC: bullish/bullish",
+      "entry": 0.07305,
+      "stop_loss": 0.0736,
+      "take_profit_1": 0.0723,
+      "take_profit_2": 0.0719,
+      "risk_reward": 1.36,
+      "atr_15m": 0.0002557142857142857,
+      "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 67.4,
+        "total_score": 66.3,
         "structure_score": 75,
         "trend_score": 67,
-        "momentum_score": 75.0,
+        "momentum_score": 67.5,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -60,13 +60,13 @@
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 570.55,
-      "stop_loss": 588.4566,
-      "take_profit_1": 549.8886,
-      "take_profit_2": 539.5579,
-      "risk_reward": 1.15,
-      "atr_15m": 6.88714285714287,
-      "btc_regime": "BTC: bullish/bullish",
+      "entry": 570.32,
+      "stop_loss": 582.7214,
+      "take_profit_1": 551.7179,
+      "take_profit_2": 542.4168,
+      "risk_reward": 1.5,
+      "atr_15m": 6.20071428571429,
+      "btc_regime": "BTC: bullish/bearish",
       "audit": {
         "total_score": 69.8,
         "structure_score": 75,
