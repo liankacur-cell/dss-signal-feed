@@ -1,34 +1,25 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 3,
-  "last_update": "2026-07-09 12:10:37",
+  "signal_count": 2,
+  "last_update": "2026-07-09 12:55:40",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07261,
-      "stop_loss": 0.0731,
-      "take_profit_1": 0.0718,
-      "take_profit_2": 0.0714,
-      "risk_reward": 1.65
+      "entry": 0.07274,
+      "stop_loss": 0.0732,
+      "take_profit_1": 0.072,
+      "take_profit_2": 0.0716,
+      "risk_reward": 1.61
     },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 176.61,
-      "stop_loss": 182.7234,
-      "take_profit_1": 168.5764,
-      "take_profit_2": 164.5596,
-      "risk_reward": 1.31
-    },
-    {
-      "symbol": "XAUUSDT",
-      "signal": "LONG",
-      "entry": 4071.69,
-      "stop_loss": 4053.6441,
-      "take_profit_1": 4092.5121,
-      "take_profit_2": 4102.9231,
-      "risk_reward": 1.15
+      "entry": 178.96,
+      "stop_loss": 183.7943,
+      "take_profit_1": 171.7086,
+      "take_profit_2": 168.0829,
+      "risk_reward": 1.5
     }
   ]
 }
