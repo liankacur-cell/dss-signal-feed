@@ -1,51 +1,33 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 5,
-  "last_update": "2026-07-09 06:55:17",
+  "signal_count": 3,
+  "last_update": "2026-07-09 07:40:19",
   "signals": [
     {
-      "symbol": "SNDKUSDT",
-      "signal": "SHORT",
-      "entry": 1740.0,
-      "stop_loss": 1759.6771,
-      "take_profit_1": 1710.4843,
-      "take_profit_2": 1695.7265,
-      "risk_reward": 1.5
+      "symbol": "UNIUSDT",
+      "signal": "LONG",
+      "entry": 3.268,
+      "stop_loss": 3.2197,
+      "take_profit_1": 3.3211,
+      "take_profit_2": 3.3476,
+      "risk_reward": 1.1
     },
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1479.45,
-      "stop_loss": 1503.0457,
-      "take_profit_1": 1444.0564,
-      "take_profit_2": 1426.3596,
-      "risk_reward": 1.5
+      "entry": 1480.05,
+      "stop_loss": 1526.0347,
+      "take_profit_1": 1426.9907,
+      "take_profit_2": 1400.4611,
+      "risk_reward": 1.15
     },
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 178.12,
-      "stop_loss": 180.9371,
-      "take_profit_1": 173.8943,
-      "take_profit_2": 171.7814,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "MUUSDT",
-      "signal": "SHORT",
-      "entry": 957.5,
-      "stop_loss": 965.6471,
-      "take_profit_1": 945.2793,
-      "take_profit_2": 939.1689,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "KORUUSDT",
-      "signal": "SHORT",
-      "entry": 555.88,
-      "stop_loss": 573.3257,
-      "take_profit_1": 529.7114,
-      "take_profit_2": 516.6271,
+      "entry": 179.08,
+      "stop_loss": 182.4886,
+      "take_profit_1": 173.9671,
+      "take_profit_2": 171.4106,
       "risk_reward": 1.5
     }
   ]
