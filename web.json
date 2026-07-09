@@ -1,61 +1,52 @@
 {
   "btc_context": "BTC: bullish/bearish",
-  "signal_count": 6,
-  "last_update": "2026-07-09 22:41:25",
+  "signal_count": 5,
+  "last_update": "2026-07-09 23:26:26",
   "signals": [
     {
       "symbol": "SOLUSDT",
       "signal": "LONG",
-      "entry": 77.75,
-      "stop_loss": 76.5239,
-      "take_profit_1": 79.1107,
-      "take_profit_2": 79.791,
-      "risk_reward": 1.11
+      "entry": 77.27,
+      "stop_loss": 76.4314,
+      "take_profit_1": 78.5279,
+      "take_profit_2": 79.1569,
+      "risk_reward": 1.5
     },
     {
-      "symbol": "SUIUSDT",
+      "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 0.7185,
-      "stop_loss": 0.7108,
-      "take_profit_1": 0.7287,
-      "take_profit_2": 0.7338,
-      "risk_reward": 1.32
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": "SHORT",
-      "entry": 0.07264,
-      "stop_loss": 0.0733,
-      "take_profit_1": 0.0717,
-      "take_profit_2": 0.0712,
-      "risk_reward": 1.42
+      "entry": 464.51,
+      "stop_loss": 455.2951,
+      "take_profit_1": 475.2586,
+      "take_profit_2": 480.6329,
+      "risk_reward": 1.17
     },
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 1877.2,
-      "stop_loss": 1928.0943,
-      "take_profit_1": 1800.8586,
-      "take_profit_2": 1762.6879,
+      "entry": 1880.6,
+      "stop_loss": 1931.1014,
+      "take_profit_1": 1804.8479,
+      "take_profit_2": 1766.9718,
       "risk_reward": 1.5
-    },
-    {
-      "symbol": "SKHYNIXUSDT",
-      "signal": "SHORT",
-      "entry": 1539.22,
-      "stop_loss": 1576.0704,
-      "take_profit_1": 1486.5164,
-      "take_profit_2": 1460.1646,
-      "risk_reward": 1.43
     },
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 565.85,
-      "stop_loss": 589.2686,
-      "take_profit_1": 530.7221,
-      "take_profit_2": 513.1581,
-      "risk_reward": 1.5
+      "entry": 560.55,
+      "stop_loss": 590.2494,
+      "take_profit_1": 526.2814,
+      "take_profit_2": 509.1471,
+      "risk_reward": 1.15
+    },
+    {
+      "symbol": "LABUSDT",
+      "signal": "SHORT",
+      "entry": 1.1222,
+      "stop_loss": 1.2692,
+      "take_profit_1": 0.9266,
+      "take_profit_2": 0.8288,
+      "risk_reward": 1.33
     }
   ]
 }
