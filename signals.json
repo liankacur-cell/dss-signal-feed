@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 3,
-  "last_update": "2026-07-10 03:56:48",
+  "last_update": "2026-07-10 04:41:51",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07318,
-      "stop_loss": 0.0737,
-      "take_profit_1": 0.0724,
-      "take_profit_2": 0.072,
-      "risk_reward": 1.5,
-      "atr_15m": 0.00025928571428571586,
+      "entry": 0.07321,
+      "stop_loss": 0.0738,
+      "take_profit_1": 0.0725,
+      "take_profit_2": 0.0721,
+      "risk_reward": 1.2,
+      "atr_15m": 0.00022642857142857187,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 65.1,
+        "total_score": 66.2,
         "structure_score": 75,
         "trend_score": 61,
-        "momentum_score": 67.5,
+        "momentum_score": 75.0,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 67.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
@@ -60,17 +60,17 @@
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 568.87,
-      "stop_loss": 579.8171,
-      "take_profit_1": 553.1993,
-      "take_profit_2": 545.3639,
-      "risk_reward": 1.43,
-      "atr_15m": 5.223571428571412,
+      "entry": 570.45,
+      "stop_loss": 581.11,
+      "take_profit_1": 554.46,
+      "take_profit_2": 546.465,
+      "risk_reward": 1.5,
+      "atr_15m": 5.329999999999984,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 69.8,
+        "total_score": 68.6,
         "structure_score": 75,
-        "trend_score": 67,
+        "trend_score": 61,
         "momentum_score": 82.5,
         "volatility_score": 80,
         "liquidity_score": 60,
@@ -87,7 +87,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 67,
+        "score": 61,
         "direction": "bearish"
       },
       "momentum": {
@@ -114,12 +114,12 @@
     {
       "symbol": "SPCXUSDT",
       "signal": "SHORT",
-      "entry": 152.7,
-      "stop_loss": 154.3243,
-      "take_profit_1": 150.2636,
-      "take_profit_2": 149.0454,
-      "risk_reward": 1.5,
-      "atr_15m": 0.8121428571428554,
+      "entry": 152.5,
+      "stop_loss": 154.3349,
+      "take_profit_1": 150.3829,
+      "take_profit_2": 149.3244,
+      "risk_reward": 1.15,
+      "atr_15m": 0.7057142857142813,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 67.4,
