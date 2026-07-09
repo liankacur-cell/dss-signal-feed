@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bearish",
   "signal_count": 5,
-  "last_update": "2026-07-09 15:55:55",
+  "last_update": "2026-07-09 16:40:58",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07287,
-      "stop_loss": 0.0734,
-      "take_profit_1": 0.0721,
-      "take_profit_2": 0.0717,
+      "entry": 0.07271,
+      "stop_loss": 0.0732,
+      "take_profit_1": 0.072,
+      "take_profit_2": 0.0716,
       "risk_reward": 1.45,
-      "atr_15m": 0.00026357142857143045,
+      "atr_15m": 0.0002292857142857156,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 69.4,
+        "total_score": 68.3,
         "structure_score": 75,
         "trend_score": 77,
-        "momentum_score": 75.0,
+        "momentum_score": 67.5,
         "volatility_score": 65,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {
@@ -60,17 +60,17 @@
     {
       "symbol": "SNDKUSDT",
       "signal": "SHORT",
-      "entry": 1763.26,
-      "stop_loss": 1801.9309,
-      "take_profit_1": 1706.8514,
-      "take_profit_2": 1678.6471,
-      "risk_reward": 1.46,
-      "atr_15m": 18.802857142857096,
+      "entry": 1785.81,
+      "stop_loss": 1822.1129,
+      "take_profit_1": 1731.3557,
+      "take_profit_2": 1704.1286,
+      "risk_reward": 1.5,
+      "atr_15m": 18.151428571428532,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 67.5,
+        "total_score": 66.9,
         "structure_score": 75,
-        "trend_score": 61,
+        "trend_score": 58,
         "momentum_score": 75.0,
         "volatility_score": 80,
         "liquidity_score": 60,
@@ -87,7 +87,7 @@
         "label": "LL-BIAS"
       },
       "trend": {
-        "score": 61,
+        "score": 58,
         "direction": "bearish"
       },
       "momentum": {
@@ -114,12 +114,12 @@
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1498.03,
-      "stop_loss": 1526.7057,
-      "take_profit_1": 1455.0164,
-      "take_profit_2": 1433.5096,
-      "risk_reward": 1.5,
-      "atr_15m": 14.337857142857095,
+      "entry": 1496.59,
+      "stop_loss": 1521.9902,
+      "take_profit_1": 1466.5879,
+      "take_profit_2": 1451.5869,
+      "risk_reward": 1.18,
+      "atr_15m": 10.000714285714253,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
         "total_score": 68.7,
@@ -168,12 +168,12 @@
     {
       "symbol": "SOXLUSDT",
       "signal": "SHORT",
-      "entry": 187.43,
-      "stop_loss": 192.6486,
-      "take_profit_1": 179.6021,
-      "take_profit_2": 175.6882,
+      "entry": 187.06,
+      "stop_loss": 191.8914,
+      "take_profit_1": 179.8129,
+      "take_profit_2": 176.1894,
       "risk_reward": 1.5,
-      "atr_15m": 2.6092857142857144,
+      "atr_15m": 2.415714285714285,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
         "total_score": 69.8,
@@ -222,18 +222,18 @@
     {
       "symbol": "MUUSDT",
       "signal": "SHORT",
-      "entry": 986.01,
-      "stop_loss": 1002.3429,
-      "take_profit_1": 961.5107,
-      "take_profit_2": 949.2611,
+      "entry": 986.29,
+      "stop_loss": 1000.9971,
+      "take_profit_1": 964.2293,
+      "take_profit_2": 953.1989,
       "risk_reward": 1.5,
-      "atr_15m": 8.166428571428558,
+      "atr_15m": 7.353571428571415,
       "btc_regime": "BTC: bullish/bearish",
       "audit": {
-        "total_score": 68.6,
+        "total_score": 67.5,
         "structure_score": 75,
         "trend_score": 61,
-        "momentum_score": 82.5,
+        "momentum_score": 75.0,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -253,7 +253,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 82.5,
+        "score": 75.0,
         "direction": "bullish"
       },
       "volatility": {
