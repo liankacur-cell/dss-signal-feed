@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-10 17:27:50",
+  "last_update": "2026-07-10 18:12:57",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07451,
+      "entry": 0.07449,
       "stop_loss": 0.075,
       "take_profit_1": 0.0738,
-      "take_profit_2": 0.0734,
-      "risk_reward": 1.45
+      "take_profit_2": 0.0735,
+      "risk_reward": 1.35
     }
   ]
 }
