@@ -1,24 +1,15 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-10 14:27:32",
+  "signal_count": 1,
+  "last_update": "2026-07-10 15:12:37",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.074,
-      "stop_loss": 0.0744,
-      "take_profit_1": 0.0734,
-      "take_profit_2": 0.0731,
-      "risk_reward": 1.5
-    },
-    {
-      "symbol": "SNDKUSDT",
-      "signal": "LONG",
-      "entry": 1811.85,
-      "stop_loss": 1780.1714,
-      "take_profit_1": 1859.3679,
-      "take_profit_2": 1883.1269,
+      "entry": 0.0739,
+      "stop_loss": 0.0743,
+      "take_profit_1": 0.0733,
+      "take_profit_2": 0.073,
       "risk_reward": 1.5
     }
   ]
