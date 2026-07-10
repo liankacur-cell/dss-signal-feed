@@ -1,23 +1,23 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-10 15:57:40",
+  "last_update": "2026-07-10 16:42:45",
   "signals": [
     {
       "symbol": "DOGEUSDT",
       "signal": "SHORT",
-      "entry": 0.07424,
-      "stop_loss": 0.0747,
-      "take_profit_1": 0.0736,
+      "entry": 0.0744,
+      "stop_loss": 0.0748,
+      "take_profit_1": 0.0737,
       "take_profit_2": 0.0733,
-      "risk_reward": 1.39,
-      "atr_15m": 0.00020928571428571442,
+      "risk_reward": 1.75,
+      "atr_15m": 0.00022357142857142815,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 63.4,
+        "total_score": 64.5,
         "structure_score": 75,
         "trend_score": 58,
-        "momentum_score": 75.0,
+        "momentum_score": 82.5,
         "volatility_score": 40,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -37,7 +37,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 75.0,
+        "score": 82.5,
         "direction": "bullish"
       },
       "volatility": {
