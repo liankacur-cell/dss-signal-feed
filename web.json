@@ -1,42 +1,42 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 4,
-  "last_update": "2026-07-11 00:58:27",
+  "last_update": "2026-07-11 01:43:30",
   "signals": [
     {
       "symbol": "BTCUSDT",
       "signal": "LONG",
-      "entry": 63846.5,
-      "stop_loss": 63418.2286,
-      "take_profit_1": 64488.9071,
-      "take_profit_2": 64810.1106,
+      "entry": 63880.0,
+      "stop_loss": 63532.5714,
+      "take_profit_1": 64401.1429,
+      "take_profit_2": 64661.7143,
       "risk_reward": 1.5
     },
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.536,
-      "stop_loss": 3.4667,
-      "take_profit_1": 3.6189,
-      "take_profit_2": 3.6604,
-      "risk_reward": 1.2
+      "entry": 3.532,
+      "stop_loss": 3.4678,
+      "take_profit_1": 3.6038,
+      "take_profit_2": 3.6397,
+      "risk_reward": 1.12
     },
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 499.1,
-      "stop_loss": 489.1323,
-      "take_profit_1": 512.0771,
-      "take_profit_2": 518.5657,
-      "risk_reward": 1.3
+      "entry": 502.12,
+      "stop_loss": 491.7739,
+      "take_profit_1": 514.0579,
+      "take_profit_2": 520.0268,
+      "risk_reward": 1.15
     },
     {
       "symbol": "KORUUSDT",
       "signal": "SHORT",
-      "entry": 556.52,
-      "stop_loss": 582.36,
-      "take_profit_1": 517.76,
-      "take_profit_2": 498.38,
+      "entry": 557.43,
+      "stop_loss": 579.7943,
+      "take_profit_1": 523.8836,
+      "take_profit_2": 507.1104,
       "risk_reward": 1.5
     }
   ]
