@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-11 04:43:45",
+  "last_update": "2026-07-11 05:30:17",
   "signals": [
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 500.56,
-      "stop_loss": 493.5854,
-      "take_profit_1": 510.0057,
-      "take_profit_2": 514.7286,
-      "risk_reward": 1.35
+      "entry": 499.77,
+      "stop_loss": 493.8299,
+      "take_profit_1": 506.7707,
+      "take_profit_2": 510.271,
+      "risk_reward": 1.18
     }
   ]
 }
