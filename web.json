@@ -1,16 +1,6 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-11 09:15:33",
-  "signals": [
-    {
-      "symbol": "SUIUSDT",
-      "signal": "LONG",
-      "entry": 0.7325,
-      "stop_loss": 0.728,
-      "take_profit_1": 0.7392,
-      "take_profit_2": 0.7425,
-      "risk_reward": 1.49
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-07-11 10:00:36",
+  "signals": []
 }
