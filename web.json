@@ -1,6 +1,25 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-07-12 04:47:07",
-  "signals": []
+  "signal_count": 2,
+  "last_update": "2026-07-12 05:32:11",
+  "signals": [
+    {
+      "symbol": "SUIUSDT",
+      "signal": "LONG",
+      "entry": 0.7426,
+      "stop_loss": 0.7372,
+      "take_profit_1": 0.7498,
+      "take_profit_2": 0.7534,
+      "risk_reward": 1.33
+    },
+    {
+      "symbol": "XRPUSDT",
+      "signal": "LONG",
+      "entry": 1.1101,
+      "stop_loss": 1.1054,
+      "take_profit_1": 1.1166,
+      "take_profit_2": 1.1199,
+      "risk_reward": 1.38
+    }
+  ]
 }
