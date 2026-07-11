@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-11 19:01:23",
+  "signal_count": 3,
+  "last_update": "2026-07-11 19:46:27",
   "signals": [
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1482.8,
-      "stop_loss": 1487.5414,
-      "take_profit_1": 1475.6879,
-      "take_profit_2": 1472.1318,
+      "entry": 1483.58,
+      "stop_loss": 1488.8186,
+      "take_profit_1": 1475.7221,
+      "take_profit_2": 1471.7931,
       "risk_reward": 1.5,
-      "atr_15m": 2.3707142857142736,
+      "atr_15m": 2.619285714285687,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 68.9,
@@ -58,20 +58,74 @@
       }
     },
     {
-      "symbol": "LABUSDT",
-      "signal": "SHORT",
-      "entry": 0.8499,
-      "stop_loss": 0.9405,
-      "take_profit_1": 0.7447,
-      "take_profit_2": 0.6921,
-      "risk_reward": 1.16,
-      "atr_15m": 0.035078571428571445,
+      "symbol": "XAUUSDT",
+      "signal": "LONG",
+      "entry": 4118.42,
+      "stop_loss": 4115.8401,
+      "take_profit_1": 4121.9193,
+      "take_profit_2": 4123.6689,
+      "risk_reward": 1.36,
+      "atr_15m": 1.1664285714285663,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
-        "total_score": 73.0,
+        "total_score": 76.4,
+        "structure_score": 75,
+        "trend_score": 80,
+        "momentum_score": 62.5,
+        "volatility_score": 40,
+        "liquidity_score": 80,
+        "money_flow_score": 55,
+        "squeeze_score": 60,
+        "structure_dir": "bullish",
+        "trend_dir": "bullish",
+        "momentum_dir": "bullish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bullish",
+        "label": "HH-BIAS"
+      },
+      "trend": {
+        "score": 80,
+        "direction": "bullish"
+      },
+      "momentum": {
+        "score": 62.5,
+        "direction": "bullish"
+      },
+      "volatility": {
+        "score": 40,
+        "state": "squeeze"
+      },
+      "liquidity": {
+        "score": 80,
+        "state": "sell_liquidity_sweep"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 60,
+        "state": "pre_squeeze"
+      }
+    },
+    {
+      "symbol": "LABUSDT",
+      "signal": "SHORT",
+      "entry": 0.8741,
+      "stop_loss": 0.9573,
+      "take_profit_1": 0.7493,
+      "take_profit_2": 0.6869,
+      "risk_reward": 1.5,
+      "atr_15m": 0.04160714285714288,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 73.8,
         "structure_score": 75,
         "trend_score": 98,
-        "momentum_score": 62.5,
+        "momentum_score": 67.5,
         "volatility_score": 80,
         "liquidity_score": 60,
         "money_flow_score": 55,
@@ -91,7 +145,7 @@
         "direction": "bearish"
       },
       "momentum": {
-        "score": 62.5,
+        "score": 67.5,
         "direction": "bullish"
       },
       "volatility": {

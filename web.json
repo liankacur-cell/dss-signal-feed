@@ -1,25 +1,34 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 2,
-  "last_update": "2026-07-11 19:01:23",
+  "signal_count": 3,
+  "last_update": "2026-07-11 19:46:27",
   "signals": [
     {
       "symbol": "SKHYNIXUSDT",
       "signal": "SHORT",
-      "entry": 1482.8,
-      "stop_loss": 1487.5414,
-      "take_profit_1": 1475.6879,
-      "take_profit_2": 1472.1318,
+      "entry": 1483.58,
+      "stop_loss": 1488.8186,
+      "take_profit_1": 1475.7221,
+      "take_profit_2": 1471.7931,
       "risk_reward": 1.5
+    },
+    {
+      "symbol": "XAUUSDT",
+      "signal": "LONG",
+      "entry": 4118.42,
+      "stop_loss": 4115.8401,
+      "take_profit_1": 4121.9193,
+      "take_profit_2": 4123.6689,
+      "risk_reward": 1.36
     },
     {
       "symbol": "LABUSDT",
       "signal": "SHORT",
-      "entry": 0.8499,
-      "stop_loss": 0.9405,
-      "take_profit_1": 0.7447,
-      "take_profit_2": 0.6921,
-      "risk_reward": 1.16
+      "entry": 0.8741,
+      "stop_loss": 0.9573,
+      "take_profit_1": 0.7493,
+      "take_profit_2": 0.6869,
+      "risk_reward": 1.5
     }
   ]
 }
