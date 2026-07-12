@@ -1,25 +1,25 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 2,
-  "last_update": "2026-07-12 13:47:45",
+  "last_update": "2026-07-12 14:32:48",
   "signals": [
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.629,
-      "stop_loss": 3.572,
-      "take_profit_1": 3.6948,
-      "take_profit_2": 3.7277,
-      "risk_reward": 1.15
+      "entry": 3.637,
+      "stop_loss": 3.5866,
+      "take_profit_1": 3.7013,
+      "take_profit_2": 3.7334,
+      "risk_reward": 1.28
     },
     {
       "symbol": "BUSDT",
       "signal": "SHORT",
-      "entry": 0.1371,
-      "stop_loss": 0.1533,
-      "take_profit_1": 0.1129,
-      "take_profit_2": 0.1008,
-      "risk_reward": 1.49
+      "entry": 0.1356,
+      "stop_loss": 0.1507,
+      "take_profit_1": 0.113,
+      "take_profit_2": 0.1017,
+      "risk_reward": 1.5
     }
   ]
 }
