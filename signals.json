@@ -1,17 +1,17 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 4,
-  "last_update": "2026-07-12 08:32:24",
+  "signal_count": 2,
+  "last_update": "2026-07-12 09:17:28",
   "signals": [
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.686,
-      "stop_loss": 3.6102,
-      "take_profit_1": 3.7734,
-      "take_profit_2": 3.8171,
-      "risk_reward": 1.15,
-      "atr_15m": 0.029142857142857075,
+      "entry": 3.671,
+      "stop_loss": 3.6126,
+      "take_profit_1": 3.7586,
+      "take_profit_2": 3.8024,
+      "risk_reward": 1.5,
+      "atr_15m": 0.0292142857142857,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 69.3,
@@ -58,122 +58,14 @@
       }
     },
     {
-      "symbol": "ZECUSDT",
-      "signal": "LONG",
-      "entry": 508.96,
-      "stop_loss": 497.4123,
-      "take_profit_1": 522.2843,
-      "take_profit_2": 528.9465,
-      "risk_reward": 1.15,
-      "atr_15m": 4.441428571428564,
-      "btc_regime": "BTC: bullish/bullish",
-      "audit": {
-        "total_score": 68.0,
-        "structure_score": 75,
-        "trend_score": 98,
-        "momentum_score": 37.5,
-        "volatility_score": 65,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bearish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 75,
-        "direction": "bullish",
-        "label": "HH-BIAS"
-      },
-      "trend": {
-        "score": 98,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 37.5,
-        "direction": "bearish"
-      },
-      "volatility": {
-        "score": 65,
-        "state": "normal"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
-    {
-      "symbol": "TUSDT",
-      "signal": "LONG",
-      "entry": 0.004632,
-      "stop_loss": 0.0042,
-      "take_profit_1": 0.0052,
-      "take_profit_2": 0.0055,
-      "risk_reward": 1.31,
-      "atr_15m": 0.00017985714285714268,
-      "btc_regime": "BTC: bullish/bullish",
-      "audit": {
-        "total_score": 80.0,
-        "structure_score": 65,
-        "trend_score": 98,
-        "momentum_score": 82.5,
-        "volatility_score": 80,
-        "liquidity_score": 60,
-        "money_flow_score": 55,
-        "squeeze_score": 40,
-        "structure_dir": "bullish",
-        "trend_dir": "bullish",
-        "momentum_dir": "bullish",
-        "gate": "PASS"
-      },
-      "structure": {
-        "score": 65,
-        "direction": "bullish",
-        "label": "RANGE_BIAS"
-      },
-      "trend": {
-        "score": 98,
-        "direction": "bullish"
-      },
-      "momentum": {
-        "score": 82.5,
-        "direction": "bullish"
-      },
-      "volatility": {
-        "score": 80,
-        "state": "expansion"
-      },
-      "liquidity": {
-        "score": 60,
-        "state": "neutral"
-      },
-      "money_flow": {
-        "score": 55,
-        "state": "balanced"
-      },
-      "squeeze": {
-        "score": 40,
-        "state": "no_squeeze"
-      }
-    },
-    {
       "symbol": "SNDKUSDT",
       "signal": "LONG",
-      "entry": 1943.37,
-      "stop_loss": 1929.4057,
-      "take_profit_1": 1964.3164,
-      "take_profit_2": 1974.7896,
+      "entry": 1945.92,
+      "stop_loss": 1934.0157,
+      "take_profit_1": 1963.7764,
+      "take_profit_2": 1972.7046,
       "risk_reward": 1.5,
-      "atr_15m": 6.982142857142841,
+      "atr_15m": 5.952142857142836,
       "btc_regime": "BTC: bullish/bullish",
       "audit": {
         "total_score": 68.0,
