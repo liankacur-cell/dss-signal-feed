@@ -1,16 +1,16 @@
 {
   "btc_context": "BTC: bullish/bullish",
   "signal_count": 1,
-  "last_update": "2026-07-12 20:33:16",
+  "last_update": "2026-07-12 21:18:20",
   "signals": [
     {
-      "symbol": "EVAAUSDT",
-      "signal": "SHORT",
-      "entry": 1.4968,
-      "stop_loss": 1.6869,
-      "take_profit_1": 1.2777,
-      "take_profit_2": 1.1682,
-      "risk_reward": 1.15
+      "symbol": "UNIUSDT",
+      "signal": "LONG",
+      "entry": 3.614,
+      "stop_loss": 3.5642,
+      "take_profit_1": 3.6819,
+      "take_profit_2": 3.7159,
+      "risk_reward": 1.36
     }
   ]
 }
