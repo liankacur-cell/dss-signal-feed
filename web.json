@@ -1,16 +1,6 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 1,
-  "last_update": "2026-07-12 17:33:02",
-  "signals": [
-    {
-      "symbol": "BUSDT",
-      "signal": "SHORT",
-      "entry": 0.1313,
-      "stop_loss": 0.1416,
-      "take_profit_1": 0.1195,
-      "take_profit_2": 0.1136,
-      "risk_reward": 1.15
-    }
-  ]
+  "signal_count": 0,
+  "last_update": "2026-07-12 18:18:05",
+  "signals": []
 }
