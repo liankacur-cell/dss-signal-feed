@@ -1,6 +1,61 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 0,
-  "last_update": "2026-07-12 19:03:09",
-  "signals": []
+  "signal_count": 1,
+  "last_update": "2026-07-12 19:48:13",
+  "signals": [
+    {
+      "symbol": "EVAAUSDT",
+      "signal": "SHORT",
+      "entry": 1.3926,
+      "stop_loss": 1.5005,
+      "take_profit_1": 1.2307,
+      "take_profit_2": 1.1497,
+      "risk_reward": 1.5,
+      "atr_15m": 0.05395714285714285,
+      "btc_regime": "BTC: bullish/bullish",
+      "audit": {
+        "total_score": 73.0,
+        "structure_score": 75,
+        "trend_score": 98,
+        "momentum_score": 62.5,
+        "volatility_score": 80,
+        "liquidity_score": 60,
+        "money_flow_score": 55,
+        "squeeze_score": 40,
+        "structure_dir": "bearish",
+        "trend_dir": "bearish",
+        "momentum_dir": "bullish",
+        "gate": "PASS"
+      },
+      "structure": {
+        "score": 75,
+        "direction": "bearish",
+        "label": "LL-BIAS"
+      },
+      "trend": {
+        "score": 98,
+        "direction": "bearish"
+      },
+      "momentum": {
+        "score": 62.5,
+        "direction": "bullish"
+      },
+      "volatility": {
+        "score": 80,
+        "state": "expansion"
+      },
+      "liquidity": {
+        "score": 60,
+        "state": "neutral"
+      },
+      "money_flow": {
+        "score": 55,
+        "state": "balanced"
+      },
+      "squeeze": {
+        "score": 40,
+        "state": "no_squeeze"
+      }
+    }
+  ]
 }
