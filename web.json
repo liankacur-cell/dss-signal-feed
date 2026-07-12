@@ -1,51 +1,42 @@
 {
   "btc_context": "BTC: bullish/bullish",
-  "signal_count": 5,
-  "last_update": "2026-07-12 07:02:19",
+  "signal_count": 4,
+  "last_update": "2026-07-12 07:47:21",
   "signals": [
     {
       "symbol": "UNIUSDT",
       "signal": "LONG",
-      "entry": 3.655,
-      "stop_loss": 3.5851,
-      "take_profit_1": 3.7544,
-      "take_profit_2": 3.8041,
-      "risk_reward": 1.42
+      "entry": 3.657,
+      "stop_loss": 3.5974,
+      "take_profit_1": 3.7464,
+      "take_profit_2": 3.7911,
+      "risk_reward": 1.5
     },
     {
       "symbol": "ZECUSDT",
       "signal": "LONG",
-      "entry": 509.14,
-      "stop_loss": 499.01,
-      "take_profit_1": 524.335,
-      "take_profit_2": 531.9325,
+      "entry": 505.65,
+      "stop_loss": 496.7071,
+      "take_profit_1": 519.0643,
+      "take_profit_2": 525.7714,
       "risk_reward": 1.5
     },
     {
       "symbol": "HYPEUSDT",
       "signal": "LONG",
-      "entry": 66.818,
-      "stop_loss": 66.2485,
-      "take_profit_1": 67.6533,
-      "take_profit_2": 68.071,
-      "risk_reward": 1.47
-    },
-    {
-      "symbol": "EVAAUSDT",
-      "signal": "SHORT",
-      "entry": 1.8884,
-      "stop_loss": 1.9822,
-      "take_profit_1": 1.7477,
-      "take_profit_2": 1.6774,
+      "entry": 66.795,
+      "stop_loss": 66.1546,
+      "take_profit_1": 67.7556,
+      "take_profit_2": 68.2359,
       "risk_reward": 1.5
     },
     {
       "symbol": "SNDKUSDT",
       "signal": "LONG",
-      "entry": 1944.91,
-      "stop_loss": 1930.9829,
-      "take_profit_1": 1965.8007,
-      "take_profit_2": 1976.246,
+      "entry": 1948.2,
+      "stop_loss": 1934.5371,
+      "take_profit_1": 1968.6943,
+      "take_profit_2": 1978.9415,
       "risk_reward": 1.5
     }
   ]
