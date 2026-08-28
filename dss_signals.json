@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-08-28T12:43:40.739718",
+  "timestamp": "2026-08-28T12:57:03.039884",
   "total": 1,
   "signals": [
     {
-      "pair": "BMTUSDT",
+      "pair": "SKRUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 86.15,
+      "score": 90.65,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 82",
-      "vol_reason": "Volatility: high (exp=10.16)",
+      "mom_reason": "Momentum score: 92",
+      "vol_reason": "Volatility: high (exp=7.73)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:True, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.0251,
-        "sl": 0.021710899999999998,
-        "tp": 0.02894455,
-        "risk": 0.0033891000000000025,
-        "reward": 0.0038445499999999987,
-        "rr": 1.134386710336076,
-        "pos_factor": 0.4,
+        "entry": 0.010902,
+        "sl": 0.010228642857142858,
+        "tp": 0.012147954999999998,
+        "risk": 0.0006733571428571422,
+        "reward": 0.0012459549999999982,
+        "rr": 1.8503627877373494,
+        "pos_factor": 0.5,
         "sl_reason": "Liquidity primary, ATR validated",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.13"
+        "reason": "RR=1:1.85"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 0.9% above EMA21",
-      "ts": "2026-08-28T12:43:13.970809"
+      "entry_reason": "Price 0.2% above EMA21",
+      "ts": "2026-08-28T12:56:56.881370"
     }
   ]
 }
