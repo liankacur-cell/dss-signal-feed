@@ -1,36 +1,5 @@
 {
-  "timestamp": "2026-08-28T21:15:06.880412",
-  "total": 1,
-  "signals": [
-    {
-      "pair": "UNIUSDT",
-      "market": "crypto",
-      "dir": "SHORT",
-      "score": 83.37372255196175,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 58",
-      "vol_reason": "Volatility: high (exp=12.99)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.40",
-      "risk": {
-        "entry": 4.59,
-        "sl": 4.6735,
-        "tp": 4.463204999999999,
-        "risk": 0.08349999999999991,
-        "reward": 0.12679500000000044,
-        "rr": 1.518502994011983,
-        "pos_factor": 0.5,
-        "sl_reason": "Liquidity primary, ATR validated",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.52"
-      },
-      "entry_status": "WEAK",
-      "entry_reason": "EMA50 above EMA200",
-      "ts": "2026-08-28T21:15:01.185892"
-    }
-  ]
+  "timestamp": "2026-08-29T07:37:33.278229",
+  "total": 0,
+  "signals": []
 }
