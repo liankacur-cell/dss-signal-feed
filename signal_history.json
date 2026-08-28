@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "pair": "BLESSUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 87.05,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 99",
+    "vol_reason": "Volatility: high (exp=2.96)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.012097,
+      "sl": 0.011545714285714286,
+      "tp": 0.01279371,
+      "risk": 0.0005512857142857142,
+      "reward": 0.0006967099999999997,
+      "rr": 1.2637911376004143,
+      "pos_factor": 0.4,
+      "sl_reason": "Liquidity primary, ATR validated",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.26"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 1.2% above EMA21",
+    "ts": "2026-08-28T11:01:39.105491"
+  }
+]
