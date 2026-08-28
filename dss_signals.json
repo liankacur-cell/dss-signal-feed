@@ -1,36 +1,5 @@
 {
-  "timestamp": "2026-08-28T13:06:45.495412",
-  "total": 1,
-  "signals": [
-    {
-      "pair": "SKRUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 88.5,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=8.70)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 0.01108,
-        "sl": 0.010401571428571428,
-        "tp": 0.012147954999999998,
-        "risk": 0.0006784285714285711,
-        "reward": 0.001067954999999999,
-        "rr": 1.574159823120656,
-        "pos_factor": 0.5,
-        "sl_reason": "Liquidity primary, ATR validated",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.57"
-      },
-      "entry_status": "GOOD",
-      "entry_reason": "Price 1.6% above EMA21",
-      "ts": "2026-08-28T13:06:39.179305"
-    }
-  ]
+  "timestamp": "2026-08-28T13:50:10.813047",
+  "total": 0,
+  "signals": []
 }
