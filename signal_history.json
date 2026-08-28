@@ -418,5 +418,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 1.4% above EMA21",
     "ts": "2026-08-28T15:32:13.087912"
+  },
+  {
+    "pair": "HEMIUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 84.25,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 85",
+    "vol_reason": "Volatility: high (exp=8.24)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.01131,
+      "sl": 0.010433071428571429,
+      "tp": 0.012265364999999999,
+      "risk": 0.0008769285714285719,
+      "reward": 0.000955364999999998,
+      "rr": 1.089444489696177,
+      "pos_factor": 0.4,
+      "sl_reason": "Liquidity primary, ATR validated",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.09"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 1.4% above EMA21",
+    "ts": "2026-08-28T16:23:04.159542"
   }
 ]
