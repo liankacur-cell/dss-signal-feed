@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-28T12:30:55.272634",
+  "timestamp": "2026-08-28T12:36:16.158244",
   "total": 1,
   "signals": [
     {
@@ -12,25 +12,25 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
       "mom_reason": "Momentum score: 87",
-      "vol_reason": "Volatility: high (exp=7.25)",
+      "vol_reason": "Volatility: high (exp=8.93)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:True, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.02514,
+        "entry": 0.02527,
         "sl": 0.021710899999999998,
         "tp": 0.02894455,
-        "risk": 0.003429100000000001,
-        "reward": 0.0038045500000000003,
-        "rr": 1.1094893703887316,
+        "risk": 0.0035591000000000025,
+        "reward": 0.0036745499999999987,
+        "rr": 1.0324379758927809,
         "pos_factor": 0.4,
         "sl_reason": "Liquidity primary, ATR validated",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.11"
+        "reason": "RR=1:1.03"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 1.1% above EMA21",
-      "ts": "2026-08-28T12:30:49.186750"
+      "entry_reason": "Price 1.5% above EMA21",
+      "ts": "2026-08-28T12:36:09.859542"
     }
   ]
 }
