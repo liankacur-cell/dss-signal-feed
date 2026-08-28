@@ -388,5 +388,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 1.7% above EMA21",
     "ts": "2026-08-28T15:20:48.753998"
+  },
+  {
+    "pair": "TRUMPUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 89.75,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=11.08)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 2.784,
+      "sl": 2.6755714285714283,
+      "tp": 2.91933,
+      "risk": 0.10842857142857154,
+      "reward": 0.13533000000000017,
+      "rr": 1.2481027667984192,
+      "pos_factor": 0.4,
+      "sl_reason": "Liquidity primary, ATR validated",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.25"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 1.4% above EMA21",
+    "ts": "2026-08-28T15:32:13.087912"
   }
 ]
