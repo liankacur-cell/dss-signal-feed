@@ -1,5 +1,36 @@
 {
-  "timestamp": "2026-08-28T19:21:11.897547",
-  "total": 0,
-  "signals": []
+  "timestamp": "2026-08-28T19:55:56.015095",
+  "total": 1,
+  "signals": [
+    {
+      "pair": "BASUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 92.05,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 99",
+      "vol_reason": "Volatility: high (exp=4.26)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: rising, Acc:True, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.030116,
+        "sl": 0.02889142857142857,
+        "tp": 0.033233,
+        "risk": 0.001224571428571429,
+        "reward": 0.0031169999999999982,
+        "rr": 2.5453803079794657,
+        "pos_factor": 0.5,
+        "sl_reason": "Liquidity primary, ATR validated",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:2.55"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 3.0% above EMA21, wait pullback",
+      "ts": "2026-08-28T19:55:40.701791"
+    }
+  ]
 }
