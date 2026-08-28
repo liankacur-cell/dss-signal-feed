@@ -1,36 +1,66 @@
 {
-  "timestamp": "2026-08-28T11:01:57.465062",
-  "total": 1,
+  "timestamp": "2026-08-28T11:12:42.286727",
+  "total": 2,
   "signals": [
     {
-      "pair": "BLESSUSDT",
+      "pair": "HEMIUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 87.05,
+      "score": 84.25,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 99",
-      "vol_reason": "Volatility: high (exp=2.96)",
+      "mom_reason": "Momentum score: 85",
+      "vol_reason": "Volatility: high (exp=6.60)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.012097,
-        "sl": 0.011545714285714286,
-        "tp": 0.01279371,
-        "risk": 0.0005512857142857142,
-        "reward": 0.0006967099999999997,
-        "rr": 1.2637911376004143,
-        "pos_factor": 0.4,
+        "entry": 0.010063,
+        "sl": 0.00939,
+        "tp": 0.01112609,
+        "risk": 0.000673,
+        "reward": 0.0010630899999999992,
+        "rr": 1.5796285289747387,
+        "pos_factor": 0.5,
         "sl_reason": "Liquidity primary, ATR validated",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.26"
+        "reason": "RR=1:1.58"
       },
-      "entry_status": "GOOD",
-      "entry_reason": "Price 1.2% above EMA21",
-      "ts": "2026-08-28T11:01:39.105491"
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price below EMA21, wait confirmation",
+      "ts": "2026-08-28T11:12:36.023289"
+    },
+    {
+      "pair": "SKRUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 84.25,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 85",
+      "vol_reason": "Volatility: high (exp=5.45)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.010879,
+        "sl": 0.010255428571428572,
+        "tp": 0.012147954999999998,
+        "risk": 0.0006235714285714282,
+        "reward": 0.0012689549999999987,
+        "rr": 2.034979381443298,
+        "pos_factor": 0.5,
+        "sl_reason": "Liquidity primary, ATR validated",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:2.03"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price below EMA21, wait confirmation",
+      "ts": "2026-08-28T11:12:36.029236"
     }
   ]
 }
