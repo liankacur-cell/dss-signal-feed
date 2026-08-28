@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-08-28T13:57:39.023221",
+  "timestamp": "2026-08-28T14:16:29.677007",
   "total": 1,
   "signals": [
     {
-      "pair": "BMTUSDT",
+      "pair": "TRUMPUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 84.55,
+      "score": 91.0,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 74",
-      "vol_reason": "Volatility: high (exp=6.93)",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=9.48)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.02499,
-        "sl": 0.021710899999999998,
-        "tp": 0.02894455,
-        "risk": 0.0032791,
-        "reward": 0.003954550000000001,
-        "rr": 1.2059863987069626,
+        "entry": 2.804,
+        "sl": 2.691642857142857,
+        "tp": 2.91933,
+        "risk": 0.11235714285714282,
+        "reward": 0.11533000000000015,
+        "rr": 1.0264589955499064,
         "pos_factor": 0.4,
         "sl_reason": "Liquidity primary, ATR validated",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.21"
+        "reason": "RR=1:1.03"
       },
       "entry_status": "WAIT_PULLBACK",
-      "entry_reason": "Price below EMA21, wait confirmation",
-      "ts": "2026-08-28T13:57:33.452914"
+      "entry_reason": "Price 2.9% above EMA21, wait pullback",
+      "ts": "2026-08-28T14:16:14.212356"
     }
   ]
 }
